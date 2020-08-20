@@ -1,0 +1,9 @@
+%syntax-version=1.0.0
+%project=tdr
+%uri=https://tdr.com/
+
+10-Create_table 2020-08-17T15:01:52Z "Etudiant O'clock",,, <etudiant@teleporteur> # Implementation of tables
+20-Foreigns_Keys 2020-08-18T07:34:40Z "Etudiant O'clock",,, <etudiant@teleporteur> # Add foreigns keys
+30-Constraints 2020-08-18T09:04:08Z "Etudiant O'clock",,, <etudiant@teleporteur> # Add contraints
+40-Department_Datas 2020-08-18T12:02:22Z "Etudiant O'clock",,, <etudiant@teleporteur> # Add Department_Datas
+45-Add_seeder 2020-08-18T12:17:59Z "Etudiant O'clock",,, <etudiant@teleporteur> # Add Datas All Tables

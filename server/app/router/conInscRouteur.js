@@ -1,0 +1,19 @@
+const express = require('express');
+const router = express.Router();
+
+const conInscController = require('../controllers/conInscController');
+
+/**
+     * To connect a user after click on "sign in" button of login form
+     * @route POST /api/user
+     * @group 
+     * @returns {object} 200 - {isLogged: true , message:" OK User and Password"})
+     */
+router.post('/api/user', conInscController.connectionUser);
+
+
+router.post('/inscription/pro', conInscController.insertUserPro);
+router.post('/inscription/part', conInscController.insertUserPart);
+// router.post('/api/user', conInscController.connectionUser) ;
+
+module.exports = router;
