@@ -25,35 +25,56 @@ app.all('*', (request, response, next) => {
     next();
 });
 
-const conInscRouteur = require('./app/router/conInscRouteur');
-const quoteRouteur = require('./app/router/quoteRouter');
-
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-app.use(conInscRouteur);
-app.use(quoteRouteur);
 
-app.use((request, response, next) => {
-   if (!response.headersSent) {
-    response.status(202).send();
-   } 
 
-   next();
-});
+
 
 // Gestion des sessions
 app.use(session({
-    secret: 'rZS/;QKoCQ2@jI4zb4>W2#@Le.0CG#',
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true
 }));
 
-// Middleware pour stocker les infos de session en local - utililsé à chaque requête
+// app.use((request,response, next) => {
+
+//     response.locals.username = request.session.username;
+
+//     next();
+// });
+
+
+
+//! Middleware pour stocker les infos de session en local - utililsé à chaque requête
 app.use((request, response, next) => {
+    // console.log(request)
+    
   response.locals.session = request.session;
+    
   next();  
+
 })
+
+const conInscRouteur = require('./app/router/conInscRouteur');
+const quoteRouteur = require('./app/router/quoteRouter');
+
+app.use(conInscRouteur);
+app.use(quoteRouteur);
+
+
+
+//! Juste pour le TEST 
+
+// app.use((request, response, next) => {
+//     if (!response.headersSent) {
+//      response.status(202).send();
+//     } 
+ 
+//     next();
+//  });
 
 const port = process.env.PORT || 8080 ;
 app.listen(port, _ => {

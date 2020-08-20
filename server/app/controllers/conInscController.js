@@ -5,29 +5,41 @@ module.exports = {
     connectionUser: async (request,response) => {
     
         const body = request.body;
+       
         const user = await conInscDataMapper.findUser(body);
 
-        if (!user) {
-             
-            response.status(404).json({isLogged:false, error:"Utilisateur non trouvé"});
-            return;
-        }
+            if (!user) {
+                
+               
+                response.status(404).json({isLogged:false, error:"Utilisateur non trouvé"});
+                console.log(" Erreur Connexion : Mauvais Identifiant")
+                return;
+            }
 
-        if (body.password !== user.password) {
- 
-            response.status(401).json({isLogged:false, error:"Mauvais Mot de Passe"});
-            return;
-        }
+            if (body.password !== user.password) {
+    
+                response.status(401).json({isLogged:false, error:"Mauvais Mot de Passe"});
+                console.log(" Erreur Connexion : Mauvais Mot de Passe")
+                return;
+            }
+      
+
+        request.session.login = body.email;
+  
+            if(!request.session.login){
+                response.redirect('/');
+            };
         
-        response.json({isLogged: true , message:" Connexion Utilisateur Acceptée"});
+        response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée"});
 
-        console.log("Connexion : Identifiant & Mot de Passe Correct")
+        console.log(" Connexion : Identifiant & Mot de Passe Correct")
 
         //! Ne pas toucher au dessus !
 
-        //creer une session
+        // Creer une session
+        // console.log('request session', request.session);
         // request.session.login = body.mail; //! Ne fonctionne pas ! 
-        
+        // console.log(request.session.login);
         //pour rediriger vers la dernière page visitée
         //response.redirect(request.session.history.filter(page => page !== '/login').pop());
 
