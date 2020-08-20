@@ -36,10 +36,20 @@ module.exports = {
 
         //! Ne pas toucher au dessus !
 
+<<<<<<< HEAD
         // Creer une session
         // console.log('request session', request.session);
         // request.session.login = body.mail; //! Ne fonctionne pas ! 
         // console.log(request.session.login);
+=======
+        //creer une session
+
+        request.session.login = body.mail;
+
+        // request.session.login = body.mail; //! Ne fonctionne pas ! 
+
+        
+>>>>>>> c5945ad1edf0c02aede4db33540c97681e7935f0
         //pour rediriger vers la dernière page visitée
         //response.redirect(request.session.history.filter(page => page !== '/login').pop());
 

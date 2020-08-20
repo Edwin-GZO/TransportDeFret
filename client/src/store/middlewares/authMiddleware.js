@@ -1,9 +1,25 @@
 import axios from 'axios';
-import { LOGIN, CHECK_AUTH, loginSuccess, loginError, logoutSuccess } from '../action/user-actions';
+import { LOGIN, CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT } from '../action/user-actions';
 
 export default (store) => (next) => (action) => {
   next(action);
   switch (action.type) {
+    case LOGOUT: {
+      axios({
+        method: 'post',
+        url: 'http://localhost:8080/api/user/logout',
+        withCredentials: true
+      })
+        .then((res) => {
+          console.log(res.data);
+          store.dispatch(logoutSuccess());
+        })
+        .catch((err) => {
+          console.error(err);
+        })
+      break;
+    }
+    
     /*
     case CHECK_AUTH: {
       axios({
