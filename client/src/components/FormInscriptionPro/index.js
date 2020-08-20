@@ -1,48 +1,55 @@
 import React from 'react'
-import Field from '../LoginForm/Field'
+import Field from '../../components/LoginForm/Field'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import './style.scss';
 
 const FormInscriptionPro = ({
-  value,
-  type,
-  name,
-  placeholder,
-  onChange,
+ email,
+ changeField,
+ signup,
+ password,
+ phone,
+ bill_adress,
+ siret,
+ city,
+ postal_code,
 }) =>{
-  const handleChange = (evt) => {
-    onChange(evt.target.value, name);
+  
+  
+  const handleSignUp = (evt) => {
+    evt.preventDefault();
+    signup();
   };
- 
+
   
   return(
   
   <section className="register">
   <h1 className="title">Formulaire d'inscription</h1>
-  <Form >
+  <Form onSubmit={handleSignUp} >
     <Form.Field>
       <label>N° Siret</label>
       <Field name="siret"
             type="text"
             placeholder="N° siret"
-            value=""
-            onChange={handleChange} />
+            value={siret}
+            onChange={changeField} />
     </Form.Field>
     <Form.Field>
       <label>Adresse Mail</label>
       <Field name="mail"
             type="email"
             placeholder="email"
-            value=""
-            onChange={handleChange} />
+            value={email}
+            onChange={changeField} />
     </Form.Field>
         <Form.Field>
       <label>Adresse de facturation</label>
       <Field  name="billing_address"
-            type="email"
+            type="text"
             placeholder=""
-            value=""
-            onChange={handleChange}/>
+            value={bill_adress}
+            onChange={changeField}/>
     </Form.Field>
     <Form.Group className="ui grid">
     <Form.Field >
@@ -50,25 +57,25 @@ const FormInscriptionPro = ({
       <Field  name="city"
             type="text"
             placeholder=""
-            value=""
-            onChange={handleChange}/>
+            value={city}
+            onChange={changeField}/>
     </Form.Field>
     <Form.Field >
       <label>Code postal</label>
       <Field name="postal_code"
             type="text"
             placeholder=""
-            value=""
-            onChange={handleChange} />
+            value={postal_code}
+            onChange={changeField} />
     </Form.Field>
     </Form.Group>
     <Form.Field>
       <label>Telephone</label>
-      <Field name="town"
+      <Field name="phone"
             type="text"
             placeholder=""
-            value=""
-            onChange={handleChange}  />
+            value={phone}
+            onChange={changeField}  />
     </Form.Field>
     <Form.Field>
       <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
@@ -76,7 +83,7 @@ const FormInscriptionPro = ({
             type="password"
             placeholder=""
             value=""
-            onChange={handleChange} />
+            onChange={changeField} />
     </Form.Field>
     <Form.Field>
       <label>Comfirmez votre mot de passe</label>
@@ -84,14 +91,18 @@ const FormInscriptionPro = ({
             type="password"
             placeholder=""
             value=""
-            onChange={handleChange}  />
+            onChange={changeField}  />
     </Form.Field>
     <Form.Field>
       <Checkbox label='Accepter les termes et conditions' />
     </Form.Field>
     <Button type='submit'>Validez</Button>
   </Form>
+
+
   </section>
+
+
 )
   }
 export default FormInscriptionPro;
