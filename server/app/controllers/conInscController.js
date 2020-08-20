@@ -26,11 +26,11 @@ module.exports = {
         //! Ne pas toucher au dessus !
 
         //creer une session
-<<<<<<< HEAD
+
         request.session.login = body.mail;
-=======
+
         // request.session.login = body.mail; //! Ne fonctionne pas ! 
->>>>>>> 40cfc62a1cc02b9f32459a03ddbd741b91796ebb
+
         
         //pour rediriger vers la dernière page visitée
         //response.redirect(request.session.history.filter(page => page !== '/login').pop());
