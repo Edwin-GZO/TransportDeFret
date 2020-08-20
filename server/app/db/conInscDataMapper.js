@@ -7,18 +7,6 @@ module.exports = {
         return user.rows[0];
     },
 
-    //  connectedUser: async (result,response) => {
-
-           
-    //     const connectedUser = {
-    //             mail:result.email,
-    //             name:result.name,
-    //             message: "User connected"
-    //         };
-    //         console.log('connectedUser',connectedUser);
-    //      return connectedUser;
-    // },
-
     addBillAddress : async (result) => {
         
         const newBillAddress = await client.query(

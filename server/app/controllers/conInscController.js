@@ -5,27 +5,51 @@ module.exports = {
     connectionUser: async (request,response) => {
     
         const body = request.body;
+       
         const user = await conInscDataMapper.findUser(body);
 
-        if (!user) {
-                 
-            response.status(404).json({isLogged:false, error:"User not found"});
-            return;
-        }
+            if (!user) {
+                
+               
+                response.status(404).json({isLogged:false, error:"Utilisateur non trouvé"});
+                console.log(" Erreur Connexion : Mauvais Identifiant")
+                return;
+            }
 
-        if (result.password !== user.password) {
- 
-            response.status(401).json({isLogged:false, error:"Bad password"});
-            return;
+            if (body.password !== user.password) {
+    
+                response.status(401).json({isLogged:false, error:"Mauvais Mot de Passe"});
+                console.log(" Erreur Connexion : Mauvais Mot de Passe")
+                return;
+            }
+      
 
-        }
+        request.session.login = body.email;
+  
+            if(!request.session.login){
+                response.redirect('/');
+            };
         
-        
-        
-        response.json({isLogged: true , message:" OK User and Password"});
+        response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée"});
+
+        console.log(" Connexion : Identifiant & Mot de Passe Correct")
+
+        //! Ne pas toucher au dessus !
+
+<<<<<<< HEAD
+        // Creer une session
+        // console.log('request session', request.session);
+        // request.session.login = body.mail; //! Ne fonctionne pas ! 
+        // console.log(request.session.login);
+=======
         //creer une session
-        request.session.login = result.mail;
+
+        request.session.login = body.mail;
+
+        // request.session.login = body.mail; //! Ne fonctionne pas ! 
+
         
+>>>>>>> c5945ad1edf0c02aede4db33540c97681e7935f0
         //pour rediriger vers la dernière page visitée
         //response.redirect(request.session.history.filter(page => page !== '/login').pop());
 
@@ -33,47 +57,59 @@ module.exports = {
 
     insertUserPro: async (request, response) => {
 
-        
         const result = request.body;
-        console.log(result);
+       
+        const mailverif = await conInscDataMapper.findUser(result.mail);
 
-        const newBillAddress = await conInscDataMapper.addBillAddress(result);
+        console.log("lA:", mailverif);
+        
+        // if (mailverif.mail) {
 
-        console.log("ID : " , newBillAddress);
+        //     response.status(401).json({error:"Utilisateur déjà existant veuillez vous connecter "}).redirect('/');
+        //     return
 
-        await conInscDataMapper.addUserPro(result,newBillAddress)
+        // }
 
-        response.status(201).json({isLogged: true });
+        // const newBillAddress = await conInscDataMapper.addBillAddress(result);
+        // await conInscDataMapper.addUserPro(result,newBillAddress)
+
+        // response.status(201).json({message: "Utilisateur enregistré" }).redirect('/');
+
+        // console.log("Création : Utilisateur Professionnel enregistré")
+        
+        //! Ne pas toucher au dessus !
+
         //creer une session
-        request.session.login = result.mail;
-        response.redirect('/');
-        //pour rediriger vers la dernière page visitée
+        // request.session.login = result.mail; //! Ne fonctionne pas ! 
+                //pour rediriger vers la dernière page visitée
         //response.redirect(request.session.history.filter(page => page !== '/login').pop());
     },
 
     insertUserPart: async (request, response,next) => {
 
-        
         const result = request.body;
-        console.log(result);
-
+       
         const newBillAddress = await conInscDataMapper.addBillAddress(result);
-
-        console.log("ID : " , newBillAddress);
-
         await conInscDataMapper.addUserPart(result,newBillAddress)
+        
+        response.status(201).json({message: "Utilisateur enregistré" }).redirect('/');
+       
+        console.log("Création : Utilisateur 'Particulier' enregistré")       
 
-        response.status(201).json({isLogged: true });
-        //creer une session
-        request.session.login = result.mail;
-        if(!request.session.login){
-            response.status(404).json({error:"invalid session"});
-        }
-        next();
+        //! Ne pas toucher au dessus !
+
+        // //creer une session
+        // request.session.login = result.mail;
+        // if(!request.session.login){
+        //     response.status(404).json({error:"invalid session"});
+        // }
+        // next();
         //pour rediriger vers la dernière page visitée
         //response.redirect(request.session.history.filter(page => page !== '/log
     },
 
+    //TODO Gérer la connexion utilisateur
+    
     checkLogin: (request, response, next) => {
 
         // S"il n'y a pas de login alors on redirige vers la page de connection
@@ -84,9 +120,6 @@ module.exports = {
 
     },
 
-    test: (_, response) => {
-        response.send('hello Cédric')
-    }
 }
 
 // Lucas_Moreau@hotmail.fr
