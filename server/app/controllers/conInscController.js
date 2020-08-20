@@ -13,7 +13,7 @@ module.exports = {
             return;
         }
 
-        if (result.password !== user.password) {
+        if (body.password !== user.password) {
  
             response.status(401).json({isLogged:false, error:"Bad password"});
             return;
@@ -24,7 +24,7 @@ module.exports = {
         
         response.json({isLogged: true , message:" OK User and Password"});
         //creer une session
-        request.session.login = result.mail;
+        request.session.login = body.mail;
         
         //pour rediriger vers la dernière page visitée
         //response.redirect(request.session.history.filter(page => page !== '/login').pop());

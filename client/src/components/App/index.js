@@ -31,8 +31,10 @@ function App() {
    
 
     <div className="App">
-     
+      
+      <LoginForm />
       <FormInscriptionPro />
+      <Accueil />
       <Switch>
       <Route path="/affretement" component={Affretement} />
     
