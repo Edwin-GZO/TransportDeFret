@@ -4,14 +4,14 @@ const session = require('express-session');
 const app = express();
 
 app.use((error, request, response, next) => {
-    console.error('Oh mon dieu ça plante!');
+    console.error('Erreur à la connexion');
     console.error(error);
 
-    response.status(500).send('{ "merde": true }');
+    response.status(500).send('{ "Ok connexion": true }');
 });
 
 app.all('*', (request, response, next) => {
-    console.log('CORS Authorized');
+    // console.log('Autorisation du protocole COR');
     response.setHeader('Access-Control-Allow-Origin', request.header('Origin') || '*');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
@@ -42,20 +42,20 @@ app.use((request, response, next) => {
    next();
 });
 
-//Gestion des sessions
+// Gestion des sessions
 app.use(session({
     secret: 'rZS/;QKoCQ2@jI4zb4>W2#@Le.0CG#',
     resave: true,
     saveUninitialized: true
 }));
 
-//Middleware pour stocker les infos de session en local - utililsé à chaque requête
+// Middleware pour stocker les infos de session en local - utililsé à chaque requête
 app.use((request, response, next) => {
   response.locals.session = request.session;
   next();  
 })
 
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT || 8080 ;
 app.listen(port, _ => {
     console.log(`Listening on ${port}`);
 });
