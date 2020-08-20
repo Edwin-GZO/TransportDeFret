@@ -31,7 +31,10 @@ function App() {
    
 
     <div className="App">
+<<<<<<< HEAD
       
+=======
+>>>>>>> 40cfc62a1cc02b9f32459a03ddbd741b91796ebb
       <LoginForm />
       <FormInscriptionPro />
       <Accueil />
