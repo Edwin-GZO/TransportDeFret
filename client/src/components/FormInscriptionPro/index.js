@@ -29,7 +29,7 @@ const FormInscriptionPro = ({
   <Form onSubmit={handleSignUp} >
     <Form.Field>
       <label>N° Siret</label>
-      <Field name="siret"
+      <Field name="text"
             type="text"
             placeholder="N° siret"
             value={siret}
@@ -37,8 +37,8 @@ const FormInscriptionPro = ({
     </Form.Field>
     <Form.Field>
       <label>Adresse Mail</label>
-      <Field name="mail"
-            type="email"
+      <Field name="email"
+            
             placeholder="email"
             value={email}
             onChange={changeField} />
@@ -54,7 +54,7 @@ const FormInscriptionPro = ({
     <Form.Group className="ui grid">
     <Form.Field >
       <label>Ville</label>
-      <Field  name="city"
+      <Field  name="text"
             type="text"
             placeholder=""
             value={city}
@@ -62,7 +62,7 @@ const FormInscriptionPro = ({
     </Form.Field>
     <Form.Field >
       <label>Code postal</label>
-      <Field name="postal_code"
+      <Field name="text"
             type="text"
             placeholder=""
             value={postal_code}
@@ -82,15 +82,15 @@ const FormInscriptionPro = ({
       <Field  name="password"
             type="password"
             placeholder=""
-            value=""
+            value={password}
             onChange={changeField} />
     </Form.Field>
     <Form.Field>
       <label>Comfirmez votre mot de passe</label>
-      <Field name="password"
+      <Field name="paswword"
             type="password"
             placeholder=""
-            value=""
+            value={password}
             onChange={changeField}  />
     </Form.Field>
     <Form.Field>
