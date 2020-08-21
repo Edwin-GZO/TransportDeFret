@@ -41,7 +41,7 @@ const FormInscriptionPro = ({
       <Field name="mail"
             type="mail"
             placeholder="mail"
-            value={email}
+            value={mail}
             onChange={changeField} />
     </Form.Field>
         <Form.Field>
