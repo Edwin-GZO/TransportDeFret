@@ -23,7 +23,7 @@ app.use((error, request, response, next) => {
 });
 
 app.all('*', (request, response, next) => {
-    // console.log('Autorisation du protocole COR');
+    console.log('Autorisation du protocole COR');
     response.setHeader('Access-Control-Allow-Origin', request.header('Origin') || '*');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
@@ -43,26 +43,20 @@ app.use(express.json());
 const conInscRouteur = require('./app/router/conInscRouteur');
 const quoteRouteur = require('./app/router/quoteRouter');
 
-app.all(/^(\/login.*|\/home.*)/, (request, response, next) => {
-    if (!request.session.login) {
-        response.status(401).json({ authentified: false });
-    } else {
-        next();
-    }
-});
+
+// Middleware qui vérifie que le USER est connection
+// app.route(/^(\/api\/user.*|\/)/, (request, response, next) => {
+//     if (!request.session.login) {
+//         console.log(" Error : pas de Login session ")
+//         response.status(401).json({ isLogged: false }).redirect('/api/user');
+//     } else {
+//         next();
+//     }
+// });
 
 app.use(conInscRouteur);
 app.use(quoteRouteur);
 
-//! Juste pour le TEST 
-
-// app.use((request, response, next) => {
-//     if (!response.headersSent) {
-//      response.status(202).send();
-//     } 
- 
-//     next();
-//  });
 
 const port = process.env.PORT || 8080 ;
 app.listen(port, _ => {
