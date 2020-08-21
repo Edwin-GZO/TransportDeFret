@@ -45,10 +45,11 @@ const quoteRouteur = require('./app/router/quoteRouter');
 
 
 // Middleware qui vérifie que le USER est connection
+// app.route('/api/user*'
 // app.route(/^(\/api\/user.*|\/)/, (request, response, next) => {
 //     if (!request.session.login) {
 //         console.log(" Error : pas de Login session ")
-//         response.status(401).json({ isLogged: false }).redirect('/api/user');
+//         response.status(401).json({ isLogged: false });
 //     } else {
 //         next();
 //     }

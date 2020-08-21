@@ -2,14 +2,16 @@ import { connect } from 'react-redux';
 import FormInscriptionPro from '../components/FormInscriptionPro';
 import { changeField, signup } from '../store/action/user-actions';
 
+//! Register à la place de USER
+
 const mapStateToProps = (state) => ({
-    email: state.user.email,
-    password: state.user.password,
-    phone: state.user.phone,
-    bill_address: state.user.bill_address,
-    siret: state.user.siret,
-    city: state.user.city,
-    postal_code: state.user.postal_code,
+    email: state.register.email,
+    password: state.register.password,
+    phone: state.register.phone,
+    bill_address: state.register.bill_address,
+    siret: state.register.siret,
+    city: state.register.city,
+    postal_code: state.register.postal_code,
   });
   
   const mapDispatchToProps = (dispatch) => ({

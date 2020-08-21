@@ -1,18 +1,19 @@
 import React from 'react'
 import Field from '../../components/LoginForm/Field'
+import PropTypes from 'prop-types';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import './style.scss';
 
 const FormInscriptionPro = ({
- email,
- changeField,
- signup,
- password,
- phone,
- bill_adress,
- siret,
- city,
- postal_code,
+  email,
+  changeField,
+  signup,
+  password,
+  phone,
+  bill_adress,
+  siret,
+  city,
+  postal_code,
 }) =>{
   
   
@@ -29,7 +30,7 @@ const FormInscriptionPro = ({
   <Form onSubmit={handleSignUp} >
     <Form.Field>
       <label>N° Siret</label>
-      <Field name="siret"
+      <Field name="text"
             type="text"
             placeholder="N° siret"
             value={siret}
@@ -37,15 +38,15 @@ const FormInscriptionPro = ({
     </Form.Field>
     <Form.Field>
       <label>Adresse Mail</label>
-      <Field name="email"
-            
+      <Field name="text"
+            type="email"
             placeholder="email"
             value={email}
             onChange={changeField} />
     </Form.Field>
         <Form.Field>
       <label>Adresse de facturation</label>
-      <Field  name="billing_address"
+      <Field  name="bill_address"
             type="text"
             placeholder=""
             value={bill_adress}
@@ -102,7 +103,18 @@ const FormInscriptionPro = ({
 
   </section>
 
-
+    
 )
-  }
+  };
+
+  FormInscriptionPro.propTypes = {
+    email: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    changeField: PropTypes.func.isRequired,
+    phone:PropTypes.string.isRequired,
+    isLogged: PropTypes.bool,
+    
+  };
+
+
 export default FormInscriptionPro;
