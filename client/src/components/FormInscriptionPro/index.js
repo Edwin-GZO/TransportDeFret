@@ -38,7 +38,7 @@ const FormInscriptionPro = ({
             onChange={changeField} />
     </Form.Field>
     <Form.Field>
-      <label>Sosiete</label>
+      <label>Societe</label>
       <Field name="societe"
             type="text"
             placeholder="société"
