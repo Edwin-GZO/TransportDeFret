@@ -31,7 +31,7 @@ module.exports = {
         
         console.log(" Connexion : Identifiant & Mot de Passe Correct")
 
-        response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée"});
+        response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée", name : user.name});
 
     },
 
