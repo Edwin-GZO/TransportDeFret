@@ -43,7 +43,7 @@ const LoginForm = ({
         
            
         <form autoComplete="off" className="login-box" onSubmit={handleSubmit}>
-          <h1>Se connecter</h1>
+          
           <div className="text-box">
             <i className="fa fa-user" aria-hidden="true"></i>
           <Field
@@ -71,7 +71,7 @@ const LoginForm = ({
             <input type="submit"
             className="btn"
             name=""
-            value="sign in">
+            value="se connecter">
 
             </input>
            
