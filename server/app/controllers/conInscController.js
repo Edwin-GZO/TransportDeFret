@@ -10,41 +10,31 @@ module.exports = {
 
         if (!user) {
             
-            response.status(404).json({isLogged:false, error:"Utilisateur non trouvé"});
+            response.status(404).json({isLogged:false , error:"Utilisateur non trouvé"});
             console.log(" Erreur Connexion : Mauvais Identifiant")
             return;
         }
 
         if (body.password !== user.password) {
 
-            response.status(401).json({isLogged:false, error:"Mauvais Mot de Passe"});
+            response.status(401).json({isLogged:false , error:"Mauvais Mot de Passe"});
             console.log(" Erreur Connexion : Mauvais Mot de Passe")
             return;
         }
       
-
         request.session.login = body.email;
 
         if (!request.session.login) {
-            response.redirect('/');
+            response.status(401).json({isLogged: false , error:" Pas de session" });
+            console.log(" Erreur : Aucune session ")
         };
         
         console.log(" Connexion : Identifiant & Mot de Passe Correct")
 
-        //! Ne pas toucher au dessus !
-
-        //creer une session
-
-        request.session.login = body.mail;
-
-        // request.session.login = body.mail; //! Ne fonctionne pas ! 
-
-        
-        //pour rediriger vers la dernière page visitée
-        //response.redirect(request.session.history.filter(page => page !== '/login').pop());
-
         response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée"});
+
     },
+
 
     insertUserPro: async (request, response) => {
 
@@ -88,7 +78,7 @@ module.exports = {
         const newBillAddress = await conInscDataMapper.addBillAddress(result);
         await conInscDataMapper.addUserPart(result,newBillAddress)
         
-        response.status(201).json({message: "Utilisateur enregistré" }).redirect('/');
+        response.status(201).json({message: "Utilisateur enregistré" });
        
         console.log("Création : Utilisateur 'Particulier' enregistré")       
 
