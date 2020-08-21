@@ -1,37 +1,34 @@
 const conInscDataMapper = require('../db/conInscDataMapper');
 
 module.exports = {
-    
+
     connectionUser: async (request,response) => {
     
         const body = request.body;
        
         const user = await conInscDataMapper.findUser(body);
 
-            if (!user) {
-                
-               
-                response.status(404).json({isLogged:false, error:"Utilisateur non trouvé"});
-                console.log(" Erreur Connexion : Mauvais Identifiant")
-                return;
-            }
+        if (!user) {
+            
+            response.status(404).json({isLogged:false, error:"Utilisateur non trouvé"});
+            console.log(" Erreur Connexion : Mauvais Identifiant")
+            return;
+        }
 
-            if (body.password !== user.password) {
-    
-                response.status(401).json({isLogged:false, error:"Mauvais Mot de Passe"});
-                console.log(" Erreur Connexion : Mauvais Mot de Passe")
-                return;
-            }
+        if (body.password !== user.password) {
+
+            response.status(401).json({isLogged:false, error:"Mauvais Mot de Passe"});
+            console.log(" Erreur Connexion : Mauvais Mot de Passe")
+            return;
+        }
       
 
         request.session.login = body.email;
-  
-            if(!request.session.login){
-                response.redirect('/');
-            };
-        
-        response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée"});
 
+        if (!request.session.login) {
+            response.redirect('/');
+        };
+        
         console.log(" Connexion : Identifiant & Mot de Passe Correct")
 
         //! Ne pas toucher au dessus !
@@ -46,9 +43,15 @@ module.exports = {
         //pour rediriger vers la dernière page visitée
         //response.redirect(request.session.history.filter(page => page !== '/login').pop());
 
+        response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée"});
     },
 
     insertUserPro: async (request, response) => {
+
+        // Vérifier que le mec est connecté
+        if (!request.session.login) {
+            response.status(401).json({ dégage: true });
+        }
 
         const result = request.body;
        
