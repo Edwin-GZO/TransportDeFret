@@ -15,9 +15,4 @@ router.post('/api/user', conInscController.connectionUser);
 router.post('/api/user/signup', conInscController.insertUserPro);
 
 
-
-router.post('/inscription/pro', conInscController.insertUserPro);
-router.post('/inscription/part', conInscController.insertUserPart);
-// router.post('/api/user', conInscController.connectionUser) ;
-
 module.exports = router;
