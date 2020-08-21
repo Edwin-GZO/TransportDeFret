@@ -13,7 +13,7 @@ import Mots from '../../components/Mots';
 import PageContact from '../../components/PageContact';
 import ProPartModale from '../../components/ProPartModale';
 import Réseau from '../../components/Reseau';
-import FormInscriptionPro from '../FormInscriptionPro';
+import FormInscriptionPro from '../../containers/FormInscriptionPro';
 import FormInscriptionPart from '../FormInscriptionPart';
 import LoginForm from '../../containers/LoginForm';
 import DeuxLoginForm from '../../components/DeuxLoginForm';
