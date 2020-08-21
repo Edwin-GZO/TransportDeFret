@@ -113,16 +113,14 @@ const FormInscriptionPro = ({
             onChange={changeField} />
     </Form.Field>
     <Form.Field>
-      <label>Comfirmez votre mot de passe</label>
+      <label>Confirmez votre mot de passe</label>
       <Field name="passwordconfirm"
             type="password"
             placeholder=""
             value={passwordconfirm}
             onChange={changeField}  />
     </Form.Field>
-    <Form.Field>
-      <Checkbox label='Accepter les termes et conditions' />
-    </Form.Field>
+    
     <Button type='submit'>Validez</Button>
   </Form>
 
