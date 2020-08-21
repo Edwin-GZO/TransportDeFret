@@ -5,7 +5,7 @@ import { Button, Checkbox, Form } from 'semantic-ui-react'
 import './style.scss';
 
 const FormInscriptionPro = ({
-  email,
+  mail,
   changeField,
   signup,
   password,
@@ -38,9 +38,9 @@ const FormInscriptionPro = ({
     </Form.Field>
     <Form.Field>
       <label>Adresse Mail</label>
-      <Field name="email"
-            type="email"
-            placeholder="email"
+      <Field name="mail"
+            type="mail"
+            placeholder="mail"
             value={email}
             onChange={changeField} />
     </Form.Field>

@@ -2,7 +2,7 @@ import {CHANGE_FIELD, SIGN_UP_ERROR, SIGN_UP_SUCCESS} from '../action/user-actio
 
 const stateInitial = {
     siret: '',
-    email: '',
+    mail: '',
     bill_address: '',
     phone: '',
     password: '',
@@ -28,7 +28,7 @@ export default (state= stateInitial , action={})=> {
       return {
         ...state,
         ...action.payload,
-        email: '',
+        mail: '',
         siret: '',
         bill_adress: '',
         phone: '',
@@ -42,7 +42,7 @@ export default (state= stateInitial , action={})=> {
         return {
           ...state,
           ...action.payload,
-          email: '',
+          mail: '',
         siret: '',
         bill_adress: '',
         phone: '',

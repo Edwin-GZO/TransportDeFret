@@ -2,7 +2,7 @@ import { CHANGE_FIELD, LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT_SUCCESS  } from '../ac
 
 
 const stateInitial = {
-  email: '',
+  mail: '',
   password: '',
   isLogged: false,
   loggedMessage: '',
@@ -24,7 +24,7 @@ export default (state = stateInitial, action = {}) => {
       return {
         ...state,
         isLogged: true,
-        email: '',
+        mail: '',
         password: '',
         error: '',
         user: action.payload,
