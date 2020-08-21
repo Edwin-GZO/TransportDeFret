@@ -5,6 +5,8 @@ const quoteController = require('../controllers/quoteController');
 
 // router.get('/api/quotes/:user_id', quoteController.findAllQuotes);
 
+router.get('/coucou',quoteController.test)
+
 // router.post('/inscription', conInscController.insertUserPro);
 
 // router.route('/api/quote/:id')

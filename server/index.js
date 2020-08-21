@@ -23,7 +23,7 @@ app.use((error, request, response, next) => {
 });
 
 app.all('*', (request, response, next) => {
-    console.log('Autorisation du protocole COR');
+    // console.log('Autorisation du protocole COR');
     response.setHeader('Access-Control-Allow-Origin', request.header('Origin') || '*');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
@@ -45,15 +45,18 @@ const quoteRouteur = require('./app/router/quoteRouter');
 
 
 // Middleware qui vérifie que le USER est connection
-// app.route('/api/user*'
-// app.route(/^(\/api\/user.*|\/)/, (request, response, next) => {
-//     if (!request.session.login) {
-//         console.log(" Error : pas de Login session ")
-//         response.status(401).json({ isLogged: false });
-//     } else {
-//         next();
-//     }
-// });
+// app.route(/^(\/api\/user.*|\/)/
+
+//! Pourquoi all ? Pourquoi pas route ? Trouver le moyen d'inversé la selection ....  Tous SAUF /api/user*
+app.all(/^(\/api\/user*)/, (request, response, next) => {
+    console.log("Passe par le middleware Session", request.session.login);
+    if (!request.session.login) {
+        console.log(" Error : Pas de session Login" );
+        response.status(401).json({ isLogged: false , error : "Pas de session Login " });
+    } else {
+        next();
+    }
+});
 
 app.use(conInscRouteur);
 app.use(quoteRouteur);

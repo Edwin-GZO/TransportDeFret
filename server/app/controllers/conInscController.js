@@ -1,11 +1,21 @@
 const conInscDataMapper = require('../db/conInscDataMapper');
+const validator = require("email-validator");
 
 module.exports = {
 
     connectionUser: async (request,response) => {
     
         const body = request.body;
-       
+
+        const validMail = validator.validate(body.mail)
+  
+        if (!validMail) {
+            
+            response.status(400).json({isLogged:false , error:"Mail non valide"});
+            console.log(" Erreur Connexion : Mail au Mauvais Format")
+            return;
+        }
+
         const user = await conInscDataMapper.findUser(body);
 
         if (!user) {
@@ -35,12 +45,18 @@ module.exports = {
 
     },
 
-
     insertUserPro: async (request, response) => {
 
         const body = request.body;
        
-        console.log(body);
+        const validMail = validator.validate(body.mail)
+  
+        if (!validMail) {
+            
+            response.status(400).json({isLogged:false , error:"Mail non valide"});
+            console.log(" Erreur Connexion : Mail au Mauvais Format")
+            return;
+        }
 
         const checkUser = await conInscDataMapper.findUser(body);
 
@@ -67,7 +83,14 @@ module.exports = {
 
         const body = request.body;
        
-        console.log(body);
+        const validMail = validator.validate(body.mail)
+  
+        if (!validMail) {
+            
+            response.status(400).json({isLogged:false , error:"Mail non valide"});
+            console.log(" Erreur Connexion : Mail au Mauvais Format")
+            return;
+        }
 
         const checkUser = await conInscDataMapper.findUser(body);
 

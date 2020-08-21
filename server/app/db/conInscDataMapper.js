@@ -19,7 +19,7 @@ module.exports = {
             ] 
             
         );
-        console.log(newBillAddress.rows[0]);  
+
         return newBillAddress.rows[0]
         // Renvoyer l'information au controlleur => newBillAddress.rows[0]
     },
