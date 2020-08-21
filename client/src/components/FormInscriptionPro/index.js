@@ -11,10 +11,12 @@ const FormInscriptionPro = ({
   password,
   phone,
   bill_address,
+  complement,
   siret,
   city,
   postal_code,
   societe,
+  passwordconfirm
 }) =>{
   
   
@@ -23,6 +25,13 @@ const FormInscriptionPro = ({
     signup();
   };
 
+ /* const handleSubmit = () => {
+    if(password !=passwordconfirm) {
+
+    }
+    
+   
+  }*/
   
   return(
   
@@ -59,6 +68,14 @@ const FormInscriptionPro = ({
             type="text"
             placeholder=""
             value={bill_address}
+            onChange={changeField}/>
+    </Form.Field>
+    <Form.Field>
+      <label>Complément d'adresse</label>
+      <Field  name="complement"
+            type="text"
+            placeholder=""
+            value={complement}
             onChange={changeField}/>
     </Form.Field>
     <Form.Group className="ui grid">
@@ -100,7 +117,7 @@ const FormInscriptionPro = ({
       <Field name="passwordconfirm"
             type="password"
             placeholder=""
-            value={password}
+            value={passwordconfirm}
             onChange={changeField}  />
     </Form.Field>
     <Form.Field>
