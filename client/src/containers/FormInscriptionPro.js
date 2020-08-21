@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
     siret: state.register.siret,
     city: state.register.city,
     postal_code: state.register.postal_code,
+    societe: state.register.societe,
   });
   
   const mapDispatchToProps = (dispatch) => ({

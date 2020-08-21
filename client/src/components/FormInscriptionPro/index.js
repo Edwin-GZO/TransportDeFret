@@ -10,10 +10,11 @@ const FormInscriptionPro = ({
   signup,
   password,
   phone,
-  bill_adress,
+  bill_address,
   siret,
   city,
   postal_code,
+  societe,
 }) =>{
   
   
@@ -37,6 +38,14 @@ const FormInscriptionPro = ({
             onChange={changeField} />
     </Form.Field>
     <Form.Field>
+      <label>Sosiete</label>
+      <Field name="societe"
+            type="text"
+            placeholder="société"
+            value={societe}
+            onChange={changeField} />
+    </Form.Field>
+    <Form.Field>
       <label>Adresse Mail</label>
       <Field name="mail"
             type="mail"
@@ -49,7 +58,7 @@ const FormInscriptionPro = ({
       <Field  name="bill_address"
             type="text"
             placeholder=""
-            value={bill_adress}
+            value={bill_address}
             onChange={changeField}/>
     </Form.Field>
     <Form.Group className="ui grid">
@@ -88,7 +97,7 @@ const FormInscriptionPro = ({
     </Form.Field>
     <Form.Field>
       <label>Comfirmez votre mot de passe</label>
-      <Field name="paswword"
+      <Field name="passwordconfirm"
             type="password"
             placeholder=""
             value={password}
@@ -108,10 +117,15 @@ const FormInscriptionPro = ({
   };
 
   FormInscriptionPro.propTypes = {
-    email: PropTypes.string.isRequired,
+    mail: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
+    passwordconfirm: PropTypes.string.isRequired,
+    city:PropTypes.string.isRequired,
     changeField: PropTypes.func.isRequired,
     phone:PropTypes.string.isRequired,
+    postal_code:PropTypes.string.isRequired,
+    bill_address:PropTypes.string.isRequired,
+    societe:PropTypes.string.isRequired,
     isLogged: PropTypes.bool,
     
   };

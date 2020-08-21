@@ -1,4 +1,4 @@
-import {CHANGE_FIELD, SIGN_UP_ERROR, SIGN_UP_SUCCESS} from '../action/user-actions';
+import {CHANGE_FIELD, SIGN_UP_ERROR, SIGN_UP_SUCCESS, SIGN_UP} from '../action/user-actions';
 
 const stateInitial = {
     siret: '',
@@ -6,9 +6,14 @@ const stateInitial = {
     bill_address: '',
     phone: '',
     password: '',
+    passwordconfirm: '',
     isSignedUp: false,
     error: '',
     signUpMessage: '',
+    societe: '',
+    city:'',
+    postal_code:'',
+
     user: {}
 }
 
@@ -28,11 +33,17 @@ export default (state= stateInitial , action={})=> {
       return {
         ...state,
         ...action.payload,
-        mail: '',
         siret: '',
-        bill_adress: '',
+        mail: '',
+        bill_address: '',
+        city:'',
+        postal_code:'',
         phone: '',
-        error:'',
+        password: '',
+        passwordconfirm: '',
+        error: '',
+        signUpMessage: '',
+        societe: '',
         isSignedUp: true,
         signUpMessage: `Votre compte à été crée avec succès !`
 
@@ -42,14 +53,38 @@ export default (state= stateInitial , action={})=> {
         return {
           ...state,
           ...action.payload,
+          siret: '',
           mail: '',
-        siret: '',
-        bill_adress: '',
-        phone: '',
-        error :'',
+          bill_address: '',
+          city:'',
+          postal_code:'',
+          phone: '',
+          password: '',
+          passwordconfirm: '',
+          error: '',
+          signUpMessage: '',
+          societe: '',
         isSignedUp: false,
         signUpMessage: `Votre compte n'a pu etre créé ! `,
-        user: {}
+      
+        };
+
+        case SIGN_UP:
+        return {
+          ...state,
+          ...action.payload,
+          siret: '',
+          mail: '',
+          bill_address: '',
+          city:'',
+          postal_code:'',
+          phone: '',
+          password: '',
+          passwordconfirm: '',
+          error: '',
+          signUpMessage: '',
+          societe: '',
+        
         };
     
       default:
