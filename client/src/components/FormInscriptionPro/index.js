@@ -30,7 +30,7 @@ const FormInscriptionPro = ({
   <Form onSubmit={handleSignUp} >
     <Form.Field>
       <label>N° Siret</label>
-      <Field name="text"
+      <Field name="siret"
             type="text"
             placeholder="N° siret"
             value={siret}
@@ -38,7 +38,7 @@ const FormInscriptionPro = ({
     </Form.Field>
     <Form.Field>
       <label>Adresse Mail</label>
-      <Field name="text"
+      <Field name="email"
             type="email"
             placeholder="email"
             value={email}
