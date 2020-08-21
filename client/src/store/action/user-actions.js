@@ -6,6 +6,7 @@ export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGOUT = 'LOGOUT';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+export const SIGN_UP_ERROR = 'SIGN_UP_ERROR';
 export const SIGN_UP = 'SIGN_UP';
 
 
@@ -43,6 +44,11 @@ export const logoutSuccess = () => ({
 
 export const signupsuccess = (payload) => ({
   type: SIGN_UP_SUCCESS,
+  payload
+});
+
+export const signuperror = (payload) => ({
+  type: SIGN_UP_ERROR,
   payload
 });
 

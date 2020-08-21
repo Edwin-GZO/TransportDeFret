@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FormInscriptionPro from '../components/FormInscriptionPro';
-import { signupsuccess, changeField, signup } from '../store/action/user-actions';
+import { changeField, signup } from '../store/action/user-actions';
 
 const mapStateToProps = (state) => ({
     email: state.user.email,
@@ -23,10 +23,7 @@ const mapStateToProps = (state) => ({
       dispatch(changeField(changeObject));
   
     },
-    signupsuccess: () => {
-        console.log('signupsucces');
-        dispatch(signupsuccess());
-      },
+    
 
     signup: ()=> {
         console.log('signup');

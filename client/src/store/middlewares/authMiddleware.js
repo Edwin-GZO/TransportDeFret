@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOGIN, CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT } from '../action/user-actions';
+import { LOGIN, CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror } from '../action/user-actions';
 
 export default (store) => (next) => (action) => {
   next(action);
@@ -60,6 +60,28 @@ export default (store) => (next) => (action) => {
 
       break;
     }
+
+ case SIGN_UP: {
+      const { user } = store.getState();
+      console.log(user);
+      
+      axios({
+        method: 'post',
+        url: 'http://localhost:8080/api/user/signup',
+        data: user,
+        withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
+      })
+        .then((res) => {
+            console.log('signup request')
+          store.dispatch(signupsuccess(res.data));
+        })
+        .catch((err) => {
+          store.dispatch(signuperror("Impossible d'enregistrer cet utilisateur"))
+        })
+
+      break;
+    }
+
     default:
       return;
     }
