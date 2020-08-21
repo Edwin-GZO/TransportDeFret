@@ -33,7 +33,7 @@ app.all('*', (request, response, next) => {
     }
 
     response.setHeader('Access-Control-Allow-Credentials', 'true');
-    // ligne 31       headers: {'Content-Type': 'application/json'},    
+     
     next();
 });
 

@@ -13,7 +13,7 @@ ALTER TABLE "sender_address" ADD COLUMN "department_id" INT REFERENCES "departme
 
 ALTER TABLE "receiver_address" ADD COLUMN "department_id" INT REFERENCES "department"("id");
 
--- ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_!@#$%^&*]).{8,16}$
+
 
 
 COMMIT;
