@@ -22,7 +22,7 @@ module.exports = {
             return;
         }
       
-        request.session.login = body.email;
+        request.session.login = body.mail;
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
@@ -38,72 +38,56 @@ module.exports = {
 
     insertUserPro: async (request, response) => {
 
-        // Vérifier que le mec est connecté
-        if (!request.session.login) {
-            response.status(401).json({ dégage: true });
+        const body = request.body;
+       
+        console.log(body);
+
+        const checkUser = await conInscDataMapper.findUser(body);
+
+        if (checkUser) {
+            response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
         }
 
-        const result = request.body;
-       
-        const mailverif = await conInscDataMapper.findUser(result.mail);
+        const newBillAddress = await conInscDataMapper.addBillAddress(body);
+        await conInscDataMapper.addUserPro(body,newBillAddress)
 
-        console.log("lA:", mailverif);
+        request.session.login = body.mail;
+
+        if (!request.session.login) {
+            response.status(401).json({isLogged: false , error:" Pas de session" });
+            console.log(" Erreur : Aucune session ")
+        };
         
-        // if (mailverif.mail) {
+        console.log("Création : Utilisateur Professionnel enregistré")
+        response.status(201).json({isLogged: true , message: "Utilisateur enregistré" });
 
-        //     response.status(401).json({error:"Utilisateur déjà existant veuillez vous connecter "}).redirect('/');
-        //     return
-
-        // }
-
-        // const newBillAddress = await conInscDataMapper.addBillAddress(result);
-        // await conInscDataMapper.addUserPro(result,newBillAddress)
-
-        // response.status(201).json({message: "Utilisateur enregistré" }).redirect('/');
-
-        // console.log("Création : Utilisateur Professionnel enregistré")
-        
-        //! Ne pas toucher au dessus !
-
-        //creer une session
-        // request.session.login = result.mail; //! Ne fonctionne pas ! 
-                //pour rediriger vers la dernière page visitée
-        //response.redirect(request.session.history.filter(page => page !== '/login').pop());
     },
 
     insertUserPart: async (request, response,next) => {
 
-        const result = request.body;
+        const body = request.body;
        
-        const newBillAddress = await conInscDataMapper.addBillAddress(result);
-        await conInscDataMapper.addUserPart(result,newBillAddress)
-        
-        response.status(201).json({message: "Utilisateur enregistré" });
-       
-        console.log("Création : Utilisateur 'Particulier' enregistré")       
+        console.log(body);
 
-        //! Ne pas toucher au dessus !
+        const checkUser = await conInscDataMapper.findUser(body);
 
-        // //creer une session
-        // request.session.login = result.mail;
-        // if(!request.session.login){
-        //     response.status(404).json({error:"invalid session"});
-        // }
-        // next();
-        //pour rediriger vers la dernière page visitée
-        //response.redirect(request.session.history.filter(page => page !== '/log
-    },
-
-    //TODO Gérer la connexion utilisateur
-    
-    checkLogin: (request, response, next) => {
-
-        // S"il n'y a pas de login alors on redirige vers la page de connection
-        if(!request.session.login){
-            response.redirect('/login');
+        if (checkUser) {
+            response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
         }
-        next();
 
+        const newBillAddress = await conInscDataMapper.addBillAddress(body);
+        await conInscDataMapper.addUserPart(result,newBillAddress)
+
+        request.session.login = body.mail;
+
+        if (!request.session.login) {
+            response.status(401).json({isLogged: false , error:" Pas de session" });
+            console.log(" Erreur : Aucune session ")
+        };
+        
+        console.log("Création : Utilisateur Particulier enregistré")     
+        response.status(201).json({isLogged: true , message: "Utilisateur Particulier enregistré" });
+       
     },
 
 }
