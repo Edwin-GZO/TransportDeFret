@@ -1,5 +1,6 @@
 
 # Cahier des charges fonctionnel
+![](./images/logo_TDR.jpg)
 <details>
 <summary>
 <strong>L'équipe</strong>
@@ -161,8 +162,40 @@ Dans des versions 2.X, il est prévu d’implémenter les fonctionnalités suiva
 
 </details>
 
----
+<details>
+<summary>
+<strong> Arborescence </strong>
+</summary>
 
+![](./images/arborescence.jpg)
+
+</details>
+
+<details>
+<summary>
+<strong> Wireframes </strong>
+</summary>
+
+## Desktop ##
+![](./images/Desktop_Accueil.jpg)
+
+![](./images/Desktop_page_2.jpg)
+
+![](./images/Desktop_page_3_4.jpg)
+
+![](./images/Desktop_Inscription_pro_part.jpg)
+
+![](./images/Desktop_Carte_Contact.jpg)
+
+
+## Mobile ##
+![](./images/Mobile_1.jpg)
+
+![](./images/Mobile_2.jpg)
+
+</details>
+
+---
 
 ## Conception bdd
 
@@ -314,7 +347,7 @@ RECEIVER_ADDRESS : main, complement, postal_code, city
 LOCATE_R , 0N DEPARTMENT , 11 RECEIVER_ADDRESS
 DEPARTMENT : nbr, name
 
-![](MCD.svg)
+![](./images/MCD.svg)
 
 </details>
 
@@ -325,6 +358,6 @@ DEPARTMENT : nbr, name
 
 </summary>
 
-![](MPD.png)
+![](./images/MPD.png)
 
 </details>
