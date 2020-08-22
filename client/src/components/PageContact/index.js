@@ -6,7 +6,7 @@ import './style.scss';
 const PageContact = () => {
 return (
 
-<>
+<div id='page'>
 
 <div id='mainTitle'>
 <img  style={{width:300,height:300}} src={logo}/>
@@ -48,7 +48,7 @@ return (
    </div>
 
     </section>
-    </>
+    </div>
 )
 
 }
