@@ -47,7 +47,7 @@ const LoginForm = ({
           <div className="text-box">
             <i className="fa fa-user" aria-hidden="true"></i>
           <Field
-            name="email"
+            name="mail"
             placeholder="Adresse Email"
             onChange={changeField}
             value={mail}
