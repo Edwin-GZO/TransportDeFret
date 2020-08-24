@@ -16,28 +16,50 @@ const FormInscriptionPro = ({
   city,
   postal_code,
   societe,
-  passwordconfirm
+  passwordconfirm,
+  submit
 }) =>{
   
   
+  const handleSubmit = () => {
+    let message = []
+    console.log(passwordconfirm)
+    console.log(password)
+    if(password !== passwordconfirm) {
+         console.log("ejidie")
+         alert("mot de passe incorrect")
+      }
+
+      if(city === ""){
+        alert('name city please')
+      }
+    
+     signup();
+    } 
+
+
   const handleSignUp = (evt) => {
     evt.preventDefault();
     signup();
   };
 
- /* const handleSubmit = () => {
-    if(password !=passwordconfirm) {
+/*const validateForm =() => {
+  if(mail, changeField, signup,password, phone, bill_address, complement, siret, city, postal_code, societe, passwordconfirm, submit == ""){
+   ;
+    alert("saisissez les champs vides")
+    return false
+  }
+ 
+}*/
 
-    }
-    
-   
-  }*/
+
+ 
   
   return(
   
   <section className="register">
   <h1 className="title">Formulaire d'inscription</h1>
-  <Form onSubmit={handleSignUp} >
+  <Form  onSubmit={handleSignUp, handleSubmit }  >
     <Form.Field>
       <label>N° Siret</label>
       <Field name="siret"
@@ -121,7 +143,7 @@ const FormInscriptionPro = ({
             onChange={changeField}  />
     </Form.Field>
     
-    <Button type='submit'>Validez</Button>
+    <Button  name="submit" type='submit'>Validez</Button>
   </Form>
 
 
