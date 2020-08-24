@@ -16,27 +16,32 @@ const FormInscriptionPro = ({
   city,
   postal_code,
   societe,
-  passwordconfirm
+  passwordconfirm,
+  submit
 }) =>{
   
   
-  const handleSignUp = (evt) => {
-    evt.preventDefault();
-    signup();
-  };
-
   const handleSubmit = () => {
+   
     console.log(passwordconfirm)
     console.log(password)
     if(password !== passwordconfirm) {
          console.log("ejidie")
          alert("mot de passe incorrect")
       }
+
       if(city === ""){
         alert('name city please')
       }
+    
      signup();
-    }
+    } 
+
+
+  const handleSignUp = (evt) => {
+    evt.preventDefault();
+    signup();
+  };
   
   return(
   
@@ -126,7 +131,7 @@ const FormInscriptionPro = ({
             onChange={changeField}  />
     </Form.Field>
     
-    <Button type='submit'>Validez</Button>
+    <Button  name="submit" type='submit'>Validez</Button>
   </Form>
 
 

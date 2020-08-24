@@ -7,6 +7,7 @@ import { changeField, signup } from '../store/action/user-actions';
 const mapStateToProps = (state) => ({
     mail: state.register.mail,
     password: state.register.password,
+    passwordconfirm: state.register.passwordconfirm,
     phone: state.register.phone,
     bill_address: state.register.bill_address,
     complement: state.register.complement,
@@ -14,6 +15,7 @@ const mapStateToProps = (state) => ({
     city: state.register.city,
     postal_code: state.register.postal_code,
     societe: state.register.societe,
+    submit: state.register.submit,
   });
   
   const mapDispatchToProps = (dispatch) => ({
