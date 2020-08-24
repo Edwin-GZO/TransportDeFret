@@ -52,9 +52,9 @@ export default (store) => (next) => (action) => {
         data: user,
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
-        .then((res) => {
+        .then(() => {
             console.log('login request')
-          store.dispatch(loginSuccess(res.data));
+          store.dispatch(loginSuccess("vous êtes connecté"));
         })
         .catch((err) => {
           store.dispatch(loginError("Impossible de connecter cet utilisateur"))
@@ -73,9 +73,9 @@ export default (store) => (next) => (action) => {
         data: user,
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
-        .then((res) => {
+        .then(() => {
             console.log('signup request')
-          store.dispatch(signupsuccess(res.data));
+          store.dispatch(signupsuccess("vous êtes connecté"));
         })
         .catch((err) => {
           store.dispatch(signuperror("Impossible d'enregistrer cet utilisateur"))
