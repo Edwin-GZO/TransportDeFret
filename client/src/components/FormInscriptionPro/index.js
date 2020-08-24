@@ -25,19 +25,24 @@ const FormInscriptionPro = ({
     signup();
   };
 
- /* const handleSubmit = () => {
-    if(password !=passwordconfirm) {
-
+  const handleSubmit = () => {
+    console.log(passwordconfirm)
+    console.log(password)
+    if(password !== passwordconfirm) {
+         console.log("ejidie")
+         alert("mot de passe incorrect")
+      }
+      if(city === ""){
+        alert('name city please')
+      }
+     signup();
     }
-    
-   
-  }*/
   
   return(
   
   <section className="register">
   <h1 className="title">Formulaire d'inscription</h1>
-  <Form onSubmit={handleSignUp} >
+  <Form onSubmit={handleSignUp,handleSubmit} >
     <Form.Field>
       <label>N° Siret</label>
       <Field name="siret"

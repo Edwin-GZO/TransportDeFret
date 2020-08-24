@@ -48,15 +48,15 @@ const quoteRouteur = require('./app/router/quoteRouter');
 // app.route(/^(\/api\/user.*|\/)/
 
 //! Pourquoi all ? Pourquoi pas route ? Trouver le moyen d'inversé la selection ....  Tous SAUF /api/user*
-app.all(/^(\/api\/user*)/, (request, response, next) => {
-    console.log("Passe par le middleware Session", request.session.login);
-    if (!request.session.login) {
-        console.log(" Error : Pas de session Login" );
-        response.status(401).json({ isLogged: false , error : "Pas de session Login " });
-    } else {
-        next();
-    }
-});
+// app.all(/^(\/api\/user*)/, (request, response, next) => {
+//     console.log("Passe par le middleware Session", request.session.login);
+//     if (!request.session.login) {
+//         console.log(" Error : Pas de session Login" );
+//         response.status(401).json({ isLogged: false , error : "Pas de session Login " });
+//     } else {
+//         next();
+//     }
+// });
 
 app.use(conInscRouteur);
 app.use(quoteRouteur);
