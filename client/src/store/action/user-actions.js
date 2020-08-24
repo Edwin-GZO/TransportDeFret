@@ -8,6 +8,10 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_ERROR = 'SIGN_UP_ERROR';
 export const SIGN_UP = 'SIGN_UP';
+export const SUBMIT_CONTACT = "SUBMIT_CONTACT";
+export const SUBMIT_CONTACT_SUCCESS = "SUBMIT_CONTACT_SUCCESS";
+export const SUBMIT_CONTACT_ERROR = "SUBMIT_CONTACT_ERROR";
+
 
 
 
@@ -54,5 +58,20 @@ export const signuperror = (payload) => ({
 
 export const signup = () => ({
   type: SIGN_UP,
+  
+});
+
+export const submit = () => ({
+  type: SUBMIT_CONTACT,
+  
+});
+
+export const submitsuccess = () => ({
+  type: SUBMIT_CONTACT_SUCCESS,
+  
+});
+
+export const submiterror = () => ({
+  type: SUBMIT_CONTACT_ERROR,
   
 });

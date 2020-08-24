@@ -1,7 +1,7 @@
 import React from 'react'
 import Field from '../../components/LoginForm/Field'
 import PropTypes from 'prop-types';
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import './style.scss';
 
 const FormInscriptionPro = ({
@@ -22,7 +22,7 @@ const FormInscriptionPro = ({
   
   
   const handleSubmit = () => {
-    let message = []
+   
     console.log(passwordconfirm)
     console.log(password)
     if(password !== passwordconfirm) {
