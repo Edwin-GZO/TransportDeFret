@@ -10,10 +10,9 @@ const conInscController = require('../controllers/conInscController');
      * @returns {object} 200 - {isLogged: true , message:" OK User and Password"})
      */
 router.post('/api/user', conInscController.connectionUser);
+// router.get('/api/user/logout', conInscController.deconnectionUser); //! Rajouter ici la déconnexion
 
+router.post('/api/user/signup', conInscController.insertUserPro);
 
-router.post('/inscription/pro', conInscController.insertUserPro);
-router.post('/inscription/part', conInscController.insertUserPart);
-// router.post('/api/user', conInscController.connectionUser) ;
 
 module.exports = router;

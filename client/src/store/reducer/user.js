@@ -1,8 +1,8 @@
-import { CHANGE_FIELD, LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT_SUCCESS } from '../action/user-actions';
+import { CHANGE_FIELD, LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT_SUCCESS  } from '../action/user-actions';
 
 
 const stateInitial = {
-  email: '',
+  mail: '',
   password: '',
   isLogged: false,
   loggedMessage: '',
@@ -24,11 +24,11 @@ export default (state = stateInitial, action = {}) => {
       return {
         ...state,
         isLogged: true,
-        email: '',
+        mail: '',
         password: '',
         error: '',
         user: action.payload,
-        loggedMessage: `Bienvenue ${action.payload.username}`
+        loggedMessage: `Bienvenue ${action.payload.name}`
       };
     case LOGIN_ERROR:
       return {
