@@ -3,15 +3,27 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 
+// Gestion des sessions
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true
+}));
+
 app.use((error, request, response, next) => {
-    console.error('Oh mon dieu ça plante!');
+    
+    // if (error instanceof UnrauthrorizedError()) {
+    //     response.status(403).send('zefopàik,zefoik,0');
+    // }
+
+    console.error('Erreur à la connexion');
     console.error(error);
 
-    response.status(500).send('{ "merde": true }');
+    response.status(500).send('{"Ok connexion": true}');
 });
 
 app.all('*', (request, response, next) => {
-    console.log('CORS Authorized');
+    // console.log('Autorisation du protocole COR');
     response.setHeader('Access-Control-Allow-Origin', request.header('Origin') || '*');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
@@ -21,41 +33,36 @@ app.all('*', (request, response, next) => {
     }
 
     response.setHeader('Access-Control-Allow-Credentials', 'true');
-    // ligne 31       headers: {'Content-Type': 'application/json'},    
+     
     next();
 });
-
-const conInscRouteur = require('./app/router/conInscRouteur');
-const quoteRouteur = require('./app/router/quoteRouter');
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+const conInscRouteur = require('./app/router/conInscRouteur');
+const quoteRouteur = require('./app/router/quoteRouter');
+
+
+// Middleware qui vérifie que le USER est connection
+// app.route(/^(\/api\/user.*|\/)/
+
+//! Pourquoi all ? Pourquoi pas route ? Trouver le moyen d'inversé la selection ....  Tous SAUF /api/user*
+// app.all(/^(\/api\/user*)/, (request, response, next) => {
+//     console.log("Passe par le middleware Session", request.session.login);
+//     if (!request.session.login) {
+//         console.log(" Error : Pas de session Login" );
+//         response.status(401).json({ isLogged: false , error : "Pas de session Login " });
+//     } else {
+//         next();
+//     }
+// });
+
 app.use(conInscRouteur);
 app.use(quoteRouteur);
 
-app.use((request, response, next) => {
-   if (!response.headersSent) {
-    response.status(202).send();
-   } 
 
-   next();
-});
-
-//Gestion des sessions
-app.use(session({
-    secret: 'rZS/;QKoCQ2@jI4zb4>W2#@Le.0CG#',
-    resave: true,
-    saveUninitialized: true
-}));
-
-//Middleware pour stocker les infos de session en local - utililsé à chaque requête
-app.use((request, response, next) => {
-  response.locals.session = request.session;
-  next();  
-})
-
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT || 8080 ;
 app.listen(port, _ => {
     console.log(`Listening on ${port}`);
 });

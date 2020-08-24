@@ -1,92 +1,118 @@
 const conInscDataMapper = require('../db/conInscDataMapper');
+const validator = require("email-validator");
 
 module.exports = {
-    
+
     connectionUser: async (request,response) => {
     
         const body = request.body;
+
+        const validMail = validator.validate(body.mail)
+  
+        if (!validMail) {
+            
+            response.status(400).json({isLogged:false , error:"Mail non valide"});
+            console.log(" Erreur Connexion : Mail au Mauvais Format")
+            return;
+        }
+
         const user = await conInscDataMapper.findUser(body);
 
         if (!user) {
-                 
-            response.status(404).json({isLogged:false, error:"User not found"});
+            
+            response.status(404).json({isLogged:false , error:"Utilisateur non trouvé"});
+            console.log(" Erreur Connexion : Mauvais Identifiant")
             return;
         }
 
-        if (result.password !== user.password) {
- 
-            response.status(401).json({isLogged:false, error:"Bad password"});
-            return;
+        if (body.password !== user.password) {
 
+            response.status(401).json({isLogged:false , error:"Mauvais Mot de Passe"});
+            console.log(" Erreur Connexion : Mauvais Mot de Passe")
+            return;
         }
+      
+        request.session.login = body.mail;
+
+        if (!request.session.login) {
+            response.status(401).json({isLogged: false , error:" Pas de session" });
+            console.log(" Erreur : Aucune session ")
+        };
         
-        
-        
-        response.json({isLogged: true , message:" OK User and Password"});
-        //creer une session
-        request.session.login = result.mail;
-        
-        //pour rediriger vers la dernière page visitée
-        //response.redirect(request.session.history.filter(page => page !== '/login').pop());
+        console.log(" Connexion : Identifiant & Mot de Passe Correct")
+
+        response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée", name : user.name});
 
     },
 
     insertUserPro: async (request, response) => {
 
+        const body = request.body;
+       
+        const validMail = validator.validate(body.mail)
+  
+        if (!validMail) {
+            
+            response.status(400).json({isLogged:false , error:"Mail non valide"});
+            console.log(" Erreur Connexion : Mail au Mauvais Format")
+            return;
+        }
+
+        const checkUser = await conInscDataMapper.findUser(body);
+
+        if (checkUser) {
+            response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
+        }
+
+        const newBillAddress = await conInscDataMapper.addBillAddress(body);
+        await conInscDataMapper.addUserPro(body,newBillAddress)
+
+        request.session.login = body.mail;
+
+        if (!request.session.login) {
+            response.status(401).json({isLogged: false , error:" Pas de session" });
+            console.log(" Erreur : Aucune session ")
+        };
         
-        const result = request.body;
-        console.log(result);
+        console.log("Création : Utilisateur Professionnel enregistré")
+        response.status(201).json({isLogged: true , message: "Utilisateur enregistré" });
 
-        const newBillAddress = await conInscDataMapper.addBillAddress(result);
-
-        console.log("ID : " , newBillAddress);
-
-        await conInscDataMapper.addUserPro(result,newBillAddress)
-
-        response.status(201).json({isLogged: true });
-        //creer une session
-        request.session.login = result.mail;
-        response.redirect('/');
-        //pour rediriger vers la dernière page visitée
-        //response.redirect(request.session.history.filter(page => page !== '/login').pop());
     },
 
     insertUserPart: async (request, response,next) => {
 
-        
-        const result = request.body;
-        console.log(result);
+        const body = request.body;
+       
+        const validMail = validator.validate(body.mail)
+  
+        if (!validMail) {
+            
+            response.status(400).json({isLogged:false , error:"Mail non valide"});
+            console.log(" Erreur Connexion : Mail au Mauvais Format")
+            return;
+        }
 
-        const newBillAddress = await conInscDataMapper.addBillAddress(result);
+        const checkUser = await conInscDataMapper.findUser(body);
 
-        console.log("ID : " , newBillAddress);
+        if (checkUser) {
+            response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
+        }
 
+        const newBillAddress = await conInscDataMapper.addBillAddress(body);
         await conInscDataMapper.addUserPart(result,newBillAddress)
 
-        response.status(201).json({isLogged: true });
-        //creer une session
-        request.session.login = result.mail;
-        if(!request.session.login){
-            response.status(404).json({error:"invalid session"});
-        }
-        next();
-        //pour rediriger vers la dernière page visitée
-        //response.redirect(request.session.history.filter(page => page !== '/log
+        request.session.login = body.mail;
+
+        if (!request.session.login) {
+            response.status(401).json({isLogged: false , error:" Pas de session" });
+            console.log(" Erreur : Aucune session ")
+        };
+        
+        console.log("Création : Utilisateur Particulier enregistré")     
+        response.status(201).json({isLogged: true , message: "Utilisateur Particulier enregistré" });
+       
     },
 
-    checkLogin: (request, response, next) => {
-
-        // S"il n'y a pas de login alors on redirige vers la page de connection
-        if(!request.session.login){
-            response.redirect('/login');
-        }
-        next();
-
-    },
-
-    test: (_, response) => {
-        response.send('hello Cédric')
-    }
 }
 
 // Lucas_Moreau@hotmail.fr

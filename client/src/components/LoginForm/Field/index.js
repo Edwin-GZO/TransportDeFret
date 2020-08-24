@@ -20,7 +20,7 @@ const Field = ({
   const inputId = `field-${name}`;
 
   return (
-    <div className={value.length > 0 ? 'field field--has-content' : 'field'}>
+    <div >
       <input
         // React - state
         value={value}

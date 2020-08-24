@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 const LoginForm = ({
-  email,
+  mail,
   password,
   changeField,
   handleLogin,
@@ -43,14 +43,14 @@ const LoginForm = ({
         
            
         <form autoComplete="off" className="login-box" onSubmit={handleSubmit}>
-          <h1>Login</h1>
+          
           <div className="text-box">
             <i className="fa fa-user" aria-hidden="true"></i>
           <Field
             name="email"
             placeholder="Adresse Email"
             onChange={changeField}
-            value={email}
+            value={mail}
           />
           </div>
       
@@ -71,7 +71,7 @@ const LoginForm = ({
             <input type="submit"
             className="btn"
             name=""
-            value="sign in">
+            value="se connecter">
 
             </input>
            
@@ -88,7 +88,7 @@ const LoginForm = ({
     };
 
     LoginForm.propTypes = {
-      email: PropTypes.string.isRequired,
+      mail: PropTypes.string.isRequired,
       password: PropTypes.string.isRequired,
       changeField: PropTypes.func.isRequired,
       handleLogin: PropTypes.func.isRequired,
