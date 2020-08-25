@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOGIN, CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror } from '../action/user-actions';
+import { LOGIN, SIGN_UP_PART,  CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror, signuppartsuccess, signupparterror } from '../action/user-actions';
 
 export default (store) => (next) => (action) => {
   next(action);
@@ -7,7 +7,7 @@ export default (store) => (next) => (action) => {
     case LOGOUT: {
       axios({
         method: 'post',
-        url: 'http://localhost:8080/api/user/logout',
+        url: 'http://localhost:8080/api/logout',
         withCredentials: true
       })
         .then((res) => {
@@ -50,7 +50,7 @@ export default (store) => (next) => (action) => {
         method: 'post',
         url: 'http://54.175.105.52:8080/api/user',
         data: user,
-        withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
+        withCredentials: true 
       })
         .then((res) => {
            
@@ -69,9 +69,9 @@ export default (store) => (next) => (action) => {
 
       axios({
         method: 'post',
-        url: 'http://localhost:8080/api/user/signup',
+        url: 'http://localhost:8080/api/signup',
         data: register,
-        withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
+        withCredentials: true 
       })
         .then((res) => {
             console.log('signup request')
@@ -79,6 +79,27 @@ export default (store) => (next) => (action) => {
         })
         .catch((err) => {
           store.dispatch(signuperror("Impossible d'enregistrer cet utilisateur"))
+        })
+
+      break;
+    }
+
+    case SIGN_UP_PART: {
+      const { registerPart } = store.getState();
+      console.log(registerPart);
+
+      axios({
+        method: 'post',
+        url: 'http://localhost:8080/api/signup',
+        data: registerPart,
+        withCredentials: true 
+      })
+        .then((res) => {
+            console.log('signup request')
+          store.dispatch(signuppartsuccess(res.data));
+        })
+        .catch((err) => {
+          store.dispatch(signupparterror("Impossible d'enregistrer cet utilisateur"))
         })
 
       break;

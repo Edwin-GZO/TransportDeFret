@@ -14,7 +14,7 @@ import PageContact from '../../components/PageContact';
 import ProPartModale from '../../components/ProPartModale';
 import Réseau from '../../components/Reseau';
 import FormInscriptionPro from '../../containers/FormInscriptionPro';
-import FormInscriptionPart from '../FormInscriptionPart';
+import FormInscriptionPart from '../../containers/FormInscriptionPart';
 import LoginForm from '../../containers/LoginForm';
 import ContactForm from '../../containers/ContactForm';
 
@@ -31,7 +31,9 @@ function App() {
    
 
     <div className="App">
+    <FormInscriptionPart />
     <FormInscriptionPro />
+   
     
      
     

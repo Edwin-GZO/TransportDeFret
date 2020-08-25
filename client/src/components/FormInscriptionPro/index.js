@@ -7,17 +7,17 @@ import './style.scss';
 const FormInscriptionPro = ({ 
   isFormValid,
   signup,
-  mailSignUp,
-  password,
-  passwordconfirm,
-  phone,
-  bill_street,
-  bill_number,
-  bill_track,
-  bill_complement,
+  mailSignUpPro,
+  passwordSignUpPro,
+  passwordconfirmSignUpPro,
+  phoneSignUpPro,
+  billStreetSignUpPro,
+  billNumberSignUpPro,
+  billTrackSignUpPro,
+  billComplementSigPUpro,
   siret,
-  city,
-  postal_code,
+  citySignUpPro,
+  postalCodeSignUpPro,
   societe,
   hasError,
   isSamePassword
@@ -26,7 +26,7 @@ const FormInscriptionPro = ({
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    if (password !== passwordconfirm) {
+    if (passwordSignUpPro !== passwordconfirmSignUpPro) {
       return
     }
     
@@ -63,7 +63,7 @@ const FormInscriptionPro = ({
     <Form.Field>
       <label>Adresse Mail</label>
         <Field 
-          name="mailSignUp"
+          name="mailSignUpPro"
           type="email"
           reducerName="register"
           placeholder="mail"
@@ -77,7 +77,7 @@ const FormInscriptionPro = ({
            <Form.Field>
           <label>N° de la voie</label>
           <Field
-            name="bill_number"
+            name="billNumberSignUpPro"
             reducerName="register"
             placeholder=""
              />
@@ -88,7 +88,7 @@ const FormInscriptionPro = ({
           <Form.Field>
           <label>Type voie</label>
           <Field
-            name="bill_track"
+            name="billTrackSignUpPro"
             
             reducerName="register"
             placeholder=""
@@ -103,7 +103,7 @@ const FormInscriptionPro = ({
         <Form.Field>
           <label>Nom de la voie</label>
           <Field
-            name="bill_street"
+            name="billStreetSignUpPro"
             
             reducerName="register"
             placeholder=""
@@ -112,7 +112,7 @@ const FormInscriptionPro = ({
         </Form.Field>
         <Form.Field>
           <label>Complément d'adresse</label>
-          <Field  name="bill_complement"
+          <Field  name="billComplementSignUpPro"
                 
                 reducerName="register"
                 placeholder=""
@@ -126,7 +126,7 @@ const FormInscriptionPro = ({
                   <div className="field">
         <Form.Field >
           <label>Ville</label>
-          <Field  name="city"
+          <Field  name="citySignUpPro"
                 
                 reducerName="register"
                 placeholder=""
@@ -137,7 +137,7 @@ const FormInscriptionPro = ({
         <div className="field">
         <Form.Field >
           <label>Code postal</label>
-          <Field name="postal_code"
+          <Field name="postalCodeSignUpPro"
                 
                 reducerName="register"
                 placeholder=""
@@ -150,7 +150,7 @@ const FormInscriptionPro = ({
     
     <Form.Field>
       <label>Telephone</label>
-      <Field name="phone"
+      <Field name="phoneSignUpPro"
             
             reducerName="register"
             placeholder=""
@@ -160,7 +160,7 @@ const FormInscriptionPro = ({
       <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
         <Field
           cssClass={!isSamePassword ? 'error' : ''}
-          name="passwordSignUp"
+          name="passwordSignUpPro"
           type="password"
           reducerName="register"
           placeholder=""
@@ -172,7 +172,7 @@ const FormInscriptionPro = ({
       <label>Confirmez votre mot de passe</label>
         <Field
           cssClass={!isSamePassword ? 'error' : ''}
-          name="passwordconfirmSignUp"
+          name="passwordconfirmSignUpPro"
           type="password"
           reducerName="register"
           placeholder=""

@@ -7,29 +7,30 @@ import './style.scss';
 
 const FormInscriptionPart = ({ 
     isFormValid,
-    signup,
-    mail,
-    password,
-    passwordconfirm,
-    phone,
-    bill_street,
-    bill_number,
-    bill_track,
-    city,
-    postal_code,
-    societe,
+    handlesignuppart,
+    nameSignUpPart,
+    firstNameSignUpPart,
+    mailSignUpPart,
+    passwordSignUpPart,
+    passwordconfirmSignUpPart,
+    phoneSignUpPart,
+    billStreetSignUpPart,
+    billNumberSignUpPart,
+    billTrackSignUpPart,
+    citySignUpPart,
+    postalCodeSignUpPart,
     hasError,
     isSamePassword
   }) => {
   
-    const handleSubmit = (evt) => {
+    const handleSubmitpart = (evt) => {
       evt.preventDefault();
   
-      if (password !== passwordconfirm) {
+      if (passwordSignUpPart !== passwordconfirmSignUpPart) {
         return
       }
       
-      signup('part');
+      handlesignuppart();
       } 
     
     return (
@@ -39,13 +40,13 @@ const FormInscriptionPart = ({
         {
           hasError ? <p>modal</p> : null
         }
-    <Form onSubmit={handleSubmit} >
+    <Form onSubmit={handleSubmitpart} >
   
       <Form.Field>
         <label>Nom</label>
         <Field
-          name="name"
-          reducerName="register"
+          name="nameSignUpPart"
+          reducerName="registerPart"
           placeholder="Nom"
         />
       </Form.Field>
@@ -53,9 +54,9 @@ const FormInscriptionPart = ({
       <Form.Field>
         <label>Prénom</label>
         <Field 
-          name="firstname"
+          name="firstNameSignUpPart"
           
-          reducerName="register"
+          reducerName="registerPart"
           placeholder="prénom"
         />
       </Form.Field>
@@ -63,34 +64,34 @@ const FormInscriptionPart = ({
       <Form.Field>
         <label>Adresse Mail</label>
           <Field 
-            name="mail"
+            name="mailSignUpPart"
             type="mail"
-            reducerName="register"
+            reducerName="registerPart"
             placeholder="mail"
              />
              </Form.Field>
   
-             <div class="ui form">
-                  <div class="two fields">
-                  <div class="field">
+             <div className="ui form">
+                  <div className="two fields">
+                  <div className="field">
   
              <Form.Field>
             <label>N° de la voie</label>
             <Field
-              name="bill_number"
-              reducerName="register"
+              name="billNumberSignUpPart"
+              reducerName="registerPart"
               placeholder=""
                />
               </Form.Field>
               </div>
   
-              <div class="field">
+              <div className="field">
             <Form.Field>
             <label>Type voie</label>
             <Field
-              name="bill_track"
+              name="billTrackSignUpPart"
               
-              reducerName="register"
+              reducerName="registerPart"
               placeholder=""
                />
                </Form.Field>
@@ -103,43 +104,41 @@ const FormInscriptionPart = ({
           <Form.Field>
             <label>Nom de la voie</label>
             <Field
-              name="bill_street"
-              
-              reducerName="register"
+              name="billStreetSignUpPart"              
+              reducerName="registerPart"
               placeholder=""
                
             />
           </Form.Field>
           <Form.Field>
             <label>Complément d'adresse</label>
-            <Field  name="bill_complement"
-                  
-                  reducerName="register"
+            <Field  name="billComplementSignUpPart"                  
+                  reducerName="registerPart"
                   placeholder=""
                   />
           </Form.Field>
           
   
   
-          <div class="ui form">
-                <div class="two fields">
-                    <div class="field">
+          <div className="ui form">
+                <div className="two fields">
+                    <div className="field">
           <Form.Field >
             <label>Ville</label>
-            <Field  name="city"
+            <Field  name="citySignUpPart"
                   
-                  reducerName="register"
+                  reducerName="registerPart"
                   placeholder=""
                   />
           </Form.Field>
           </div>
   
-          <div class="field">
+          <div className="field">
           <Form.Field >
             <label>Code postal</label>
-            <Field name="postal_code"
+            <Field name="postalCodeSignUpPart"
                   
-                  reducerName="register"
+                  reducerName="registerPart"
                   placeholder=""
                   />
           </Form.Field>
@@ -150,9 +149,8 @@ const FormInscriptionPart = ({
       
       <Form.Field>
         <label>Telephone</label>
-        <Field name="phone"
-              
-              reducerName="register"
+        <Field name="phoneSignUpPart"              
+              reducerName="registerPart"
               placeholder=""
                 />
       </Form.Field>
@@ -160,9 +158,9 @@ const FormInscriptionPart = ({
         <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
           <Field
             cssClass={!isSamePassword ? 'error' : ''}
-            name="password"
+            name="passwordSignUpPart"
             type="password"
-            reducerName="register"
+            reducerName="registerPart"
             placeholder=""
             required={true}
             minLength={8}
@@ -172,14 +170,14 @@ const FormInscriptionPart = ({
         <label>Confirmez votre mot de passe</label>
           <Field
             cssClass={!isSamePassword ? 'error' : ''}
-            name="passwordconfirm"
+            name="passwordconfirmSignUpPart"
             type="password"
-            reducerName="register"
+            reducerName="registerPart"
             placeholder=""
           />
       </Form.Field>
       
-      <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
+      <Button >Validez</Button>
     </Form>
   
   
