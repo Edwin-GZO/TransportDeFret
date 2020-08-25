@@ -3,11 +3,8 @@ const router = express.Router();
 
 const quoteController = require('../controllers/quoteController');
 
-// router.get('/api/quotes/:user_id', quoteController.findAllQuotes);
-
 router.get('/coucou',quoteController.test)
-
-// router.post('/inscription', conInscController.insertUserPro);
+router.get('/api/quotes/:user_id', quoteController.getAllQuotes);
 
 // router.route('/api/quote/:id')
 //     .patch()
