@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import ContactForm from '../components/FormInscriptionPro';
-import { changeField, submit } from '../store/action/user-actions';
+import ContactForm from '../components/ContactForm';
+import { changeField, submitcontact } from '../store/action/user-actions';
 
 const mapStateToProps = (state) => ({
-    mail: state.contact.email,
-    password: state.contact.password,
+    name: state.contact.name,
+    mail: state.contact.mail,
     message: state.contact.message,
-    
+    object: state.contact.object,
+    contactMessage: state.contact.contactMessage,
   });
   
   const mapDispatchToProps = (dispatch) => ({
@@ -20,9 +21,9 @@ const mapStateToProps = (state) => ({
       dispatch(changeField(changeObject));
   
     },
-    handleSubmit: () => {
-      console.log('envoi du message');
-      dispatch(submit());
+    submitcontact: () => {
+      console.log('submit');
+      dispatch(submitcontact());
     },
     
   });

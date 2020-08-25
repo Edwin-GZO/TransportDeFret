@@ -12,8 +12,8 @@ const enhancers = composeEnhancers(
     //ajaxMiddleware,
     authMiddleware,
     logMiddleware,
-    contactMiddleware
-    // secondMiddleware,
+    contactMiddleware,
+    
   )
 );
 
