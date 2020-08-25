@@ -12,7 +12,7 @@ const conInscController = require('../controllers/conInscController');
 router.post('/api/user', conInscController.connectionUser);
 // router.get('/api/user/logout', conInscController.deconnectionUser); //! Rajouter ici la déconnexion
 
-router.post('/api/user/signup', conInscController.insertUserPro);
-
+router.post('/api/user/signup/pro', conInscController.insertUserPro);
+router.post('/api/user/signup/part', conInscController.insertUserPart);
 
 module.exports = router;
