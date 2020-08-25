@@ -11,8 +11,10 @@ const FormInscriptionPro = ({
   password,
   passwordconfirm,
   phone,
-  bill_address,
-  complement,
+  bill_street,
+  bill_number,
+  bill_track,
+  bill_complement,
   siret,
   city,
   postal_code,
@@ -53,7 +55,6 @@ const FormInscriptionPro = ({
       <label>Societe</label>
       <Field 
         name="societe"
-        
         reducerName="register"
         placeholder="société"
       />
@@ -62,7 +63,7 @@ const FormInscriptionPro = ({
     <Form.Field>
       <label>Adresse Mail</label>
         <Field 
-          name="mail"
+          name="mailSignUp"
           type="mail"
           reducerName="register"
           placeholder="mail"
@@ -159,7 +160,7 @@ const FormInscriptionPro = ({
       <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
         <Field
           cssClass={!isSamePassword ? 'error' : ''}
-          name="password"
+          name="passwordSignUp"
           type="password"
           reducerName="register"
           placeholder=""
@@ -171,7 +172,7 @@ const FormInscriptionPro = ({
       <label>Confirmez votre mot de passe</label>
         <Field
           cssClass={!isSamePassword ? 'error' : ''}
-          name="passwordconfirm"
+          name="passwordconfirmSignUp"
           type="password"
           reducerName="register"
           placeholder=""
