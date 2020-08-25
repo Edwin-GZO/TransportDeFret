@@ -1,20 +1,24 @@
 import React from 'react'
 import Field from '../../components/LoginForm/Field'
 import PropTypes from 'prop-types';
-import { Button, Form, Input } from 'semantic-ui-react'
+import { Button, Form, TextArea } from 'semantic-ui-react'
 import './style.scss';
+
 
 const ContactForm = ({
     name,
     mail,
     message,
+    object,
+    value,
     changeField,
-    submit,
+    submitcontact,
+    
 
 }) => {
-    const handleSubmit = (evt) => {
+    const handleContact = (evt) => {
         evt.preventDefault();
-        submit();
+        submitcontact();
       };
 
 
@@ -22,7 +26,7 @@ const ContactForm = ({
 <section className="contact">
 <h1 className="title">Formulaire de contact</h1>
 
-<Form>
+<Form autoComplete="off" className="login-box" onSubmit={handleContact}>
 
     <Form.Field>
       <label>Nom</label>
@@ -33,24 +37,50 @@ const ContactForm = ({
       value={name}/>
     </Form.Field>
 
+    <Form.Field>
+      <label>Objet</label>
+      <Field 
+      name='object'
+      placeholder=''
+      onChange={changeField}
+      value={object}/>
+    </Form.Field>
+
     <Form.Field required>
       <label>Adresse Mail</label>
       <Field 
-      name='email'
+      name='mail'
+      type='email'
       placeholder=''
       onChange={changeField}
       value={mail}
        />
 
     </Form.Field>
+
+
+    
     <Form.Field required>
-    <label>Votre message</label>
-    <textarea fluid 
-    name='message'
-    placeholder='Formulez votre demande...'
-    onChange={changeField}
-      value={message} />
-    </Form.Field>
+    
+    <label>Votre message</label>    
+     
+    
+    
+    <Field
+     
+     name='message'
+     placeholder='Formulez votre demande ...'
+     onChange={changeField}
+     value={value}
+     message={message}
+     
+     
+      />  
+          
+      </Form.Field>
+    
+
+
     <Button type='submit'>Validez</Button>
   </Form>
 
@@ -58,6 +88,8 @@ const ContactForm = ({
 
 
     )
-}
+};
+
+
 
 export default ContactForm;

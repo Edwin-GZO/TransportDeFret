@@ -11,12 +11,16 @@ const Field = ({
   type,
   name,
   placeholder,
+  message,
   onChange,
+  rows=10
+  
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
   };
 
+  
   const inputId = `field-${name}`;
 
   return (
@@ -31,12 +35,15 @@ const Field = ({
         className="field-input"
         placeholder={placeholder}
         name={name}
+        message={message}
+        rows={rows}
       />
 
       
     </div>
   );
 };
+
 
 
 // == Export

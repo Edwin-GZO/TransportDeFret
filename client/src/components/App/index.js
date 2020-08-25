@@ -16,7 +16,7 @@ import Réseau from '../../components/Reseau';
 import FormInscriptionPro from '../../containers/FormInscriptionPro';
 import FormInscriptionPart from '../FormInscriptionPart';
 import LoginForm from '../../containers/LoginForm';
-import ContactForm from '../../components/ContactForm';
+import ContactForm from '../../containers/ContactForm';
 
 import './style.scss';
 
@@ -31,8 +31,10 @@ function App() {
    
 
     <div className="App">
-     <LoginForm />
-     <FormInscriptionPro />
+     
+     <ContactForm />
+     
+    
       <Switch>
       <Route path="/affretement" component={Affretement} />
     

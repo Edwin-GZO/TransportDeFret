@@ -61,17 +61,17 @@ export const signup = () => ({
   
 });
 
-export const submit = () => ({
+export const submitcontact = () => ({
   type: SUBMIT_CONTACT,
   
 });
 
-export const submitsuccess = () => ({
+export const submitsuccess = (payload) => ({
   type: SUBMIT_CONTACT_SUCCESS,
-  
+  payload
 });
 
-export const submiterror = () => ({
+export const submiterror = (payload) => ({
   type: SUBMIT_CONTACT_ERROR,
-  
+  payload
 });

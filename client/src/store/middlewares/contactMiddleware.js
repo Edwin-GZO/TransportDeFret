@@ -8,11 +8,11 @@ export default (store) => (next) => (action) => {
         case SUBMIT_CONTACT : {
             axios({
                 method: 'post',
-                url: 'http://localhost:8080/api/contact',
-                withCredentials: false
+                url: 'http://172.31.83.109/api/contact',
+                withCredentials: true
             }).then((res) => {
-                console.log(res.data);
-                store.dispatch(submitsuccess());
+                
+                store.dispatch(submitsuccess("votre message a été envoyé"));
               })
               .catch((err) => {
                 store.dispatch(submiterror("Votre message n'a pu etre envoyé"));

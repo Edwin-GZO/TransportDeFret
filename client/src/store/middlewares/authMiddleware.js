@@ -25,7 +25,7 @@ export default (store) => (next) => (action) => {
     /*
     case CHECK_AUTH: {
       axios({
-        method: 'post',
+        method: 'post'
         url: 'http://localhost:3001/isLogged',
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
@@ -48,12 +48,12 @@ export default (store) => (next) => (action) => {
       
       axios({
         method: 'post',
-        url: 'http://localhost:8080/api/user',
+        url: 'http://54.90.53.91/api/user',
         data: user,
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
         .then((res) => {
-            console.log('login request')
+           
           store.dispatch(loginSuccess(res.data));
         })
         .catch((err) => {

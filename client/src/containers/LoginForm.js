@@ -3,7 +3,7 @@ import LoginForm from '../components/LoginForm';
 import { changeField, login, logout } from '../store/action/user-actions';
 
 const mapStateToProps = (state) => ({
-    email: state.user.email,
+    mail: state.user.mail,
     password: state.user.password,
     isLogged: state.user.isLogged,
     loggedMessage: state.user.loggedMessage
