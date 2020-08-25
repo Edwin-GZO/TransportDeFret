@@ -19,7 +19,7 @@ const FormInscriptionPro = ({
   submit
 }) =>{
  
-  const {register, errors} = useForm();
+  
 
   const handleSubmit = () => {
    
@@ -158,9 +158,7 @@ const FormInscriptionPro = ({
             type="password"
             placeholder=""
             value={password}
-            ref={register({required: true, minLength:8})}
             onChange={changeField} />
-            {errors.password }
     </Form.Field>
     <Form.Field>
       <label>Confirmez votre mot de passe</label>
