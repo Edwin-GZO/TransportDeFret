@@ -7,7 +7,7 @@ export default (store) => (next) => (action) => {
 
         case SUBMIT_CONTACT :  {
             const { contact } = store.getState();
-            
+            console.log(contact);
             const data = {...contact}
 
             delete data.contactMessage
