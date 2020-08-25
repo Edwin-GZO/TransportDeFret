@@ -3,6 +3,12 @@
 BEGIN ;
 
 -- ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_!@#$%^&*]).{8,16}$
+CREATE DOMAIN CHECK_PASSWORD AS TEXT
+CHECK (
+    VALUE ~'^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_!@#$%^&*]).{8,16}$'
+) ;
+
+ALTER TABLE "user" ALTER COLUMN "password" SET DATA TYPE CHECK_PASSWORD ;
 
 CREATE DOMAIN POSTAL_CODE_FR AS TEXT
 CHECK (

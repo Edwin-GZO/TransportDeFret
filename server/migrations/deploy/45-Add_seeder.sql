@@ -39,13 +39,13 @@ INSERT INTO "quote" ("ref_quote", "nbr_pallets", "distance", "price","length","w
   ('000006', '6', '67895', '5000','6542','12358','1235','1234', 'New Clara');
 
 INSERT INTO "user" ("name", "password","mail","phone","type","siret","bill_address_id") VALUES
-  ('Caron EURL', 'PypMaeA_MHTYy34', 'Lo88@gmail.com',  '+33165649473','pro','123 123 123 12345','1') ,
-  ('Gaillard SA', 'tx73FkhLy7R1J4Z', 'Ocane_Colin15@yahoo.fr',  '0790296896','pro','456 789 123 12345','2') ,
-  ('Garcia SA', '_sFWYtshLNKAsYc', 'Enzo.Fleury@hotmail.fr',  '0560122832','pro','456 987 456 88961','3') ,
+  ('Caron EURL', 'Pyp_MaeA_MHTYy34', 'Lo88@gmail.com',  '+33165649473','pro','123 123 123 12345','1') ,
+  ('Gaillard SA', 'tx73Fkh_Ly7R1J4Z', 'Ocane_Colin15@yahoo.fr',  '0790296896','pro','456 789 123 12345','2') ,
+  ('Garcia SA', 'AsFWYt0shL_NKA', 'Enzo.Fleury@hotmail.fr',  '0560122832','pro','456 987 456 88961','3') ,
   ('Fernandez Olivier', 'YpvqkGdvi8_Xb_n', 'Laura_Lecomte@gmail.com',  '+33313683682', 'part','000 000 000 00000','4' ) ,
-  ('Le roux - Martin', 'cf93ecpOqaYFV0j', 'Clmence20@hotmail.fr',  '+33701859131', 'part','000 000 000 00000','5') ,
-  ('Da silva SA', 'zt4IBIRtx2vzF0F', 'Mathilde.Baron@gmail.com',  '+33399001543', 'pro','457 977 416 89896' , '3') ,
-  ('Renaud Jean-Michel', 'nHScj9_r_Halbb0', 'Lucas_Moreau@hotmail.fr', '0783790556', 'part', '000 000 000 00000' , '2') ;
+  ('Le roux - Martin', 'cf93ecp_OqaYFV0j', 'Clmence20@hotmail.fr',  '+33701859131', 'part','000 000 000 00000','5') ,
+  ('Da silva SA', 'YpvqkGdvi8_Xb_n', 'Mathilde.Baron@gmail.com',  '+33399001543', 'pro','457 977 416 89896' , '3') ,
+  ('Renaud Jean-Michel', 'YpvqkGdvi8_Xb_n', 'Lucas_Moreau@hotmail.fr', '0783790556', 'part', '000 000 000 00000' , '2') ;
 
 INSERT INTO "shipment" ("ref_shipment", "user_id","sender_address_id","receiver_address_id","quote_id") VALUES
   ('003633','1','1','1','1'),
