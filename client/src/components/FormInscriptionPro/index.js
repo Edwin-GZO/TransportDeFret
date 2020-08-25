@@ -2,7 +2,6 @@ import React from 'react'
 import Field from '../../components/LoginForm/Field'
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react'
-import {useForm} from 'react-hook-form';
 import './style.scss';
 
 const FormInscriptionPro = ({
