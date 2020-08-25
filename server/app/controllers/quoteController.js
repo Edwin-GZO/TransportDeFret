@@ -10,25 +10,25 @@ module.exports = {
     getAllQuotes: async (request, response, next) => {
         
         const userID = request.params.user_id;
-        console.log(userID);
+        console.log('UserID',userID);
 
         const quotes = await quoteDataMapper.findAllQuotesForUserId(userID);
 
         console.log({quotes});
 
-        response.json({quotes});
+        response.status(200).json({quotes});
 
     },
 
-    addQuote : (request, response, next) => {
+    // addQuote : (request, response, next) => {
         
-        const quoteBody = request.body;
+    //     const quoteBody = request.body;
 
-        // await quoteDataMapper.createQuote(quoteBody);
+    //     // await quoteDataMapper.createQuote(quoteBody);
 
         
 
-    }
+    // }
 
 
 }
