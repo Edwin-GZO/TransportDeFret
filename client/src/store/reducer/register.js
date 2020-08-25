@@ -3,8 +3,10 @@ import {CHANGE_FIELD, SIGN_UP_ERROR, SIGN_UP_SUCCESS, SIGN_UP} from '../action/u
 const stateInitial = {
     siret: '',
     mail: '',
-    bill_address: '',
-    complement: '',
+    bill_number: '',
+    bill_track: '',
+    bill_street: '',
+    bill_complement: '',
     phone: '',
     password: '',
     passwordconfirm: '',

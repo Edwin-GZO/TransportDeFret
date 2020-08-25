@@ -39,6 +39,7 @@ const FormInscriptionPro = ({
         hasError ? <p>modal</p> : null
       }
   <Form onSubmit={handleSubmit} >
+
     <Form.Field>
       <label>N° Siret</label>
       <Field
@@ -47,6 +48,7 @@ const FormInscriptionPro = ({
         placeholder="N° siret"
       />
     </Form.Field>
+
     <Form.Field>
       <label>Societe</label>
       <Field 
@@ -56,6 +58,7 @@ const FormInscriptionPro = ({
         placeholder="société"
       />
     </Form.Field>
+
     <Form.Field>
       <label>Adresse Mail</label>
         <Field 
@@ -64,43 +67,86 @@ const FormInscriptionPro = ({
           reducerName="register"
           placeholder="mail"
            />
-    </Form.Field>
-        <Form.Field>
-          <label>Adresse de facturation</label>
+           </Form.Field>
+
+           <div class="ui form">
+                <div class="two fields">
+                <div class="field">
+
+           <Form.Field>
+          <label>N° de la voie</label>
           <Field
-            name="bill_address"
+            name="bill_number"
+            reducerName="register"
+            placeholder=""
+             />
+            </Form.Field>
+            </div>
+
+            <div class="field">
+          <Form.Field>
+          <label>Type voie</label>
+          <Field
+            name="bill_track"
+            
+            reducerName="register"
+            placeholder=""
+             />
+             </Form.Field>
+             </div>
+             </div>
+             </div>
+             
+
+   
+        <Form.Field>
+          <label>Nom de la voie</label>
+          <Field
+            name="bill_street"
             
             reducerName="register"
             placeholder=""
              
           />
-    </Form.Field>
-    <Form.Field>
-      <label>Complément d'adresse</label>
-      <Field  name="complement"
-            
-            reducerName="register"
-            placeholder=""
-            />
-    </Form.Field>
-    <Form.Group className="ui grid">
-    <Form.Field >
-      <label>Ville</label>
-      <Field  name="city"
-            
-            reducerName="register"
-            placeholder=""
-            />
-    </Form.Field>
-    <Form.Field >
-      <label>Code postal</label>
-      <Field name="postal_code"
-            
-            reducerName="register"
-            placeholder=""
-             />
-    </Form.Field>
-    </Form.Group>
+        </Form.Field>
+        <Form.Field>
+          <label>Complément d'adresse</label>
+          <Field  name="bill_complement"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        
+
+
+        <div class="ui form">
+              <div class="two fields">
+                  <div class="field">
+        <Form.Field >
+          <label>Ville</label>
+          <Field  name="city"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        </div>
+
+        <div class="field">
+        <Form.Field >
+          <label>Code postal</label>
+          <Field name="postal_code"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        </div>
+          </div>
+          </div>
+
+    
     <Form.Field>
       <label>Telephone</label>
       <Field name="phone"
