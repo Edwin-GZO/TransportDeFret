@@ -15,7 +15,6 @@ const FormInscriptionPart = ({
     bill_street,
     bill_number,
     bill_track,
-    bill_complement,   
     city,
     postal_code,
     societe,
@@ -43,21 +42,21 @@ const FormInscriptionPart = ({
     <Form onSubmit={handleSubmit} >
   
       <Form.Field>
-        <label>N° Siret</label>
+        <label>Nom</label>
         <Field
-          name="siret"
+          name="name"
           reducerName="register"
-          placeholder="N° siret"
+          placeholder="Nom"
         />
       </Form.Field>
   
       <Form.Field>
-        <label>Societe</label>
+        <label>Prénom</label>
         <Field 
-          name="societe"
+          name="firstname"
           
           reducerName="register"
-          placeholder="société"
+          placeholder="prénom"
         />
       </Form.Field>
   
@@ -190,7 +189,7 @@ const FormInscriptionPart = ({
   )
     };
   
-    FormInscriptionPro.propTypes = {
+    FormInscriptionPart.propTypes = {
       isFormValid: PropTypes.bool.isRequired,
     };
   
