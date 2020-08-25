@@ -3,6 +3,6 @@ const router = express.Router();
 
 const contactController = require('../controllers/contactController');
 
-router.post('/contact',contactController.contactForm);
+router.post('/api/contact',contactController.contactForm);
 
 module.exports = router;

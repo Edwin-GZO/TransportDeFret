@@ -42,7 +42,7 @@ app.use(express.json());
 
 const conInscRouteur = require('./app/router/conInscRouteur');
 const quoteRouteur = require('./app/router/quoteRouter');
-
+const contactRouteur = require('./app/router/quoteRouter');
 
 // Middleware qui vérifie que le USER est connection
 // app.route(/^(\/api\/user.*|\/)/
@@ -60,6 +60,7 @@ const quoteRouteur = require('./app/router/quoteRouter');
 
 app.use(conInscRouteur);
 app.use(quoteRouteur);
+app.use(contactRouteur);
 
 
 const port = process.env.PORT || 8080 ;
