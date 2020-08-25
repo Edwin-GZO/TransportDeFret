@@ -5,9 +5,9 @@ import { changeField, signup } from '../store/action/user-actions';
 //! Register à la place de USER
 
 const mapStateToProps = (state) => ({
-    mail: state.register.mail,
-    password: state.register.password,
-    passwordconfirm: state.register.passwordconfirm,
+    mailSignUp: state.register.mailSignUp,
+    passwordSignUp: state.register.passwordSignUp,
+    passwordconfirmSignUp: state.register.passwordconfirmSignUp,
     phone: state.register.phone,
     bill_number: state.register.bill_number,
     bill_track: state.register.bill_track,

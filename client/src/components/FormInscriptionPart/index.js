@@ -29,7 +29,7 @@ const FormInscriptionPart = ({
         return
       }
       
-      signup('pro');
+      signup('part');
       } 
     
     return (

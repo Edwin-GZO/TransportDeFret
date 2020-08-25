@@ -7,7 +7,7 @@ import './style.scss';
 const FormInscriptionPro = ({ 
   isFormValid,
   signup,
-  mail,
+  mailSignUp,
   password,
   passwordconfirm,
   phone,
@@ -64,15 +64,15 @@ const FormInscriptionPro = ({
       <label>Adresse Mail</label>
         <Field 
           name="mailSignUp"
-          type="mail"
+          type="email"
           reducerName="register"
           placeholder="mail"
            />
            </Form.Field>
 
-           <div class="ui form">
-                <div class="two fields">
-                <div class="field">
+           <div className="ui form">
+                <div className="two fields">
+                <div className="field">
 
            <Form.Field>
           <label>N° de la voie</label>
@@ -84,7 +84,7 @@ const FormInscriptionPro = ({
             </Form.Field>
             </div>
 
-            <div class="field">
+            <div className="field">
           <Form.Field>
           <label>Type voie</label>
           <Field
@@ -121,9 +121,9 @@ const FormInscriptionPro = ({
         
 
 
-        <div class="ui form">
-              <div class="two fields">
-                  <div class="field">
+        <div className="ui form">
+              <div className="two fields">
+                  <div className="field">
         <Form.Field >
           <label>Ville</label>
           <Field  name="city"
@@ -134,7 +134,7 @@ const FormInscriptionPro = ({
         </Form.Field>
         </div>
 
-        <div class="field">
+        <div className="field">
         <Form.Field >
           <label>Code postal</label>
           <Field name="postal_code"
@@ -179,7 +179,7 @@ const FormInscriptionPro = ({
         />
     </Form.Field>
     
-    <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
+    <Button>Validez</Button>
   </Form>
 
 

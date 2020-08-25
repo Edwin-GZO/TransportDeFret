@@ -14,9 +14,8 @@ const mapStateToProps = (state) => ({
     bill_street: state.register.bill_street,
     bill_complement: state.register.bill_complement,    
     name: state.register.name,
-    firstname: state.register.firstname,
-    
-city: state.register.city,
+    firstname: state.register.firstname,    
+    city: state.register.city,
     postal_code: state.register.postal_code,
     societe: state.register.societe,
     isFormValid: state.register.isFormValid,
@@ -43,5 +42,5 @@ city: state.register.city,
     }  
     
   });
-  FormInscriptionPart
-  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPro);
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(FormInscriptionPart);

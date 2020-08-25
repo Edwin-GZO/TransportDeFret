@@ -2,14 +2,14 @@ import {CHANGE_FIELD, SIGN_UP_ERROR, SIGN_UP_SUCCESS, SIGN_UP} from '../action/u
 
 const stateInitial = {
     siret: '',
-    mail: '',
+    mailSignUp: '',
     bill_number: '',
     bill_track: '',
     bill_street: '',
     bill_complement: '',
     phone: '',
-    password: '',
-    passwordconfirm: '',
+    passwordSignUp: '',
+    passwordconfirmSignUp: '',
     societe: '',
     city:'',
     postal_code: '',
@@ -19,6 +19,7 @@ const stateInitial = {
     error: '',
     signUpMessage: '',
     isFormValid: false,
+    
 }
 
 export default (state= stateInitial , action={})=> {
@@ -101,8 +102,10 @@ export default (state= stateInitial , action={})=> {
           ...action.payload,
           siret: '',
           mail: '',
-          bill_address: '',
-          complement: '',
+          bill_number: '',
+           bill_track: '',
+           bill_street: '',
+          bill_complement: '',
           city:'',
           postal_code:'',
           phone: '',
