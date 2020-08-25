@@ -11,7 +11,6 @@ export default (store) => (next) => (action) => {
             const data = {...contact}
 
             delete data.contactMessage
-            console.log({data})
 
             axios({
                 method: 'post',
@@ -19,11 +18,12 @@ export default (store) => (next) => (action) => {
                 data,
                 withCredentials: false,
             }).then((res) => {                
-                store.dispatch(submitsuccess(res.data));
-              })
-              .catch((err) => {
-                store.dispatch(submiterror("Votre message n'a pu etre envoyé"));
-              })
+                // store.dispatch(submitsuccess(res.data));
+                store.dispatch(submitsuccess('Votre message a bien été envoyé'));
+            })
+            .catch((err) => {
+            store.dispatch(submiterror("Votre message n'a pu etre envoyé"));
+            })
             break;
             
         }

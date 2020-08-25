@@ -35,30 +35,17 @@ export default (state = stateInitial, action = {}) => {
         //     }; 
 
             case SUBMIT_CONTACT_SUCCESS:
-            return {
-                ...state,
-                ...action.payload,
-                name:'',
-                mail: '',
-                message: '',
-                object: '', 
-                contac: {},
-                contactMessage: 'Votre message est envoyé',
-               
-            };
+                return {
+                    ...state,
+                    contactMessage: action.payload,
+                
+                };
 
             case SUBMIT_CONTACT_ERROR:
-            return {
-                ...state,
-                ...action.payload,
-                name:'',
-                mail: '',
-                message: '',
-                object: '',
-                contac: {},              
-                contactMessage: 'Echec d envoi du message',
-                
-            };
+                return {
+                    ...state,              
+                    contactMessage: action.payload,
+                };
 
             
 
