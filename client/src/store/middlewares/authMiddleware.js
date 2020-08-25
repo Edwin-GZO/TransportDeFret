@@ -25,7 +25,7 @@ export default (store) => (next) => (action) => {
     /*
     case CHECK_AUTH: {
       axios({
-        method: 'post',
+        method: 'post'
         url: 'http://localhost:3001/isLogged',
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
@@ -53,7 +53,7 @@ export default (store) => (next) => (action) => {
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
         .then((res) => {
-            console.log('login request')
+           
           store.dispatch(loginSuccess(res.data));
         })
         .catch((err) => {
@@ -64,13 +64,13 @@ export default (store) => (next) => (action) => {
     }
 
  case SIGN_UP: {
-      const { user } = store.getState();
-      console.log(user);
-      
+      const { register } = store.getState();
+      console.log(register);
+
       axios({
         method: 'post',
         url: 'http://localhost:8080/api/user/signup',
-        data: user,
+        data: register,
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
         .then((res) => {

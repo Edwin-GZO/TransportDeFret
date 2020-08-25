@@ -9,13 +9,17 @@ const mapStateToProps = (state) => ({
     password: state.register.password,
     passwordconfirm: state.register.passwordconfirm,
     phone: state.register.phone,
-    bill_address: state.register.bill_address,
-    complement: state.register.complement,
+    bill_number: state.register.bill_number,
+    bill_track: state.register.bill_track,
+    bill_street: state.register.bill_street,
+    bill_complement: state.register.bill_complement,    
     siret: state.register.siret,
     city: state.register.city,
     postal_code: state.register.postal_code,
     societe: state.register.societe,
-    submit: state.register.submit,
+    isFormValid: state.register.isFormValid,
+    isSamePassword: state.register.isSamePassword,
+    hasError: state.register.hasError,
   });
   
   const mapDispatchToProps = (dispatch) => ({

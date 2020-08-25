@@ -5,18 +5,25 @@ export default (store) => (next) => (action) => {
     next(action);
     switch (action.type) {
 
-        case SUBMIT_CONTACT : {
+        case SUBMIT_CONTACT :  {
+            const { contact } = store.getState();
+            console.log(contact);
+            const data = {...contact}
+
+            delete data.contactMessage
+
             axios({
                 method: 'post',
-                url: 'http://localhost:8080/api/contact',
-                withCredentials: false
-            }).then((res) => {
-                console.log(res.data);
-                store.dispatch(submitsuccess());
-              })
-              .catch((err) => {
-                store.dispatch(submiterror("Votre message n'a pu etre envoyé"));
-              })
+                url: 'http://172.31.83.109/api/contact',
+                data,
+                withCredentials: false,
+            }).then((res) => {                
+                // store.dispatch(submitsuccess(res.data));
+                store.dispatch(submitsuccess('Votre message a bien été envoyé'));
+            })
+            .catch((err) => {
+            store.dispatch(submiterror("Votre message n'a pu etre envoyé"));
+            })
             break;
             
         }
