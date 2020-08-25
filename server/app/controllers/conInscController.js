@@ -7,7 +7,8 @@ module.exports = {
     
         const body = request.body;
 
-        const validMail = validator.validate(body.mail)
+        // Changement !
+        const validMail = validator.validate(body.mailLogin)
   
         if (!validMail) {
             
@@ -25,14 +26,14 @@ module.exports = {
             return;
         }
 
-        if (body.password !== user.password) {
+        if (body.passwordLogin !== user.password) {
 
             response.status(401).json({isLogged:false , error:"Mauvais Mot de Passe"});
             console.log(" Erreur Connexion : Mauvais Mot de Passe")
             return;
         }
       
-        request.session.login = body.mail;
+        request.session.login = body.mailLogin;
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
@@ -49,7 +50,8 @@ module.exports = {
 
         const body = request.body;
        
-        const validMail = validator.validate(body.mail)
+        // Changement !
+        const validMail = validator.validate(body.mailSignUp)
   
         if (!validMail) {
             
@@ -67,7 +69,7 @@ module.exports = {
         const newBillAddress = await conInscDataMapper.addBillAddress(body);
         await conInscDataMapper.addUserPro(body,newBillAddress)
 
-        request.session.login = body.mail;
+        request.session.login = body.mailSignUp;
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
@@ -83,7 +85,7 @@ module.exports = {
 
         const body = request.body;
        
-        const validMail = validator.validate(body.mail)
+        const validMail = validator.validate(body.mailSignUp)
   
         if (!validMail) {
             
@@ -101,7 +103,7 @@ module.exports = {
         const newBillAddress = await conInscDataMapper.addBillAddress(body);
         await conInscDataMapper.addUserPart(result,newBillAddress)
 
-        request.session.login = body.mail;
+        request.session.login = body.mailSignUp;
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
@@ -114,6 +116,3 @@ module.exports = {
     },
 
 }
-
-// Lucas_Moreau@hotmail.fr
-// nHScj9_r_Halbb0 

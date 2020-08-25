@@ -3,20 +3,14 @@ const client = require('./db');
 module.exports = {
 
     // Affiche toutes les quotes d'un USER ( ID )
-    findAllQuotesForUserId : async (request, userID) => {
-        // if (permissionService.check(request.session.user.group, FIND_ALL_QUOTE)) {
-        //     throw new Error();
-        // }
+    findAllQuotesForUserId : async (userID) => {
 
-        // SELECT * FROM quote WHERE quote.id = ANY(ARRAY(SELECT DISTINCT quote_id FROM shipment WHERE shipment.user_id = $1));
-
+        console.log(userID)
         const results = await client.query(
-            'SELECT * FROM "user" LEFT JOIN "shipment" ON "user".id = shipment.user_id LEFT JOIN "quote" ON "shipment".id = shipment.quote_id  WHERE "user".id = $1 ',
-            // 'SELECT * FROM "user" LEFT JOIN "shipment" ON "user".id = shipment.user_id WHERE "user".id = $1',
-            [userID]
-        );
-
-        // console.log(results.rows);
+            'SELECT * FROM "quote" WHERE quote.id = ANY(ARRAY(SELECT DISTINCT quote_id FROM shipment WHERE shipment.user_id = $1)) AND "active" = \'t\'',
+            [userID]);
+  
+        console.log('result',results.rows);
         return results.rows;
     },
 
@@ -41,16 +35,11 @@ module.exports = {
     // Modifie les informations d'un Devis
     editQuote : async () => {
 
-
     },
 
     // Supprime (soft) une quote en identidiant l'ID
     softDeleteQuote : async () => {
 
     },
-
-    
-
-
 
 }

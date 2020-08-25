@@ -3,7 +3,7 @@ const client = require('./db');
 module.exports = {
 
     findUser: async (body) => {
-        const user = await client.query('SELECT * FROM "user" WHERE "mail"= $1', [body.mail]);
+        const user = await client.query('SELECT * FROM "user" WHERE "mail"= $1', [body.mailLogin]);
         return user.rows[0];
     },
 
@@ -12,7 +12,7 @@ module.exports = {
         const newBillAddress = await client.query(
             'INSERT INTO "bill_address" ("main", "complement","postal_code","city") VALUES ($1,$2,$3,$4) RETURNING "id"',
             [
-            result.bill_address ,
+            result.bill_address , //! A changer " a diviser par 3 "
             result.complement ,
             result.postal_code ,
             result.city
@@ -29,8 +29,8 @@ module.exports = {
             'INSERT INTO "user" ("name", "password","mail","phone","type","siret","bill_address_id")VALUES ($1,$2,$3,$4,$5,$6,$7)',
             [
             result.societe ,
-            result.password ,
-            result.mail ,
+            result.passwordSignUp ,
+            result.mailSignUp ,
             result.phone ,
             "pro" ,
             result.siret,
@@ -44,8 +44,8 @@ module.exports = {
             'INSERT INTO "user" ("name", "password","mail","phone","type","bill_address_id")VALUES ($1,$2,$3,$4,$5,$6)',
             [
             result.societe ,
-            result.password ,
-            result.mail ,
+            result.passwordSignUp ,
+            result.mailSignUp ,
             result.phone ,
             "part" ,
             billAddressId.id
