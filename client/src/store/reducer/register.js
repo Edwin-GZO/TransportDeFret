@@ -3,51 +3,95 @@ import {CHANGE_FIELD, SIGN_UP_ERROR, SIGN_UP_SUCCESS, SIGN_UP} from '../action/u
 const stateInitial = {
     siret: '',
     mail: '',
-    bill_address: '',
-    complement: '',
+    bill_number: '',
+    bill_track: '',
+    bill_street: '',
+    bill_complement: '',
     phone: '',
     password: '',
     passwordconfirm: '',
+    societe: '',
+    city:'',
+    postal_code: '',
+    isSamePassword: true,
+    hasError: false,
     isSignedUp: false,
     error: '',
     signUpMessage: '',
-    societe: '',
-    city:'',
-    postal_code:'',
-
-    user: {}
+    isFormValid: false,
 }
 
-
-
-
 export default (state= stateInitial , action={})=> {
-    switch(action.type)
-    {
- case CHANGE_FIELD:
-      return {
-        ...state,
-        ...action.payload
-      };
-   
-    case SIGN_UP_SUCCESS:
+    switch(action.type) {
+    case CHANGE_FIELD:
+        if (action.payload.reducerName === 'register') {
+          let isValid = true;
+
+          const newState = {
+          ...state,
+          [action.payload.name]: action.payload.value,
+          }
+          
+        const isSamePassword = newState.password === newState.passwordconfirm
+
+          for (const key in state) {
+            if (
+                key ===  'isSignedUp' 
+              || key ==='error' 
+              || key === 'signUpMessage'
+              || key === 'isFormValid'
+              || key === 'complement'
+              || key === 'isSamePassword'
+              || key === 'hasError'
+            ){
+              continue;
+            }
+            if (!state[key]) {
+              isValid = false;
+              break;
+            } 
+          }
+            
+        return {
+          ...state,
+          [action.payload.name]: action.payload.value,
+          isFormValid: isValid,
+          isSamePassword,
+          hasError: !isSamePassword
+        };
+      } 
+      return state;
+      case SIGN_UP_SUCCESS:
+        const properties = {};
+
+        for (const key in state) {
+          properties[key] = ''
+          }
+
+        properties.isSignedUp = true
+        properties.signUpMessage = `Votre compte à été crée avec succès !`
+        properties.isFormValid = false
+        properties.isSamePassword = true
+        properties.hasError = false;
+
       return {
         ...state,
         ...action.payload,
-        siret: '',
-        mail: '',
-        bill_address: '',
-        complement: '',
-        city:'',
-        postal_code:'',
-        phone: '',
-        password: '',
-        passwordconfirm: '',
-        error: '',
-        signUpMessage: '',
-        societe: '',
-        isSignedUp: true,
-        signUpMessage: `Votre compte à été crée avec succès !`
+        ...properties,
+        // siret: '',
+        // mail: '',
+        // bill_address: '',
+        // complement: '',
+        // city:'',
+        // postal_code:'',
+        // phone: '',
+        // password: '',
+        // passwordconfirm: '',
+        // error: '',
+        // signUpMessage: '',
+        // societe: '',
+        // isSignedUp: true,
+        // signUpMessage: `Votre compte à été crée avec succès !`
 
       } ;  
 
@@ -67,28 +111,16 @@ export default (state= stateInitial , action={})=> {
           error: '',
           signUpMessage: '',
           societe: '',
-        isSignedUp: false,
-        signUpMessage: `Votre compte n'a pu etre créé ! `,
+          isSignedUp: false,
+          signUpMessage: `Votre compte n'a pu etre créé ! `,
       
         };
 
-        case SIGN_UP:
-        return {
-          ...state,
-          ...action.payload,
-          siret: '',
-          mail: '',
-          bill_address: '',
-          city:'',
-          postal_code:'',
-          phone: '',
-          password: '',
-          passwordconfirm: '',
-          error: '',
-          signUpMessage: '',
-          societe: '',
-        
-        };
+        // case SIGN_UP:
+        //   return {
+        //     ...state,
+        //     ...action.payload,
+        //   };
     
       default:
       return state;   

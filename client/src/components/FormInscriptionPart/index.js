@@ -1,76 +1,197 @@
-import React from 'react';
-import * as ReactBootStrap from "react-bootstrap";
+import React, { useState } from 'react';
+import Field from '../../containers/Field'
+import PropTypes from 'prop-types';
+import { Button, Form } from 'semantic-ui-react'
 import './style.scss';
-import PropTypes from "prop-types";
 
-const FormInscriptionPart = () => {
 
-    return (
-     <section className="formulaire">
-<h1 className="title">Formulaire d'inscription</h1>
-
-        <ReactBootStrap.Form >
-<ReactBootStrap.Form.Row>
-    <ReactBootStrap.Form.Group as={ReactBootStrap.Col} controlId="formGridEmail">
-      <ReactBootStrap.Form.Label>Nom</ReactBootStrap.Form.Label>
-      <ReactBootStrap.Form.Control type="name" placeholder="" />
-    </ReactBootStrap.Form.Group>
-    <ReactBootStrap.Form.Group as={ReactBootStrap.Col} controlId="formGridPassword">
-      <ReactBootStrap.Form.Label>Prenom</ReactBootStrap.Form.Label>
-      <ReactBootStrap.Form.Control type="text" placeholder="" />
-    </ReactBootStrap.Form.Group>
-  </ReactBootStrap.Form.Row>
-  <ReactBootStrap.Form.Row>
-    <ReactBootStrap.Form.Group as={ReactBootStrap.Col} controlId="formGridEmail">
-      <ReactBootStrap.Form.Label>Email</ReactBootStrap.Form.Label>
-      <ReactBootStrap.Form.Control type="email" placeholder="" />
-    </ReactBootStrap.Form.Group>
-    <ReactBootStrap.Form.Group as={ReactBootStrap.Col} controlId="formGridPassword">
-      <ReactBootStrap.Form.Label>Mot de passe</ReactBootStrap.Form.Label>
-      <ReactBootStrap.Form.Control type="password" placeholder="" />
-    </ReactBootStrap.Form.Group>
-  </ReactBootStrap.Form.Row>
-  <ReactBootStrap.Form.Group controlId="formGridAddress1">
-    <ReactBootStrap.Form.Label>Adresse de facturation</ReactBootStrap.Form.Label>
-    <ReactBootStrap.Form.Control placeholder="" />
-  </ReactBootStrap.Form.Group>
-  <ReactBootStrap.Form.Group controlId="formGridAddress2">
-    <ReactBootStrap.Form.Label>Suite Adresse </ReactBootStrap.Form.Label>
-    <ReactBootStrap.Form.Control placeholder="" />
-  </ReactBootStrap.Form.Group>
-  <ReactBootStrap.Form.Row>
-    <ReactBootStrap.Form.Group as={ReactBootStrap.Col} controlId="formGridCity">
-      <ReactBootStrap.Form.Label>Ville</ReactBootStrap.Form.Label>
-      <ReactBootStrap.Form.Control />
-    </ReactBootStrap.Form.Group>
-    <ReactBootStrap.Form.Group as={ReactBootStrap.Col} controlId="formGridState">
-      <ReactBootStrap.Form.Label>Pays</ReactBootStrap.Form.Label>
-      <ReactBootStrap.Form.Control as="select" defaultValue="France">
-        <option>France</option>
-        <option>Espagne</option>
-        <option>Pologne</option>
-        <option>Italie</option>
-        <option>Autriche</option>
-        <option>...</option>
-      </ReactBootStrap.Form.Control>
-    </ReactBootStrap.Form.Group>
-    <ReactBootStrap.Form.Group as={ReactBootStrap.Col} controlId="formGridZip">
-      <ReactBootStrap.Form.Label>Code postal</ReactBootStrap.Form.Label>
-      <ReactBootStrap.Form.Control />
-    </ReactBootStrap.Form.Group>
-  </ReactBootStrap.Form.Row>
-  <ReactBootStrap.Button variant="danger" type="reset" >
-    Annuler
-  </ReactBootStrap.Button>
-  <ReactBootStrap.Button variant="primary" type="submit"  >
-    Valider
-  </ReactBootStrap.Button>
- 
-</ReactBootStrap.Form>
-</section>
-
-    );
+const FormInscriptionPart = ({ 
+    isFormValid,
+    signup,
+    mail,
+    password,
+    passwordconfirm,
+    phone,
+    bill_street,
+    bill_number,
+    bill_track,
+    city,
+    postal_code,
+    societe,
+    hasError,
+    isSamePassword
+  }) => {
   
-};
-
-export default FormInscriptionPart;
+    const handleSubmit = (evt) => {
+      evt.preventDefault();
+  
+      if (password !== passwordconfirm) {
+        return
+      }
+      
+      signup('pro');
+      } 
+    
+    return (
+    
+      <section className="register">
+        <h1 className="title">Formulaire d'inscription</h1>
+        {
+          hasError ? <p>modal</p> : null
+        }
+    <Form onSubmit={handleSubmit} >
+  
+      <Form.Field>
+        <label>Nom</label>
+        <Field
+          name="name"
+          reducerName="register"
+          placeholder="Nom"
+        />
+      </Form.Field>
+  
+      <Form.Field>
+        <label>Prénom</label>
+        <Field 
+          name="firstname"
+          
+          reducerName="register"
+          placeholder="prénom"
+        />
+      </Form.Field>
+  
+      <Form.Field>
+        <label>Adresse Mail</label>
+          <Field 
+            name="mail"
+            type="mail"
+            reducerName="register"
+            placeholder="mail"
+             />
+             </Form.Field>
+  
+             <div class="ui form">
+                  <div class="two fields">
+                  <div class="field">
+  
+             <Form.Field>
+            <label>N° de la voie</label>
+            <Field
+              name="bill_number"
+              reducerName="register"
+              placeholder=""
+               />
+              </Form.Field>
+              </div>
+  
+              <div class="field">
+            <Form.Field>
+            <label>Type voie</label>
+            <Field
+              name="bill_track"
+              
+              reducerName="register"
+              placeholder=""
+               />
+               </Form.Field>
+               </div>
+               </div>
+               </div>
+               
+  
+     
+          <Form.Field>
+            <label>Nom de la voie</label>
+            <Field
+              name="bill_street"
+              
+              reducerName="register"
+              placeholder=""
+               
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>Complément d'adresse</label>
+            <Field  name="bill_complement"
+                  
+                  reducerName="register"
+                  placeholder=""
+                  />
+          </Form.Field>
+          
+  
+  
+          <div class="ui form">
+                <div class="two fields">
+                    <div class="field">
+          <Form.Field >
+            <label>Ville</label>
+            <Field  name="city"
+                  
+                  reducerName="register"
+                  placeholder=""
+                  />
+          </Form.Field>
+          </div>
+  
+          <div class="field">
+          <Form.Field >
+            <label>Code postal</label>
+            <Field name="postal_code"
+                  
+                  reducerName="register"
+                  placeholder=""
+                  />
+          </Form.Field>
+          </div>
+            </div>
+            </div>
+  
+      
+      <Form.Field>
+        <label>Telephone</label>
+        <Field name="phone"
+              
+              reducerName="register"
+              placeholder=""
+                />
+      </Form.Field>
+      <Form.Field>
+        <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
+          <Field
+            cssClass={!isSamePassword ? 'error' : ''}
+            name="password"
+            type="password"
+            reducerName="register"
+            placeholder=""
+            required={true}
+            minLength={8}
+          />
+      </Form.Field>
+      <Form.Field>
+        <label>Confirmez votre mot de passe</label>
+          <Field
+            cssClass={!isSamePassword ? 'error' : ''}
+            name="passwordconfirm"
+            type="password"
+            reducerName="register"
+            placeholder=""
+          />
+      </Form.Field>
+      
+      <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
+    </Form>
+  
+  
+    </section>
+  
+      
+  )
+    };
+  
+    FormInscriptionPart.propTypes = {
+      isFormValid: PropTypes.bool.isRequired,
+    };
+  
+  
+  export default FormInscriptionPart;   

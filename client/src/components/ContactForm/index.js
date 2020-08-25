@@ -1,56 +1,70 @@
 import React from 'react'
-import Field from '../../components/LoginForm/Field'
+import Field from '../../containers/Field.js'
 import PropTypes from 'prop-types';
-import { Button, Form, Input } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import './style.scss';
 
-const ContactForm = ({
-    name,
-    mail,
-    message,
-    changeField,
-    submit,
 
-}) => {
-    const handleSubmit = (evt) => {
+const ContactForm = ({ submitcontact, contactMessage }) => {
+    const handleContact = (evt) => {
         evt.preventDefault();
-        submit();
+        submitcontact();
       };
 
 
     return (
 <section className="contact">
 <h1 className="title">Formulaire de contact</h1>
+{contactMessage ? <p>{contactMessage}</p> : null}
+<Form autoComplete="off" className="login-box" onSubmit={handleContact}>
 
-<Form>
-
-    <Form.Field>
+    <Form.Field >
       <label>Nom</label>
       <Field 
+      reducerName="contact"
       name='name'
-      placeholder=''
-      onChange={changeField}
-      value={name}/>
+      placeholder=''/>
+    </Form.Field>
+
+    <Form.Field required>
+      <label>Objet</label>
+      <Field 
+      reducerName="contact"
+      name='object'
+      placeholder=''/>
     </Form.Field>
 
     <Form.Field required>
       <label>Adresse Mail</label>
       <Field 
-      name='email'
+      name='mail'
+      reducerName="contact"
+      type='email'
       placeholder=''
-      onChange={changeField}
-      value={mail}
        />
 
     </Form.Field>
+
+
+    
     <Form.Field required>
-    <label>Votre message</label>
-    <textarea fluid 
-    name='message'
-    placeholder='Formulez votre demande...'
-    onChange={changeField}
-      value={message} />
-    </Form.Field>
+    
+    <label>Votre message</label>    
+     
+    
+    
+    <Field
+      type="textarea"
+      reducerName="contact"
+      name='message'
+      placeholder='Formulez votre demande ...'
+      cssClass='field-input'
+    />  
+          
+      </Form.Field>
+    
+
+
     <Button type='submit'>Validez</Button>
   </Form>
 
@@ -58,6 +72,8 @@ const ContactForm = ({
 
 
     )
-}
+};
+
+
 
 export default ContactForm;

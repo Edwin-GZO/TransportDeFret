@@ -27,7 +27,7 @@ export default (state = stateInitial, action = {}) => {
         mail: '',
         password: '',
         error: '',
-        user: action.payload,
+        user: action.payload.name,
         loggedMessage: `Bienvenue ${action.payload.name}`
       };
     case LOGIN_ERROR:
@@ -40,10 +40,14 @@ export default (state = stateInitial, action = {}) => {
         isLogged: false
       };
     case CHANGE_FIELD:
-      return {
-        ...state,
-        ...action.payload
+      if(action.payloadreducerName === "user"){
+        return {
+          ...state,
+          [action.payload.name]: action.payload.value
+        }
       }
+
+      return state
     default:
       return state;
   }
