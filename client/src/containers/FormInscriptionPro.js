@@ -15,7 +15,9 @@ const mapStateToProps = (state) => ({
     city: state.register.city,
     postal_code: state.register.postal_code,
     societe: state.register.societe,
-    submit: state.register.submit,
+    isFormValid: state.register.isFormValid,
+    isSamePassword: state.register.isSamePassword,
+    hasError: state.register.hasError,
   });
   
   const mapDispatchToProps = (dispatch) => ({

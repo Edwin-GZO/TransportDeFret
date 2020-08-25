@@ -6,26 +6,33 @@ mail: '',
 message: '',
 object: '',
 contactMessage:'',
-
-
+contact: {},
 
 };
 
 export default (state = stateInitial, action = {}) => {
     switch (action.type)
 
-    {
-        
+    {        
+        case CHANGE_FIELD:
+            if (action.payload.reducerName === "contact"){
+                return {
+                    ...state,
+                    [action.payload.name]: action.payload.value
+                };
+            }
 
-        case SUBMIT_CONTACT:
-            return {
-                ...state,
-                name:'',
-                mail: '',
-                message: '',
-                object: '',
-               
-            };
+            return state;
+
+        // case SUBMIT_CONTACT:
+        //     return {
+        //         ...state,
+        //         name:'',
+        //         mail: '',
+        //         message: '',
+        //         object: '',
+        //         contact: {},
+        //     }; 
 
             case SUBMIT_CONTACT_SUCCESS:
             return {
@@ -34,7 +41,8 @@ export default (state = stateInitial, action = {}) => {
                 name:'',
                 mail: '',
                 message: '',
-                object: '',
+                object: '', 
+                contac: {},
                 contactMessage: 'Votre message est envoyé',
                
             };
@@ -47,15 +55,12 @@ export default (state = stateInitial, action = {}) => {
                 mail: '',
                 message: '',
                 object: '',
+                contac: {},              
                 contactMessage: 'Echec d envoi du message',
                 
             };
 
-            case CHANGE_FIELD:
-            return {
-              ...state,
-              ...action.payload
-            };
+            
 
             default:
                 return state;

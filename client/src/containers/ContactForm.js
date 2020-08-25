@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
     mail: state.contact.mail,
     message: state.contact.message,
     object: state.contact.object,
-   
+    contactMessage: state.contact.contactMessage,
   });
   
   const mapDispatchToProps = (dispatch) => ({
@@ -22,6 +22,7 @@ const mapStateToProps = (state) => ({
   
     },
     submitcontact: () => {
+      console.log('submit');
       dispatch(submitcontact());
     },
     

@@ -14,3 +14,11 @@
 }
 
 
+.submit-btn:disabled{
+    cursor: not-allowed;
+}
+
+.error {
+    background: rgba(255, 0, 0, 0.2) !important;
+    border: 1px solid red !important;
+}

@@ -1,21 +1,11 @@
 import React from 'react'
-import Field from '../../components/LoginForm/Field'
+import Field from '../../containers/Field.js'
 import PropTypes from 'prop-types';
-import { Button, Form, TextArea } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import './style.scss';
 
 
-const ContactForm = ({
-    name,
-    mail,
-    message,
-    object,
-    value,
-    changeField,
-    submitcontact,
-    
-
-}) => {
+const ContactForm = ({ submitcontact, contactMessage }) => {
     const handleContact = (evt) => {
         evt.preventDefault();
         submitcontact();
@@ -25,35 +15,32 @@ const ContactForm = ({
     return (
 <section className="contact">
 <h1 className="title">Formulaire de contact</h1>
-
+{contactMessage ? <p>{contactMessage}</p> : null}
 <Form autoComplete="off" className="login-box" onSubmit={handleContact}>
 
-    <Form.Field>
+    <Form.Field >
       <label>Nom</label>
       <Field 
+      reducerName="contact"
       name='name'
-      placeholder=''
-      onChange={changeField}
-      value={name}/>
+      placeholder=''/>
     </Form.Field>
 
-    <Form.Field>
+    <Form.Field required>
       <label>Objet</label>
       <Field 
+      reducerName="contact"
       name='object'
-      placeholder=''
-      onChange={changeField}
-      value={object}/>
+      placeholder=''/>
     </Form.Field>
 
     <Form.Field required>
       <label>Adresse Mail</label>
       <Field 
       name='mail'
+      reducerName="contact"
       type='email'
       placeholder=''
-      onChange={changeField}
-      value={mail}
        />
 
     </Form.Field>
@@ -67,15 +54,12 @@ const ContactForm = ({
     
     
     <Field
-     
-     name='message'
-     placeholder='Formulez votre demande ...'
-     onChange={changeField}
-     value={value}
-     message={message}
-     
-     
-      />  
+      type="textarea"
+      reducerName="contact"
+      name='message'
+      placeholder='Formulez votre demande ...'
+      cssClass='field-input'
+    />  
           
       </Form.Field>
     

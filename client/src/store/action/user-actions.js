@@ -58,7 +58,6 @@ export const signuperror = (payload) => ({
 
 export const signup = () => ({
   type: SIGN_UP,
-  
 });
 
 export const submitcontact = () => ({

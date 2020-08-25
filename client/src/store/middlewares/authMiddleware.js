@@ -64,13 +64,13 @@ export default (store) => (next) => (action) => {
     }
 
  case SIGN_UP: {
-      const { user } = store.getState();
-      console.log(user);
-      
+      const { register } = store.getState();
+      console.log(register);
+
       axios({
         method: 'post',
         url: 'http://localhost:8080/api/user/signup',
-        data: user,
+        data: register,
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
         .then((res) => {
