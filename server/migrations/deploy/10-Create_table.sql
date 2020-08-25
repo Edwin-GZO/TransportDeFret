@@ -19,7 +19,7 @@ CREATE TABLE "user" (
 DROP TABLE IF EXISTS "shipment";
 CREATE TABLE "shipment" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "ref_shipment" INT, 
+    "ref_shipment" SERIAL NOT NULL, 
     "creation_date" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP, --! A vérifier
     "created_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMPTZ ,
@@ -67,7 +67,7 @@ CREATE TABLE "receiver_address" (
 DROP TABLE IF EXISTS "quote";
 CREATE TABLE "quote" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "ref_quote" INT NOT NULL, -- Définir un format pour le référence : 6 chiffres
+    "ref_quote" SERIAL NOT NULL, -- Définir un format pour le référence : 6 chiffres
     "nbr_pallets" INT DEFAULT 0, 
     "distance" INT NOT NULL, -- en KM
     "price" FLOAT NOT NULL, -- €

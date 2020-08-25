@@ -3,6 +3,12 @@
 BEGIN ;
 
 -- ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_!@#$%^&*]).{8,16}$
+CREATE DOMAIN CHECK_PASSWORD AS TEXT
+CHECK (
+    VALUE ~'^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_!@#$%^&*]).{8,16}$'
+) ;
+
+ALTER TABLE "user" ALTER COLUMN "password" SET DATA TYPE CHECK_PASSWORD ;
 
 CREATE DOMAIN POSTAL_CODE_FR AS TEXT
 CHECK (
@@ -26,14 +32,6 @@ CHECK (
 ) ;
 
 ALTER TABLE "user" ALTER COLUMN "siret" SET DATA TYPE SIRET;
-
-CREATE DOMAIN INTERNAL_REF AS TEXT
-CHECK (
-    VALUE ~'^(\d{6})$'
-) ;
-
-ALTER TABLE "quote" ALTER COLUMN "ref_quote" SET DATA TYPE INTERNAL_REF;
-ALTER TABLE "shipment" ALTER COLUMN "ref_shipment" SET DATA TYPE INTERNAL_REF;
 
 ALTER TABLE "quote" ADD CONSTRAINT "nbr_pallets > 6" CHECK("nbr_pallets" < 7) ;
 
