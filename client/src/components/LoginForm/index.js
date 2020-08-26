@@ -1,5 +1,5 @@
 import React from 'react';
-import Field from '../Field';
+import Field from '../../components/LoginForm/Field';
 import './style.scss';
 import PropTypes from 'prop-types';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
