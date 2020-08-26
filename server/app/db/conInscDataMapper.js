@@ -31,7 +31,7 @@ module.exports = {
             result.societe ,
             result.passwordSignUpPro ,
             result.mailSignUpPro ,
-            result.phonePro ,
+            result.phoneSignUpPro ,
             "pro" ,
             result.siret,
             billAddressId.id
@@ -46,7 +46,7 @@ module.exports = {
             `${result.firstNameSignUpPart}  ${result.nameSignUpPart}` ,
             result.passwordSignUpPart ,
             result.mailSignUpPart ,
-            result.phone ,
+            result.phoneSignUpPart ,
             "part" ,
             billAddressId.id
             ] 
