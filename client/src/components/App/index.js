@@ -31,9 +31,10 @@ function App() {
    
 
     <div className="App">
-   
+   <LoginForm />
+    <FormInscriptionPart />
+    <FormInscriptionPro />
     <ContactForm />
-   
     
      
     
