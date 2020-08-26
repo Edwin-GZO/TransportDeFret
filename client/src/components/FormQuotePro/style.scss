@@ -3,6 +3,11 @@
      text-align: center;
   }
   
+
+.subtitle {
+    margin: 5% auto;
+    
+  }
   
 
 .quote {
@@ -12,7 +17,9 @@
    
 }
 
-
+.submit{
+    margin-top: 5%;
+}
 .submit-btn:disabled{
     cursor: not-allowed;
 }

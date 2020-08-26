@@ -7,7 +7,7 @@ import Accueil from '../../components/Accueil';
 import Affretement from '../../components/Affretement';
 import Carte from '../../components/Carte';
 import Distribution from '../../components/Distribution';
-//import FormQuotePro from '../../containers//FormQuotePro';
+import FormQuotePro from '../../containers//FormQuotePro';
 import Logistique from '../../components/Logistique';
 import Mots from '../../components/Mots';
 import PageContact from '../../components/PageContact';
@@ -31,6 +31,7 @@ function App() {
    
 
     <div className="App">
+feature/forms
    <LoginForm />
     <FormInscriptionPart />
     <FormInscriptionPro />
@@ -45,7 +46,7 @@ function App() {
     
       <Route path="/distribution" component={Distribution} />
 
-     
+      <Route path="/quotepro" component={FormQuotePro} />
     
       <Route path="/logistique" component={Logistique} />
   

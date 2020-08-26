@@ -14,7 +14,9 @@ export const SUBMIT_CONTACT_ERROR = "SUBMIT_CONTACT_ERROR";
 export const SIGN_UP_PART = 'SIGN_UP_PART';
 export const SIGN_UP_PART_SUCCESS = 'SIGN_UP_PART_SUCCESS';
 export const SIGN_UP_PART_ERROR = 'SIGN_UP_PART_ERROR';
-
+export const SUBMIT_QUOTE = "SUBMIT_CONTACT";
+export const SUBMIT_QUOTE_SUCCESS = "SUBMIT_QUOTE_SUCCESS";
+export const SUBMIT_QUOTE_ERROR = "SUBMIT_QUOTE_ERROR";
 
 
 
@@ -93,3 +95,22 @@ export const submiterror = (payload) => ({
   type: SUBMIT_CONTACT_ERROR,
   payload
 });
+
+export const submitquote = () => ({
+  type: SUBMIT_QUOTE,
+  
+});
+
+export const submitquotesuccess = (payload) => ({
+  type: SUBMIT_QUOTE_SUCCESS,
+  payload
+});
+
+export const submitquoteerror = (payload) => ({
+  type: SUBMIT_QUOTE_ERROR,
+  payload
+});
+
+
+
+
