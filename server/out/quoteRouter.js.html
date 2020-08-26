@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: conInscRouteur.js</title>
+    <title>JSDoc: Source: quoteRouter.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: conInscRouteur.js</h1>
+    <h1 class="page-title">Source: quoteRouter.js</h1>
 
     
 
@@ -27,34 +27,32 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
-     * @file router for login and signup (Pro and Part) forms
+     * @file router for quote (Pro and Part) forms
      * @author Edwin GRANZOTTO - Cédric GAUTHIER
- */     
-
+ */ 
 
 const express = require('express');
 const router = express.Router();
 
-const conInscController = require('../controllers/conInscController');
+const quoteController = require('../controllers/quoteController');
 
 /**
-     * @function POST: /api/user
-     * @param conInscController.connectionUser - to connect a user by opening a session
+     * @function GET: /coucou
+     * @param quoteController.test - to test
 */
-router.post('/api/user', conInscController.connectionUser);
-// router.get('/api/user/logout', conInscController.deconnectionUser); //! Rajouter ici la déconnexion
+
+router.get('/coucou',quoteController.test)
 
 /**
-     * @function POST: /api/user/signup/pro
-     * @param conInscController.insertUserPro - To add a new pro user (need a SIRET number to signUp) on database after click on "s'inscrire" button of SignUpPro form
+     * @function GET: /api/quotes/:user_id
+     * @param quoteController.getAllQuotes - to list all quotes of an user
 */
-router.post('/api/user/signup/pro', conInscController.insertUserPro);
 
-/**
-     * @function POST /api/user/signup/part
-     * @param conInscController.insertUserPart - To add a user part (without a SIRET number to signUp) on database after click on "s'inscrire" button of SignUpPart form 
-*/
-router.post('/api/user/signup/part', conInscController.insertUserPart);
+router.get('/api/quotes/:user_id', quoteController.getAllQuotes);
+
+// router.route('/api/quote/:id')
+//     .patch()
+//     .delete()
 
 module.exports = router;</code></pre>
         </article>
