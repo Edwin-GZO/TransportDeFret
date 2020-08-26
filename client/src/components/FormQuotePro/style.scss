@@ -1,0 +1,23 @@
+.title {
+    margin: 5% auto;
+     text-align: center;
+  }
+  
+  
+
+.quote {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+   
+}
+
+
+.submit-btn:disabled{
+    cursor: not-allowed;
+}
+
+.error {
+    background: rgba(255, 0, 0, 0.2) !important;
+    border: 1px solid red !important;
+}

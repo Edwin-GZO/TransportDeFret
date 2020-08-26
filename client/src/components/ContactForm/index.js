@@ -22,7 +22,7 @@ const ContactForm = ({ submitcontact, contactMessage }) => {
       <label>Nom</label>
       <Field 
       reducerName="contact"
-      name='name'
+      name='nameContact'
       placeholder=''/>
     </Form.Field>
 
@@ -30,14 +30,14 @@ const ContactForm = ({ submitcontact, contactMessage }) => {
       <label>Objet</label>
       <Field 
       reducerName="contact"
-      name='object'
+      name='subjectContact'
       placeholder=''/>
     </Form.Field>
 
     <Form.Field required>
       <label>Adresse Mail</label>
       <Field 
-      name='mail'
+      name='mailContact'
       reducerName="contact"
       type='email'
       placeholder=''
@@ -56,7 +56,7 @@ const ContactForm = ({ submitcontact, contactMessage }) => {
     <Field
       type="textarea"
       reducerName="contact"
-      name='message'
+      name='commentContact'
       placeholder='Formulez votre demande ...'
       cssClass='field-input'
     />  

@@ -3,10 +3,10 @@ import ContactForm from '../components/ContactForm';
 import { changeField, submitcontact } from '../store/action/user-actions';
 
 const mapStateToProps = (state) => ({
-    name: state.contact.name,
-    mail: state.contact.mail,
-    message: state.contact.message,
-    object: state.contact.object,
+    nameContact: state.contact.nameContact,
+    mailContact: state.contact.mailContact,
+    commentContact: state.contact.commentContact,
+    subjectContact: state.contact.subjectContact,
     contactMessage: state.contact.contactMessage,
   });
   
