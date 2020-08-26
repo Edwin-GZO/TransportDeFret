@@ -45,7 +45,7 @@ export default (state = stateInitial, action = {}) => {
 
     {        
         case CHANGE_FIELD:
-            if (action.payload.reducerName === "quotePro"){
+            if (action.payload.reducerName === "quotePro") {
                 return {
                     ...state,
                     [action.payload.name]: action.payload.value

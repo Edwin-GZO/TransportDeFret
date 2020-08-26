@@ -14,7 +14,18 @@ const Field = ({
   let field;
 
   const inputChangeHandler = (event) => {
-    changeField({name, value:event.target.value, reducerName});
+    let value = event.target.value; 
+
+    // 'patrick'
+    // +value = NaN
+
+    // '0'
+    // +value = 0
+    if (!isNaN(+value)) { 
+      value = +value 
+    }
+    
+    changeField({name, value, reducerName});
   };
 
   switch (type) {
@@ -113,7 +124,7 @@ Field.propTypes = {
   placeholder: PropTypes.string,
   reducerName: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool, PropTypes.number]).isRequired,
   changeField: PropTypes.func.isRequired,
   cssClass: PropTypes.string,
   id: PropTypes.string,

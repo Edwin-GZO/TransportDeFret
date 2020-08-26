@@ -32,10 +32,12 @@ function App() {
 
     <div className="App">
 feature/forms
-   <LoginForm />
+    
+    {/* <LoginForm />
     <FormInscriptionPart />
     <FormInscriptionPro />
-    <ContactForm />
+    <ContactForm /> */}
+    <FormQuotePro />
     
      
     
