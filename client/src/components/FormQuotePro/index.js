@@ -36,10 +36,9 @@ const FormQuotePro = ({
   return (
   
     <section className="quote">
-      <h1 className="title">Formulaire d'inscription</h1>
-      {
-        hasError ? <p>modal</p> : null
-      }
+      <h1 className="title">Demande de devis</h1>
+      <h2 className="subtitle">Adresse de facturation</h2>
+      
   <Form onSubmit={handleSubmit} >
 
     <Form.Field>
@@ -156,29 +155,282 @@ const FormQuotePro = ({
             placeholder=""
               />
     </Form.Field>
+
+    <h2 className="subtitle">Adresse de chargement</h2>
+   
+    <div className="ui form">
+                <div className="two fields">
+                <div className="field">
     <Form.Field>
-      <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
+        <label>Nom</label>
         <Field
-          cssClass={!isSamePassword ? 'error' : ''}
-          name="passwordSignUpPro"
-          type="password"
-          reducerName="register"
-          placeholder=""
-          required={true}
-          minLength={8}
+          name="nameSignUpPart"
+          reducerName="registerPart"
+          placeholder="Nom"
         />
-    </Form.Field>
-    <Form.Field>
-      <label>Confirmez votre mot de passe</label>
-        <Field
-          cssClass={!isSamePassword ? 'error' : ''}
-          name="passwordconfirmSignUpPro"
-          type="password"
-          reducerName="register"
-          placeholder=""
+      </Form.Field>
+      </div>
+      <div className="field">
+      <Form.Field>
+        <label>Prénom</label>
+        <Field 
+          name="firstNameSignUpPart"
+          
+          reducerName="registerPart"
+          placeholder="prénom"
         />
-    </Form.Field>
+      </Form.Field>
+      </div>
+      </div>
+             </div>
+
+      <div className="ui form">
+                <div className="two fields">
+                <div className="field">
+
+           <Form.Field>
+          <label>N° de la voie</label>
+          <Field
+            name="billNumberSignUpPro"
+            reducerName="register"
+            placeholder=""
+             />
+            </Form.Field>
+            </div>
+
+            <div className="field">
+          <Form.Field>
+          <label>Type voie</label>
+          <Field
+            name="billTrackSignUpPro"
+            
+            reducerName="register"
+            placeholder=""
+             />
+             </Form.Field>
+             </div>
+             </div>
+             </div>
+             
+
+   
+        <Form.Field>
+          <label>Nom de la voie</label>
+          <Field
+            name="billStreetSignUpPro"
+            
+            reducerName="register"
+            placeholder=""
+             
+          />
+        </Form.Field>
+
+        <Form.Field>
+          <label>Complément d'adresse</label>
+          <Field  name="billComplementSignUpPro"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        
+
+
+        <div className="ui form">
+              <div className="two fields">
+                  <div className="field">
+        <Form.Field >
+          <label>Ville</label>
+          <Field  name="citySignUpPro"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        </div>
+
+        <div className="field">
+        <Form.Field >
+          <label>Code postal</label>
+          <Field name="postalCodeSignUpPro"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        </div>
+          </div>
+          </div>
+
     
+    <Form.Field>
+      <label>Telephone</label>
+      <Field name="phoneSignUpPro"
+            
+            reducerName="register"
+            placeholder=""
+              />
+    </Form.Field>
+
+    <h2 className="subtitle">Adresse de livraison</h2>
+
+    <div className="ui form">
+                <div className="two fields">
+                <div className="field">
+    <Form.Field>
+        <label>Nom</label>
+        <Field
+          name="nameSignUpPart"
+          reducerName="registerPart"
+          placeholder="Nom"
+        />
+      </Form.Field>
+      </div>
+      <div className="field">
+      <Form.Field>
+        <label>Prénom</label>
+        <Field 
+          name="firstNameSignUpPart"
+          
+          reducerName="registerPart"
+          placeholder="prénom"
+        />
+      </Form.Field>
+      </div>
+      </div>
+             </div>
+
+      <div className="ui form">
+                <div className="two fields">
+                <div className="field">
+
+           <Form.Field>
+          <label>N° de la voie</label>
+          <Field
+            name="billNumberSignUpPro"
+            reducerName="register"
+            placeholder=""
+             />
+            </Form.Field>
+            </div>
+
+            <div className="field">
+          <Form.Field>
+          <label>Type voie</label>
+          <Field
+            name="billTrackSignUpPro"
+            
+            reducerName="register"
+            placeholder=""
+             />
+             </Form.Field>
+             </div>
+             </div>
+             </div>
+             
+
+   
+        <Form.Field>
+          <label>Nom de la voie</label>
+          <Field
+            name="billStreetSignUpPro"
+            
+            reducerName="register"
+            placeholder=""
+             
+          />
+        </Form.Field>
+
+        <Form.Field>
+          <label>Complément d'adresse</label>
+          <Field  name="billComplementSignUpPro"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        
+
+
+        <div className="ui form">
+              <div className="two fields">
+                  <div className="field">
+        <Form.Field >
+          <label>Ville</label>
+          <Field  name="citySignUpPro"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        </div>
+
+        <div className="field">
+        <Form.Field >
+          <label>Code postal</label>
+          <Field name="postalCodeSignUpPro"
+                
+                reducerName="register"
+                placeholder=""
+                />
+        </Form.Field>
+        </div>
+          </div>
+          </div>
+
+    
+    <Form.Field>
+      <label>Telephone</label>
+      <Field name="phoneSignUpPro"
+            
+            reducerName="register"
+            placeholder=""
+              />
+    </Form.Field>
+
+    <h2 className="subtitle">Détails</h2>
+
+    <div className="ui form">
+                <div className="three fields">
+                <div className="field">
+
+           <Form.Field>
+          <label>Nombre de palettes</label>
+          <Field
+            name="billNumberSignUpPro"
+            reducerName="register"
+            placeholder=""
+             />
+            </Form.Field>
+            </div>
+
+            <div className="field">
+          <Form.Field>
+          <label>Poids (Kg)</label>
+          <Field
+            name="billTrackSignUpPro"
+            
+            reducerName="register"
+            placeholder=""
+             />
+              </Form.Field>
+              </div>
+              <div className="field">
+          <Form.Field>
+          <label>Dimensions (cm)</label>
+          <Field
+            name="billTrackSignUpPro"
+            
+            reducerName="register"
+            placeholder=""
+             />
+             </Form.Field>
+             </div>
+             </div>
+             </div>
+            
+             
+
     <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
   </Form>
 
@@ -189,7 +441,7 @@ const FormQuotePro = ({
 )
   };
 
-  FormInscriptionPro.propTypes = {
+  FormQuotePro.propTypes = {
     isFormValid: PropTypes.bool.isRequired,
   };
 
