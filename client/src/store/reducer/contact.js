@@ -1,10 +1,10 @@
 import { CHANGE_FIELD, SUBMIT_CONTACT, SUBMIT_CONTACT_SUCCESS, SUBMIT_CONTACT_ERROR } from '../action/user-actions';
 
 const stateInitial = {
-name: '',
-mail: '',
-message: '',
-object: '',
+nameContact: '',
+mailContact: '',
+commentContact: '',
+subjectContact: '',
 contactMessage:'',
 contact: {},
 

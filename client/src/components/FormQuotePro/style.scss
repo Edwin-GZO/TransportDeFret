@@ -1,14 +1,19 @@
 .title {
-    padding-top: 5%;
+    margin: 5% auto;
      text-align: center;
   }
-  .formulaire {
-      width: 60%;
-      margin: 5% auto;
-      text-align: center;
-  }
+  
+  
 
-  .submit-btn:disabled{
+.quote {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+   
+}
+
+
+.submit-btn:disabled{
     cursor: not-allowed;
 }
 
@@ -16,4 +21,3 @@
     background: rgba(255, 0, 0, 0.2) !important;
     border: 1px solid red !important;
 }
- 

@@ -1,18 +1,18 @@
 import {CHANGE_FIELD, SIGN_UP_ERROR, SIGN_UP_SUCCESS} from '../action/user-actions';
 
 const stateInitial = {
-    siret: '',
-    mailSignUpPro: '',
-    billNumberSignUpPro: '',
-    billTrackSignUpPro: '',
-    billStreetSignUpPro: '',
-    billComplementSignUpPro: '',
-    phoneSignUpPro: '',
-    passwordSignUpPro: '',
-    passwordconfirmSignUpPro: '',
-    societe: '',
-    citySignUpPro:'',
-    postalCodeSignUpPro: '',
+    nameSignUpPart:'',
+    firstNameSignUpPart: '',
+    mailSignUpPart: '',
+    billNumberSignUpPart: '',
+    billTrackSignUpPart: '',
+    billStreetSignUpPart: '',
+    billComplementSignUpPart: '',
+    phoneSignUpPart: '',
+    passwordSignUpPart: '',
+    passwordconfirmSignUpPart: '',
+    citySignUpPart:'',
+    postalCodeSignUpPart: '',
     isSamePassword: true,
     hasError: false,
     isSignedUp: false,
@@ -20,12 +20,13 @@ const stateInitial = {
     signUpMessage: '',
     isFormValid: false,
     
+    
 }
 
 export default (state= stateInitial , action={})=> {
     switch(action.type) {
     case CHANGE_FIELD:
-        if (action.payload.reducerName === 'register') {
+        if (action.payload.reducerName === 'registerPart') {
           let isValid = true;
 
           const newState = {
@@ -33,7 +34,7 @@ export default (state= stateInitial , action={})=> {
           [action.payload.name]: action.payload.value,
           }
           
-        const isSamePassword = newState.passwordSignUpPro === newState.passwordconfirmSignUpPro
+        const isSamePassword = newState.passwordSignUpPart === newState.passwordconfirmSignUpPart
 
           for (const key in state) {
             if (
@@ -79,7 +80,7 @@ export default (state= stateInitial , action={})=> {
         ...state,
         ...action.payload,
         ...properties,
-        // siret: '',
+       
         // mail: '',
         // bill_address: '',
         // complement: '',
@@ -100,20 +101,20 @@ export default (state= stateInitial , action={})=> {
         return {
           ...state,
           ...action.payload,
-          siret: '',
-          mailSignUpPro: '',
-          billNumberSignUpPro: '',
-           billTrackSignUpPro: '',
-           billStreetSignUpPro: '',
-          billComplementSignUpPro: '',
-          citySignUpPro:'',
-          postalCodeSignUpPro:'',
-          phoneSignUpPro: '',
-          passwordSignUpPro: '',
-          passwordconfirmSignUpPro: '',
+          nameSignUpPart: '',
+          firstNameSignUpPart: '',
+          mailSignUpPart: '',
+          billNumberSignUpPart: '',
+           billTrackSignUpPart: '',
+           billStreetSignUpPart: '',
+          billComplementSignUpPart: '',
+          citySignUpPart:'',
+          postalCodeSignUpPart:'',
+          phoneSignUpPart: '',
+          passwordSignUpPart: '',
+          passwordconfirmSignUpPart: '',
           error: '',
           signUpMessage: '',
-          societe: '',
           isSignedUp: false,
           signUpMessage: `Votre compte n'a pu etre créé ! `,
       

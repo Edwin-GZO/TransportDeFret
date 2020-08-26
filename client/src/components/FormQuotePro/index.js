@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react'
 import './style.scss';
 
-const FormInscriptionPro = ({ 
+const FormQuotePro = ({ 
   isFormValid,
   signup,
   mailSignUpPro,
@@ -30,12 +30,12 @@ const FormInscriptionPro = ({
       return
     }
     
-    signup('pro');
+    signup();
     } 
   
   return (
   
-    <section className="register">
+    <section className="quote">
       <h1 className="title">Formulaire d'inscription</h1>
       {
         hasError ? <p>modal</p> : null
@@ -194,4 +194,4 @@ const FormInscriptionPro = ({
   };
 
 
-export default FormInscriptionPro;
+export default FormQuotePro;
