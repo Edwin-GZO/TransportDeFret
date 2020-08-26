@@ -34,7 +34,7 @@ export default (state= stateInitial , action={})=> {
           [action.payload.name]: action.payload.value,
           }
           
-        const isSamePassword = newState.password === newState.passwordconfirm
+        const isSamePassword = newState.passwordSignUpPart === newState.passwordconfirmSignUpPart
 
           for (const key in state) {
             if (

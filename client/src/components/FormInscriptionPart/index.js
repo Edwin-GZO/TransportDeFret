@@ -177,7 +177,7 @@ const FormInscriptionPart = ({
           />
       </Form.Field>
       
-      <Button >Validez</Button>
+      <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
     </Form>
   
   
