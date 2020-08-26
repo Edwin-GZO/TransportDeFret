@@ -10,6 +10,7 @@ const Field = ({
   changeField,
   cssClass,
   id,
+  required
 }) => {
   let field;
 
@@ -79,6 +80,7 @@ const Field = ({
           name={name}
           value={value}
           onChange={inputChangeHandler}
+          required={required ? true : false}
         />
       );
   }
