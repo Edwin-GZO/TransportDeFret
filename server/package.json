@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "jsdoc": "./node_modules/jsdoc/jsdoc.js ./app/router/conInscRouteur.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jest": "^26.4.2",
+    "jsdoc": "^3.6.5",
     "nodemailer": "^6.4.11",
     "pg": "^8.3.2"
   }
