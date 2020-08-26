@@ -12,7 +12,7 @@ export default (store) => (next) => (action) => {
 
             axios({
                 method: 'post',
-                url: 'http://172.31.83.109/api/quotePro',
+                url: 'http://54.175.105.52:8080/api/quote/Pro',
                 data: quotePro,
                 withCredentials: true,
             }).then((res) => {                

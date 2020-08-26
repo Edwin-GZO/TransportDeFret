@@ -70,7 +70,7 @@ const Field = ({
       break;
       case 'select':
       field = (
-        <select multiple="" class="ui dropdown"
+        <select multiple="" className="ui dropdown"
         
           id={id}
           className={cssClass}
