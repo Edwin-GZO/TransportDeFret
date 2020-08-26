@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SUBMIT_CONTACT, submitsuccess, submiterror } from '../action/user-actions';
+import { SUBMIT_QUOTE, submitquotesuccess, submitquoteerror } from '../action/user-actions';
 
 export default (store) => (next) => (action) => {
     next(action);
@@ -12,7 +12,7 @@ export default (store) => (next) => (action) => {
 
             axios({
                 method: 'post',
-                url: 'http://172.31.83.109/api/quote',
+                url: 'http://172.31.83.109/api/quotePro',
                 data: quotePro,
                 withCredentials: true,
             }).then((res) => {                

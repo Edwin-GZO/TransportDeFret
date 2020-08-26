@@ -1,20 +1,42 @@
-import { CHANGE_FIELD, SUBMIT_CONTACT, SUBMIT_CONTACT_SUCCESS, SUBMIT_CONTACT_ERROR } from '../action/user-actions';
+import { CHANGE_FIELD,  SUBMIT_QUOTE_SUCCESS, SUBMIT_QUOTE_ERROR } from '../action/user-actions';
 
 const stateInitial = {
-    siret: '',
-    mailSignUpPro: '',
-    billNumberSignUpPro: '',
-    billTrackSignUpPro: '',
-    billStreetSignUpPro: '',
-    billComplementSignUpPro: '',
-    phoneSignUpPro: '',
-    passwordSignUpPro: '',
-    passwordconfirmSignUpPro: '',
-    societe: '',
-    citySignUpPro:'',
-    postalCodeSignUpPro: '',
-    
 
+  billSiretQuotePro: '',
+  billSocieteQuotePro:'',
+  billMailQuotePro:'',
+  billNumberQuotePro:'',
+  billTrackQuotePro:'',
+  billStreetQuotePro:'',
+  billComplementQuotePro:'',
+  billCityQuotePro:'',
+  billPostalCodeQuotePro:'',
+  billPhoneQuotePro:'',
+  loadNameQuotePro:'',
+  loadFirstNameQuotePro:'',
+  loadNumberQuotePro:'',
+  loadTrackQuotePro:'',
+  loadStreetQuotePro:'',
+  loadComplementQuotePro:'',
+  loadCityQuotePro:'',
+  loadPostalCodeQuotePro:'',
+  loadPhoneQuotePro:'',
+  nameDeliveryQuotePro:'',
+  firstNameDeliveryQuotePro:'',
+  deliveryNumberQuotePro:'',
+  deliveryTrackQuotePro:'',
+  deliveryStreetQuotePro:'',
+  deliveryComplementQuotePro:'',
+  deliveryCityQuotePro:'',
+  deliveryCodeQuotePro:'',
+  deliveryphoneQuotePro:'',
+  paletteNumberQuotePro:'',
+  weightQuotePro:'',
+  lenghtQuotePro:'',
+  widthQuotePro:'',
+  heightQuotePro:'',
+  commentQuotePro:'',
+  quotePro: {}
 
 };
 
