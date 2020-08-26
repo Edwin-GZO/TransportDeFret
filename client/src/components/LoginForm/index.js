@@ -1,5 +1,5 @@
 import React from 'react';
-import Field from '../Field';
+import Field from '../../containers/Field';
 import './style.scss';
 import PropTypes from 'prop-types';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
@@ -48,6 +48,7 @@ const LoginForm = ({
             <i className="fa fa-user" aria-hidden="true"></i>
           <Field
             name="mailLogin"
+            reducerName="user"
             placeholder="Adresse Email"
             onChange={changeField}
             value={mail}
@@ -59,6 +60,7 @@ const LoginForm = ({
             <Field
             
             name="passwordLogin"
+            reducerName="user"
             type="password"
             placeholder="Mot de Passe"
             onChange={changeField}

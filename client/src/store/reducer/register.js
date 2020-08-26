@@ -41,7 +41,7 @@ export default (state= stateInitial , action={})=> {
               || key ==='error' 
               || key === 'signUpMessage'
               || key === 'isFormValid'
-              || key === 'complement'
+              || key === 'billComplementSignUpPro'
               || key === 'isSamePassword'
               || key === 'hasError'
             ){
@@ -112,7 +112,6 @@ export default (state= stateInitial , action={})=> {
           passwordSignUpPro: '',
           passwordconfirmSignUpPro: '',
           error: '',
-          signUpMessage: '',
           societe: '',
           isSignedUp: false,
           signUpMessage: `Votre compte n'a pu etre créé ! `,

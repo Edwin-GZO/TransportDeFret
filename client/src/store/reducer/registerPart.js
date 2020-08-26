@@ -42,7 +42,7 @@ export default (state= stateInitial , action={})=> {
               || key ==='error' 
               || key === 'signUpMessage'
               || key === 'isFormValid'
-              || key === 'complement'
+              || key === 'billComplementSignUpPart'
               || key === 'isSamePassword'
               || key === 'hasError'
             ){

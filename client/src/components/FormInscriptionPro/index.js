@@ -116,6 +116,7 @@ const FormInscriptionPro = ({
                 
                 reducerName="register"
                 placeholder=""
+                required={true}
                 />
         </Form.Field>
         
