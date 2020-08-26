@@ -397,9 +397,12 @@ const FormQuotePro = ({
            <Form.Field>
           <label>Nombre de palettes</label>
           <Field
+           
+            type="select"
             name="billNumberSignUpPro"
             reducerName="register"
-            placeholder=""
+            placeholder="1"
+            
              />
             </Form.Field>
             </div>
@@ -428,10 +431,19 @@ const FormQuotePro = ({
              </div>
              </div>
              </div>
+
+             <Field
+      type="textarea"
+      reducerName="contact"
+      name='commentContact'
+      placeholder='Commentaires ... ...'
+      cssClass='field-input'
+    />  
             
              
-
+<div className="submit">
     <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
+  </div>
   </Form>
 
 
