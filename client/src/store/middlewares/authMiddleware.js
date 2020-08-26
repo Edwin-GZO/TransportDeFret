@@ -69,7 +69,7 @@ export default (store) => (next) => (action) => {
 
       axios({
         method: 'post',
-        url: 'http://localhost:8080/api/signup',
+        url: 'http://54.175.105.52:8080/api/user/signup/pro',
         data: register,
         withCredentials: true 
       })
@@ -90,7 +90,7 @@ export default (store) => (next) => (action) => {
 
       axios({
         method: 'post',
-        url: 'http://localhost:8080/api/signup',
+        url: 'http://54.175.105.52:8080/api/user/signup/part',
         data: registerPart,
         withCredentials: true 
       })

@@ -32,7 +32,7 @@ function App() {
 
     <div className="App">
    
-    <FormQuotePro />
+    <ContactForm />
    
     
      
