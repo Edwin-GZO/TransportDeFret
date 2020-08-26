@@ -12,10 +12,10 @@ module.exports = {
             from: "cgauthier.dev@gmail.com", //dataForm.mail,
 
             to: "test.projet.transport.de.fret@gmail.com", //exploitation@transportstdr.fr"
-            subject: dataForm.subject,
+            subject: dataForm.subjectContact,
 
-            html: `Mail du contact : ${dataForm.mailContact} . 
-            Contenu du message : ${dataForm.comment}`
+            html: `<strong>Mail du contact :</strong> ${dataForm.mailContact} <br /> <strong>Nom du contact :</strong> ${dataForm.nameContact} <br /><br />  
+            <strong>Contenu du message :</strong> ${dataForm.commentContact}`
         };
 
         await contactDataMapper.sendMailContact(mail);

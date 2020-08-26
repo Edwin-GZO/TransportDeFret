@@ -6,10 +6,9 @@ module.exports = {
     connectionUser: async (request,response) => {
     
         const body = request.body;
-
-        // Changement !
+        
         const validMail = validator.validate(body.mailLogin)
-  
+
         if (!validMail) {
             
             response.status(400).json({isLogged:false , error:"Mail non valide"});
@@ -32,7 +31,7 @@ module.exports = {
             console.log(" Erreur Connexion : Mauvais Mot de Passe")
             return;
         }
-      
+    
         request.session.login = body.mailLogin;
 
         if (!request.session.login) {
@@ -49,10 +48,21 @@ module.exports = {
     insertUserPro: async (request, response) => {
 
         const body = request.body;
-       
-        // Changement !
-        const validMail = validator.validate(body.mailSignUp)
-  
+        const bodyAddressPro = {
+            "billNumber": request.body.billNumberSignUpPro,
+            "billTrack": request.body.billTrackSignUpPro,
+            "billStreet": request.body.billStreetSignUpPro,
+            "billComplement": request.body.billComplementSignUpPro,
+            "city": request.body.citySignUpPro,
+            "postalCode": request.body.postalCodeSignUpPro
+        }
+        const bodyMailUser = {
+            "mailLogin" : request.body.mailSignUpPro,
+        }
+        //console.log ('bodyaddress',bodyAddressPro);
+            // Changement !
+        const validMail = validator.validate(body.mailSignUpPro)
+
         if (!validMail) {
             
             response.status(400).json({isLogged:false , error:"Mail non valide"});
@@ -60,16 +70,16 @@ module.exports = {
             return;
         }
 
-        const checkUser = await conInscDataMapper.findUser(body);
+        const checkUser = await conInscDataMapper.findUser(bodyMailUser);
 
         if (checkUser) {
             response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
         }
 
-        const newBillAddress = await conInscDataMapper.addBillAddress(body);
+        const newBillAddress = await conInscDataMapper.addBillAddress(bodyAddressPro);
         await conInscDataMapper.addUserPro(body,newBillAddress)
 
-        request.session.login = body.mailSignUp;
+        request.session.login = body.mailSignUpPro;
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
@@ -84,8 +94,19 @@ module.exports = {
     insertUserPart: async (request, response,next) => {
 
         const body = request.body;
-       
-        const validMail = validator.validate(body.mailSignUp)
+        const bodyAddressPart = {
+            "billNumber": request.body.billNumberSignUpPart,
+            "billTrack": request.body.billTrackSignUpPart,
+            "billStreet": request.body.billStreetSignUpPart,
+            "billComplement": request.body.billComplementSignUpPart,
+            "city": request.body.citySignUpPart,
+            "postalCode": request.body.postalCodeSignUpPart
+        }
+        const bodyMailUser = {
+            "mailLogin" : request.body.mailSignUpPart,
+        }
+
+        const validMail = validator.validate(body.mailSignUpPart)
   
         if (!validMail) {
             
@@ -94,16 +115,16 @@ module.exports = {
             return;
         }
 
-        const checkUser = await conInscDataMapper.findUser(body);
+        const checkUser = await conInscDataMapper.findUser(bodyMailUser);
 
         if (checkUser) {
             response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
         }
 
-        const newBillAddress = await conInscDataMapper.addBillAddress(body);
-        await conInscDataMapper.addUserPart(result,newBillAddress)
+        const newBillAddress = await conInscDataMapper.addBillAddress(bodyAddressPart);
+        await conInscDataMapper.addUserPart(body,newBillAddress)
 
-        request.session.login = body.mailSignUp;
+        request.session.login = body.mailSignUpPart;
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
