@@ -42,7 +42,7 @@ const FormInscriptionPro = ({
       }
   <Form onSubmit={handleSubmit} >
 
-    <Form.Field>
+    <Form.Field required>
       <label>N° Siret</label>
       <Field
         name="siret"
@@ -51,7 +51,7 @@ const FormInscriptionPro = ({
       />
     </Form.Field>
 
-    <Form.Field>
+    <Form.Field required>
       <label>Societe</label>
       <Field 
         name="societe"
@@ -60,7 +60,7 @@ const FormInscriptionPro = ({
       />
     </Form.Field>
 
-    <Form.Field>
+    <Form.Field required>
       <label>Adresse Mail</label>
         <Field 
           name="mailSignUpPro"
@@ -74,7 +74,7 @@ const FormInscriptionPro = ({
                 <div className="two fields">
                 <div className="field">
 
-           <Form.Field>
+           <Form.Field required>
           <label>N° de la voie</label>
           <Field
             name="billNumberSignUpPro"
@@ -85,7 +85,7 @@ const FormInscriptionPro = ({
             </div>
 
             <div className="field">
-          <Form.Field>
+          <Form.Field required>
           <label>Type voie</label>
           <Field
             name="billTrackSignUpPro"
@@ -100,7 +100,7 @@ const FormInscriptionPro = ({
              
 
    
-        <Form.Field>
+        <Form.Field required>
           <label>Nom de la voie</label>
           <Field
             name="billStreetSignUpPro"
@@ -125,7 +125,7 @@ const FormInscriptionPro = ({
         <div className="ui form">
               <div className="two fields">
                   <div className="field">
-        <Form.Field >
+        <Form.Field required>
           <label>Ville</label>
           <Field  name="citySignUpPro"
                 
@@ -136,7 +136,7 @@ const FormInscriptionPro = ({
         </div>
 
         <div className="field">
-        <Form.Field >
+        <Form.Field required>
           <label>Code postal</label>
           <Field name="postalCodeSignUpPro"
                 
@@ -149,7 +149,7 @@ const FormInscriptionPro = ({
           </div>
 
     
-    <Form.Field>
+    <Form.Field required>
       <label>Telephone</label>
       <Field name="phoneSignUpPro"
             
@@ -157,7 +157,7 @@ const FormInscriptionPro = ({
             placeholder=""
               />
     </Form.Field>
-    <Form.Field>
+    <Form.Field required>
       <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
         <Field
           cssClass={!isSamePassword ? 'error' : ''}
@@ -169,7 +169,7 @@ const FormInscriptionPro = ({
           minLength={8}
         />
     </Form.Field>
-    <Form.Field>
+    <Form.Field required>
       <label>Confirmez votre mot de passe</label>
         <Field
           cssClass={!isSamePassword ? 'error' : ''}
