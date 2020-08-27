@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Field from '../../containers/Field'
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react'
 import './style.scss';
 
-const FormQuotePro = ({ 
+const FormQuotePro = ({
   submitquote,
   handlesubmitquote,
   isFormValid,
@@ -45,19 +45,33 @@ const FormQuotePro = ({
   widthQuotePro,
   heightQuotePro,
   commentQuotePro,
- 
+  // history
 }) => {
 
+  // const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  // useEffect(()=> {
+  //   if(isLoggedIn) {
+  //     console.log('click');
+  //     setTimeout(() => history.push('/'), 2000);
+  //   }
+  // }, [isLoggedIn])
+
   const handleSubmit = (evt) => {
-    evt.preventDefault();    
+    evt.preventDefault();
     submitquote();
-    } 
+  } 
   
   return (
   
     <section className="quote">
+      
+    {/* <button onClick={()=> setIsLoggedIn(true)}>click</button> */}
+      
       <h1 className="title">Demande de devis</h1>
       <h2 className="subtitle">Adresse de facturation</h2>
+
+      {/* {isLoggedIn ? <p>some text</p> : */}
       
   <Form autoComplete="off" onSubmit={handleSubmit} >
 
@@ -485,10 +499,10 @@ const FormQuotePro = ({
             
              
 <div className="submit">
-    <Button >Validez</Button>
+          <Button >Validez</Button>
   </div>
   </Form>
-
+{/* } */}
 
   </section>
 

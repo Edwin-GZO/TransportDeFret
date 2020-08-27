@@ -22,25 +22,26 @@ export default (store) => (next) => (action) => {
 
     
     
-    /*
+    
     case CHECK_AUTH: {
       axios({
-        method: 'post'
-        url: 'http://localhost:3001/isLogged',
+        method: 'post',
+        url: 'http://localhost:8080/isLogged',
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
         .then((res) => {
           console.log(res.data);
-          if (res.data.logged) {
-            store.dispatch(loginSuccess(res.data.info));
-          }
+          res.data.logged
+            ? store.dispatch(loginSuccess(res.data.info))
+            : store.dispatch(loginError(res.data.info));
+            
         })
         .catch((err) => {
           console.error(err);
         })
       break;
     }
-    */
+    
     // réagir au login
     case LOGIN: {
       const { user } = store.getState();
