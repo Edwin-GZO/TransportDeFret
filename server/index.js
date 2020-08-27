@@ -1,6 +1,9 @@
 require('dotenv').config();
-const express = require('express');
-const session = require('express-session');
+const express = require('express') ;
+const session = require('express-session') ;
+var moment = require('moment') ; 
+moment.locale('fr'); 
+
 const app = express();
 
 // Gestion des sessions
