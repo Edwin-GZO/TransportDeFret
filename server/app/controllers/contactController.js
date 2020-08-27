@@ -14,13 +14,15 @@ module.exports = {
             to: "test.projet.transport.de.fret@gmail.com", //exploitation@transportstdr.fr"
             subject: dataForm.subjectContact,
 
-            html: `<br /><strong>Mail du contact :</strong> ${dataForm.mailContact} <br /> <strong>Nom du contact :</strong> ${dataForm.nameContact} <br /><br />  
+            html: 
+            `<br /><strong>Mail du contact :</strong> ${dataForm.mailContact} <br /> <strong>Nom du contact :</strong> ${dataForm.nameContact} <br /><br />  
             <strong>Contenu du message :</strong> ${dataForm.commentContact}`
+
         };
 
         await contactDataMapper.sendMailContact(mail);
         
-        response.status(201).json(moment().format('LLLL'), " Le mail de contact a bien été envoyé ");
+        response.status(201).json(" Le mail de contact a bien été envoyé ");
 
     }
 }
