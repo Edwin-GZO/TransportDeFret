@@ -50,8 +50,7 @@ const LoginForm = ({
             name="mailLogin"
             reducerName="user"
             placeholder="Adresse Email"
-            onChange={changeField}
-            value={mail}
+
           />
           </div>
       
@@ -63,8 +62,7 @@ const LoginForm = ({
             reducerName="user"
             type="password"
             placeholder="Mot de Passe"
-            onChange={changeField}
-            value={password}
+
           />
             </div>    
          

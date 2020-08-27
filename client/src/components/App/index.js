@@ -34,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+    <LoginForm />
       <Switch>
         
         <Route path='/inscr' component={FormInscriptionPart} />
