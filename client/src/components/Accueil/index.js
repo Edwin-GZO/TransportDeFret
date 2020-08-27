@@ -24,7 +24,7 @@ const Accueil = () => {
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <Link class="navbar-item" id="Link" exact to="/">
+      <Link class="navbar-item" id="navlink-items" exact to="/">
         Home
       </Link>
 
@@ -53,13 +53,14 @@ const Accueil = () => {
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-          <Link class="button is-primary" exact to="/connection">
-            S'inscrire
-            </Link>
-          <Link class="button" exact to="/inscription">
+        <div class="buttons" >
+        <Link class="button"  exact to="/connection">
             <strong>Se connecter</strong>
             </Link>
+          <Link class="button is-primary" exact to="/inscription">
+            S'inscrire
+            </Link>
+         
           
         </div>
       </div>
