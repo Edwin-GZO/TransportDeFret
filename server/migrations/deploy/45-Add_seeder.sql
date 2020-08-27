@@ -10,25 +10,25 @@ INSERT INTO "bill_address" ("main", "complement", "postal_code", "city") VALUES
   ('49 Quentin Oberkampf', 'Apt. 992', '86880',  'Adamstad'),
   ('1091 Henry de Richelieu', 'Suite 356', '75960',  'New Clara');
 
-INSERT INTO "sender_address" ("main", "complement", "postal_code", "city" , "department_id") VALUES
-  ('7 Alexandre Saint-Jacques', 'Suite 435', '83460',  'Maëlysport' , '83'),
-  ('33 Charles de Tilsitt', '', '14280', 'Durandfort' , '77'),
-  ('14 Olivier Saint-Bernard', 'Suite 671', '74590',  'South Hugo' , '75'),
-  ('39 Louise de la Bûcherie', '', '55990',  'Perrinside' , '55'),
-  ('1 Elisa de la Huchette', '', '17240',  'Juliettefurt' , '63'),
-  ('96 Charlotte Pastourelle', 'Suite 517', '23650',  'Port Kylianview' , '57'),
-  ('31 Mattéo Pierre Charron', '', '70970',  'Ethanhaven' , '83'),
-  ('28 Sarah de Vaugirard', '613', '43550',  'West Maëlys' , '70') ;
+INSERT INTO "sender_address" ("name", "main", "complement", "postal_code", "city" , "department_id") VALUES
+  ('T.D.R','7 Alexandre Saint-Jacques', 'Suite 435', '83460',  'Maëlysport' , '83'),
+  ('T.D.R', '33 Charles de Tilsitt', '', '14280', 'Durandfort' , '77'),
+  ('T.D.R', '14 Olivier Saint-Bernard', 'Suite 671', '74590',  'South Hugo' , '75'),
+  ('T.D.R', '39 Louise de la Bûcherie', '', '55990',  'Perrinside' , '55'),
+  ('T.D.R', '1 Elisa de la Huchette', '', '17240',  'Juliettefurt' , '63'),
+  ('T.D.R', '96 Charlotte Pastourelle', 'Suite 517', '23650',  'Port Kylianview' , '57'),
+  ('T.D.R', '31 Mattéo Pierre Charron', '', '70970',  'Ethanhaven' , '83'),
+  ('T.D.R', '28 Sarah de Vaugirard', '613', '43550',  'West Maëlys' , '70') ;
 
-INSERT INTO "receiver_address" ("main", "complement", "postal_code", "city" , "department_id") VALUES
-  ('181 Sarah de Seine', 'Suite 314', '84168',  'New Adamberg' , '56'),
-  ('97 Jules de la Chaussée-d''Antin', 'Apt. 809', '12676',  'Moulinville' , '01'),
-  ('9 Thomas de la Huchette', '', '71800',  'Clémencetown' , '39'),
-  ('6 Blanchard de l''Odéon', '', '35200',  'East Benjaminton' , '73'),
-  ('10 Lefevre d''Alésia', 'Apt. 482', '05630',  'Brunview' , '75'),
-  ('8 Evan des Grands Augustins', 'Suite 057', '98000',  'East Axelstad' , '56'),
-  ('71 Roux des Rosiers', 'Apt. 373', '31694',  'East Maelside' , '36'),
-  ('42 Lopez des Francs-Bourgeois', 'Suite 615', '04090',  'New Quentin' , '52');
+INSERT INTO "receiver_address" ("name", "main", "complement", "postal_code", "city" , "department_id") VALUES
+  ('Nom_1','181 Sarah de Seine', 'Suite 314', '84168',  'New Adamberg' , '56'),
+  ('Nom_2','97 Jules de la Chaussée-d''Antin', 'Apt. 809', '12676',  'Moulinville' , '01'),
+  ('Nom_3','9 Thomas de la Huchette', '', '71800',  'Clémencetown' , '39'),
+  ('Nom_4','6 Blanchard de l''Odéon', '', '35200',  'East Benjaminton' , '73'),
+  ('Nom_5','10 Lefevre d''Alésia', 'Apt. 482', '05630',  'Brunview' , '75'),
+  ('Nom_6','8 Evan des Grands Augustins', 'Suite 057', '98000',  'East Axelstad' , '56'),
+  ('Nom_7','71 Roux des Rosiers', 'Apt. 373', '31694',  'East Maelside' , '36'),
+  ('Nom_8','42 Lopez des Francs-Bourgeois', 'Suite 615', '04090',  'New Quentin' , '52');
 
 INSERT INTO "quote" ("nbr_pallets", "distance", "price","length","width","height","weight","comments") VALUES
   ('1', '123','1000','5012','6598','5687','5486','5648'),
