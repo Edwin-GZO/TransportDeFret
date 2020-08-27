@@ -34,7 +34,10 @@ function App() {
 
   return (
     <div className="App">
+      <LoginForm />
     <FormInscriptionPart />
+    <FormInscriptionPro />
+    <ContactForm />
       <Switch>
         
         <Route path='/inscr' component={FormInscriptionPart} />
