@@ -20,11 +20,11 @@ module.exports = {
 
     },
 
-    // addQuote : (request, response, next) => {
+    addQuote : async (request, response, next) => {
         
-    //     const quoteBody = request.body;
+        const quoteBody = request.body;
 
-    //     // await quoteDataMapper.createQuote(quoteBody);
+        await quoteDataMapper.createQuote(quoteBody);
 
         
 
