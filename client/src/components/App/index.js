@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-    <FormInscriptionPart />
+    <FormQuotePro />
       <Switch>
         <Route path="/affretement" component={Affretement} />
         <Route path="/carte" component={Carte} />

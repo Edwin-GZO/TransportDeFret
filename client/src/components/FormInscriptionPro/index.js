@@ -180,7 +180,7 @@ const FormInscriptionPro = ({
         />
     </Form.Field>
     
-    <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
+    <Button >Validez</Button>
   </Form>
 
 
