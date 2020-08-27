@@ -20,15 +20,17 @@ module.exports = {
 
     },
 
-    // addQuote : (request, response, next) => {
+    addQuote : async (request, response, next) => {
         
-    //     const quoteBody = request.body;
+        const quoteBody = request.body;
+        console.log("quoteBody", quoteBody)
 
-    //     // await quoteDataMapper.createQuote(quoteBody);
-
+        await quoteDataMapper.createQuote(quoteBody);
+        await quoteDataMapper.createSenderAddress(quoteBody);
+        await quoteDataMapper.createReceiverAddress(quoteBody); 
         
-
-    // }
-
-
+        
+        response.status(201).json(" Le formulaire de devis a bien été envoyé ");
+    
+    }
 }
