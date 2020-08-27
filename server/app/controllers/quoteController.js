@@ -26,8 +26,8 @@ module.exports = {
         console.log("quoteBody", quoteBody)
 
         await quoteDataMapper.createQuote(quoteBody);
-        await quoteDataMapper.createSenderAdress(quoteBody);
-        await quoteDataMapper.createReceiverAdress(quoteBody); 
+        await quoteDataMapper.createSenderAddress(quoteBody);
+        await quoteDataMapper.createReceiverAddress(quoteBody); 
         
         
         response.status(201).json(" Le formulaire de devis a bien été envoyé ");

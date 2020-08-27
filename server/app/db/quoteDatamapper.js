@@ -32,7 +32,7 @@ module.exports = {
         console.log(" Création : Facture enregistrée ")   
     },
 
-    createSenderAdress : async (body) => {
+    createSenderAddress : async (body) => {
         const result = await client.query(
             'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES ($1,$2,$3,$4,$5,$6,$7)',
             [
@@ -49,7 +49,7 @@ module.exports = {
     },
 
 
-    createReceiverAdress : async (body) => {
+    createReceiverAddress : async (body) => {
         const result = await client.query(
             'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES ($1,$2,$3,$4,$5,$6,$7)',
             [
