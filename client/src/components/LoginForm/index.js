@@ -46,7 +46,7 @@ const LoginForm = ({
           
           <div className="text-box">
             <i className="fa fa-user" aria-hidden="true"></i>
-          <Field
+          <Field 
             name="mailLogin"
             reducerName="user"
             placeholder="Adresse Email"

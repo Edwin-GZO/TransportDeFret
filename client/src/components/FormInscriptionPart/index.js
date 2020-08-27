@@ -42,7 +42,7 @@ const FormInscriptionPart = ({
         }
     <Form onSubmit={handleSubmitpart} >
   
-      <Form.Field>
+      <Form.Field required >
         <label>Nom</label>
         <Field
           name="nameSignUpPart"
@@ -51,7 +51,7 @@ const FormInscriptionPart = ({
         />
       </Form.Field>
   
-      <Form.Field>
+      <Form.Field required >
         <label>Prénom</label>
         <Field 
           name="firstNameSignUpPart"
@@ -61,7 +61,7 @@ const FormInscriptionPart = ({
         />
       </Form.Field>
   
-      <Form.Field>
+      <Form.Field required >
         <label>Adresse Mail</label>
           <Field 
             name="mailSignUpPart"
@@ -75,7 +75,7 @@ const FormInscriptionPart = ({
                   <div className="two fields">
                   <div className="field">
   
-             <Form.Field>
+             <Form.Field required>
             <label>N° de la voie</label>
             <Field
               name="billNumberSignUpPart"
@@ -86,7 +86,7 @@ const FormInscriptionPart = ({
               </div>
   
               <div className="field">
-            <Form.Field>
+            <Form.Field required>
             <label>Type voie</label>
             <Field
               name="billTrackSignUpPart"
@@ -101,7 +101,7 @@ const FormInscriptionPart = ({
                
   
      
-          <Form.Field>
+          <Form.Field required>
             <label>Nom de la voie</label>
             <Field
               name="billStreetSignUpPart"              
@@ -123,7 +123,7 @@ const FormInscriptionPart = ({
           <div className="ui form">
                 <div className="two fields">
                     <div className="field">
-          <Form.Field >
+          <Form.Field required>
             <label>Ville</label>
             <Field  name="citySignUpPart"
                   
@@ -134,7 +134,7 @@ const FormInscriptionPart = ({
           </div>
   
           <div className="field">
-          <Form.Field >
+          <Form.Field required>
             <label>Code postal</label>
             <Field name="postalCodeSignUpPart"
                   
@@ -147,7 +147,7 @@ const FormInscriptionPart = ({
             </div>
   
       
-      <Form.Field>
+      <Form.Field required>
         <label>Telephone</label>
         <Field name="phoneSignUpPart"              
               reducerName="registerPart"
@@ -155,7 +155,7 @@ const FormInscriptionPart = ({
               type=""
                 />
       </Form.Field>
-      <Form.Field>
+      <Form.Field required>
         <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
           <Field
             cssClass={!isSamePassword ? 'error' : ''}
@@ -167,7 +167,7 @@ const FormInscriptionPart = ({
             minLength={8}
           />
       </Form.Field>
-      <Form.Field>
+      <Form.Field required>
         <label>Confirmez votre mot de passe</label>
           <Field
             cssClass={!isSamePassword ? 'error' : ''}
