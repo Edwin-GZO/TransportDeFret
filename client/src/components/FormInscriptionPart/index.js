@@ -152,6 +152,7 @@ const FormInscriptionPart = ({
         <Field name="phoneSignUpPart"              
               reducerName="registerPart"
               placeholder=""
+              type=""
                 />
       </Form.Field>
       <Form.Field>
