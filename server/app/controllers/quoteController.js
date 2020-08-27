@@ -23,10 +23,14 @@ module.exports = {
     addQuote : async (request, response, next) => {
         
         const quoteBody = request.body;
+        console.log("quoteBody", quoteBody)
 
         await quoteDataMapper.createQuote(quoteBody);
         await quoteDataMapper.createSenderAdress(quoteBody);
-        await quoteDataMapper.createReceiverAdress(quoteBody);  
+        await quoteDataMapper.createReceiverAdress(quoteBody); 
+        
+        
+        response.status(201).json(" Le formulaire de devis a bien été envoyé ");
     
     }
 }

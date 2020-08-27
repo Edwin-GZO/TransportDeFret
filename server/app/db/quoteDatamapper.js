@@ -29,27 +29,29 @@ module.exports = {
                 body.commentQuotePro 
             ]
         )
+        console.log(" Création : Facture enregistrée ")   
     },
 
     createSenderAdress : async (body) => {
         const result = await client.query(
-            'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES VALUES ($1,$2,$3,$4,$5,$6,$7)',
+            'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES ($1,$2,$3,$4,$5,$6,$7)',
             [
-                `${loadFirstNameQuotePro} ${loadFirstNameQuotePro}` , 
+                `${body.loadFirstNameQuotePro} ${body.loadFirstNameQuotePro}` , 
                 body.loadPhoneQuotePro ,
                 `${body.loadNumberQuotePro} ${body.loadTrackQuotePro} ${body.loadStreetQuotePro}` ,
                 body.loadComplementQuotePro ,
                 body.loadPostalCodeQuotePro ,
                 body.loadCityQuotePro ,
                 "13" 
-            ]
+            ] 
         )
+        console.log(" Création : Adresse Envoi enregistrée ")   
     },
 
 
     createReceiverAdress : async (body) => {
         const result = await client.query(
-            'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES VALUES ($1,$2,$3,$4,$5,$6,$7)',
+            'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES ($1,$2,$3,$4,$5,$6,$7)',
             [
                 `${body.nameDeliveryQuotePro} ${body.firstNameDeliveryQuotePro}` , 
                 body.loadPhoneQuotePro ,
@@ -60,7 +62,8 @@ module.exports = {
                 "13"
             ]
         )
-    }
+        console.log(" Création : Adresse Reception enregistrée ") 
+    },
 
     // Modifie les informations d'un Devis
     editQuote : async () => {
