@@ -1,25 +1,52 @@
 `<table cellspacing="0" cellpadding="0" border="0">
     <strong> Description du Colis </strong>
+    <p>
         <ul>
             <li> Nombre(s) de palette(s) : ${quoteBody.paletteNumberQuotePro} </li>
-            <li> Poids : ${quoteBody.weightQuotePro} </li>
-            <li> Poids : ${quoteBody.weightQuotePro} </li>
+            <li> Poids : ${quoteBody.weightQuotePro} unité ????</li>
+            <li> Longueur : ${quoteBody.lenghtQuotePro} cm</li>
+            <li> Largeur : ${quoteBody.widthQuotePro} cm</li>
+            <li> Hauteur : ${quoteBody.heightQuotePro} cm</li>
         </ul>
-
-
-<tbody><tr>
-<td>
-<strong>Adresse de Chargement</strong>
-<a href="http://www.twitter.com/">
-    <img data-src="images/tw.gif" alt="Twitter" style="display: block;" width="38" height="38" border="0">
-</a>
-</td>
-<td style="font-size: 0; line-height: 0;" width="20"> </td>
-<td>
-<strong>Adresse de Livraison<strong>
-<a href="http://www.twitter.com/">
-    <img data-src="images/fb.gif" alt="Facebook" style="display: block;" width="38" height="38" border="0">
-</a>
-</td>
-</tr>
-</tbody></table>`
+    </p>
+    <p>
+        <em> Commentaire :</em>
+        ${commentQuotePro}
+    </p>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Adresse de Chargement</strong>
+                <p>
+                    <ul>
+                        <li> Adresse : ${quoteBody.loadNumberQuotePro} ${quoteBody.loadTrackQuotePro} ${quoteBody.loadStreetQuotePro}</li>
+                        <li> Complément : ${quoteBody.loadComplementQuotePro}</li>
+                        <li> Code postal : ${quoteBody.loadCityQuotePro}</li>
+                        <li> Ville : ${quoteBody.loadCityQuotePro}</li>
+                    </ul>
+                    <ul>   
+                        <li> <em>Contact : ${quoteBody.loadFirstNameQuotePro} ${quoteBody.loadNameQuotePro}</em></li>
+                        <li> <em>Téléphone : ${quoteBody.loadPhoneQuotePro}</em></li>
+                    </ul>
+                </p>
+            </td>
+            <td style="font-size: 0; line-height: 0;" width="20">
+            </td>
+            <td>
+                <strong>Adresse de Livraison</strong>
+                <p>
+                    <ul>
+                        <li> Adresse : ${quoteBody.deliveryNumberQuotePro} ${quoteBody.deliveryTrackQuotePro} ${quoteBody.deliveryStreetQuotePro}</li>
+                        <li> Complément : ${quoteBody.deliveryComplementQuotePro}</li>
+                        <li> Code postal : ${quoteBody.deliveryCodeQuotePro}</li>
+                        <li> Ville : ${quoteBody.deliveryCityQuotePro}</li>
+                    </ul>
+                    <ul>   
+                        <li> <em>Contact : ${quoteBody.firstNameDeliveryQuotePro} ${quoteBody.nameDeliveryQuotePro}</em></li>
+                        <li> <em>Téléphone : ${quoteBody.deliveryphoneQuotePro}</em></li>
+                    </ul>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>`

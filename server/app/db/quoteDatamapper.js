@@ -30,7 +30,7 @@ module.exports = {
                 body.commentQuotePro 
             ]
         )
-        console.log(moment().format('LLLL')," Création : Devis enregistré ")   
+        console.log(moment().format('LLLL')," Devis enregistré OK ")   
     },
 
     createSenderAddress : async (body) => {
@@ -46,7 +46,7 @@ module.exports = {
                 "13" 
             ] 
         )
-        console.log(moment().format('LLLL')," Création : Adresse Envoi enregistrée ")   
+        console.log(moment().format('LLLL')," Adresse Envoi OK ")   
     },
 
 
@@ -63,7 +63,7 @@ module.exports = {
                 "13"
             ]
         )
-        console.log(moment().format('LLLL')," Création : Adresse Reception enregistrée ") 
+        console.log(moment().format('LLLL')," Adresse Reception OK ") 
     },
 
     // Modifie les informations d'un Devis

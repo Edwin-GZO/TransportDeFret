@@ -18,9 +18,9 @@ module.exports = {
             
             if(error){
                 console.log(moment().format('LLLL')," Erreur lors de l'envoi du mail");
-                console.log(error);
+                console.log("Descriptif erreur Echec envoi du mail", error );
             } else {
-                console.log(moment().format('LLLL')," Mail envoyé avec succès !")
+                console.log(moment().format('LLLL'),` Mail envoyé avec succès pour le ${mail.message} `)
                 
             }
             smtpTransport.close();
