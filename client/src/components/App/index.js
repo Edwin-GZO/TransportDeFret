@@ -12,7 +12,7 @@ import Logistique from '../../components/Logistique';
 import Mots from '../../components/Mots';
 import PageContact from '../../components/PageContact';
 import ProPartModale from '../../components/ProPartModale';
-import Réseau from '../../components/Reseau';
+import Reseau from '../../components/Reseau';
 import FormInscriptionPro from '../../containers/FormInscriptionPro';
 import FormInscriptionPart from '../../containers/FormInscriptionPart';
 import LoginForm from '../../containers/LoginForm';
@@ -24,47 +24,21 @@ import './style.scss';
 
 function App() {
   return (
-    
-
-    
-     
-   
-
     <div className="App">
-
-    
-    
-
-    
-    <FormQuotePro />
-   
-    
-     
-    
       <Switch>
-      <Route path="/affretement" component={Affretement} />
-    
-      <Route path="/carte" component={Carte} />
-    
-      <Route path="/distribution" component={Distribution} />
-
-      <Route path="/quotepro" component={FormQuotePro} />
-    
-      <Route path="/logistique" component={Logistique} />
-  
-      <Route path="/Mots" component={Mots} />
-    
-      <Route path="/pageContact" component={PageContact} />
-    
-      <Route path="/ProPartModale" component={ProPartModale} />
-    
-      <Route path="/reseau" component={Réseau} />
+        
+        <Route path='/inscr' component={FormInscriptionPart} />
+        <Route path="/affretement" component={Affretement} />
+        <Route path="/carte" component={Carte} />
+        <Route path="/distribution" component={Distribution} />
+        <Route path="/quotepro" component={FormQuotePro} />
+        <Route path="/logistique" component={Logistique} />
+        <Route path="/Mots" component={Mots} />
+        <Route path="/pageContact" component={PageContact} />
+        <Route path="/ProPartModale" component={ProPartModale} />
+        <Route path="/reseau" component={Reseau} />
       </Switch>
-     
-  
     </div>
-
-    
   );
 }
 

@@ -1,20 +1,30 @@
+@import '../../index.scss';
+
 .title {
     margin: 5% auto;
-     text-align: center;
-  }
-  
+    text-align: center;
+
+    // @include sm {
+    //     margin: 0 0;
+    // }
+
+    // @include xl {
+    //     margin: 50% 50%;
+    // }
+}
+
 
 .subtitle {
     margin: 5% auto;
-    
-  }
-  
+}
+
 
 .quote {
     width: 30%;
     margin: auto;
     text-align: center;
-   
+
+    // @include flex(center, space-between, column nowrap);
 }
 
 .submit{

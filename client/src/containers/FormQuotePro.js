@@ -53,7 +53,7 @@ const mapStateToProps = (state) => ({
     },
     
 
-    handlesubmitquote: ()=> {
+    submitquote: ()=> {
         console.log('demande envoyée');
         dispatch(submitquote());
     }  

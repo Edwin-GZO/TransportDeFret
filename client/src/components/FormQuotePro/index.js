@@ -49,11 +49,8 @@ const FormQuotePro = ({
 }) => {
 
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-
-    
-    
-    handlesubmitquote();
+    evt.preventDefault();    
+    submitquote();
     } 
   
   return (
@@ -62,7 +59,7 @@ const FormQuotePro = ({
       <h1 className="title">Demande de devis</h1>
       <h2 className="subtitle">Adresse de facturation</h2>
       
-  <Form onSubmit={handleSubmit} >
+  <Form autoComplete="off" onSubmit={handleSubmit} >
 
     <Form.Field>
       <label>N° Siret</label>

@@ -22,7 +22,7 @@ const Field = ({
 
     // '0'
     // +value = 0
-    if (!isNaN(+value)) { 
+    if (!isNaN(+value) && value !== '') { 
       value = +value 
     }
     

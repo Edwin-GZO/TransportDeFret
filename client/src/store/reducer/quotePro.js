@@ -54,16 +54,6 @@ export default (state = stateInitial, action = {}) => {
 
             return state;
 
-        // case SUBMIT_CONTACT:
-        //     return {
-        //         ...state,
-        //         name:'',
-        //         mail: '',
-        //         message: '',
-        //         object: '',
-        //         contact: {},
-        //     }; 
-
             case SUBMIT_QUOTE_SUCCESS:
                 return {
                     ...state,
