@@ -34,23 +34,26 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <LoginForm />
     <FormInscriptionPart />
     <FormInscriptionPro />
     <ContactForm />
+=======
+    <FormQuotePro />
+>>>>>>> d44719279dab9ccd508b5d8504a25dcd2b99cd79
       <Switch>
-        
-        <Route path='/inscr' component={FormInscriptionPart} />
         <Route path="/affretement" component={Affretement} />
         <Route path="/carte" component={Carte} />
         <Route path="/distribution" component={Distribution} />
-        <Route path="/quotepro" component={FormQuotePro} />
+        
         <Route path="/logistique" component={Logistique} />
         <Route path="/Mots" component={Mots} />
         <Route path="/pageContact" component={PageContact} />
         <Route path="/ProPartModale" component={ProPartModale} />
         <Route path="/reseau" component={Reseau} />
       </Switch>
+      
     </div>
   );
 }
