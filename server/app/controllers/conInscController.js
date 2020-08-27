@@ -78,14 +78,7 @@ module.exports = {
             return;
         }
         
-        /**
-            
-            @function findUser
-            @description  find a user in the database
-            @param {object} - the request.body
-            @returns {object} user
-            @example conInscDataMapper.findUser(body)
-        */
+        
 
         /**
             @const user
@@ -103,6 +96,19 @@ module.exports = {
             return;
         }
 
+        /**
+            @const body.passwordLogin
+            @description password filled in Login form
+            @type {string}
+        */
+        /**
+            @const user.password
+            @description password of a user in the database 
+            @type {string}
+        */
+
+
+
         if (body.passwordLogin !== user.password) {
 
             response.status(401).json({isLogged:false , error:"Mauvais Mot de Passe"});
@@ -115,7 +121,12 @@ module.exports = {
             @description login of session = body.mailLogin
             @type {string}
         */
-        
+        /**
+            @const body.mailLogin
+            @description mail filled in Login form 
+            @type {string}
+        */
+
         request.session.login = body.mailLogin;
 
         if (!request.session.login) {
@@ -160,7 +171,13 @@ module.exports = {
         
         /**
         @const bodyAddressPro
-        @description billaddress informations for a pro user
+        @description billaddress informations for a pro user / 
+        .billNumber : Street number filled in the SignUpPro form = request.body.billNumberSignUpPro / 
+        .billTrack : Street type filled in the SignUpPro form = request.body.billTrackSignUpPro / 
+        .billStreet : Street name filled in the SignUpPro form = request.body.billStreetSignUpPro /
+        .billComplement : Complement of address filled in the SignUpPro form = request.body.billComplementSignUpPro /
+        .city : city filled in the SignUpPro form = request.body.citySignUpPro /
+        .postalCode : Post code filled in the SignUpPro form = request.body.postalCodeSignUpPro /
         @type {object}
         */
         
@@ -172,11 +189,13 @@ module.exports = {
             "city": request.body.citySignUpPro,
             "postalCode": request.body.postalCodeSignUpPro
         }
+        
         /**
         @const bodyMailUser
-        @description emailaddress for a pro user
+        @description .mailLogin : email address filled int the SignUpPro form = request.body.mailSignUpPro
         @type {object}
         */
+        
         const bodyMailUser = {
             "mailLogin" : request.body.mailSignUpPro,
         }
@@ -197,13 +216,43 @@ module.exports = {
             return;
         }
 
+        /**
+            @const checkUser
+            @description the result of await conInscDataMapper.findUser(bodyMailUser)
+            @type {object}
+
+        */
+        
         const checkUser = await conInscDataMapper.findUser(bodyMailUser);
 
         if (checkUser) {
             response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
         }
 
+        
+
+        /**
+            @const newBillAddress
+            @description the result of await conInscDataMapper.addBillAddress
+            @type {object}
+
+        */
+
+
         const newBillAddress = await conInscDataMapper.addBillAddress(bodyAddressPro);
+        
+        /**
+            
+            @function addUserPro
+            @description  add a new bill address in the database
+            @param {object} - bodyAddressPro
+            @returns {object} newBillAddress
+            @example conInscDataMapper.addBillAddress(bodyAddressPro)
+        */
+        
+        
+        
+        
         await conInscDataMapper.addUserPro(body,newBillAddress)
 
         request.session.login = body.mailSignUpPro;

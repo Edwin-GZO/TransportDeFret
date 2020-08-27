@@ -1,12 +1,26 @@
 const client = require('./db');
 
 module.exports = {
-
+        /**
+            @async
+            @function findUser
+            @description  find a user in the database
+            @param {object} - the request.body
+            @returns {object} user.rows[0]
+            @example conInscDataMapper.findUser(body)
+        */
     findUser: async (body) => {
         const user = await client.query('SELECT * FROM "user" WHERE "mail"= $1', [body.mailLogin]);
         return user.rows[0];
     },
-
+        /**
+            @async
+            @function addBillAddress
+            @description  add a new bill address in the database
+            @param {object} - bodyAddress (pro or part)
+            @returns {object} newBillAddress
+            @example conInscDataMapper.addBillAddress(bodyAddressPro)
+        */
     addBillAddress : async (bodyAddress) => {
         
         const newBillAddress = await client.query(

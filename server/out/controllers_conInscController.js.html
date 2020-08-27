@@ -106,14 +106,7 @@ module.exports = {
             return;
         }
         
-        /**
-            
-            @function findUser
-            @description  find a user in the database
-            @param {object} - the request.body
-            @returns {object} user
-            @example conInscDataMapper.findUser(body)
-        */
+        
 
         /**
             @const user
@@ -131,6 +124,19 @@ module.exports = {
             return;
         }
 
+        /**
+            @const body.passwordLogin
+            @description password filled in Login form
+            @type {string}
+        */
+        /**
+            @const user.password
+            @description password of a user in the database 
+            @type {string}
+        */
+
+
+
         if (body.passwordLogin !== user.password) {
 
             response.status(401).json({isLogged:false , error:"Mauvais Mot de Passe"});
@@ -143,7 +149,12 @@ module.exports = {
             @description login of session = body.mailLogin
             @type {string}
         */
-        
+        /**
+            @const body.mailLogin
+            @description mail filled in Login form 
+            @type {string}
+        */
+
         request.session.login = body.mailLogin;
 
         if (!request.session.login) {
@@ -188,7 +199,13 @@ module.exports = {
         
         /**
         @const bodyAddressPro
-        @description billaddress informations for a pro user
+        @description billaddress informations for a pro user / 
+        .billNumber : Street number filled in the SignUpPro form = request.body.billNumberSignUpPro / 
+        .billTrack : Street type filled in the SignUpPro form = request.body.billTrackSignUpPro / 
+        .billStreet : Street name filled in the SignUpPro form = request.body.billStreetSignUpPro /
+        .billComplement : Complement of address filled in the SignUpPro form = request.body.billComplementSignUpPro /
+        .city : city filled in the SignUpPro form = request.body.citySignUpPro /
+        .postalCode : Post code filled in the SignUpPro form = request.body.postalCodeSignUpPro /
         @type {object}
         */
         
@@ -200,11 +217,13 @@ module.exports = {
             "city": request.body.citySignUpPro,
             "postalCode": request.body.postalCodeSignUpPro
         }
+        
         /**
         @const bodyMailUser
-        @description emailaddress for a pro user
+        @description .mailLogin : email address filled int the SignUpPro form = request.body.mailSignUpPro
         @type {object}
         */
+        
         const bodyMailUser = {
             "mailLogin" : request.body.mailSignUpPro,
         }
@@ -225,13 +244,43 @@ module.exports = {
             return;
         }
 
+        /**
+            @const checkUser
+            @description the result of await conInscDataMapper.findUser(bodyMailUser)
+            @type {object}
+
+        */
+        
         const checkUser = await conInscDataMapper.findUser(bodyMailUser);
 
         if (checkUser) {
             response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
         }
 
+        
+
+        /**
+            @const newBillAddress
+            @description the result of await conInscDataMapper.addBillAddress
+            @type {object}
+
+        */
+
+
         const newBillAddress = await conInscDataMapper.addBillAddress(bodyAddressPro);
+        
+        /**
+            
+            @function addUserPro
+            @description  add a new bill address in the database
+            @param {object} - bodyAddressPro
+            @returns {object} newBillAddress
+            @example conInscDataMapper.addBillAddress(bodyAddressPro)
+        */
+        
+        
+        
+        
         await conInscDataMapper.addUserPro(body,newBillAddress)
 
         request.session.login = body.mailSignUpPro;
@@ -301,13 +350,13 @@ module.exports = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#body">body</a></li><li><a href="global.html#bodyAddressPro">bodyAddressPro</a></li><li><a href="global.html#bodyMailUser">bodyMailUser</a></li><li><a href="global.html#conInscDataMapper">conInscDataMapper</a></li><li><a href="global.html#connectionUser">connectionUser</a></li><li><a href="global.html#findUser">findUser</a></li><li><a href="global.html#GET:/api/quotes/:user_id">GET: /api/quotes/:user_id</a></li><li><a href="global.html#GET:/coucou">GET: /coucou</a></li><li><a href="global.html#insertUserPro">insertUserPro</a></li><li><a href="global.html#POST:/api/contact">POST: /api/contact</a></li><li><a href="global.html#POST:/api/user">POST: /api/user</a></li><li><a href="global.html#POST:/api/user/signup/part">POST: /api/user/signup/part</a></li><li><a href="global.html#POST:/api/user/signup/pro">POST: /api/user/signup/pro</a></li><li><a href="global.html#user">user</a></li><li><a href="global.html#validate">validate</a></li><li><a href="global.html#validator">validator</a></li><li><a href="global.html#validMail">validMail</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addUserPro">addUserPro</a></li><li><a href="global.html#body">body</a></li><li><a href="global.html#bodyAddressPro">bodyAddressPro</a></li><li><a href="global.html#bodyMailUser">bodyMailUser</a></li><li><a href="global.html#checkUser">checkUser</a></li><li><a href="global.html#conInscDataMapper">conInscDataMapper</a></li><li><a href="global.html#connectionUser">connectionUser</a></li><li><a href="global.html#GET:/api/quotes/:user_id">GET: /api/quotes/:user_id</a></li><li><a href="global.html#GET:/coucou">GET: /coucou</a></li><li><a href="global.html#insertUserPro">insertUserPro</a></li><li><a href="global.html#newBillAddress">newBillAddress</a></li><li><a href="global.html#POST:/api/contact">POST: /api/contact</a></li><li><a href="global.html#POST:/api/user">POST: /api/user</a></li><li><a href="global.html#POST:/api/user/signup/part">POST: /api/user/signup/part</a></li><li><a href="global.html#POST:/api/user/signup/pro">POST: /api/user/signup/pro</a></li><li><a href="global.html#user">user</a></li><li><a href="global.html#validate">validate</a></li><li><a href="global.html#validator">validator</a></li><li><a href="global.html#validMail">validMail</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Wed Aug 26 2020 19:51:18 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Thu Aug 27 2020 08:35:13 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
