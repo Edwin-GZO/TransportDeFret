@@ -67,6 +67,8 @@ const FormQuotePro = ({
     <section className="quote">
       
     {/* <button onClick={()=> setIsLoggedIn(true)}>click</button> */}
+
+     {/* {isLoggedIn ? <p>some text</p> : */}
       
       <h1 className="title">Demande de devis</h1>
       <h2 className="subtitle">Adresse de facturation</h2>

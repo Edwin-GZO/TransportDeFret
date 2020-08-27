@@ -5,15 +5,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from 'react-redux'
 import { Route, Switch } from 'react-router-dom';
 import Accueil from '../../components/Accueil';
-import Affretement from '../../components/Affretement';
-import Carte from '../../components/Carte';
-import Distribution from '../../components/Distribution';
 import FormQuotePro from '../../containers//FormQuotePro';
-import Logistique from '../../components/Logistique';
-import Mots from '../../components/Mots';
 import PageContact from '../../components/PageContact';
-import ProPartModale from '../../components/ProPartModale';
-import Reseau from '../../components/Reseau';
 import FormInscriptionPro from '../../containers/FormInscriptionPro';
 import FormInscriptionPart from '../../containers/FormInscriptionPart';
 import LoginForm from '../../containers/LoginForm';
@@ -34,17 +27,11 @@ function App() {
 
   return (
     <div className="App">
-    <FormQuotePro />
+    
       <Switch>
-        <Route path="/affretement" component={Affretement} />
-        <Route path="/carte" component={Carte} />
-        <Route path="/distribution" component={Distribution} />
-        
-        <Route path="/logistique" component={Logistique} />
-        <Route path="/Mots" component={Mots} />
-        <Route path="/pageContact" component={PageContact} />
-        <Route path="/ProPartModale" component={ProPartModale} />
-        <Route path="/reseau" component={Reseau} />
+        <Route path="/contact" component={PageContact} />
+        <Route path="/" component={Accueil} />
+        <Route path="/connection" component={LoginForm} />
       </Switch>
       
     </div>

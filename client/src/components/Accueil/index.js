@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './style.scss';
-import * as ReactBootStrap from "react-bootstrap";
+
 
 
 
@@ -9,86 +10,64 @@ const Accueil = () => {
  
     return(
    
+  
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
     
-    <div className="App" >
-  <div className="container">
-      
-      <ReactBootStrap.Navbar className="fw" collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <ReactBootStrap.Navbar.Brand href="#home">Logo Entreprise que j'arrive pas à integrer</ReactBootStrap.Navbar.Brand>
-  <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
-    <ReactBootStrap.Nav className="mr-auto">
-      <ReactBootStrap.Nav.Link href="#accueil">Accueil</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#reseau">Réseau</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#livraison">Livraison</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#affretement">Affretement</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#logistique">Logistique</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#entreprise">Entreprise</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#carte">Carte</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#inscription">Inscription</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#contact">Contact</ReactBootStrap.Nav.Link>
-      
-      {/*<ReactBootStrap.NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-        <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Item href="#action/3.3">Something</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Divider />
-        <ReactBootStrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootStrap.NavDropdown.Item>
-    </ReactBootStrap.NavDropdown>*/}
-    </ReactBootStrap.Nav>
-    <ReactBootStrap.Nav>
-      <ReactBootStrap.Nav.Link href="#inscrire">s'incrire</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link eventKey={2} href="#connection">
-        se connecter
-      </ReactBootStrap.Nav.Link>
-    </ReactBootStrap.Nav>
-  </ReactBootStrap.Navbar.Collapse>
-</ReactBootStrap.Navbar>
-</div>
 
-{/*
-<div className="carousel">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-<ReactBootStrap.Carousel interval={3000} >
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="https://www.cocoexpress.fr/view/images/icon/256/transport-express-colis-france.png"
-      alt="First slide"
-    />
-    <ReactBootStrap.Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="holder.js/800x400?text=Second slide&bg=282c34"
-      alt="Third slide"
-    />
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <Link class="navbar-item" id="Link" exact to="/">
+        Home
+      </Link>
 
-    <ReactBootStrap.Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="holder.js/800x400?text=Third slide&bg=20232a"
-      alt="Third slide"
-    />
+      <a class="navbar-item">
+        Contact
+      </a>
 
-    <ReactBootStrap.Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-</ReactBootStrap.Carousel>
-</div>*/}
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
 
-     </div>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a Link class="navbar-item" exact to="/contact">
+            Contact
+          </a>
+         </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <Link class="button is-primary" exact to="/connection">
+            S'inscrire
+            </Link>
+          <Link class="button" exact to="/inscription">
+            <strong>Se connecter</strong>
+            </Link>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+ 
+   
     )
   }
   
