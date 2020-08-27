@@ -26,22 +26,38 @@ module.exports = {
                 body.widthQuotePro ,
                 body.heightQuotePro ,
                 body.weightQuotePro ,
-                body.commentQuotePromments // vérifier
+                body.commentQuotePro 
             ]
         )
     },
 
     createSenderAdress : async (body) => {
         const result = await client.query(
-            'INSERT INTO "sender_address" ("main", "complement", "postal_code", "city" , "department_id") VALUES VALUES ($1,$2,$3,$4,$5)',
+            'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES VALUES ($1,$2,$3,$4,$5,$6,$7)',
             [
-                `${body.loadNumberQuotePro} ${body.loadTrackQuotePro} ${body.loadStreetQuotePro}`,
+                `${loadFirstNameQuotePro} ${loadFirstNameQuotePro}` , 
+                body.loadPhoneQuotePro ,
+                `${body.loadNumberQuotePro} ${body.loadTrackQuotePro} ${body.loadStreetQuotePro}` ,
                 body.loadComplementQuotePro ,
                 body.loadPostalCodeQuotePro ,
                 body.loadCityQuotePro ,
-                "13" ,
-                body.loadPhoneQuotePro
-                
+                "13" 
+            ]
+        )
+    },
+
+
+    createReceiverAdress : async (body) => {
+        const result = await client.query(
+            'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES VALUES ($1,$2,$3,$4,$5,$6,$7)',
+            [
+                `${body.nameDeliveryQuotePro} ${body.firstNameDeliveryQuotePro}` , 
+                body.loadPhoneQuotePro ,
+                `${body.deliveryNumberQuotePro} ${body.deliveryTrackQuotePro} ${body.deliveryStreetQuotePro}` ,
+                body.deliveryComplementQuotePro ,
+                body.deliveryCodeQuotePro ,
+                body.deliveryCityQuotePro ,
+                "13"
             ]
         )
     }

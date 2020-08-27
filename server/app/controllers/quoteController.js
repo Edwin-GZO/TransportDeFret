@@ -25,10 +25,8 @@ module.exports = {
         const quoteBody = request.body;
 
         await quoteDataMapper.createQuote(quoteBody);
-
-        
-
-    // }
-
-
+        await quoteDataMapper.createSenderAdress(quoteBody);
+        await quoteDataMapper.createReceiverAdress(quoteBody);  
+    
+    }
 }
