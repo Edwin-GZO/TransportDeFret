@@ -1,4 +1,5 @@
-const client = require('./db');
+const client = require('./db') ;
+const moment = require('moment') ;
 
 module.exports = {
 
@@ -10,7 +11,7 @@ module.exports = {
             'SELECT * FROM "quote" WHERE quote.id = ANY(ARRAY(SELECT DISTINCT quote_id FROM shipment WHERE shipment.user_id = $1)) AND "active" = \'t\'',
             [userID]);
   
-        console.log('result',results.rows);
+        // console.log('result',results.rows);
         return results.rows;
     },
 
@@ -29,7 +30,7 @@ module.exports = {
                 body.commentQuotePro 
             ]
         )
-        console.log(" Création : Facture enregistrée ")   
+        console.log(moment().format('LLLL')," Création : Devis enregistré ")   
     },
 
     createSenderAddress : async (body) => {
@@ -45,7 +46,7 @@ module.exports = {
                 "13" 
             ] 
         )
-        console.log(" Création : Adresse Envoi enregistrée ")   
+        console.log(moment().format('LLLL')," Création : Adresse Envoi enregistrée ")   
     },
 
 
@@ -62,7 +63,7 @@ module.exports = {
                 "13"
             ]
         )
-        console.log(" Création : Adresse Reception enregistrée ") 
+        console.log(moment().format('LLLL')," Création : Adresse Reception enregistrée ") 
     },
 
     // Modifie les informations d'un Devis

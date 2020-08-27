@@ -1,5 +1,6 @@
 const client = require('./db');
 const mailer = require('nodemailer');
+const moment = require('moment') ;
 
 module.exports = {
     
@@ -16,10 +17,10 @@ module.exports = {
         await smtpTransport.sendMail(mail, function(error,response){
             
             if(error){
-                console.log("Erreur lors de l'envoi du mail");
+                console.log(moment().format('LLLL')," Erreur lors de l'envoi du mail");
                 console.log(error);
             } else {
-                console.log("Mail envoyé avec succès !")
+                console.log(moment().format('LLLL')," Mail envoyé avec succès !")
                 
             }
             smtpTransport.close();

@@ -12,7 +12,7 @@ module.exports = {
         const newBillAddress = await client.query(
             'INSERT INTO "bill_address" ("main", "complement","postal_code","city") VALUES ($1,$2,$3,$4) RETURNING "id"',
             [
-             `${bodyAddress.billNumber} ${bodyAddress.billTrack} ${bodyAddress.billStreet}`,//result.bill_address , //! A changer " a diviser par 3 "
+             `${bodyAddress.billNumber} ${bodyAddress.billTrack} ${bodyAddress.billStreet}`,
              bodyAddress.billComplement ,
              bodyAddress.postalCode ,
              bodyAddress.city

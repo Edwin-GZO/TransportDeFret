@@ -1,5 +1,6 @@
-const conInscDataMapper = require('../db/conInscDataMapper');
-const validator = require("email-validator");
+const conInscDataMapper = require('../db/conInscDataMapper') ;
+const validator = require("email-validator") ;
+const moment = require('moment') ;
 
 module.exports = {
 
@@ -12,7 +13,7 @@ module.exports = {
         if (!validMail) {
             
             response.status(400).json({isLogged:false , error:"Mail non valide"});
-            console.log(" Erreur Connexion : Mail au Mauvais Format")
+            console.log(moment().format('LLLL')," Erreur Connexion : Mail au Mauvais Format")
             return;
         }
 
@@ -21,14 +22,14 @@ module.exports = {
         if (!user) {
             
             response.status(404).json({isLogged:false , error:"Utilisateur non trouvé"});
-            console.log(" Erreur Connexion : Mauvais Identifiant")
+            console.log(moment().format('LLLL')," Erreur Connexion : Mauvais Identifiant")
             return;
         }
 
         if (body.passwordLogin !== user.password) {
 
             response.status(401).json({isLogged:false , error:"Mauvais Mot de Passe"});
-            console.log(" Erreur Connexion : Mauvais Mot de Passe")
+            console.log(moment().format('LLLL')," Erreur Connexion : Mauvais Mot de Passe")
             return;
         }
     
@@ -36,10 +37,10 @@ module.exports = {
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
-            console.log(" Erreur : Aucune session ")
+            console.log(moment().format('LLLL'), " Erreur : Aucune session ")
         };
         
-        console.log(" Connexion : Identifiant & Mot de Passe Correct")
+        console.log(moment().format('LLLL') ," Connexion : Identifiant & Mot de Passe Correct")
 
         response.status(200).json({isLogged: true , message:" Connexion Utilisateur Acceptée", name : user.name});
 
@@ -59,21 +60,23 @@ module.exports = {
         const bodyMailUser = {
             "mailLogin" : request.body.mailSignUpPro,
         }
-        //console.log ('bodyaddress',bodyAddressPro);
-            // Changement !
+    
         const validMail = validator.validate(body.mailSignUpPro)
 
         if (!validMail) {
-            
+
+            console.log(moment().format('LLLL')," Erreur Connexion : Mail au Mauvais Format")
             response.status(400).json({isLogged:false , error:"Mail non valide"});
-            console.log(" Erreur Connexion : Mail au Mauvais Format")
             return;
         }
 
         const checkUser = await conInscDataMapper.findUser(bodyMailUser);
 
         if (checkUser) {
+
+            console.log(moment().format('LLLL')," Erreur Connexion : Utilisateur déjà existant")
             response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
+            return
         }
 
         const newBillAddress = await conInscDataMapper.addBillAddress(bodyAddressPro);
@@ -82,11 +85,13 @@ module.exports = {
         request.session.login = body.mailSignUpPro;
 
         if (!request.session.login) {
+
+            console.log(moment().format('LLLL')," Erreur : Aucune session ");
             response.status(401).json({isLogged: false , error:" Pas de session" });
-            console.log(" Erreur : Aucune session ")
         };
         
-        console.log("Création : Utilisateur Professionnel enregistré")
+    
+        console.log(moment().format('LLLL'), "Création : Utilisateur Professionnel enregistré")
         response.status(201).json({isLogged: true , message: "Utilisateur enregistré" });
 
     },
@@ -110,14 +115,16 @@ module.exports = {
   
         if (!validMail) {
             
+            console.log(moment().format('LLLL')," Erreur Connexion : Mail au Mauvais Format")
             response.status(400).json({isLogged:false , error:"Mail non valide"});
-            console.log(" Erreur Connexion : Mail au Mauvais Format")
             return;
         }
 
         const checkUser = await conInscDataMapper.findUser(bodyMailUser);
 
         if (checkUser) {
+            
+            console.log(moment().format('LLLL')," Erreur Connexion : Utilisateur déjà existant")
             response.status(401).json({ error : " Utilisateur déjà existant veuillez vous connecter "});
         }
 
@@ -131,7 +138,7 @@ module.exports = {
             console.log(" Erreur : Aucune session ")
         };
         
-        console.log("Création : Utilisateur Particulier enregistré")     
+        console.log(moment().format('LLLL'), " Création : Utilisateur Particulier enregistré")     
         response.status(201).json({isLogged: true , message: "Utilisateur Particulier enregistré" });
        
     },
