@@ -10,37 +10,38 @@ module.exports = {
         const mail = {
             
             message: "formulaire de contact" ,
-            from: "cgauthier.dev@gmail.com", //dataForm.mail,
+            from: "tdr_site@gmail.com" , //dataForm.mail,
 
-            to: "test.projet.transport.de.fret@gmail.com", //exploitation@transportstdr.fr"
+            to: "test.projet.transport.de.fret@gmail.com" , //exploitation@transportstdr.fr"
             subject: dataForm.subjectContact,
 
             html: 
             `<table cellspacing="0" cellpadding="0" border="0">
-                <tbody><tr>
-                <td>
-                <strong>Mail du contact </strong>
-                    <p>
-                        <ul>
-                            <li> ${dataForm.mailContact}</li>
-                        </ul>
-                        
-                    </p>
-                    
-                    
-                </td>
-                <td style="font-size: 0; line-height: 0;" width="100"> </td>
-                <td>
-                    <strong>Nom du contact</strong>
-                    <p>
-                        <ul>   
-                            <li> ${dataForm.nameContact}</li>
-                        </ul>
-                    </p>
-                    
-                    
-                </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>
+                        <strong>Mail du contact </strong>
+                            <p>
+                                <ul>
+                                    <li> ${dataForm.mailContact}</li>
+                                </ul>
+                                
+                            </p>
+                            
+                            
+                        </td>
+                        <td style="font-size: 0; line-height: 0;" width="100"> </td>
+                        <td>
+                            <strong>Nom du contact</strong>
+                            <p>
+                                <ul>   
+                                    <li> ${dataForm.nameContact}</li>
+                                </ul>
+                            </p>
+                            
+                            
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <br />
