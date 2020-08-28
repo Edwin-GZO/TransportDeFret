@@ -11,6 +11,9 @@ import FormInscriptionPro from '../../containers/FormInscriptionPro';
 import FormInscriptionPart from '../../containers/FormInscriptionPart';
 import LoginForm from '../../containers/LoginForm';
 import ContactForm from '../../containers/ContactForm';
+import ModalInscription from '../../components/ModalInscription';
+import NotFound from '../../components/NotFound';
+
 
 import { checkAuth } from '../../store/action/user-actions';
 
@@ -29,10 +32,17 @@ function App() {
     <div className="App">
     
       <Switch>
-        <Route path="/contact" component={PageContact} />
-        <Route path="/" component={Accueil} />
-        <Route path="/connection" component={LoginForm} />
+        <Route exact path="/contact" component={ContactForm} />
+        <Route exact path="/" component={Accueil} />
+        <Route exact path="/connection" component={LoginForm} />
+        <Route exact path="/ipro" component={FormInscriptionPro} />
+        <Route exact path="/ipart" component={FormInscriptionPart} />
+        <Route exact path="/imodal" component={ModalInscription} />
+        <Route>
+            <NotFound />
+        </Route>
       </Switch>
+     
       
     </div>
   );

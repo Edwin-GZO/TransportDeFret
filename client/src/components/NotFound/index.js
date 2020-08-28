@@ -4,10 +4,14 @@ import "./style.scss";
 const NotFound = () => {
 
     return (
-
-<h1>404</h1> 
-
-    )
+        <div className="not-found">
+          <h2>
+            404
+          </h2>
+          <p>Désolé, cette page n'existe pas</p>
+         
+        </div>
+      );
  
   };
   export default NotFound;

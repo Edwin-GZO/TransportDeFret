@@ -28,25 +28,23 @@ const Accueil = () => {
         Home
       </Link>
 
-      <a class="navbar-item">
+      <Link class="navbar-item" id="navlink-items" exact to="/contact">
         Contact
-      </a>
+      </Link>
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More
+          S'inscrire
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a Link class="navbar-item" exact to="/contact">
-            Contact
-          </a>
+        <Link class="navbar-item" id="navlink-items" exact to="/ipro">
+            Je suis un professionnel
+          </Link>
+          <Link class="navbar-item" id="navlink-items" exact to="/ipart">
+            Je suis un particulier
+          </Link>
+          
          </div>
       </div>
     </div>
@@ -54,19 +52,19 @@ const Accueil = () => {
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons" >
-        <Link class="button"  exact to="/connection">
+        <Link class="button is-primary" exact to="/connection">
             <strong>Se connecter</strong>
             </Link>
-          <Link class="button is-primary" exact to="/inscription">
-            S'inscrire
-            </Link>
+          
+            
          
           
         </div>
       </div>
     </div>
   </div>
-</nav>
+  </nav>
+
  
    
     )
