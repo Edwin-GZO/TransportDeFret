@@ -37,6 +37,7 @@ function App() {
         <Route exact path="/connection" component={LoginForm} />
         <Route exact path="/ipro" component={FormInscriptionPro} />
         <Route exact path="/ipart" component={FormInscriptionPart} />
+        <Route exact path="/devis" component={FormQuotePro} />
         <Route exact path="/imodal" component={ModalInscription} />
         <Route>
             <NotFound />

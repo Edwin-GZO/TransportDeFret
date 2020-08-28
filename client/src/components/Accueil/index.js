@@ -6,7 +6,10 @@ import './style.scss';
 
 
 
-const Accueil = () => {
+const Accueil = (
+  isLogged,
+  loggedMessage
+) => {
  
     return(
    
@@ -32,7 +35,32 @@ const Accueil = () => {
         Contact
       </Link>
 
-      <div class="navbar-item has-dropdown is-hoverable">
+      
+
+      <div class="navbar-item has-dropdown is-hoverable ">
+        <a class="navbar-link">
+          Documentations
+        </a>
+
+        <div class="navbar-dropdown">
+        <Link class="navbar-item" id="navlink-items" exact to="/devis">
+            Demande de devis
+          </Link>
+          <Link class="navbar-item" id="navlink-items" exact to="/docs">
+            Telechargement
+          </Link>
+          
+         </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons" >
+        <Link class="button is-primary" exact to="/connection">
+            <strong>Se connecter</strong>
+            </Link>
+            <div class="navbar-item has-dropdown is-hoverable ">
         <a class="navbar-link">
           S'inscrire
         </a>
@@ -47,15 +75,6 @@ const Accueil = () => {
           
          </div>
       </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons" >
-        <Link class="button is-primary" exact to="/connection">
-            <strong>Se connecter</strong>
-            </Link>
-          
             
          
           
