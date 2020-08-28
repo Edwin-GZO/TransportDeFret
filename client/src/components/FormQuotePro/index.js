@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import Field from '../../containers/Field'
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react'
@@ -70,24 +71,26 @@ const FormQuotePro = ({
 
      {/* {isLoggedIn ? <p>some text</p> : */}
       
-      <h1 className="title">Demande de devis</h1>
+     <h1 class="ui orange header">Demande de devis</h1>
       
       
   <Form autoComplete="off" onSubmit={handleSubmit} >
 
     
-
-    <h2 className="subtitle">Adresse de chargement</h2>
+<section className="chargement">
+  <h2 id="h2" class="ui blue header">Adresse de chargement</h2>
    
     <div className="ui form">
                 <div className="two fields">
                 <div className="field">
     <Form.Field>
+    
         <label>Nom</label>
         <Field
+                
           name="loadNameQuotePro"
           reducerName="quotePro"
-          placeholder="Nom"
+          placeholder=""
         />
       </Form.Field>
       </div>
@@ -98,7 +101,7 @@ const FormQuotePro = ({
           name="loadFirstNameQuotePro"
           
           reducerName="quotePro"
-          placeholder="prénom"
+          placeholder=""
         />
       </Form.Field>
       </div>
@@ -192,8 +195,9 @@ const FormQuotePro = ({
             placeholder=""
               />
     </Form.Field>
+    </section>
 
-    <h2 className="subtitle">Adresse de livraison</h2>
+    <h2 id="h2" class="ui blue header">Adresse de livraison</h2>
 
     <div className="ui form">
                 <div className="two fields">
@@ -203,7 +207,7 @@ const FormQuotePro = ({
         <Field
           name="nameDeliveryQuotePro"
           reducerName="quotePro"
-          placeholder="Nom"
+          placeholder=""
         />
       </Form.Field>
       </div>
@@ -214,7 +218,7 @@ const FormQuotePro = ({
           name="firstNameDeliveryQuotePro"
           
           reducerName="quotePro"
-          placeholder="prénom"
+          placeholder=""
         />
       </Form.Field>
       </div>
@@ -309,7 +313,7 @@ const FormQuotePro = ({
               />
     </Form.Field>
 
-    <h2 className="subtitle">Détails</h2>
+    <h2 id="h2" class="ui blue header">Détails</h2>
 
     
 
@@ -385,10 +389,16 @@ const FormQuotePro = ({
       cssClass='field-input'
     />  
             
-             
-<div className="submit">
-          <Button >Validez</Button>
-  </div>
+   <div className="btn">       
+<span className="">
+          <Button className="ui primary button">Validez</Button>
+  </span>
+  <span>
+  <Link button className="ui negative button" to="/">
+  Annuler
+</Link>
+</span>
+</div>
   </Form>
 {/* } */}
 

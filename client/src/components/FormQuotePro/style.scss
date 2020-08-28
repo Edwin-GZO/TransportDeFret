@@ -18,17 +18,21 @@
     margin: 5% auto;
 }
 
-
+#h2 {
+    margin-top: 2%;
+}
 .quote {
-    width: 30%;
+    width: 50%;
     margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
 
     // @include flex(center, space-between, column nowrap);
 }
 
-.submit{
-    margin-top: 5%;
+.btn{
+    margin-top: 2%;
 }
 .submit-btn:disabled{
     cursor: not-allowed;
