@@ -91,8 +91,8 @@ module.exports = {
         };
         
     
-        console.log(moment().format('LLLL'), "Création : Utilisateur Professionnel enregistré")
-        response.status(201).json({isLogged: true , message: "Utilisateur enregistré" });
+        console.log(moment().format('LLLL'), " Création : Utilisateur Professionnel enregistré")
+        response.status(201).json({isLogged: true , message: " Utilisateur enregistré " });
 
     },
 
