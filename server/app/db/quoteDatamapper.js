@@ -80,7 +80,6 @@ module.exports = {
 
     createReceiverAddress : async (body) => {
 
-        try {
 
             await client.query(
                 'INSERT INTO "sender_address" ("name", "phone", "main", "complement", "postal_code", "city" , "department_id") VALUES ($1,$2,$3,$4,$5,$6,$7)',
@@ -96,12 +95,6 @@ module.exports = {
             )
             console.log(moment().format('LLLL')," Adresse Reception OK ")     
 
-        } catch (error) {
-        
-        console.trace(moment().format('LLLL'), error) ;
-        response.status(500).send(error) ;
-        
-        }
     },
 
     // Modifie les informations d'un Devis
