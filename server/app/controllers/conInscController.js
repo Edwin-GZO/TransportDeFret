@@ -5,7 +5,7 @@ const moment = require('moment') ;
 module.exports = {
 
     connectionUser: async (request,response) => {
-    
+
         try {
             
             const body = request.body;
@@ -165,5 +165,11 @@ module.exports = {
             response.status(500).send(error) ;
 
         }
+    },
+
+    logOutUser : async (request, response,next) => {
+
+
+
     }
 }
