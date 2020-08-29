@@ -38,7 +38,7 @@ const Accueil = (
       
 
       <div class="navbar-item has-dropdown is-hoverable ">
-        <a class="navbar-link">
+      <a  id="navlink-items" class={isLogged ? "navbar-link" : "display:none"} >
           Documentations
         </a>
 
@@ -61,7 +61,7 @@ const Accueil = (
             <strong>Se connecter</strong>
             </Link>
             <div class="navbar-item has-dropdown is-hoverable ">
-        <a class="navbar-link">
+        <a id="navlink-items" class="navbar-link">
           S'inscrire
         </a>
 

@@ -49,13 +49,13 @@ const FormQuotePro = ({
   // history
 }) => {
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(false)
+   //const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  // useEffect(()=> {
-  //   if(isLoggedIn) {
-  //     console.log('click');
-  //     setTimeout(() => history.push('/'), 2000);
-  //   }
+  //useEffect(()=> {
+  // if(isLoggedIn) {
+  //    console.log('click');
+  //    setTimeout(() => history.push('/'), 2000);
+    // }
   // }, [isLoggedIn])
 
   const handleSubmit = (evt) => {
@@ -71,7 +71,7 @@ const FormQuotePro = ({
 
      {/* {isLoggedIn ? <p>some text</p> : */}
       
-     <h1 class="ui orange header">Demande de devis</h1>
+     <h1 class="ui dark header">Demande de devis</h1>
       
       
   <Form autoComplete="off" onSubmit={handleSubmit} >
@@ -87,7 +87,7 @@ const FormQuotePro = ({
     
         <label>Nom</label>
         <Field
-                
+          id="bg"   
           name="loadNameQuotePro"
           reducerName="quotePro"
           placeholder=""
@@ -99,7 +99,7 @@ const FormQuotePro = ({
         <label>Prénom</label>
         <Field 
           name="loadFirstNameQuotePro"
-          
+          id="bg"
           reducerName="quotePro"
           placeholder=""
         />
@@ -115,6 +115,7 @@ const FormQuotePro = ({
            <Form.Field>
           <label>N° de la voie</label>
           <Field
+           id="bg"
             name="loadNumberQuotePro"
             reducerName="quotePro"
             placeholder=""
@@ -127,7 +128,7 @@ const FormQuotePro = ({
           <label>Type voie</label>
           <Field
             name="loadTrackQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
              />
@@ -142,7 +143,7 @@ const FormQuotePro = ({
           <label>Nom de la voie</label>
           <Field
             name="loadStreetQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
              
@@ -151,8 +152,9 @@ const FormQuotePro = ({
 
         <Form.Field>
           <label>Complément d'adresse</label>
-          <Field  name="loadComplementQuotePro"
-                
+          <Field  
+                name="loadComplementQuotePro"
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -165,8 +167,9 @@ const FormQuotePro = ({
                   <div className="field">
         <Form.Field >
           <label>Ville</label>
-          <Field  name="loadCityQuotePro"
-                
+          <Field  
+                name="loadCityQuotePro"
+                id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -177,7 +180,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Code postal</label>
           <Field name="loadPostalCodeQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -190,7 +193,7 @@ const FormQuotePro = ({
     <Form.Field>
       <label>Telephone</label>
       <Field name="loadPhoneQuotePro"
-            
+             id="bg"
             reducerName="quotePro"
             placeholder=""
               />
@@ -205,6 +208,7 @@ const FormQuotePro = ({
     <Form.Field>
         <label>Nom</label>
         <Field
+         id="bg"
           name="nameDeliveryQuotePro"
           reducerName="quotePro"
           placeholder=""
@@ -216,7 +220,7 @@ const FormQuotePro = ({
         <label>Prénom</label>
         <Field 
           name="firstNameDeliveryQuotePro"
-          
+          id="bg"
           reducerName="quotePro"
           placeholder=""
         />
@@ -232,6 +236,7 @@ const FormQuotePro = ({
            <Form.Field>
           <label>N° de la voie</label>
           <Field
+           id="bg"
             name="deliveryNumberQuotePro"
             reducerName="quotePro"
             placeholder=""
@@ -244,7 +249,7 @@ const FormQuotePro = ({
           <label>Type voie</label>
           <Field
             name="deliveryTrackQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
              />
@@ -259,7 +264,7 @@ const FormQuotePro = ({
           <label>Nom de la voie</label>
           <Field
             name="deliveryStreetQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
              
@@ -269,7 +274,7 @@ const FormQuotePro = ({
         <Form.Field>
           <label>Complément d'adresse</label>
           <Field  name="deliveryComplementQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -283,7 +288,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Ville</label>
           <Field  name="deliveryCityQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -294,7 +299,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Code postal</label>
           <Field name="deliveryCodeQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -307,7 +312,7 @@ const FormQuotePro = ({
     <Form.Field>
       <label>Telephone</label>
       <Field name="deliveryphoneQuotePro"
-            
+             id="bg"
             reducerName="quotePro"
             placeholder=""
               />
@@ -320,7 +325,7 @@ const FormQuotePro = ({
            <Form.Field>
           <label>Nombre de palettes</label>
           <Field
-           
+            id="bg"
             type="select"
             name="paletteNumberQuotePro"
             reducerName="quotePro"
@@ -337,7 +342,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Longueur (cm)</label>
           <Field  name="lenghtQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -348,7 +353,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Largeur (cm)</label>
           <Field name="widthQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -358,7 +363,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Hauteur (cm)</label>
           <Field name="heightQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -372,7 +377,7 @@ const FormQuotePro = ({
           <label>Poids (Kg)</label>
           <Field
             name="weightQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
              />
@@ -383,9 +388,10 @@ const FormQuotePro = ({
 
              <Field
       type="textarea"
+      //id="bg"
       reducerName="contact"
       name='commentQuotePro'
-      placeholder='Commentaires ... ...'
+      placeholder='Commentaires éventuels ...'
       cssClass='field-input'
     />  
             

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import Field from '../../containers/Field'
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react'
@@ -36,7 +37,7 @@ const FormInscriptionPro = ({
   return (
   
     <section className="register">
-      <h1 className="title">Formulaire d'inscription</h1>
+     <h1 class="ui dark header">Formulaire d'inscription</h1>
       {
         hasError ? <p>modal</p> : null
       }
@@ -45,6 +46,7 @@ const FormInscriptionPro = ({
     <Form.Field required>
       <label>N° Siret</label>
       <Field
+      id="bg"
         name="siret"
         reducerName="register"
         placeholder="N° siret"
@@ -54,6 +56,7 @@ const FormInscriptionPro = ({
     <Form.Field required>
       <label>Societe</label>
       <Field 
+      id="bg"
         name="societe"
         reducerName="register"
         placeholder="société"
@@ -63,6 +66,7 @@ const FormInscriptionPro = ({
     <Form.Field required>
       <label>Adresse Mail</label>
         <Field 
+        id="bg"
           name="mailSignUpPro"
           type="email"
           reducerName="register"
@@ -77,6 +81,7 @@ const FormInscriptionPro = ({
            <Form.Field required>
           <label>N° de la voie</label>
           <Field
+          id="bg"
             name="billNumberSignUpPro"
             reducerName="register"
             placeholder=""
@@ -89,7 +94,7 @@ const FormInscriptionPro = ({
           <label>Type voie</label>
           <Field
             name="billTrackSignUpPro"
-            
+            id="bg"
             reducerName="register"
             placeholder=""
              />
@@ -104,7 +109,7 @@ const FormInscriptionPro = ({
           <label>Nom de la voie</label>
           <Field
             name="billStreetSignUpPro"
-            
+            id="bg"
             reducerName="register"
             placeholder=""
              
@@ -113,7 +118,7 @@ const FormInscriptionPro = ({
         <Form.Field>
           <label>Complément d'adresse</label>
           <Field  name="billComplementSignUpPro"
-                
+                id="bg"
                 reducerName="register"
                 placeholder=""
                 required={true}
@@ -128,7 +133,7 @@ const FormInscriptionPro = ({
         <Form.Field required>
           <label>Ville</label>
           <Field  name="citySignUpPro"
-                
+                id="bg"
                 reducerName="register"
                 placeholder=""
                 />
@@ -139,7 +144,7 @@ const FormInscriptionPro = ({
         <Form.Field required>
           <label>Code postal</label>
           <Field name="postalCodeSignUpPro"
-                
+                id="bg"
                 reducerName="register"
                 placeholder=""
                 />
@@ -152,7 +157,7 @@ const FormInscriptionPro = ({
     <Form.Field required>
       <label>Telephone</label>
       <Field name="phoneSignUpPro"
-            
+            id="bg"
             reducerName="register"
             placeholder=""
               />
@@ -165,6 +170,7 @@ const FormInscriptionPro = ({
           type="password"
           reducerName="register"
           placeholder=""
+          id="bg"
           required={true}
           minLength={8}
         />
@@ -177,10 +183,23 @@ const FormInscriptionPro = ({
           type="password"
           reducerName="register"
           placeholder=""
+          id="bg"
         />
     </Form.Field>
     
-    <Button >Validez</Button>
+    <div className="btn">       
+<span className="">
+          <Button className="ui primary button">Validez</Button>
+  </span>
+  <span>
+  <Link button className="ui negative button" to="/">
+  Annuler
+</Link>
+</span>
+</div>
+
+
+
   </Form>
 
 
