@@ -23,8 +23,8 @@ const LoginForm = ({
     return(
              
       <section className="login">
-      <h1 class="ui dark header">Identifiants de connexion</h1>
-      {loggedMessage ? <p>{loggedMessage}</p> : null}
+      <h1 className="ui dark header">Identifiants de connexion</h1>
+      {loggedMessage ? <span>{loggedMessage}</span> : null}
         <Form autoComplete="off" onSubmit={handleSubmit}>
           
         <Form.Field >
@@ -46,14 +46,19 @@ const LoginForm = ({
             type="password"
             placeholder="Mot de Passe"
           />
-           </Form.Field>
+         </Form.Field>
+<div className="label">
+         <a class="ui label">
+  <i class="truck icon"></i> Mot de passe oublié ?
+</a>
+</div>
          
            <div className="btn">       
 <span className="">
           <Button className="ui primary button">Validez</Button>
   </span>
   <span>
-  <Link button className="ui negative button" to="/">
+  <Link button className="ui grey button" to="/">
   Annuler
 </Link>
 </span>
@@ -76,7 +81,7 @@ const LoginForm = ({
       handleLogin: PropTypes.func.isRequired,
       handleLogout: PropTypes.func.isRequired,
       isLogged: PropTypes.bool,
-      loggedMessage: PropTypes.string,
+      loggedMessage: PropTypes.object,
     };
     
     

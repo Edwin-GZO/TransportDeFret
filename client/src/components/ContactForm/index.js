@@ -16,7 +16,7 @@ const ContactForm = ({ submitcontact, contactMessage }) => {
     return (
 <section className="contact">
 <h1 class="ui dark header">Formulaire de contact</h1>
-{contactMessage ? <p>{contactMessage}</p> : null}
+{contactMessage ? <span>{contactMessage}</span> : null}
 <Form autoComplete="off" onSubmit={handleContact}>
 
     <Form.Field >
@@ -75,7 +75,7 @@ const ContactForm = ({ submitcontact, contactMessage }) => {
           <Button className="ui primary button">Validez</Button>
   </span>
   <span>
-  <Link button className="ui negative button" to="/">
+  <Link button className="ui grey button" to="/">
   Annuler
 </Link>
 </span>

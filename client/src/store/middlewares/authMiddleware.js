@@ -58,9 +58,9 @@ export default (store) => (next) => (action) => {
 
                      
           store.dispatch(loginSuccess(
-            <div class="ui success message">
-            <i class="close icon"></i>
-            <div class="header">
+            <div className="ui success message">
+            <i className="close icon"></i>
+            <div className="header">
               Vous êtes désormais connecté
             </div>
             <p>Bienvenu</p>
@@ -68,12 +68,13 @@ export default (store) => (next) => (action) => {
         })
         .catch((err) => {
           store.dispatch(loginError(  
-          <div class="ui negative message">
-          <i class="close icon"></i>
-          <div class="header">
-            Nous n'avons pu vous connecter
+          <div className="ui negative message">
+          <i className="close icon"></i>
+          <div className="header">
+            <span>Nous n'avons pu vous connecter</span>
           </div>
-          <p>Vérifier votre email ou votre mot de passe</p></div>));
+          <span>Vérifier votre email ou votre mot de passe</span>
+          </div>));
         })
 
       break;

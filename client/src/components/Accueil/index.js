@@ -25,28 +25,29 @@ const Accueil = (
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <Link class="navbar-item" id="navlink-items" exact to="/">
+  <div id="navbarBasicExample" className="navbar-menu">
+
+    <div className="navbar-start">
+      <Link className="navbar-item" id="navlink-items" to="/">
         Home
       </Link>
 
-      <Link class="navbar-item" id="navlink-items" exact to="/contact">
+      <Link className="navbar-item" id="navlink-items" to="/contact">
         Contact
       </Link>
 
       
 
-      <div class="navbar-item has-dropdown is-hoverable ">
-      <a  id="navlink-items" class={isLogged ? "navbar-link" : "display:none"} >
+      <div className="navbar-item has-dropdown is-hoverable ">
+      <a  id="navlink-items" className={isLogged ? "navbar-link" : "display:none"} >
           Documentations
         </a>
 
-        <div class="navbar-dropdown">
-        <Link class="navbar-item" id="navlink-items" exact to="/devis">
+        <div className="navbar-dropdown">
+        <Link className="navbar-item" id="navlink-items" to="/devis">
             Demande de devis
           </Link>
-          <Link class="navbar-item" id="navlink-items" exact to="/docs">
+          <Link className="navbar-item" id="navlink-items" to="/docs">
             Telechargement
           </Link>
           
@@ -54,34 +55,28 @@ const Accueil = (
       </div>
     </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons" >
-        <Link class="button is-primary" exact to="/connection">
-            <strong>Se connecter</strong>
-            </Link>
-            <div class="navbar-item has-dropdown is-hoverable ">
-        <a id="navlink-items" class="navbar-link">
-          S'inscrire
-        </a>
+    <div className="navbar-end">
 
-        <div class="navbar-dropdown">
-        <Link class="navbar-item" id="navlink-items" exact to="/ipro">
-            Je suis un professionnel
-          </Link>
-          <Link class="navbar-item" id="navlink-items" exact to="/ipart">
-            Je suis un particulier
-          </Link>
-          
-         </div>
+    <div className="navbar-item">
+        <div className="buttons" >
+        <Link className="button is-primary" to="/ipro">
+            <strong>S'inscrire</strong>
+            </Link>          
+            </div>
+</div>
+      
+      <div className="navbar-item"> 
+        <div className="buttons" >
+        <Link className="button is-link" to="/connection">
+            <strong>Se connecter</strong>
+            </Link>          
       </div>
-            
-         
-          
-        </div>
+      </div>         
       </div>
-    </div>
-  </div>
+      </div>
+      
+   
+ 
   </nav>
 
  
