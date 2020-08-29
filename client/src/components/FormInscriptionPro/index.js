@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
-import Field from '../../containers/Field'
+import { Link } from 'react-router-dom';
+import Field from '../../containers/Field';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
 import './style.scss';
 
 const FormInscriptionPro = ({ 
@@ -37,7 +37,7 @@ const FormInscriptionPro = ({
   return (
   
     <section className="register">
-     <h1 class="ui dark header">Formulaire d'inscription</h1>
+     <h1 class="ui dark header">Formulaire d'inscription professionnel</h1>
       {
         hasError ? <p>modal</p> : null
       }

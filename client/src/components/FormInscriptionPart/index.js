@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Field from '../../containers/Field'
+import { Link } from 'react-router-dom';
+import Field from '../../containers/Field';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
 import './style.scss';
 
 
@@ -36,7 +37,7 @@ const FormInscriptionPart = ({
     return (
     
       <section className="register">
-        <h1 className="title">Formulaire d'inscription</h1>
+       <h1 class="ui dark header">Formulaire d'inscription particulier</h1>
         {
           hasError ? <p>modal</p> : null
         }
@@ -48,6 +49,7 @@ const FormInscriptionPart = ({
           name="nameSignUpPart"
           reducerName="registerPart"
           placeholder="Nom"
+          id="bg"
         />
       </Form.Field>
   
@@ -55,7 +57,7 @@ const FormInscriptionPart = ({
         <label>Prénom</label>
         <Field 
           name="firstNameSignUpPart"
-          
+          id="bg"
           reducerName="registerPart"
           placeholder="prénom"
         />
@@ -64,6 +66,7 @@ const FormInscriptionPart = ({
       <Form.Field required >
         <label>Adresse Mail</label>
           <Field 
+          id="bg"
             name="mailSignUpPart"
             type="mail"
             reducerName="registerPart"
@@ -78,6 +81,7 @@ const FormInscriptionPart = ({
              <Form.Field required>
             <label>N° de la voie</label>
             <Field
+            id="bg"
               name="billNumberSignUpPart"
               reducerName="registerPart"
               placeholder=""
@@ -90,7 +94,7 @@ const FormInscriptionPart = ({
             <label>Type voie</label>
             <Field
               name="billTrackSignUpPart"
-              
+              id="bg"
               reducerName="registerPart"
               placeholder=""
                />
@@ -107,12 +111,14 @@ const FormInscriptionPart = ({
               name="billStreetSignUpPart"              
               reducerName="registerPart"
               placeholder=""
-               
+              id="bg"
             />
           </Form.Field>
           <Form.Field>
             <label>Complément d'adresse</label>
-            <Field  name="billComplementSignUpPart"                  
+            <Field  
+            id="bg"
+            name="billComplementSignUpPart"                  
                   reducerName="registerPart"
                   placeholder=""
                   />
@@ -126,7 +132,7 @@ const FormInscriptionPart = ({
           <Form.Field required>
             <label>Ville</label>
             <Field  name="citySignUpPart"
-                  
+                  id="bg"
                   reducerName="registerPart"
                   placeholder=""
                   />
@@ -137,7 +143,7 @@ const FormInscriptionPart = ({
           <Form.Field required>
             <label>Code postal</label>
             <Field name="postalCodeSignUpPart"
-                  
+                  id="bg"
                   reducerName="registerPart"
                   placeholder=""
                   />
@@ -153,6 +159,7 @@ const FormInscriptionPart = ({
               reducerName="registerPart"
               placeholder=""
               type=""
+              id="bg"
                 />
       </Form.Field>
       <Form.Field required>
@@ -165,6 +172,7 @@ const FormInscriptionPart = ({
             placeholder=""
             required={true}
             minLength={8}
+            id="bg"
           />
       </Form.Field>
       <Form.Field required>
@@ -175,10 +183,20 @@ const FormInscriptionPart = ({
             type="password"
             reducerName="registerPart"
             placeholder=""
+            id="bg"
           />
       </Form.Field>
       
-      <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
+      <div className="btn">       
+<span className="">
+          <Button className="ui primary button">Validez</Button>
+  </span>
+  <span>
+  <Link button className="ui negative button" to="/">
+  Annuler
+</Link>
+</span>
+</div>
     </Form>
   
   
