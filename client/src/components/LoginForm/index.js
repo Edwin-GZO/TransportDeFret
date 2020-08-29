@@ -23,7 +23,8 @@ const LoginForm = ({
     return(
              
       <section className="login">
-      <h1 class="ui dark header">Formulaire de contact</h1>
+      <h1 class="ui dark header">Identifiants de connexion</h1>
+      {loggedMessage ? <p>{loggedMessage}</p> : null}
         <Form autoComplete="off" onSubmit={handleSubmit}>
           
         <Form.Field >

@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import axios from 'axios';
 import { SUBMIT_CONTACT, submitsuccess, submiterror } from '../action/user-actions';
 
@@ -19,10 +20,23 @@ export default (store) => (next) => (action) => {
                 withCredentials: false,
             }).then((res) => {                
                 // store.dispatch(submitsuccess(res.data));
-                store.dispatch(submitsuccess('Votre message a bien été envoyé'));
+                store.dispatch(submitsuccess(
+                <div class="ui success message">
+                <i class="close icon"></i>
+                <div class="header">
+                  Votre message a été transmis avec succès.
+                </div>
+                <p>Nous reviendrons vers vous le plus rapidement possible.</p>
+              </div>));
             })
             .catch((err) => {
-            store.dispatch(submiterror("Votre message n'a pu etre envoyé"));
+            store.dispatch(submiterror(
+            <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+              Nous sommes désolés mais votre message n'a pu être envoyé.
+            </div>
+            <p>Veuillez essayer ultérieurement</p></div>));
             })
             break;
             

@@ -28,11 +28,8 @@ export default (state = stateInitial, action = {}) => {
       };
     case LOGIN_ERROR:
       return {
-        ...state,
-        password: '',
-        error: action.payload,
-        loggedMessage: '',
-        user: {},
+        ...state,        
+        loggedMessage: action.payload,
         isLogged: false
       };
     case CHANGE_FIELD:

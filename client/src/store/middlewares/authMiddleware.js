@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import axios from 'axios';
 import { LOGIN, SIGN_UP_PART,  CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror, signuppartsuccess, signupparterror } from '../action/user-actions';
 
@@ -54,11 +55,25 @@ export default (store) => (next) => (action) => {
         withCredentials: true 
       })
         .then((res) => {
-           
-          store.dispatch(loginSuccess(res.data));
+
+                     
+          store.dispatch(loginSuccess(
+            <div class="ui success message">
+            <i class="close icon"></i>
+            <div class="header">
+              Vous êtes désormais connecté
+            </div>
+            <p>Bienvenu</p>
+          </div>));
         })
         .catch((err) => {
-          store.dispatch(loginError("Impossible de connecter cet utilisateur"))
+          store.dispatch(loginError(  
+          <div class="ui negative message">
+          <i class="close icon"></i>
+          <div class="header">
+            Nous n'avons pu vous connecter
+          </div>
+          <p>Vérifier votre email ou votre mot de passe</p></div>));
         })
 
       break;
@@ -96,7 +111,7 @@ export default (store) => (next) => (action) => {
         withCredentials: true 
       })
         .then((res) => {
-            console.log('signup request')
+           
           store.dispatch(signuppartsuccess(res.data));
         })
         .catch((err) => {
