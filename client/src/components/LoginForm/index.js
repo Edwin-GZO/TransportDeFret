@@ -46,9 +46,12 @@ const LoginForm = ({
             id="bg"
           />
         </Form.Field>
-      
+
+     
         <Form.Field >
-      <label>Mot de passe</label>
+       
+        <label>Mot de passe</label>
+       
             <Field
             id="bg"
             name="passwordLogin"
@@ -57,6 +60,7 @@ const LoginForm = ({
             placeholder="Mot de Passe"
           />
          </Form.Field>
+        
 
 
 <div className="label">

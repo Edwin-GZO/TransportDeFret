@@ -154,17 +154,18 @@ const FormInscriptionPro = ({
           </div>
 
     
-    <Form.Field required>
-      <label>Telephone</label>
-      <Field name="phoneSignUpPro"
+    <Form.Field >
+      <label >Telephone</label>
+            <Field 
+            name="phoneSignUpPro"
             id="bg"
             reducerName="register"
             placeholder=""
-              />
+              /> 
     </Form.Field>
-    <Form.Field required>
-      <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
-        <Field
+    <Form.Field required data-tooltip="Entre 8 et 16 caractères, une Maj et 1 caractère spécial" data-position="top-center" >
+        <label >Choisissez votre mot de passe</label>
+        <Field 
           cssClass={!isSamePassword ? 'error' : ''}
           name="passwordSignUpPro"
           type="password"
