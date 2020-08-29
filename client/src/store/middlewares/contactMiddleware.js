@@ -15,7 +15,7 @@ export default (store) => (next) => (action) => {
 
             axios({
                 method: 'post',
-                url: 'http://54.90.53.9:8080/api/contact',
+                url: 'http://54.90.53.91:8080/api/contact',
                 data,
                 withCredentials: false,
             }).then((res) => {                

@@ -50,7 +50,7 @@ export default (store) => (next) => (action) => {
       
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/user',
+        url: 'http://54.90.53.91:8080/api/user',
         data: user,
         withCredentials: true 
       })

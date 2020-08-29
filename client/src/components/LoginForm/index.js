@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Field from '../../containers/Field';
 import { Link } from 'react-router-dom';
 import './style.scss';
@@ -13,7 +13,17 @@ const LoginForm = ({
   handleLogout,
   isLogged,
   loggedMessage,
+  history
 }) => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(()=> {
+      if(isLoggedIn) {
+      
+       setTimeout(() => history.push('/'), 2000);
+   }
+  }, [isLoggedIn])
     const handleSubmit = (evt) => {
         evt.preventDefault();
         handleLogin();
@@ -47,10 +57,11 @@ const LoginForm = ({
             placeholder="Mot de Passe"
           />
          </Form.Field>
+
+
 <div className="label">
-         <a class="ui label">
-  <i class="truck icon"></i> Mot de passe oublié ?
-</a>
+         <a className="ui label"> 
+  <i className="truck icon"></i> Mot de passe oublié ?</a>
 </div>
          
            <div className="btn">       
@@ -58,7 +69,7 @@ const LoginForm = ({
           <Button className="ui primary button">Validez</Button>
   </span>
   <span>
-  <Link button className="ui grey button" to="/">
+  <Link button="true" className="ui grey button" to="/">
   Annuler
 </Link>
 </span>
@@ -81,7 +92,7 @@ const LoginForm = ({
       handleLogin: PropTypes.func.isRequired,
       handleLogout: PropTypes.func.isRequired,
       isLogged: PropTypes.bool,
-      loggedMessage: PropTypes.object,
+      loggedMessage: PropTypes.string,
     };
     
     

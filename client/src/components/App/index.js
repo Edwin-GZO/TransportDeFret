@@ -22,11 +22,11 @@ import './style.scss';
 
 
 function App() {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
-  useEffect(()=> {
-    dispatch(checkAuth());
-  }, [])
+ // useEffect(()=> {
+  //  dispatch(checkAuth());
+  //}, [])
 
   return (
     <div className="App">

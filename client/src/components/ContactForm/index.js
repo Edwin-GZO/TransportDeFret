@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Field from '../../containers/Field.js'
 import PropTypes from 'prop-types';
@@ -6,11 +6,21 @@ import { Button, Form } from 'semantic-ui-react'
 import './style.scss';
 
 
-const ContactForm = ({ submitcontact, contactMessage }) => {
+const ContactForm = ({ submitcontact, contactMessage, history }) => {
+
     const handleContact = (evt) => {
         evt.preventDefault();
         submitcontact();
       };
+
+       const [isLoggedIn, setIsLoggedIn] = useState(true)
+
+  useEffect(()=> {
+      if(isLoggedIn) {
+      console.log('click');
+       setTimeout(() => history.push('/'), 2000);
+   }
+  }, [isLoggedIn])
 
 
     return (
