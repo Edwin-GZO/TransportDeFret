@@ -11,6 +11,7 @@ const LoginForm = ({
   changeField,
   handleLogin,
   handleLogout,
+  loggedMessage,
   isLogged,  
   history
 }) => {
@@ -18,7 +19,7 @@ const LoginForm = ({
   useEffect(()=> {
     if(isLogged) {
    
-     setTimeout(() => history.push('/'), 2000);
+     setTimeout(() => history.push('/'), 5000);
  }
 }, [isLogged])
 
@@ -32,7 +33,7 @@ const LoginForm = ({
              
       <section className="login">
       <h1 className="ui dark header">Identifiants de connexion</h1>
-     
+      {loggedMessage ? <span>{loggedMessage}</span> : null}
         <Form autoComplete="off" onSubmit={handleSubmit}>
           
         <Form.Field >

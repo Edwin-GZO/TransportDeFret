@@ -15,12 +15,7 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
 
        const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  useEffect(()=> {
-      if(isLoggedIn) {
-      console.log('click');
-       setTimeout(() => history.push('/'), 2000);
-   }
-  }, [isLoggedIn])
+  
 
 
     return (

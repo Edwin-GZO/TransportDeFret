@@ -1,4 +1,4 @@
-import React, { Component, useEffect }  from 'react';
+import React, { Component }  from 'react';
 import axios from 'axios';
 import { LOGIN, SIGN_UP_PART,  CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror, signuppartsuccess, signupparterror } from '../action/user-actions';
 
@@ -55,25 +55,22 @@ export default (store) => (next) => (action) => {
         withCredentials: true 
       })
         .then((res) => {
-
-                     
           store.dispatch(loginSuccess(
             <div className="ui success message">
             <i className="close icon"></i>
             <div className="header">
-            <span>Vous êtes connecté</span>
+            <div>Vous êtes connecté</div>
           </div>
-          <span>Bonne journée</span>
-          </div>));
+         </div>));
         })
         .catch((err) => {
           store.dispatch(loginError(  
           <div className="ui negative message">
           <i className="close icon"></i>
           <div className="header">
-            <span>Nous n'avons pu vous connecter</span>
+            <div>Nous n'avons pu vous connecter</div>
           </div>
-          <span>Vérifier votre email ou votre mot de passe</span>
+          <p>Vérifier votre email ou votre mot de passe</p>
           </div>));
         })
 

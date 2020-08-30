@@ -23,8 +23,8 @@ export default (state = stateInitial, action = {}) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        isLogged: true
-       
+        isLogged: true,
+        loggedMessage: action.payload,
       };
     case LOGIN_ERROR:
       return {
