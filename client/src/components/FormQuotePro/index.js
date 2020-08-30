@@ -46,6 +46,7 @@ const FormQuotePro = ({
   widthQuotePro,
   heightQuotePro,
   commentQuotePro,
+  quoteMessage,
   // history
 }) => {
 
@@ -72,7 +73,7 @@ const FormQuotePro = ({
      {/* {isLoggedIn ? <p>some text</p> : */}
       
      <h1 class="ui dark header">Demande de devis</h1>
-      
+    
       
   <Form autoComplete="off" onSubmit={handleSubmit} >
 
@@ -394,13 +395,14 @@ const FormQuotePro = ({
       placeholder='Commentaires éventuels ...'
       cssClass='field-input'
     />  
-            
+            {quoteMessage ? <span>{quoteMessage}</span> : null}
+
    <div className="btn">       
 <span className="">
           <Button className="ui primary button">Validez</Button>
   </span>
   <span>
-  <Link button className="ui grey button" to="/">
+  <Link button="true" className="ui grey button" to="/">
   Annuler
 </Link>
 </span>

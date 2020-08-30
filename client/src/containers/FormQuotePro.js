@@ -38,6 +38,7 @@ const mapStateToProps = (state) => ({
     widthQuotePro: state.quotePro.widthQuotePro,
     heightQuotePro: state.quotePro.heightQuotePro,
     commentQuotePro: state.quotePro.commentQuotePro,
+    quoteMessage: state.quotePro.quoteMessage,
   });
 
   const mapDispatchToProps = (dispatch) => ({
@@ -54,7 +55,6 @@ const mapStateToProps = (state) => ({
     
 
     submitquote: ()=> {
-        console.log('demande envoyée');
         dispatch(submitquote());
     }  
     

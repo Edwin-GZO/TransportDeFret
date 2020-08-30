@@ -36,6 +36,7 @@ const stateInitial = {
   widthQuotePro:'',
   heightQuotePro:'',
   commentQuotePro:'',
+  quoteMessage:'',
   quotePro: {}
 
 };

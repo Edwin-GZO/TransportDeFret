@@ -1,4 +1,6 @@
+import React, { Component }  from 'react';
 import axios from 'axios';
+
 import { SUBMIT_QUOTE, submitquotesuccess, submitquoteerror } from '../action/user-actions';
 
 export default (store) => (next) => (action) => {
@@ -17,10 +19,24 @@ export default (store) => (next) => (action) => {
                 withCredentials: true,
             }).then((res) => {                
                 // store.dispatch(submitsuccess(res.data));
-                store.dispatch(submitquotesuccess('Votre demande de devis a bien été envoyée'));
+                store.dispatch(submitquotesuccess(
+                <div className="ui success message">
+                <i className="close icon"></i>
+                <div className="header">
+                <div>Votre demande a été transmise</div>
+                <p>Nous reviendrons vers vous dans les plus brefs délais.</p>
+              </div>
+             </div>));
             })
             .catch((err) => {
-            store.dispatch(submitquoteerror("Votre demande de devis n'a pu être envoyée"));
+            store.dispatch(submitquoteerror(
+            <div className="ui negative message">
+            <i className="close icon"></i>
+            <div className="header">
+              <div>Votre demande n'a pu être envoyée</div>
+            </div>
+            <p>Veuillez essayer ultérieurement</p>
+            </div>));
             })
             break;
             
