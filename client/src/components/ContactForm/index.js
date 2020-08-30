@@ -13,7 +13,7 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
         submitcontact();
       };
 
-       const [isLoggedIn, setIsLoggedIn] = useState(false)
+      
 
   
 

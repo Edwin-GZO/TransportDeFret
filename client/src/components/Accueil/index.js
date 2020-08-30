@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { Link } from 'react-router-dom'
 import './style.scss';
 
@@ -7,13 +7,16 @@ import './style.scss';
 
 
 const Accueil = (
-  isLogged,
+  
   loggedMessage
 ) => {
+
+  const [isLogged, setislogged] = useState(false);
  
     return(
    
   
+
       <nav className="navbar" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     
@@ -38,8 +41,8 @@ const Accueil = (
 
       
 
-      <div className="navbar-item has-dropdown is-hoverable ">
-      <a  id="navlink-items" className={isLogged ? "navbar-link" : "display:none"} >
+      <div className="navbar-item has-dropdown is-hoverable">
+      <a  id="navlink-items" className={(isLogged ? "navbar-link" : "display")}>
           Documentations
         </a>
 
