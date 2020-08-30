@@ -11,12 +11,16 @@ const LoginForm = ({
   changeField,
   handleLogin,
   handleLogout,
-  isLogged,
-  
+  isLogged,  
   history
 }) => {
 
-  
+  useEffect(()=> {
+    if(isLogged) {
+   
+     setTimeout(() => history.push('/'), 2000);
+ }
+}, [isLogged])
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
