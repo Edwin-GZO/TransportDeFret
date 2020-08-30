@@ -12,18 +12,12 @@ const LoginForm = ({
   handleLogin,
   handleLogout,
   isLogged,
-  loggedMessage,
+  
   history
 }) => {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  
 
-  useEffect(()=> {
-      if(isLoggedIn) {
-      
-       setTimeout(() => history.push('/'), 2000);
-   }
-  }, [isLoggedIn])
     const handleSubmit = (evt) => {
         evt.preventDefault();
         handleLogin();
@@ -34,7 +28,7 @@ const LoginForm = ({
              
       <section className="login">
       <h1 className="ui dark header">Identifiants de connexion</h1>
-      {loggedMessage ? <span>{loggedMessage}</span> : null}
+     
         <Form autoComplete="off" onSubmit={handleSubmit}>
           
         <Form.Field >

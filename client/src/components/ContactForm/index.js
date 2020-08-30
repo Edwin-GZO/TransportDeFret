@@ -13,7 +13,7 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
         submitcontact();
       };
 
-       const [isLoggedIn, setIsLoggedIn] = useState(true)
+       const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(()=> {
       if(isLoggedIn) {
@@ -25,7 +25,7 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
 
     return (
 <section className="contact">
-<h1 class="ui dark header">Formulaire de contact</h1>
+<h1 className="ui dark header">Formulaire de contact</h1>
 {contactMessage ? <span>{contactMessage}</span> : null}
 <Form autoComplete="off" onSubmit={handleContact}>
 
@@ -85,7 +85,7 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
           <Button className="ui primary button">Validez</Button>
   </span>
   <span>
-  <Link button className="ui grey button" to="/">
+  <Link button="true" className="ui grey button" to="/">
   Annuler
 </Link>
 </span>

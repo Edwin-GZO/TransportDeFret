@@ -18,13 +18,13 @@ export default (state = stateInitial, action = {}) => {
         ...state,
         isLogged: false,
         user: {},
-        loggedMessage: ''
-      };
+        
+      }; 
     case LOGIN_SUCCESS:
       return {
         ...state,
-        error: '',
-       loggedMessage: `Bienvenue ${action.payload.name}`
+        isLogged: true
+       
       };
     case LOGIN_ERROR:
       return {

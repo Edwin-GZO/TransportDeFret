@@ -15,15 +15,15 @@ export default (store) => (next) => (action) => {
 
             axios({
                 method: 'post',
-                url: 'http://54.90.53.91:8080/api/contact',
+                url: 'http://54.175.105.52:8080/api/contact',
                 data,
                 withCredentials: false,
             }).then((res) => {                
                 // store.dispatch(submitsuccess(res.data));
                 store.dispatch(submitsuccess(
-                <div class="ui success message">
-                <i class="close icon"></i>
-                <div class="header">
+                <div className="ui success message">
+                <i className="close icon"></i>
+                <div className="header">
                   Votre message a été transmis avec succès.
                 </div>
                 <p>Nous reviendrons vers vous le plus rapidement possible.</p>
@@ -31,9 +31,9 @@ export default (store) => (next) => (action) => {
             })
             .catch((err) => {
             store.dispatch(submiterror(
-            <div class="ui negative message">
-            <i class="close icon"></i>
-            <div class="header">
+            <div className="ui negative message">
+            <i className="close icon"></i>
+            <div className="header">
               Nous sommes désolés mais votre message n'a pu être envoyé.
             </div>
             <p>Veuillez essayer ultérieurement</p></div>));
