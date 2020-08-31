@@ -15,18 +15,16 @@ app.use(session({
 
 app.use((error, request, response, next) => {
     
-    // if (error instanceof UnrauthrorizedError()) {
-    //     response.status(403).send('zefopàik,zefoik,0');
-    // }
-
-    console.error('Erreur à la connexion');
-    console.error(error);
+    if (error) {
+    console.error('Erreur à la connexion',error);
+    } 
 
     response.status(500).send('{"Ok connexion": true}');
+
 });
 
 app.all('*', (request, response, next) => {
-    // console.log('Autorisation du protocole COR');
+    // console.log('Autorisation du protocole CORs');
     response.setHeader('Access-Control-Allow-Origin', request.header('Origin') || '*');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
@@ -48,16 +46,12 @@ const quoteRouter = require('./app/router/quoteRouter');
 const contactRouter = require('./app/router/contactRouter');
 const userRouter = require('./app/router/userRouter');
 
-// Middleware qui vérifie que le USER est connection
-// app.route(/^(\/api\/user.*|\/)/
-// (^\/api\/user\/\w*\/\w*)|(^\/$)|(^\/api\/user)
-//! Pourquoi all ? Pourquoi pas route ? Trouver le moyen d'inversé la selection ....  Tous SAUF /api/user*
-
+// Middleware qui vérifie que le USER est connecté
 app.all('*', (request, response, next) => {
     console.log(" Vérification par le MiddleWare de Session => ", request.session.login);
 
     routePath = request.originalUrl
-    console.log("Route Path ",routePath)
+    // console.log("Route Path ",routePath)
      
     const autorisedRoadUser = '/api/user' ; 
     const autorisedRoadPassword = '/api/user/password' ; 
@@ -67,7 +61,15 @@ app.all('*', (request, response, next) => {
     const autorisedRoadSlach = '/' ;
     const autorisedRoadCheckSessionLogin = '/api/isLogged' ;
 
-    if ((autorisedRoadUser == routePath || autorisedRoadPassword == routePath || autorisedRoadSignupPart == routePath || autorisedRoadSignupPro == routePath || autorisedRoadSlach == routePath || autorisedRoadContact == routePath || autorisedRoadCheckSessionLogin == routePath)) {
+    if ((
+        autorisedRoadUser == routePath || 
+        autorisedRoadPassword == routePath || 
+        autorisedRoadSignupPart == routePath || 
+        autorisedRoadSignupPro == routePath || 
+        autorisedRoadSlach == routePath || 
+        autorisedRoadContact == routePath || 
+        autorisedRoadCheckSessionLogin == routePath)) 
+    {
 
         console.log(" Route libre ")
         next();
@@ -85,7 +87,6 @@ app.use(conInscRouter);
 app.use(quoteRouter);
 app.use(contactRouter);
 app.use(userRouter);
-
 
 const port = process.env.PORT || 8080 ;
 app.listen(port, _ => {
