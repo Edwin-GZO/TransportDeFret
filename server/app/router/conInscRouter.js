@@ -14,5 +14,6 @@ router.post('/api/user', conInscController.connectionUser);
 
 router.post('/api/user/signup/pro', conInscController.insertUserPro);
 router.post('/api/user/signup/part', conInscController.insertUserPart);
+router.post('/api/isLogged', conInscController.checkLogged);
 
 module.exports = router;

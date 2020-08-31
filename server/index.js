@@ -65,8 +65,9 @@ app.all('*', (request, response, next) => {
     const autorisedRoadSignupPro = '/api/user/signup/pro' ;
     const autorisedRoadContact = '/api/contact' ; 
     const autorisedRoadSlach = '/' ;
+    const autorisedRoadCheckSessionLogin = '/api/isLogged' ;
 
-    if ((autorisedRoadUser == routePath || autorisedRoadPassword == routePath || autorisedRoadSignupPart == routePath || autorisedRoadSignupPro == routePath || autorisedRoadSlach == routePath || autorisedRoadContact == routePath )) {
+    if ((autorisedRoadUser == routePath || autorisedRoadPassword == routePath || autorisedRoadSignupPart == routePath || autorisedRoadSignupPro == routePath || autorisedRoadSlach == routePath || autorisedRoadContact == routePath || autorisedRoadCheckSessionLogin == routePath)) {
 
         console.log(" Route libre ")
         next();
