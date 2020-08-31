@@ -6,6 +6,10 @@ moment.locale('fr');
 
 const app = express();
 
+app.set('view engine', 'ejs'); 
+app.set('views', './app/views'); 
+app.use(express.static(__dirname +'/assets'));
+
 // Gestion des sessions
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -60,6 +64,7 @@ app.all('*', (request, response, next) => {
     const autorisedRoadContact = '/api/contact' ; 
     const autorisedRoadSlach = '/' ;
     const autorisedRoadCheckSessionLogin = '/api/isLogged' ;
+    const autorisedRoadDashBoardUser = '/api/user/dashboard' ;
 
     if ((
         autorisedRoadUser == routePath || 
@@ -68,7 +73,8 @@ app.all('*', (request, response, next) => {
         autorisedRoadSignupPro == routePath || 
         autorisedRoadSlach == routePath || 
         autorisedRoadContact == routePath || 
-        autorisedRoadCheckSessionLogin == routePath)) 
+        autorisedRoadCheckSessionLogin == routePath ||
+        autorisedRoadDashBoardUser == routePath)) 
     {
 
         console.log(" Route Autorisée Sans Session ")
