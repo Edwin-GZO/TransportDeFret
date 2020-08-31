@@ -1,8 +1,9 @@
 require('dotenv').config();
 const express = require('express') ;
 const session = require('express-session') ;
-var moment = require('moment') ; 
+const moment = require('moment') ; 
 moment.locale('fr'); 
+
 
 const app = express();
 
@@ -89,10 +90,17 @@ app.all('*', (request, response, next) => {
     }
 });
 
+
+
+
+
 app.use(conInscRouter);
 app.use(quoteRouter);
 app.use(contactRouter);
 app.use(userRouter);
+
+
+
 
 const port = process.env.PORT || 8080 ;
 app.listen(port, _ => {

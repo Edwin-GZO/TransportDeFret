@@ -1,19 +1,231 @@
-<!-- Banner -->
-	<section id="banner">
-		<div class="inner">
-			<h1>Bonjour & Bienvenue</h1>
-			<p>Vous cherchez un cuistot médiéval ? </p>
-			<ul class="actions">
-				<li><a href="#galleries" class="button alt scrolly big">Quelques recettes ?</a></li>
-			</ul>
-		</div>
-	</section>
+<!DOCTYPE html>
+		<html>
+		
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>TDR - profil utilisateur</title>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+			<!--<link rel="stylesheet" href="./assets/css/style.css"> -->
+			<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		</head>
+		
+		<body>
+			<section class="section ">
+				<div class="container">
+					<h1 class="title">
+						Profil utilisateur
+					</h1>
+					<div class="columns">
+						<!---->
+						<div class="column is-5">
+							
+							<div class="box"  >
+								<div class="columns">
+									<div class="column card-name ">
+										NOM : 
+									</div>
+									
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="NAME">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" name="content" value=""
+													placeholder="Nom">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validate_NAME">Valider</button>
+											</div>
+										</div>
+									</form>
+					
+					
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!---->
+						<div class="column is-2">
 
-<!-- Gallery -->
-	<section id="galleries">
+						</div>
+						<!---->
+						<div class="column is-5">
+							
+							<div class="box"  id="PHONE">
+								<div class="columns">
+									<div class="column card-name ">
+										TELEPHONE : 
+									</div>
+									
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" name="content" value=""
+													placeholder="Téléphone">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success"id="validate_PHONE">Valider</button>
+											</div>
+										</div>
+									</form>
+					
+					
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!---->
+					</div>
+					<div class="columns">	
+					<div class="column is-3">
 
-		<!-- Photo Galleries -->
-			<div class="gallery">
-				<header class="special">
-					<h2>Quelques recettes</h2>
-				</header>
+						</div>
+						<!---->
+						<!---->
+						<div class="column is-6">
+							
+							<div class="box"  id="PASSWORD">
+								<div class="columns">
+									<div class="column card-name ">
+										MOT DE PASSE 
+									</div>
+									
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" name="content" value=""
+													placeholder="Mot de passe">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validate_PASSWORD">Valider</button>
+											</div>
+										</div>
+									</form>
+					
+					
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+							<!---->
+						<div class="column is-3">
+
+						</div>
+					</div>
+
+					<div class="columns">
+						<!---->
+						<div class="column is-5">
+							
+							<div class="box"  id="MAIL">
+								<div class="columns">
+									<div class="column card-name ">
+										E-MAIL : 
+									</div>
+									
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" name="content" value=""
+													placeholder="e-mail">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validate_MAIL">Valider</button>
+											</div>
+										</div>
+									</form>
+					
+					
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!---->
+						<div class="column is-2">
+
+						</div>
+						<!---->
+						<div class="column is-5">
+							
+							<div class="box"  >
+								<div class="columns">
+									<div class="column card-name ">
+										SIRET : 
+									</div>
+									
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="form_SIRET">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" name="content" value=""
+													placeholder="Siret">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validate_SIRET">Valider</button>
+											</div>
+										</div>
+									</form>
+					
+					
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card" id="modify_SIRET">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!---->
+					</div>
+					<!---->
+				</div>
+
+				
+				
+				
+				
+				
+				
+						
+			</section>
+
+
+
+
+		</body>
+		
+		</html>
