@@ -7,11 +7,16 @@ import './style.scss';
 
 
 const Accueil = (
-  
+  logout,
   loggedMessage
 ) => {
 
+  const handleLogout = (evt) => {    
+    logout();
+  };
+
   const [isLogged, setislogged] = useState(false);
+ 
  
     return(
    
@@ -32,7 +37,7 @@ const Accueil = (
 
     <div className="navbar-start">
       <Link className="navbar-item" id="navlink-items" to="/">
-        Home
+        Accueil
       </Link>
 
       <Link className="navbar-item" id="navlink-items" to="/contact">
@@ -62,7 +67,7 @@ const Accueil = (
 
     <div className="navbar-item">
         <div className="buttons" >
-        <Link className="button is-primary" to="/ipro">
+        <Link className={(isLogged ? "display" : "button is-link")} to="/ipro">
             <strong>S'inscrire</strong>
             </Link>          
             </div>
@@ -70,11 +75,18 @@ const Accueil = (
       
       <div className="navbar-item"> 
         <div className="buttons" >
-        <Link className="button is-link" to="/connection">
+        <Link className={(isLogged ? "display" : "button is-primary")} to="/connection">
             <strong>Se connecter</strong>
             </Link>          
       </div>
-      </div>         
+      </div>    
+      <div className="navbar-item"> 
+        <div className="buttons" >
+        <button className={(isLogged ? "button is-danger" : "display")} onClick={handleLogout}>
+            <strong>Déconnexion</strong>
+            </button>          
+      </div>
+      </div>              
       </div>
       </div>
       

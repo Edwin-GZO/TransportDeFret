@@ -8,7 +8,7 @@ export default (store) => (next) => (action) => {
     case LOGOUT: {
       axios({
         method: 'post',
-        url: 'http://localhost:8080/api/logout',
+        url: 'http://54.175.105.52:8080/logout',
         withCredentials: true
       })
         .then((res) => {
@@ -19,24 +19,25 @@ export default (store) => (next) => (action) => {
           console.error(err);
         })
       break;
-    }
+    }   
 
-    
-    
-    
     case CHECK_AUTH: {
       axios({
         method: 'post',
-        url: 'http://localhost:8080/isLogged',
+        url: 'http://54.175.105.52:8080/isLogged',
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
         .then((res) => {
           console.log(res.data);
-          res.data.logged
-            ? store.dispatch(loginSuccess(res.data.info))
-            : store.dispatch(loginError(res.data.info));
-            
+          if (res.data.logged) {
+            store.dispatch(loginSuccess(res.data.info));
+          }
         })
+         // res.data.logged
+           //{ ? store.dispatch(loginSuccess(res.data.info))}
+            //: store.dispatch(loginError(res.data.info));
+            
+        //})
         .catch((err) => {
           console.error(err);
         })
