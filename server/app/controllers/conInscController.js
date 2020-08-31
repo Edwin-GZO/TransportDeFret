@@ -170,6 +170,5 @@ module.exports = {
     logOutUser : async (request, response,next) => {
 
 
-
     }
 }
