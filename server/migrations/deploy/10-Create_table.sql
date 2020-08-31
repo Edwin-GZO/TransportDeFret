@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS "user";
 CREATE TABLE "user" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "password" TEXT NOT NULL, -- vérifier le nombre et le type de caractère (ragex)
+    "password" TEXT NOT NULL, -- vérifier le nombre et le type de caractère (ragex) en front
     "role" TEXT NOT NULL DEFAULT 'user', -- user || admin
     "mail" TEXT UNIQUE NOT NULL, -- valider avec API mailvalidator
     "phone" TEXT, -- Expression Régulière
