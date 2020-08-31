@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[_!@#$%^&*]).{8,16}$/;
 
-
 module.exports = {
 
     connectionUser: async (request,response) => {
@@ -34,7 +33,6 @@ module.exports = {
                 return;
             }
 
-               
             const compareOK = await bcrypt.compare(body.passwordLogin, user.password)
             
             if (!compareOK) {
@@ -176,6 +174,21 @@ module.exports = {
             }
     
             const newBillAddress = await conInscDataMapper.addBillAddress(bodyAddressPart);
+
+            const uncryptedPasswordUser = body.passwordSignUpPart
+
+            // Vérification du respect de la contrainte MOT DE PASSE
+            if (!(passwordRegExp.test(uncryptedPasswordUser))) {
+            
+                response.status(400).json({isLogged:false , error:" Le Mot de Passe ne respecte pas la contrainte"});
+                console.log(moment().format('LLLL')," Erreur : Le Mot de Passe ne respecte pas la contrainte")
+                return
+              }
+
+            const hashedPassword = bcrypt.hashSync(uncryptedPasswordUser, saltRounds);
+
+            body.passwordSignUpPart = hashedPassword ;
+
             await conInscDataMapper.addUserPart(body,newBillAddress)
     
             request.session.login = body.mailSignUpPart;
@@ -196,7 +209,7 @@ module.exports = {
         }
     },
     
-    checkLogged : async (request, response,next) => {
+    checkLogged : async (request, response) => {
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
@@ -209,7 +222,7 @@ module.exports = {
 
     },
 
-    logOutUser : async (request, response,next) => {
+    logOutUser : async (request, response) => {
 
     }
 }
