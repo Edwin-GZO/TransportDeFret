@@ -1,6 +1,10 @@
 const conInscDataMapper = require('../db/conInscDataMapper') ;
 const validator = require("email-validator") ;
 const moment = require('moment') ;
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const passwordRegExp = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_!@#$%^&*]).{8,16}$");
+
 
 module.exports = {
 
@@ -57,8 +61,11 @@ module.exports = {
     insertUserPro: async (request, response) => {
 
         try {
-            
+              
             const body = request.body;
+
+            console.log(body);
+
             const bodyAddressPro = {
                 "billNumber": request.body.billNumberSignUpPro,
                 "billTrack": request.body.billTrackSignUpPro,
@@ -90,19 +97,44 @@ module.exports = {
             }
     
             const newBillAddress = await conInscDataMapper.addBillAddress(bodyAddressPro);
-            await conInscDataMapper.addUserPro(body,newBillAddress)
-    
-            request.session.login = body.mailSignUpPro;
-    
-            if (!request.session.login) {
-    
-                console.log(moment().format('LLLL')," Erreur : Aucune session ");
-                response.status(401).json({isLogged: false , error:" Pas de session" });
-            };
+
+            // Encryptage Password
+
+            const uncryptedPasswordUser = body.passwordSignUpPro
+
+            // if (uncryptedPasswordUser == passwordRegExp)
+
+            resultICi = uncryptedPasswordUser.matchAll(passwordRegExp)
+
+            console.log(resultICi)
+
+
+            // let regexIf = /(if)\s*\(\s*(\w+)\s*(==|<|>)\s*(\w+)\s*\)\s*{/g;
+            //     const ligneIf = 'if (ageJoueur == AGE_LIMITE) {';
+                
+            //     ;
+            //     console.log(...result);
+
+            const hashedPassword = bcrypt.hashSync(uncryptedPasswordUser, saltRounds);
+
+            console.log(hashedPassword) ;
+
+            body.passwordSignUpPro = hashedPassword ;
+
+            // Fin 
             
-        
-            console.log(moment().format('LLLL'), " Création : Utilisateur Professionnel enregistré")
-            response.status(201).json({isLogged: true , message: " Utilisateur enregistré " });
+            // await conInscDataMapper.addUserPro(body,newBillAddress)
+                
+            // request.session.login = body.mailSignUpPro;
+    
+            // if (!request.session.login) {
+    
+            //     console.log(moment().format('LLLL')," Erreur : Aucune session ");
+            //     response.status(401).json({isLogged: false , error:" Pas de session" });
+            // };
+            
+            // console.log(moment().format('LLLL'), " Création : Utilisateur Professionnel enregistré")
+            // response.status(201).json({isLogged: true , message: " Utilisateur enregistré " });
 
         } catch (error) {
             
@@ -166,10 +198,21 @@ module.exports = {
 
         }
     },
+    
+    checkLogged : async (request, response,next) => {
+
+        if (!request.session.login) {
+            response.status(401).json({isLogged: false , error:" Pas de session" });
+            console.log(" Erreur : Aucune session ") }
+
+        else {
+            response.status(201).json(request.session.login)
+            console.log(request.session.login) ;
+        }
+
+    },
 
     logOutUser : async (request, response,next) => {
-
-
 
     }
 }
