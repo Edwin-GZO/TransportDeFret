@@ -4,6 +4,7 @@ import rootReducer from "./reducer";
 import authMiddleware from './middlewares/authMiddleware';
 import logMiddleware from "./middlewares/logMiddleware";
 import contactMiddleware from "./middlewares/contactMiddleware";
+import quotePro from "./middlewares/quotePro";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -13,7 +14,7 @@ const enhancers = composeEnhancers(
     authMiddleware,
     logMiddleware,
     contactMiddleware,
-    
+    quotePro,
   )
 );
 

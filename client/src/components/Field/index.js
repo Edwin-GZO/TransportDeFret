@@ -10,11 +10,21 @@ const Field = ({
   changeField,
   cssClass,
   id,
+  required
 }) => {
   let field;
 
   const inputChangeHandler = (event) => {
-    changeField({name, value:event.target.value, reducerName});
+    let value = event.target.value; 
+
+    // 'patrick'
+    // +value = NaN
+
+    // '0'
+    // +value = 0
+    
+    
+    changeField({name, value, reducerName});
   };
 
   switch (type) {
@@ -56,6 +66,28 @@ const Field = ({
         />
       );
       break;
+      case 'select':
+      field = (
+        <select multiple="" className="ui dropdown"
+        
+          id={id}
+          className={cssClass}
+          type="select"
+          placeholder={placeholder}
+          name={name}
+          value={value}
+          onChange={inputChangeHandler}
+          >
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          </select>
+      );
+      break;
     case 'date':
       field = (
         <input
@@ -79,6 +111,7 @@ const Field = ({
           name={name}
           value={value}
           onChange={inputChangeHandler}
+          required={required ? true : false}
         />
       );
   }
@@ -91,7 +124,7 @@ Field.propTypes = {
   placeholder: PropTypes.string,
   reducerName: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool, PropTypes.number]).isRequired,
   changeField: PropTypes.func.isRequired,
   cssClass: PropTypes.string,
   id: PropTypes.string,

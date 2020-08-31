@@ -2,67 +2,51 @@
 
 
 import React, { useEffect } from "react";
+import { useDispatch } from 'react-redux'
 import { Route, Switch } from 'react-router-dom';
 import Accueil from '../../components/Accueil';
-import Affretement from '../../components/Affretement';
-import Carte from '../../components/Carte';
-import Distribution from '../../components/Distribution';
-//import FormQuotePro from '../../containers//FormQuotePro';
-import Logistique from '../../components/Logistique';
-import Mots from '../../components/Mots';
+import FormQuotePro from '../../containers//FormQuotePro';
 import PageContact from '../../components/PageContact';
-import ProPartModale from '../../components/ProPartModale';
-import Réseau from '../../components/Reseau';
 import FormInscriptionPro from '../../containers/FormInscriptionPro';
 import FormInscriptionPart from '../../containers/FormInscriptionPart';
 import LoginForm from '../../containers/LoginForm';
 import ContactForm from '../../containers/ContactForm';
+import ModalInscription from '../../components/ModalInscription';
+import NotFound from '../../components/NotFound';
+
+
+import { checkAuth } from '../../store/action/user-actions';
 
 import './style.scss';
 
 
 
 function App() {
+
+ 
+  //const dispatch = useDispatch();
+ // useEffect(()=> {
+  //  dispatch(checkAuth());
+  //}, [])
+
   return (
-    
-
-    
-     
-   
-
     <div className="App">
-feature/forms
-   <LoginForm />
-    <FormInscriptionPart />
-    <FormInscriptionPro />
-    <ContactForm />
-    
-     
     
       <Switch>
-      <Route path="/affretement" component={Affretement} />
-    
-      <Route path="/carte" component={Carte} />
-    
-      <Route path="/distribution" component={Distribution} />
-
-     
-    
-      <Route path="/logistique" component={Logistique} />
-  
-      <Route path="/Mots" component={Mots} />
-    
-      <Route path="/pageContact" component={PageContact} />
-    
-      <Route path="/ProPartModale" component={ProPartModale} />
-    
-      <Route path="/reseau" component={Réseau} />
+        <Route exact path="/contact" component={ContactForm} />
+        <Route exact path="/" component={Accueil} />
+        <Route exact path="/connection" component={LoginForm} />
+        <Route exact path="/ipro" component={FormInscriptionPro} />
+        <Route exact path="/ipart" component={FormInscriptionPart} />
+        <Route exact path="/devis" component={FormQuotePro} />
+        <Route exact path="/imodal" component={ModalInscription} />
+        <Route>
+            <NotFound />
+        </Route>
       </Switch>
      
-  
+      
     </div>
-
-    
   );
 }
 

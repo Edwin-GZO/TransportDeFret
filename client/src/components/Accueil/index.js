@@ -1,94 +1,101 @@
-import React from 'react';
+import React, { useState} from 'react';
+import { Link } from 'react-router-dom'
 import './style.scss';
-import * as ReactBootStrap from "react-bootstrap";
 
 
 
 
-const Accueil = () => {
+
+const Accueil = (
+  logout,
+  loggedMessage
+) => {
+
+  const handleLogout = (evt) => {    
+    logout();
+  };
+
+  const [isLogged, setislogged] = useState(false);
+ 
  
     return(
    
+  
+
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+  <div className="navbar-brand">
     
-    <div className="App" >
-  <div className="container">
+
+    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" className="navbar-menu">
+
+    <div className="navbar-start">
+      <Link className="navbar-item" id="navlink-items" to="/">
+        Accueil
+      </Link>
+
+      <Link className="navbar-item" id="navlink-items" to="/contact">
+        Contact
+      </Link>
+
       
-      <ReactBootStrap.Navbar className="fw" collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <ReactBootStrap.Navbar.Brand href="#home">Logo Entreprise que j'arrive pas à integrer</ReactBootStrap.Navbar.Brand>
-  <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
-    <ReactBootStrap.Nav className="mr-auto">
-      <ReactBootStrap.Nav.Link href="#accueil">Accueil</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#reseau">Réseau</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#livraison">Livraison</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#affretement">Affretement</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#logistique">Logistique</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#entreprise">Entreprise</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#carte">Carte</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#inscription">Inscription</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#contact">Contact</ReactBootStrap.Nav.Link>
-      
-      {/*<ReactBootStrap.NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-        <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Item href="#action/3.3">Something</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Divider />
-        <ReactBootStrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootStrap.NavDropdown.Item>
-    </ReactBootStrap.NavDropdown>*/}
-    </ReactBootStrap.Nav>
-    <ReactBootStrap.Nav>
-      <ReactBootStrap.Nav.Link href="#inscrire">s'incrire</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link eventKey={2} href="#connection">
-        se connecter
-      </ReactBootStrap.Nav.Link>
-    </ReactBootStrap.Nav>
-  </ReactBootStrap.Navbar.Collapse>
-</ReactBootStrap.Navbar>
+
+      <div className="navbar-item has-dropdown is-hoverable">
+      <a  id="navlink-items" className={(isLogged ? "navbar-link" : "display")}>
+          Documentations
+        </a>
+
+        <div className="navbar-dropdown">
+        <Link className="navbar-item" id="navlink-items" to="/devis">
+            Demande de devis
+          </Link>
+          <Link className="navbar-item" id="navlink-items" to="/docs">
+            Telechargement
+          </Link>
+          
+         </div>
+      </div>
+    </div>
+
+    <div className="navbar-end">
+
+    <div className="navbar-item">
+        <div className="buttons" >
+        <Link className={(isLogged ? "display" : "button is-link")} to="/ipro">
+            <strong>S'inscrire</strong>
+            </Link>          
+            </div>
 </div>
+      
+      <div className="navbar-item"> 
+        <div className="buttons" >
+        <Link className={(isLogged ? "display" : "button is-primary")} to="/connection">
+            <strong>Se connecter</strong>
+            </Link>          
+      </div>
+      </div>    
+      <div className="navbar-item"> 
+        <div className="buttons" >
+        <button className={(isLogged ? "button is-danger" : "display")} onClick={handleLogout}>
+            <strong>Déconnexion</strong>
+            </button>          
+      </div>
+      </div>              
+      </div>
+      </div>
+      
+   
+ 
+  </nav>
 
-{/*
-<div className="carousel">
-
-<ReactBootStrap.Carousel interval={3000} >
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="https://www.cocoexpress.fr/view/images/icon/256/transport-express-colis-france.png"
-      alt="First slide"
-    />
-    <ReactBootStrap.Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="holder.js/800x400?text=Second slide&bg=282c34"
-      alt="Third slide"
-    />
-
-    <ReactBootStrap.Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="holder.js/800x400?text=Third slide&bg=20232a"
-      alt="Third slide"
-    />
-
-    <ReactBootStrap.Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-</ReactBootStrap.Carousel>
-</div>*/}
-
-     </div>
+ 
+   
     )
   }
   

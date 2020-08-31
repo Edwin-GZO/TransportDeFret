@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Field from '../../containers/Field'
+import { Link } from 'react-router-dom';
+import Field from '../../containers/Field';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
 import './style.scss';
 
 const FormInscriptionPro = ({ 
@@ -36,33 +37,36 @@ const FormInscriptionPro = ({
   return (
   
     <section className="register">
-      <h1 className="title">Formulaire d'inscription</h1>
+     <h1 class="ui dark header">Formulaire d'inscription professionnel</h1>
       {
         hasError ? <p>modal</p> : null
       }
   <Form onSubmit={handleSubmit} >
 
-    <Form.Field>
+    <Form.Field required>
       <label>N° Siret</label>
       <Field
+      id="bg"
         name="siret"
         reducerName="register"
         placeholder="N° siret"
       />
     </Form.Field>
 
-    <Form.Field>
+    <Form.Field required>
       <label>Societe</label>
       <Field 
+      id="bg"
         name="societe"
         reducerName="register"
         placeholder="société"
       />
     </Form.Field>
 
-    <Form.Field>
+    <Form.Field required>
       <label>Adresse Mail</label>
         <Field 
+        id="bg"
           name="mailSignUpPro"
           type="email"
           reducerName="register"
@@ -74,9 +78,10 @@ const FormInscriptionPro = ({
                 <div className="two fields">
                 <div className="field">
 
-           <Form.Field>
+           <Form.Field required>
           <label>N° de la voie</label>
           <Field
+          id="bg"
             name="billNumberSignUpPro"
             reducerName="register"
             placeholder=""
@@ -85,11 +90,11 @@ const FormInscriptionPro = ({
             </div>
 
             <div className="field">
-          <Form.Field>
+          <Form.Field required>
           <label>Type voie</label>
           <Field
             name="billTrackSignUpPro"
-            
+            id="bg"
             reducerName="register"
             placeholder=""
              />
@@ -100,11 +105,11 @@ const FormInscriptionPro = ({
              
 
    
-        <Form.Field>
+        <Form.Field required>
           <label>Nom de la voie</label>
           <Field
             name="billStreetSignUpPro"
-            
+            id="bg"
             reducerName="register"
             placeholder=""
              
@@ -113,9 +118,10 @@ const FormInscriptionPro = ({
         <Form.Field>
           <label>Complément d'adresse</label>
           <Field  name="billComplementSignUpPro"
-                
+                id="bg"
                 reducerName="register"
                 placeholder=""
+                required={true}
                 />
         </Form.Field>
         
@@ -124,10 +130,10 @@ const FormInscriptionPro = ({
         <div className="ui form">
               <div className="two fields">
                   <div className="field">
-        <Form.Field >
+        <Form.Field required>
           <label>Ville</label>
           <Field  name="citySignUpPro"
-                
+                id="bg"
                 reducerName="register"
                 placeholder=""
                 />
@@ -135,10 +141,10 @@ const FormInscriptionPro = ({
         </div>
 
         <div className="field">
-        <Form.Field >
+        <Form.Field required>
           <label>Code postal</label>
           <Field name="postalCodeSignUpPro"
-                
+                id="bg"
                 reducerName="register"
                 placeholder=""
                 />
@@ -148,27 +154,29 @@ const FormInscriptionPro = ({
           </div>
 
     
-    <Form.Field>
-      <label>Telephone</label>
-      <Field name="phoneSignUpPro"
-            
+    <Form.Field >
+      <label >Telephone</label>
+            <Field 
+            name="phoneSignUpPro"
+            id="bg"
             reducerName="register"
             placeholder=""
-              />
+              /> 
     </Form.Field>
-    <Form.Field>
-      <label>Choisissez votre mot de passe (entre 8 et 16 caracteres avec majuscules et caracteres speciaux)</label>
-        <Field
+    <Form.Field required data-tooltip="Entre 8 et 16 caractères, une Maj et 1 caractère spécial" data-position="top-center" >
+        <label >Choisissez votre mot de passe</label>
+        <Field 
           cssClass={!isSamePassword ? 'error' : ''}
           name="passwordSignUpPro"
           type="password"
           reducerName="register"
           placeholder=""
+          id="bg"
           required={true}
           minLength={8}
         />
     </Form.Field>
-    <Form.Field>
+    <Form.Field required>
       <label>Confirmez votre mot de passe</label>
         <Field
           cssClass={!isSamePassword ? 'error' : ''}
@@ -176,10 +184,23 @@ const FormInscriptionPro = ({
           type="password"
           reducerName="register"
           placeholder=""
+          id="bg"
         />
     </Form.Field>
     
-    <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
+    <div className="btn">       
+<span className="">
+          <Button className="ui primary button">Validez</Button>
+  </span>
+  <span>
+  <Link button className="ui grey button" to="/">
+  Annuler
+</Link>
+</span>
+</div>
+
+
+
   </Form>
 
 

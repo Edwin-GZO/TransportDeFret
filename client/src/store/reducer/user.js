@@ -2,8 +2,8 @@ import { CHANGE_FIELD, LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT_SUCCESS  } from '../ac
 
 
 const stateInitial = {
-  mail: '',
-  password: '',
+  mailLogin: '',
+  passwordLogin: '',
   isLogged: false,
   loggedMessage: '',
   error: '',
@@ -18,29 +18,22 @@ export default (state = stateInitial, action = {}) => {
         ...state,
         isLogged: false,
         user: {},
-        loggedMessage: ''
-      };
+        
+      }; 
     case LOGIN_SUCCESS:
       return {
         ...state,
         isLogged: true,
-        mail: '',
-        password: '',
-        error: '',
-        user: action.payload.name,
-        loggedMessage: `Bienvenue ${action.payload.name}`
+        loggedMessage: action.payload,
       };
     case LOGIN_ERROR:
       return {
-        ...state,
-        password: '',
-        error: action.payload,
-        loggedMessage: '',
-        user: {},
+        ...state,        
+        loggedMessage: action.payload,
         isLogged: false
       };
     case CHANGE_FIELD:
-      if(action.payloadreducerName === "user"){
+      if(action.payload.reducerName === "user"){
         return {
           ...state,
           [action.payload.name]: action.payload.value
