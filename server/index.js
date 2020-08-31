@@ -48,17 +48,12 @@ const quoteRouter = require('./app/router/quoteRouter');
 const contactRouter = require('./app/router/contactRouter');
 const userRouter = require('./app/router/userRouter');
 
-// Middleware qui vérifie que le USER est connection
-// app.route(/^(\/api\/user.*|\/)/
-// (^\/api\/user\/\w*\/\w*)|(^\/$)|(^\/api\/user)
-//! Pourquoi all ? Pourquoi pas route ? Trouver le moyen d'inversé la selection ....  Tous SAUF /api/user*
-
+// A refactoriser si possible
 app.all('*', (request, response, next) => {
     console.log(" Vérification par le MiddleWare de Session => ", request.session.login);
 
     routePath = request.originalUrl
-    console.log("Route Path ",routePath)
-     
+    
     const autorisedRoadUser = '/api/user' ; 
     const autorisedRoadPassword = '/api/user/password' ; 
     const autorisedRoadSignupPart = '/api/user/signup/part' ;
@@ -68,7 +63,7 @@ app.all('*', (request, response, next) => {
 
     if ((autorisedRoadUser == routePath || autorisedRoadPassword == routePath || autorisedRoadSignupPart == routePath || autorisedRoadSignupPro == routePath || autorisedRoadSlach == routePath || autorisedRoadContact == routePath )) {
 
-        console.log(" Route libre ")
+        console.log(" Route Autorisée Sans Session ")
         next();
 
     } else if (!request.session.login) {
