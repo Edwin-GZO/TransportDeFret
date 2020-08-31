@@ -4,7 +4,8 @@
 import React, { useEffect } from "react";
 import { useDispatch } from 'react-redux'
 import { Route, Switch } from 'react-router-dom';
-import Accueil from '../../components/Accueil';
+
+import Accueil from '../../containers/Accueil';
 import FormQuotePro from '../../containers//FormQuotePro';
 import PageContact from '../../components/PageContact';
 import FormInscriptionPro from '../../containers/FormInscriptionPro';
@@ -33,8 +34,8 @@ function App() {
     <div className="App">
     
       <Switch>
-        <Route exact path="/contact" component={ContactForm} />
         <Route exact path="/" component={Accueil} />
+        <Route exact path="/contact" component={ContactForm} />
         <Route exact path="/connection" component={LoginForm} />
         <Route exact path="/ipro" component={FormInscriptionPro} />
         <Route exact path="/ipart" component={FormInscriptionPart} />

@@ -1,4 +1,5 @@
 export const CHECK_AUTH = 'CHECK_AUTH';
+export const LOG_USER = 'LOG_USER';
 export const CHANGE_FIELD = 'CHANGE_FIELD';
 export const LOGIN = 'LOGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -19,6 +20,10 @@ export const SUBMIT_QUOTE_SUCCESS = "SUBMIT_QUOTE_SUCCESS";
 export const SUBMIT_QUOTE_ERROR = "SUBMIT_QUOTE_ERROR";
 
 
+export const logUser = (payload) => ({
+  type: LOG_USER,
+  payload
+});
 
 export const checkAuth = () => ({
   type: CHECK_AUTH

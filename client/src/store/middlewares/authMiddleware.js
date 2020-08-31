@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
-import { LOGIN, SIGN_UP_PART,  CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror, signuppartsuccess, signupparterror } from '../action/user-actions';
+import { logUser, LOGIN, SIGN_UP_PART,  CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror, signuppartsuccess, signupparterror } from '../action/user-actions';
 
 export default (store) => (next) => (action) => {
   next(action);
@@ -22,6 +22,7 @@ export default (store) => (next) => (action) => {
     }   
 
     case CHECK_AUTH: {
+      const { user } = store.getState();
       axios({
         method: 'post',
         url: 'http://54.175.105.52:8080/isLogged',
@@ -29,9 +30,9 @@ export default (store) => (next) => (action) => {
       })
         .then((res) => {
           console.log(res.data);
-          if (res.data.logged) {
-            store.dispatch(loginSuccess(res.data.info));
-          }
+          
+            store.dispatch(logUser(res.data.isLogged));
+          
         })
          // res.data.logged
            //{ ? store.dispatch(loginSuccess(res.data.info))}

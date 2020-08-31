@@ -7,15 +7,15 @@ import './style.scss';
 
 
 const Accueil = (
-  logout,
-  loggedMessage
+  { logout,
+    isLogged }
 ) => {
 
   const handleLogout = (evt) => {    
     logout();
   };
-
-  const [isLogged, setislogged] = useState(false);
+console.log(isLogged);
+  //const [isLogged, setislogged] = useState(false);
  
  
     return(
@@ -65,28 +65,44 @@ const Accueil = (
 
     <div className="navbar-end">
 
-    <div className="navbar-item">
-        <div className="buttons" >
-        <Link className={(isLogged ? "display" : "button is-link")} to="/ipro">
+    
+        {!isLogged
+
+        ? 
+        <>
+        <div className="navbar-item">
+        <div className="buttons" >         
+        <Link className="button is-link" to="/ipro">
             <strong>S'inscrire</strong>
             </Link>          
             </div>
-</div>
-      
-      <div className="navbar-item"> 
+        </div>
+
+        <div className="navbar-item"> 
         <div className="buttons" >
-        <Link className={(isLogged ? "display" : "button is-primary")} to="/connection">
+        <Link className="button is-primary" to="/connection">
             <strong>Se connecter</strong>
             </Link>          
       </div>
       </div>    
-      <div className="navbar-item"> 
+  </>
+
+        :  
+        
+        <div className="navbar-item"> 
         <div className="buttons" >
-        <button className={(isLogged ? "button is-danger" : "display")} onClick={handleLogout}>
+        <button className="button is-danger" onClick={handleLogout}>
             <strong>Déconnexion</strong>
             </button>          
       </div>
-      </div>              
+      </div>           
+        
+
+        }
+        
+      
+      
+        
       </div>
       </div>
       
