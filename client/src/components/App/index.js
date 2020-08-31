@@ -24,10 +24,10 @@ import './style.scss';
 function App() {
 
  
-  //const dispatch = useDispatch();
- // useEffect(()=> {
-  //  dispatch(checkAuth());
-  //}, [])
+  const dispatch = useDispatch();
+  useEffect(()=> {
+   dispatch(checkAuth());
+ }, [])
 
   return (
     <div className="App">
