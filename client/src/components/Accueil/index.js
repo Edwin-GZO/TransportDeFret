@@ -44,9 +44,12 @@ console.log(isLogged);
         Contact
       </Link>
 
-      
+      <a href='#' id="navlink-items" className={(isLogged ? "navbar-link" : "display")}>
+        Mes info
+      </a>
 
       <div className="navbar-item has-dropdown is-hoverable">
+
       <a  id="navlink-items" className={(isLogged ? "navbar-link" : "display")}>
           Documentations
         </a>
@@ -63,6 +66,7 @@ console.log(isLogged);
       </div>
     </div>
 
+    
     <div className="navbar-end">
 
     

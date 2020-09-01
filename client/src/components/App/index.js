@@ -37,10 +37,13 @@ function App() {
         <Route exact path="/" component={Accueil} />
         <Route exact path="/contact" component={ContactForm} />
         <Route exact path="/connection" component={LoginForm} />
+
+        {/*require login*/}
+
         <Route exact path="/ipro" component={FormInscriptionPro} />
         <Route exact path="/ipart" component={FormInscriptionPart} />
         <Route exact path="/devis" component={FormQuotePro} />
-        <Route exact path="/imodal" component={ModalInscription} />
+        
         <Route>
             <NotFound />
         </Route>
