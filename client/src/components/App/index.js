@@ -32,9 +32,11 @@ function App() {
 
   return (
     <div className="App">
+
+
     
-      <Switch>
-        <Route exact path="/" component={Accueil} />
+      <Switch>   
+        <Route exact path="/" component={Accueil} />     
         <Route exact path="/contact" component={ContactForm} />
         <Route exact path="/connection" component={LoginForm} />
 
@@ -43,7 +45,8 @@ function App() {
         <Route exact path="/ipro" component={FormInscriptionPro} />
         <Route exact path="/ipart" component={FormInscriptionPart} />
         <Route exact path="/devis" component={FormQuotePro} />
-        
+        <Route exact path="/modinscr" component={ModalInscription} />
+               
         <Route>
             <NotFound />
         </Route>

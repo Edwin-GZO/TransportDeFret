@@ -19,7 +19,7 @@ const LoginForm = ({
   useEffect(()=> {
     if(isLogged) {
    
-     setTimeout(() => history.push('/'), 5000);
+     setTimeout(() => history.push('/'), 3000);
  }
 }, [isLogged])
 
@@ -66,6 +66,7 @@ const LoginForm = ({
          <a className="ui label"> 
   <i className="truck icon"></i> Mot de passe oublié ?</a>
 </div>
+
          
            <div className="btn">       
 <span className="">

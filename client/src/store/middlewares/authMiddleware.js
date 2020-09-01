@@ -1,14 +1,16 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
-import { logUser, LOGIN, SIGN_UP_PART,  CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror, signuppartsuccess, signupparterror } from '../action/user-actions';
+import { logUser, LOGIN, SIGN_UP_PART, CHECK_AUTH, loginSuccess, loginError, logoutSuccess, LOGOUT, SIGN_UP, signupsuccess, signuperror, signuppartsuccess, signupparterror } from '../action/user-actions';
 
 export default (store) => (next) => (action) => {
   next(action);
   switch (action.type) {
     case LOGOUT: {
+      
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/logout',
+        url: 'http://54.175.105.52:8080/api/user/logout',
+        
         withCredentials: true
       })
         .then((res) => {
@@ -20,12 +22,14 @@ export default (store) => (next) => (action) => {
         })
       break;
     }   
+    
 
     case CHECK_AUTH: {
-      const { user } = store.getState();
+      
       axios({
         method: 'post',
         url: 'http://54.175.105.52:8080/isLogged',
+        
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
         .then((res) => {

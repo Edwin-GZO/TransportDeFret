@@ -50,6 +50,9 @@ const FormInscriptionPro = ({
         name="siret"
         reducerName="register"
         placeholder="N° siret"
+        required={true}
+        minLength={14}
+        maxLength={14}
       />
     </Form.Field>
 
@@ -60,6 +63,7 @@ const FormInscriptionPro = ({
         name="societe"
         reducerName="register"
         placeholder="société"
+        required={true}
       />
     </Form.Field>
 
@@ -71,6 +75,7 @@ const FormInscriptionPro = ({
           type="email"
           reducerName="register"
           placeholder="mail"
+          required={true}
            />
            </Form.Field>
 
@@ -85,6 +90,7 @@ const FormInscriptionPro = ({
             name="billNumberSignUpPro"
             reducerName="register"
             placeholder=""
+            required={true}
              />
             </Form.Field>
             </div>
@@ -97,6 +103,7 @@ const FormInscriptionPro = ({
             id="bg"
             reducerName="register"
             placeholder=""
+            required={true}
              />
              </Form.Field>
              </div>
@@ -112,7 +119,7 @@ const FormInscriptionPro = ({
             id="bg"
             reducerName="register"
             placeholder=""
-             
+            required={true}
           />
         </Form.Field>
         <Form.Field>
@@ -121,7 +128,7 @@ const FormInscriptionPro = ({
                 id="bg"
                 reducerName="register"
                 placeholder=""
-                required={true}
+                
                 />
         </Form.Field>
         
@@ -136,6 +143,7 @@ const FormInscriptionPro = ({
                 id="bg"
                 reducerName="register"
                 placeholder=""
+                required={true}
                 />
         </Form.Field>
         </div>
@@ -147,6 +155,7 @@ const FormInscriptionPro = ({
                 id="bg"
                 reducerName="register"
                 placeholder=""
+                required={true}
                 />
         </Form.Field>
         </div>
@@ -161,6 +170,7 @@ const FormInscriptionPro = ({
             id="bg"
             reducerName="register"
             placeholder=""
+            type="text"
               /> 
     </Form.Field>
     <Form.Field required data-tooltip="Entre 8 et 16 caractères, une Maj et 1 caractère spécial" data-position="top-center" >
@@ -174,6 +184,7 @@ const FormInscriptionPro = ({
           id="bg"
           required={true}
           minLength={8}
+          maxLength={16}
         />
     </Form.Field>
     <Form.Field required>
@@ -185,6 +196,7 @@ const FormInscriptionPro = ({
           reducerName="register"
           placeholder=""
           id="bg"
+          required={true}
         />
     </Form.Field>
     

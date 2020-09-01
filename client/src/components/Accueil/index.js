@@ -42,7 +42,7 @@ console.log(isLogged);
         Contact
       </Link>
 
-      <a href='#' id="navlink-items" className={(isLogged ? "navbar-link" : "display")}>
+      <a href='#' id="navlink-items" className={(isLogged ? "navbar-item" : "display")}>
         Mes info
       </a>
 
