@@ -1,6 +1,7 @@
 const userDataMapper = require('../db/userDataMapper') ; // useless ?
 const conInscDataMapper = require('../db/conInscDataMapper');
 const contactDataMapper = require('../db/contactDataMapper');
+const dashBoardUserModule = require('../assets/dashBoardUserModule');
 const moment = require('moment') ;
 moment.locale('fr');
 
@@ -54,12 +55,15 @@ module.exports = {
     dashBoard: async (request, response, next) => {
 
         try {
-        
+            
+            dashBoardUserModule.addListenerToActions();
             const body = {mailLogin : request.session.login }
 
             const user = await conInscDataMapper.findUser(body);
     
             response.render('dashBoardUser',{user});
+            
+            
 
         } catch (error) {
         

@@ -20,20 +20,20 @@
 						<!---->
 						<div class="column is-5">
 							
-							<div class="box"  >
+							<div class="box" id="name" >
 								<div class="columns">
 									<div class="column card-name ">
-										<strong> Nom : </strong> <%= user.name%>
+										<strong> Nom : </strong> <%= <!--user.name-->%>
 									</div>
 									
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="NAME">
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formName">
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" name="content" value=""
 													placeholder="Nom">
 											</div>
 											<div class="control">
-												<button class="button is-small is-success" id="validate_NAME">Valider</button>
+												<button class="button is-small is-success" id="validateName">Valider</button>
 											</div>
 										</div>
 									</form>
@@ -41,7 +41,7 @@
 					
 									<div class="column is-narrow">
 										<a href="#" class="button--edit-card">
-											<span class="icon is-small has-text-primary">
+											<span class="icon is-small has-text-primary" id="modifyName">
 												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
 											</span>
 										</a>
@@ -58,20 +58,20 @@
 						<!---->
 						<div class="column is-5">
 							
-							<div class="box"  id="PHONE">
+							<div class="box"  id="phone">
 								<div class="columns">
 									<div class="column card-name ">
 										<strong> Téléphone : </strong> <%= user.phone%>
 									</div>
 									
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden">
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPhone">
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" name="content" value=""
 													placeholder="Téléphone">
 											</div>
 											<div class="control">
-												<button class="button is-small is-success"id="validate_PHONE">Valider</button>
+												<button class="button is-small is-success"id="validatePhone">Valider</button>
 											</div>
 										</div>
 									</form>
@@ -99,20 +99,20 @@
 						<!---->
 						<div class="column is-6">
 							
-							<div class="box"  id="PASSWORD">
+							<div class="box"  id="password">
 								<div class="columns">
 									<div class="column card-name ">
 										MOT DE PASSE 
 									</div>
 									
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden">
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPassword">
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" name="content" value=""
 													placeholder="Mot de passe">
 											</div>
 											<div class="control">
-												<button class="button is-small is-success" id="validate_PASSWORD">Valider</button>
+												<button class="button is-small is-success" id="validatePassword">Valider</button>
 											</div>
 										</div>
 									</form>
@@ -140,20 +140,20 @@
 						<!---->
 						<div class="column is-5">
 							
-							<div class="box"  id="MAIL">
+							<div class="box"  id="mail">
 								<div class="columns">
 									<div class="column card-name ">
 										<strong> E-mail : </strong> <%= user.mail%>
 									</div>
 									
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden">
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" name="content" value=""
 													placeholder="e-mail">
 											</div>
 											<div class="control">
-												<button class="button is-small is-success" id="validate_MAIL">Valider</button>
+												<button class="button is-small is-success" id="validateMail">Valider</button>
 											</div>
 										</div>
 									</form>
@@ -178,20 +178,20 @@
 						<!---->
 						<div class="column is-5">
 							
-							<div class="box"  >
+							<div class="box"  id="siret">
 								<div class="columns">
 									<div class="column card-name ">
 										<strong> Siret : </strong> <%= user.siret%>
 									</div>
 									
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="form_SIRET">
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formSiret">
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" name="content" value=""
 													placeholder="Siret">
 											</div>
 											<div class="control">
-												<button class="button is-small is-success" id="validate_SIRET">Valider</button>
+												<button class="button is-small is-success" id="validateSiret">Valider</button>
 											</div>
 										</div>
 									</form>
@@ -221,7 +221,7 @@
 					<div class="column is-6">
 					</div>
 					<div class="column is-3">
-						<button class="button is-success">Valider</button>
+						<button class="button is-success">Retour à l'accueil</button>
 					</div>
 				</div>
 				
@@ -230,7 +230,7 @@
 						
 			</section>
 
-
+			<script src="../assets/dashBoardUser.js"></script>
 
 
 		</body>

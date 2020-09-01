@@ -1,6 +1,6 @@
 module.exports = {
     
-    loadData: () => {
+    
 
         // const modifyName = document.getElementById('modify_NAME');
         // const formName = document.getElementById('form_NAME');
@@ -34,7 +34,7 @@ module.exports = {
         // validateSIRET.addEventListener('click', userDataMapper.hideForm(formSIRET));
 
         
-    },
+   
     
     
     showForm: (element) => {
