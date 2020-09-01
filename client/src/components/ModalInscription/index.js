@@ -9,32 +9,39 @@ function ModalInscription() {
   const [open, setOpen] = React.useState(false)
 
   return (
+    
     <Modal
-      closeicon
+      basic
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      size='mini'
+      size='tiny'
       trigger={<Button>Basic Modal</Button>}
     >
       
         
-       
+      <section className="modale">
       <Modal.Content>
-        <header as='h2' color='blue'>
+        <Header as='h2' color='blue'>
           Vous désirez vous inscrire en tant que :
-        </header>
+        </Header>
       </Modal.Content>
       <Modal.Actions>
-        <Button basic color='blue' inverted onClick={() => setOpen(false)}>
+      <span id="devispro">
+        <Link color='white' to="ipro">
           <Icon name='checkmark' /> Professionnel
-        </Button>
-        <Button basic color='blue' inverted onClick={() => setOpen(false)}>
+        </Link>
+       </span>
+       <span id="devispart">
+        <Link  color='white' to="ipart">
           <Icon name='checkmark' /> Particulier
-        </Button>
+        </Link>
+        </span>
         
       </Modal.Actions>
+      </section>
     </Modal>
+    
   )
 }
 

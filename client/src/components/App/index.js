@@ -24,7 +24,7 @@ import './style.scss';
 
 function App() {
 
- 
+  
   const dispatch = useDispatch();
   useEffect(()=> {
    dispatch(checkAuth());
