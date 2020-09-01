@@ -15,7 +15,8 @@ app.use(express.static(__dirname +'/assets'));
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {}
 }));
 
 app.use((error, request, response, next) => {

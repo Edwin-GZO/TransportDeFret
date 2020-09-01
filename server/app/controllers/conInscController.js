@@ -227,7 +227,7 @@ module.exports = {
         
         try {
         
-            request.session.login = '';
+            request.session.destroy();
             console.log(moment().format('LLLL'), " Supression de la session")     
             response.status(201).json({isLogged: false , message: " Utilisateur Déconnecté " });
 
