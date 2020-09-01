@@ -54,7 +54,7 @@ const userRouter = require('./app/router/userRouter');
 
 // Middleware qui vérifie que le USER est connecté
 app.all('*', (request, response, next) => {
-    console.log(" Vérification par le MiddleWare de Session => ", request.session.login);
+    // console.log(" Vérification par le MiddleWare de Session => ", request.session.login);
 
     routePath = request.originalUrl
     // console.log("Route Path ",routePath)
@@ -67,6 +67,7 @@ app.all('*', (request, response, next) => {
     const autorisedRoadSlach = '/' ;
     const autorisedRoadCheckSessionLogin = '/api/isLogged' ;
     const autorisedRoadDashBoardUser = '/api/user/dashboard' ;
+    const autorisedRoadLogOut = '/api/user/logout' ;
 
     if ((
         autorisedRoadUser == routePath || 
@@ -76,7 +77,8 @@ app.all('*', (request, response, next) => {
         autorisedRoadSlach == routePath || 
         autorisedRoadContact == routePath || 
         autorisedRoadCheckSessionLogin == routePath ||
-        autorisedRoadDashBoardUser == routePath)) 
+        autorisedRoadDashBoardUser == routePath ||
+        autorisedRoadLogOut == routePath)) 
     {
 
         console.log(" Route Autorisée Sans Session ")
