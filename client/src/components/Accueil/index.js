@@ -7,13 +7,11 @@ import './style.scss';
 
 
 const Accueil = (
-  { logout,
+  { handleLogout,
     isLogged }
 ) => {
 
-  const handleLogout = (evt) => {    
-    logout();
-  };
+ 
 console.log(isLogged);
   //const [isLogged, setislogged] = useState(false);
  
@@ -95,7 +93,7 @@ console.log(isLogged);
         
         <div className="navbar-item"> 
         <div className="buttons" >
-        <button className="button is-danger" onClick={handleLogout}>
+        <button type="button" className="button is-danger" onClick={handleLogout}>
             <strong>Déconnexion</strong>
             </button>          
       </div>

@@ -8,7 +8,7 @@ export default (store) => (next) => (action) => {
     case LOGOUT: {
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/logout',
+        url: 'http://54.175.105.52:8080/api/logout',
         withCredentials: true
       })
         .then((res) => {
