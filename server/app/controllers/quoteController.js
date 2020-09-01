@@ -8,7 +8,7 @@ module.exports = {
 
         try {
             
-            response.send('hello world');
+            response.status(200).send('Coucou petite perruche !');
             console.log(moment().format('LLLL')," Test : Coucou petite perruche  ")
 
         } catch (error) {
