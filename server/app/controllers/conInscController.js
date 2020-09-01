@@ -192,7 +192,7 @@ module.exports = {
             await conInscDataMapper.addUserPart(body,newBillAddress)
     
             request.session.login = body.mailSignUpPart;
-            response.locals.session = request.session ;
+ 
     
             if (!request.session.login) {
                 response.status(401).json({isLogged: false , error:" Pas de session" });
@@ -225,5 +225,18 @@ module.exports = {
 
     logOutUser : async (request, response) => {
         
+        try {
+        
+            request.session.login = '';
+            console.log(moment().format('LLLL'), " Supression de la session")     
+            response.status(201).json({isLogged: false , message: " Utilisateur Déconnecté " });
+
+        } catch (error) {
+        
+            console.trace(moment().format('LLLL'), error) ;
+            response.status(500).send(error) ;
+        
+        }
     }
+
 }
