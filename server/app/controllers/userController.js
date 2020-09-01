@@ -3,7 +3,7 @@ const conInscDataMapper = require('../db/conInscDataMapper');
 const contactDataMapper = require('../db/contactDataMapper');
 const moment = require('moment') ;
 moment.locale('fr'); 
-const dashBoardUserModule=require('../modules/dashBoardUserModule');
+
 
 module.exports = {
 
@@ -51,49 +51,14 @@ module.exports = {
 
     },
 
-    dashBoard:  async (request, response, next) => {
+    dashBoard: (request, response, next) => {
 
-        try {
-            const modifyName = document.getElementById('modify_NAME');
-            const formName = document.getElementById('form_NAME');
-            const validateName = document.getElementById('validate_NAME');
-            modifyName.addEventListener('click', dashBoardUserModule.showForm(formName));
-            validateName.addEventListener('click', dashBoardUserModule.hideForm(formName));
-
-            const modifyPhone = document.getElementById('modify_PHONE');
-            const formPhone = document.getElementById('form_PHONE');
-            const validatePhone = document.getElementById('validate_PHONE');
-            modifyPhone.addEventListener('click', dashBoardUserModule.showForm(formPhone));
-            validatePhone.addEventListener('click', dashBoardUserModule.hideForm(formPhone));
-
-
-            const modifyPassword = document.getElementById('modify_PASSWORD');
-            const formPassword = document.getElementById('form_PASSWORD');
-            const validatePassword = document.getElementById('validate_PASSWORD');
-            modifyPassword.addEventListener('click', dashBoardUserModule.showForm(formPassword));
-            validatePassword.addEventListener('click', dashBoardUserModule.hideForm(formPassword));
-
-            const modifyMail = document.getElementById('modify_MAIL');
-            const formMail = document.getElementById('form_MAIL');
-            const validateMail = document.getElementById('validate_MAIL');
-            modifyMail.addEventListener('click', dashBoardUserModule.showForm(formMail));
-            validateMail.addEventListener('click', dashBoardUserModule.hideForm(formMail));
-
-            const modifySIRET = document.getElementById('modify_SIRET');
-            const formSIRET = document.getElementById('form_SIRET');
-            const validateSIRET = document.getElementById('validate_SIRET');
-            modifySIRET.addEventListener('click', dashBoardUserModule.showForm(formSIRET));
-            validateSIRET.addEventListener('click', dashBoardUserModule.hideForm(formSIRET));
+        
+            //document.addEventListener('DOMContentLoaded',userDataMapper.loadData);
+            userDataMapper.loadData;
             
-            
-            
-            
-            
-            
-            
-            
-            const bodyMailDashboard = { "mailLogin": request.session.login }; 
-            const user = await conInscDataMapper.findUser(bodyMailDashboard);
+            //! const bodyMailDashboard = { "mailLogin": request.session.login };
+        //! const user = await conInscDataMapper.findUser(bodyMailDashboard);
                 //! const profileUser= {
                 //!     name: user.rows[0].name,
                 //!     mail: user.rows[0].mail,
@@ -102,14 +67,22 @@ module.exports = {
                 //!     type: user.rows[0].type
                 //! };
             
-            response.render('dashBoardUser')//!,{profileUser});
+                response.render('dashBoardUser')//!,{profileUser});
+            
+            
+            
+            
+            
+            
+             
+            
 
-        } catch (error) {
         
-            console.trace(moment().format('LLLL'), error) ;
-            response.status(500).send(error) ;
         
-        }
+            // console.trace(moment().format('LLLL'), error) ;
+            // response.status(500).send(error) ;
+        
+        
 
     },
 
