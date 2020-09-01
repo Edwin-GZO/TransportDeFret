@@ -14,7 +14,7 @@ app.use(express.static(__dirname +'/assets'));
 // Gestion des sessions
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    resave: true,
+    resave: false,
     saveUninitialized: true
 }));
 
@@ -91,16 +91,10 @@ app.all('*', (request, response, next) => {
 });
 
 
-
-
-
 app.use(conInscRouter);
 app.use(quoteRouter);
 app.use(contactRouter);
 app.use(userRouter);
-
-
-
 
 const port = process.env.PORT || 8080 ;
 app.listen(port, _ => {

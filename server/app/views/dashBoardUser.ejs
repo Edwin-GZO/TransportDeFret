@@ -14,7 +14,7 @@
 			<section class="section ">
 				<div class="container">
 					<h1 class="title">
-						Profil utilisateur
+						<strong> Profil utilisateur </strong>
 					</h1>
 					<div class="columns">
 						<!---->
@@ -23,7 +23,7 @@
 							<div class="box"  >
 								<div class="columns">
 									<div class="column card-name ">
-										NOM : 
+										<strong> Nom : </strong> <%= user.name%>
 									</div>
 									
 									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="NAME">
@@ -61,7 +61,7 @@
 							<div class="box"  id="PHONE">
 								<div class="columns">
 									<div class="column card-name ">
-										TELEPHONE : 
+										<strong> Téléphone : </strong> <%= user.phone%>
 									</div>
 									
 									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden">
@@ -143,7 +143,7 @@
 							<div class="box"  id="MAIL">
 								<div class="columns">
 									<div class="column card-name ">
-										E-MAIL : 
+										<strong> E-mail : </strong> <%= user.mail%>
 									</div>
 									
 									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden">
@@ -181,7 +181,7 @@
 							<div class="box"  >
 								<div class="columns">
 									<div class="column card-name ">
-										SIRET : 
+										<strong> Siret : </strong> : <%= user.siret%>
 									</div>
 									
 									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="form_SIRET">

@@ -1,4 +1,5 @@
 module.exports = {
+    
     loadData: () => {
 
         // const modifyName = document.getElementById('modify_NAME');
