@@ -32,8 +32,10 @@ const dashBoardUserModule = {
         // validatePassword.addEventListener('click',dashBoardUserModule.submitPassword);
         const validateMail = document.getElementById('validateMail');
         validateMail.addEventListener('click',dashBoardUserModule.submitMail);
+
         const validateSiret = document.getElementById('validateSiret');
         validateSiret.addEventListener('click',dashBoardUserModule.submitSiret);
+        
         const deleteUser = document.getElementById('deleteUser');
         deleteUser.addEventListener('click',dashBoardUserModule.submitDelete);
     },
@@ -51,6 +53,7 @@ const dashBoardUserModule = {
     showFormPhone: ()=>{
         const formPhone = document.getElementById('formPhone');
         formPhone.classList.remove('is-hidden');
+
         const dataPhone = document.getElementById('dataPhone');
         dataPhone.classList.add('is-hidden');
     },
