@@ -37,6 +37,11 @@ function ModalInscription() {
           <Icon name='checkmark' /> Particulier
         </Link>
         </span>
+        <span id="backhome">
+        <Link  color='red' to="/">
+          <Icon name='checkmark' /> Annuler
+        </Link>
+        </span>
         
       </Modal.Actions>
       </section>

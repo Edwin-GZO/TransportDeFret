@@ -30,6 +30,7 @@ export default (state = stateInitial, action = {}) => {
       return {
         ...state,        
         loggedMessage: action.payload,
+        passwordLogin: '',
         isLogged: false
       };
     case CHANGE_FIELD:

@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 import './style.scss';
 
 
@@ -11,11 +12,13 @@ const Accueil = (
     isLogged }
 ) => {
 
+  const [open, setOpen] = React.useState(false)
  
 console.log(isLogged);
   //const [isLogged, setislogged] = useState(false);
  
- 
+  
+    
     return(
    
   
@@ -41,6 +44,20 @@ console.log(isLogged);
       <Link className="navbar-item" id="navlink-items" to="/contact">
         Contact
       </Link>
+
+      {!isLogged && (
+
+        
+      <div className="navbar-item"> 
+        <div className="buttons" >
+        <span>
+        <Link className="button is-primary" to="/connection">
+            <strong>Se connecter</strong>
+            </Link>  
+            </span>        
+      </div>
+      </div> 
+      )}   
 
       <a href='#' id="navlink-items" className={(isLogged ? "navbar-item" : "display")}>
         Mes info
@@ -72,21 +89,43 @@ console.log(isLogged);
 
         ? 
         <>
+        
+      
         <div className="navbar-item">
         <div className="buttons" >         
-        <Link className="button is-link" to="/ipro">
-            <strong>S'inscrire</strong>
-            </Link>          
+        <Modal className="modal-btn"
+      basic
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      size='tiny'
+      trigger={<Button primary>S'inscrire</Button>}
+    >
+     <section className="modale">
+      <Modal.Content>
+        <Header as='h2' color='blue'>
+          Vous désirez vous inscrire en tant que :
+        </Header>
+      </Modal.Content>
+      <Modal.Actions>
+      <span id="devispro">
+        <Link color='white' to="ipro">
+          <Icon name='checkmark' /> Professionnel
+        </Link>
+       </span>
+       <span id="devispart">
+        <Link  color='white' to="ipart">
+          <Icon name='checkmark' /> Particulier
+        </Link>
+        </span>
+               
+      </Modal.Actions>
+      </section>
+    </Modal>
             </div>
         </div>
 
-        <div className="navbar-item"> 
-        <div className="buttons" >
-        <Link className="button is-primary" to="/connection">
-            <strong>Se connecter</strong>
-            </Link>          
-      </div>
-      </div>    
+       
   </>
 
         :  

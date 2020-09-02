@@ -192,7 +192,7 @@ const FormInscriptionPart = ({
           <Button className="ui primary button">Validez</Button>
   </span>
   <span>
-  <Link button className="ui negative button" to="/">
+  <Link button className="ui grey button" to="/">
   Annuler
 </Link>
 </span>

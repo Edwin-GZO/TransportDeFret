@@ -45,7 +45,7 @@ function App() {
         <Route exact path="/ipro" component={FormInscriptionPro} />
         <Route exact path="/ipart" component={FormInscriptionPart} />
         <Route exact path="/devis" component={FormQuotePro} />
-        <Route exact path="/modinscr" component={ModalInscription} />
+        
                
         <Route>
             <NotFound />
