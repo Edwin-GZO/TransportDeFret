@@ -1,4 +1,6 @@
 
+const test = require('../controllers/userController') ;
+
 const dashBoardUserModule = {
 
     init: function () {
