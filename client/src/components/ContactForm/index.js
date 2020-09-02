@@ -34,9 +34,10 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
 {contactMessage ? <span>{contactMessage}</span> : null}
 <Form autoComplete="off" onSubmit={handleContact}>
 
-    <Form.Field >
-      <label>Nom</label>
+    <Form.Field required>
+      <label >Nom</label>
       <Field 
+      required="true"
       id="bg"
       reducerName="contact"
       name='nameContact'
@@ -46,19 +47,21 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
     <Form.Field required>
       <label>Objet</label>
       <Field 
+      required="true"
       id="bg"
       reducerName="contact"
       name='subjectContact'
       placeholder=''/>
     </Form.Field>
 
-    <Form.Field required>
+    <Form.Field required >
       <label>Adresse Mail</label>
       <Field 
+      required="true"
       id="bg"
       name='mailContact'
       reducerName="contact"
-      type='email'
+      //type='email'
       placeholder=''
        />
 
@@ -73,6 +76,7 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
     
     
     <Field
+    required="true"
     id="bg"
       type="textarea"
       reducerName="contact"

@@ -100,19 +100,7 @@ export default (state= stateInitial , action={})=> {
         return {
           ...state,
           ...action.payload,
-          siret: '',
-          mailSignUpPro: '',
-          billNumberSignUpPro: '',
-           billTrackSignUpPro: '',
-           billStreetSignUpPro: '',
-          billComplementSignUpPro: '',
-          citySignUpPro:'',
-          postalCodeSignUpPro:'',
-          phoneSignUpPro: '',
-          passwordSignUpPro: '',
-          passwordconfirmSignUpPro: '',
-          error: '',
-          societe: '',
+          
           isSignedUp: false,
           signUpMessage: `Votre compte n'a pu etre créé ! `,
       
