@@ -5,6 +5,13 @@ moment.locale('fr');
 
 module.exports = {
 
+    console : async(request) => {
+
+        console.log(request) ;
+        console.log(request.body) ;
+        console.log(request.session.login) ;
+    },
+
     test: async (request, response, next) => {
 
         try {

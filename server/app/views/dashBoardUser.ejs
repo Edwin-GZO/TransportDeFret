@@ -85,14 +85,16 @@
 											<%= user.name%>
 										</span>
 									</div>
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formName">
+									<form action="http://localhost:8080/api/user/dashboard/namemodif" method="POST" style="margin-top: 11px" class="is-hidden" id="formName">
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" id="inputName" name="content" value="<%= user.name%>"
 													>
 											</div>
 											<div class="control">
+											
 												<button class="button is-small is-success" id="validateName">Valider</button>
+												
 											</div>
 										</div>
 									</form>
@@ -124,8 +126,7 @@
 									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPhone">
 										<div class="field has-addons">
 											<div class="control">
-												<input type="text" class="input is-small" id="inputPhone" name="content" value=""
-													placeholder="<%= user.phone%>">
+												<input type="text" class="input is-small" id="inputPhone" name="content" value="<%= user.phone%>">
 											</div>
 											<div class="control">
 												<button class="button is-small is-success"id="validatePhone">Valider</button>
@@ -200,7 +201,9 @@
 					</div>
 					<!--Bloc 4 - Bouton Retour Accueil-->
 					<div class="column is-1">
+						<a href="http://localhost:3000/" target="_blank" >
 						<button class="button is-success">Retour à l'accueil</button>
+						</a>
 					</div>
 				</div>
 			</div>

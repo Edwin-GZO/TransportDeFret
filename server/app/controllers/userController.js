@@ -8,50 +8,50 @@ moment.locale('fr');
 
 module.exports = {
 
-    modifyPassword: async (request, response, next) => {
+    // modifyPassword: async (request, response, next) => {
 
-        try {
+    //     try {
 
-            const mailLoginId = request.body;
+    //         const mailLoginId = request.body;
 
-            const user = await conInscDataMapper.findUser(mailLoginId);
+    //         const user = await conInscDataMapper.findUser(mailLoginId);
 
-            const mail = {
+    //         const mail = {
 
-                message: "Mot de passe Oublié" ,
-                from: "tdr_site@gmail.com" , //dataForm.mail,
+    //             message: "Mot de passe Oublié" ,
+    //             from: "tdr_site@gmail.com" , //dataForm.mail,
 
-                to: user.mail , //exploitation@transportstdr.fr"
-                subject: "Renvoi du Mot de Passe - T.D.R. ",
+    //             to: user.mail , //exploitation@transportstdr.fr"
+    //             subject: "Renvoi du Mot de Passe - T.D.R. ",
 
-                html:
-                `
-                <p>
-                <br />
-                Bonjour ${user.name} ,
-                <br />
-                <br />
-                Suite à votre demande veuillez trouver votre mot de passe : <strong> ${user.password} </strong>
-                <br />
-                <br />
-                Cordialement La société T.D.R.
-                </p>
-                `
-            };
+    //             html:
+    //             `
+    //             <p>
+    //             <br />
+    //             Bonjour ${user.name} ,
+    //             <br />
+    //             <br />
+    //             Suite à votre demande veuillez trouver votre mot de passe : <strong> ${user.password} </strong>
+    //             <br />
+    //             <br />
+    //             Cordialement La société T.D.R.
+    //             </p>
+    //             `
+    //         };
 
-            await contactDataMapper.sendMailContact(mail);
+    //         await contactDataMapper.sendMailContact(mail);
 
-            response.status(201).json(" Le mail de renvoi de mot de passe a bien été envoyé ");
+    //         response.status(201).json(" Le mail de renvoi de mot de passe a bien été envoyé ");
 
-        } catch (error) {
+    //     } catch (error) {
 
-            console.trace(moment().format('LLLL'), error) ;
-            response.status(500).send(error) ;
+    //         console.trace(moment().format('LLLL'), error) ;
+    //         response.status(500).send(error) ;
 
-        }
+    //     }
+    // },
 
-    },
-
+    // Affiche le DashBoard pour l'User
     dashBoard: async (request, response) => {
 
         try {
@@ -71,7 +71,6 @@ module.exports = {
             }
 
             response.render('dashBoardUser',{user});
-            
 
         } catch (error) {
         
@@ -79,11 +78,28 @@ module.exports = {
         response.status(500).send(error) ;
         
         }
- 
     },
 
+    // Permet de modifier le Nom
+    nameModif : async (request, response) => {
+
+        try {
     
+            console.log(request) ;
+            console.log(request.body) ;
+            console.log(request.session.login) ;
 
+            const user = await conInscDataMapper.findUser(request.session.login);
 
+            console.log(user) ;
 
+            
+
+        } catch (error) {
+        
+            console.trace(moment().format('LLLL'), error) ;
+            response.status(500).send(error) ;
+        
+        }
+    }
 }

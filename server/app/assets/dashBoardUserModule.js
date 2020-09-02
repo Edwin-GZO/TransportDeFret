@@ -1,10 +1,13 @@
 const dashBoardUserModule = {
 
+    base_url : "http://localhost:3000",
+
     init: function () {
      console.log('Initialisation DasHBoardModule');
      dashBoardUserModule.addListenerToActions();
      
-},
+    },
+    
     addListenerToActions:()=>{
 
         // Rajoute les events listeners sur le Crayon !
@@ -22,6 +25,8 @@ const dashBoardUserModule = {
 
         const modifySiret = document.getElementById('modifySiret');
         modifySiret.addEventListener('click',dashBoardUserModule.showFormSiret);
+
+
 
         //click sur le bouton valider du formulaire (input)
         const validateName = document.getElementById('validateName');
@@ -66,18 +71,20 @@ const dashBoardUserModule = {
     showFormMail: ()=>{
         const formMail = document.getElementById('formMail');
         formMail.classList.remove('is-hidden');
+
         const dataMail = document.getElementById('dataMail');
         dataMail.classList.add('is-hidden');
     },
     showFormSiret: ()=>{
         const formSiret = document.getElementById('formSiret');
         formSiret.classList.remove('is-hidden');
+
         const dataSiret = document.getElementById('dataSiret');
         dataSiret.classList.add('is-hidden');
     },
 
     //pour faire disparaitre les input
-    submitName: (event)=>{
+    submitName: async (event)=>{
         event.preventDefault();
 
         const validateName = document.getElementById('formName');
@@ -87,9 +94,27 @@ const dashBoardUserModule = {
         dataName.classList.remove('is-hidden');
 
         const inputName = document.getElementById('inputName');
-        dataName.textContent = inputName.value;
         
+        dataName.textContent = inputName.value;
+
+        console.log(inputName.value)
+
+        // try {
+            
+        //     const response = await fetch(dashBoardUserModule.base_url+'/api/user/dashboard/namemodif', {
+        //         method : "POST",
+        //         body: inputName.value
+        //     })
+
+        //     console.log(response);
+
+        // } catch (error) {
+            
+        // }
+   
     },
+
+
     submitPhone: (event)=>{
         event.preventDefault();
         const validatePhone = document.getElementById('formPhone');
