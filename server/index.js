@@ -43,7 +43,7 @@ app.all('*', (request, response, next) => {
     // console.log('Autorisation du protocole CORs');
     response.header('Access-Control-Allow-Origin', request.header('Origin') || '*');
     response.header('Access-Control-Allow-Methods', 'OPTIONS,GET,PUT,POST,DELETE');
-    // response.header('Access-Control-Allow-Headers', request.header('Access-Control-Request-Headers') || '*');
+    response.header('Access-Control-Allow-Headers', request.header('Access-Control-Request-Headers') || '*');
     response.header('Access-Control-Allow-Credentials', 'true');
     response.header('Access-Control-Max-Age', '864000');
      
