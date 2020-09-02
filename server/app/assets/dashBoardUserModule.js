@@ -22,7 +22,7 @@ module.exports = {
         modifyName.addEventListener('click',quoteRouter.test);
 
         const modifyPhone = document.getElementById('modifyPhone');
-        modifyPhone.addEventListener('click',dashBoardUserModule.showFormPhone);
+        modifyPhone.addEventListener('click',dquoteRouter.test);
 
         // const modifyPassword = document.getElementById('modifyPassword');
         // modifyPassword.addEventListener('click',dashBoardUserModule.showFormPassword);
