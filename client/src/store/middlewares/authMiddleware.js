@@ -28,7 +28,7 @@ export default (store) => (next) => (action) => {
       
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/isLogged',
+        url: 'http://54.175.105.52:8080/api/isLogged',
         
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
