@@ -45,6 +45,7 @@ const LoginForm = ({
         <Form.Field >
       <label>Adresse mail</label>
           <Field 
+          required="true"
             name="mailLogin"
             reducerName="user"
             placeholder="Adresse Email"
@@ -61,7 +62,7 @@ const LoginForm = ({
             id="bg"
             name="passwordLogin"
             reducerName="user"
-            type="password"
+            required="true"
             placeholder="Mot de Passe"
           />
          </Form.Field>

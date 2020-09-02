@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 
@@ -81,7 +82,7 @@ console.log(isLogged);
       </div>
     </div>
 
-    
+       
     <div className="navbar-end">
 
     

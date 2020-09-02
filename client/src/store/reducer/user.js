@@ -40,12 +40,13 @@ export default (state = stateInitial, action = {}) => {
           [action.payload.name]: action.payload.value
         }
       };
-
+{/*
       case LOG_USER:     
         return {
           ...state,
           isLogged: action.payload
         }
+      */}
       
 
       return state
