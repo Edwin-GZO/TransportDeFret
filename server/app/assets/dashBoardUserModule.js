@@ -1,10 +1,12 @@
 
 const dashBoardUserModule = {
+
     init: function () {
-     console.log('init !!!!');
+     console.log('Initialisation DasHBordModule');
      dashBoardUserModule.addListenerToActions();
 },
     addListenerToActions:()=>{
+
         //click sur le crayon
         const modifyName = document.getElementById('modifyName');
         modifyName.addEventListener('click',dashBoardUserModule.showFormName);
@@ -16,6 +18,7 @@ const dashBoardUserModule = {
         modifyMail.addEventListener('click',dashBoardUserModule.showFormMail);
         const modifySiret = document.getElementById('modifySiret');
         modifySiret.addEventListener('click',dashBoardUserModule.showFormSiret);
+
         //click sur le bouton valider du formulaire (input)
         const validateName = document.getElementById('validateName');
         validateName.addEventListener('click',dashBoardUserModule.submitName);
@@ -32,6 +35,7 @@ const dashBoardUserModule = {
     },
 
     //pour faire apparaitre les input
+    
     showFormName: ()=>{
         const formName = document.getElementById('formName');
         formName.classList.remove('is-hidden');
@@ -125,9 +129,4 @@ const dashBoardUserModule = {
     
 }
 
-
-
-
 document.addEventListener('DOMContentLoaded', dashBoardUserModule.init );
-
-

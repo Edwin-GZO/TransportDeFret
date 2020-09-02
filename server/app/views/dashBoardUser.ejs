@@ -27,7 +27,7 @@
 											<strong> Nom : </strong>
 										</span>
 										<span id="dataName">
-											
+											<%= user.name%>
 										</span>
 										
 									</div>
@@ -36,7 +36,7 @@
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" id="inputName" name="content" value=""
-													placeholder="">
+													placeholder="<%= user.name%>">
 											</div>
 											<div class="control">
 												<button class="button is-small is-success" id="validateName">Valider</button>
@@ -71,7 +71,7 @@
 											<strong> Téléphone : </strong>
 										</span>
 										<span id="dataPhone">
-											
+											<%= user.phone%>
 										</span>
 									</div>
 									
@@ -79,7 +79,7 @@
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" id="inputPhone" name="content" value=""
-													placeholder="">
+													placeholder="<%= user.phone%>">
 											</div>
 											<div class="control">
 												<button class="button is-small is-success"id="validatePhone">Valider</button>
@@ -161,7 +161,7 @@
 											<strong> E-mail : </strong>
 										</span>
 										<span id="dataMail">
-											
+											<%= user.mail%>
 										</span>
 									</div>
 									
@@ -169,7 +169,7 @@
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" id="inputMail" name="content" value=""
-													placeholder="">
+													placeholder="<%= user.mail%>">
 											</div>
 											<div class="control">
 												<button class="button is-small is-success" id="validateMail">Valider</button>
@@ -204,7 +204,7 @@
 											<strong> Siret : </strong>
 										</span>
 										<span id="dataSiret">
-											
+											<%= user.siret%>
 										</span>
 									</div>
 									
@@ -212,7 +212,7 @@
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" id="inputSiret" name="content" value=""
-													placeholder="">
+													placeholder="<%= user.siret%>">
 											</div>
 											<div class="control">
 												<button class="button is-small is-success" id="validateSiret">Valider</button>

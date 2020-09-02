@@ -61,8 +61,16 @@ module.exports = {
 
             const user = await conInscDataMapper.findUser(body);
     
+            console.log(user) ;
+
+            if (!user) {
+                
+                response.status(401).json({isLogged: false , error:" Pas de session" });
+                console.log(moment().format('LLLL'), " Erreur DashBoard : Aucune session ")
+                
+            }
+
             response.render('dashBoardUser',{user});
-            
             
 
         } catch (error) {
