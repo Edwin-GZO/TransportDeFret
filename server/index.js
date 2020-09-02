@@ -68,7 +68,8 @@ app.all('*', (request, response, next) => {
     const autorisedRoadSlach = '/' ;
     const autorisedRoadCheckSessionLogin = '/api/isLogged' ;
     const autorisedRoadDashBoardUser = '/api/user/dashboard' ;
-    const autorisedRoadLogOut = '/api/user/logout' ;
+    const autorisedRoadLogOut = '/api/user/logout' 
+    const autorisedRoadQuote = '/api/quote/pro' 
 
     if ((
         autorisedRoadUser == routePath || 
@@ -79,7 +80,8 @@ app.all('*', (request, response, next) => {
         autorisedRoadContact == routePath || 
         autorisedRoadCheckSessionLogin == routePath ||
         autorisedRoadDashBoardUser == routePath ||
-        autorisedRoadLogOut == routePath)) 
+        autorisedRoadLogOut == routePath ||
+        autorisedRoadQuote == routePath )) 
     {
 
         console.log(" Route Autorisée Sans Session ")

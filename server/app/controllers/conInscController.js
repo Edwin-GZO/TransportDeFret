@@ -236,8 +236,7 @@ module.exports = {
         
             console.trace(moment().format('LLLL'), error) ;
             response.status(500).send(error) ;
-        
+               
         }
     }
-
 }
