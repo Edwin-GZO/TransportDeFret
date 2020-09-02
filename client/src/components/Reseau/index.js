@@ -1,17 +1,18 @@
-import React from 'react';
-import './style.scss';
+import React from 'react'
+import { Image, Rail, Segment } from 'semantic-ui-react'
 
+const Reseau = () => (
+  <Segment>
+    <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
 
-const Reseau = () => {
-return (
-    <div classname="reseau">
-        <h1>reseau</h1>
+    <Rail attached internal position='left'>
+      <Segment>Left Rail Content</Segment>
+    </Rail>
 
-    </div>
-
+    <Rail attached internal position='right'>
+      <Segment>Right Rail Content</Segment>
+    </Rail>
+  </Segment>
 )
 
-}
-
-
-export default Reseau;
+export default Reseau

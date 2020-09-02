@@ -3,12 +3,23 @@ a, a:active, a:visited {
      text-decoration: none;
     }
 
+    .button {
+        margin-bottom: 0;
+    }
+
 #navlink-items {
     color: black;
     text-decoration: none;
+   
     
 }
 
 .display {
     display:none;
+}
+
+
+
+.modal-btn {
+    align-items:center;
 }

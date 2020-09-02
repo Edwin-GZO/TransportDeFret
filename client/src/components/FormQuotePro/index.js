@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import Field from '../../containers/Field'
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 const FormQuotePro = ({
@@ -71,6 +72,10 @@ const FormQuotePro = ({
     {/* <button onClick={()=> setIsLoggedIn(true)}>click</button> */}
 
      {/* {isLoggedIn ? <p>some text</p> : */}
+
+     <div id='mainTitle'>
+<img  style={{width:250,height:250}} src={logo}/>
+</div>
       
      <h1 class="ui dark header">Demande de devis</h1>
     

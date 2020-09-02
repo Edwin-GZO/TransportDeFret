@@ -3,7 +3,8 @@ import Field from '../../containers/Field';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 
 const LoginForm = ({
   mail,
@@ -19,7 +20,7 @@ const LoginForm = ({
   useEffect(()=> {
     if(isLogged) {
    
-     setTimeout(() => history.push('/'), 5000);
+     setTimeout(() => history.push('/'), 3000);
  }
 }, [isLogged])
 
@@ -32,6 +33,11 @@ const LoginForm = ({
     return(
              
       <section className="login">
+
+<div id='mainTitle'>
+<img  style={{width:250,height:250}} src={logo}/>
+</div>
+
       <h1 className="ui dark header">Identifiants de connexion</h1>
       {loggedMessage ? <span>{loggedMessage}</span> : null}
         <Form autoComplete="off" onSubmit={handleSubmit}>
@@ -62,14 +68,10 @@ const LoginForm = ({
         
 
 
-<div className="label">
-         <a className="ui label"> 
-  <i className="truck icon"></i> Mot de passe oublié ?</a>
-</div>
          
            <div className="btn">       
-<span className="">
-          <Button className="ui primary button">Validez</Button>
+<span className="validation-btn">
+          <Button className="ui blue button">Validez</Button>
   </span>
   <span>
   <Link button="true" className="ui grey button" to="/">
