@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Field from '../../containers/Field';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 
@@ -35,8 +36,15 @@ const FormInscriptionPart = ({
       } 
     
     return (
-    
+
+     
+
       <section className="register">
+
+<div id='mainTitle'>
+      <img  style={{width:250,height:250}} src={logo}/>
+      </div>
+      
        <h1 class="ui dark header">Formulaire d'inscription particulier</h1>
         {
           hasError ? <p>modal</p> : null
@@ -192,7 +200,7 @@ const FormInscriptionPart = ({
           <Button className="ui primary button">Validez</Button>
   </span>
   <span>
-  <Link button className="ui negative button" to="/">
+  <Link button className="ui grey button" to="/">
   Annuler
 </Link>
 </span>
