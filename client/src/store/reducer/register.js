@@ -19,7 +19,7 @@ const stateInitial = {
     error: '',
     signUpMessage: '',
     isFormValid: false,
-    
+    isLogged: ''
 }
 
 export default (state= stateInitial , action={})=> {
@@ -79,6 +79,7 @@ export default (state= stateInitial , action={})=> {
         ...state,
         ...action.payload,
         ...properties,
+        isLogged:true
         // siret: '',
         // mail: '',
         // bill_address: '',

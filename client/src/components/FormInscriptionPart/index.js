@@ -54,6 +54,7 @@ const FormInscriptionPart = ({
       <Form.Field required >
         <label>Nom</label>
         <Field
+        required="true"
           name="nameSignUpPart"
           reducerName="registerPart"
           placeholder="Nom"
@@ -64,6 +65,7 @@ const FormInscriptionPart = ({
       <Form.Field required >
         <label>Prénom</label>
         <Field 
+        required="true"
           name="firstNameSignUpPart"
           id="bg"
           reducerName="registerPart"
@@ -76,9 +78,9 @@ const FormInscriptionPart = ({
           <Field 
           id="bg"
             name="mailSignUpPart"
-            type="mail"
+            required="true"
             reducerName="registerPart"
-            placeholder="mail"
+            placeholder="john@doe.com"
              />
              </Form.Field>
   
@@ -89,6 +91,7 @@ const FormInscriptionPart = ({
              <Form.Field required>
             <label>N° de la voie</label>
             <Field
+            required="true"
             id="bg"
               name="billNumberSignUpPart"
               reducerName="registerPart"
@@ -101,6 +104,7 @@ const FormInscriptionPart = ({
             <Form.Field required>
             <label>Type voie</label>
             <Field
+            required="true"
               name="billTrackSignUpPart"
               id="bg"
               reducerName="registerPart"
@@ -116,6 +120,7 @@ const FormInscriptionPart = ({
           <Form.Field required>
             <label>Nom de la voie</label>
             <Field
+            required="true"
               name="billStreetSignUpPart"              
               reducerName="registerPart"
               placeholder=""
@@ -139,7 +144,9 @@ const FormInscriptionPart = ({
                     <div className="field">
           <Form.Field required>
             <label>Ville</label>
-            <Field  name="citySignUpPart"
+            <Field 
+            required="true"
+             name="citySignUpPart"
                   id="bg"
                   reducerName="registerPart"
                   placeholder=""
@@ -151,6 +158,7 @@ const FormInscriptionPart = ({
           <Form.Field required>
             <label>Code postal</label>
             <Field name="postalCodeSignUpPart"
+            required="true"
                   id="bg"
                   reducerName="registerPart"
                   placeholder=""
@@ -167,6 +175,7 @@ const FormInscriptionPart = ({
               reducerName="registerPart"
               placeholder=""
               type=""
+              required="true"
               id="bg"
                 />
       </Form.Field>
@@ -175,20 +184,21 @@ const FormInscriptionPart = ({
           <Field
             cssClass={!isSamePassword ? 'error' : ''}
             name="passwordSignUpPart"
-            type="password"
+            
             reducerName="registerPart"
             placeholder=""
-            required={true}
-            minLength={8}
+            required="true"
+            
             id="bg"
           />
       </Form.Field>
       <Form.Field required>
         <label>Confirmez votre mot de passe</label>
           <Field
+          required="true"
             cssClass={!isSamePassword ? 'error' : ''}
             name="passwordconfirmSignUpPart"
-            type="password"
+            
             reducerName="registerPart"
             placeholder=""
             id="bg"
