@@ -1,6 +1,7 @@
 const conInscDataMapper = require('../db/conInscDataMapper') ;
 const validator = require("email-validator") ;
 const moment = require('moment') ;
+moment.locale('fr'); 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[_!@#$%^&*]).{8,16}$/;

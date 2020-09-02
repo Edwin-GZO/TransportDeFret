@@ -1,6 +1,7 @@
 const quoteDataMapper = require('../db/quoteDatamapper') ;
 const contactDataMapper = require('../db/contactDataMapper') ;
 const moment = require('moment') ;
+moment.locale('fr'); 
 
 module.exports = {
 

@@ -1,5 +1,6 @@
 const client = require('./db') ;
 const moment = require('moment') ;
+moment.locale('fr'); 
 
 module.exports = {
 
