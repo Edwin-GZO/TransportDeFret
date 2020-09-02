@@ -107,21 +107,21 @@ const dashBoardUserModule = {
         const inputSiret = document.getElementById('inputSiret');
         dataSiret.textContent = inputSiret.value;
     },
-    submitDelete: async (event) => {
-        event.preventDefault();
-        const dataMail = await document.getElementById('dataMail');
-        const body = {mailLogin : dataMail.textContent };
+    // submitDelete: (event) => {
+    //     event.preventDefault();
+    //     const dataMail = await document.getElementById('dataMail');
+    //     const body = {mailLogin : dataMail.textContent };
         
         
-        const userToDelete = await dashBoardUserModule.findUser(body);
+    //     const userToDelete = await dashBoardUserModule.findUser(body);
         
         
-        console.log('id :', userToDelete.id);
-        //! await client.query(`
-        //!         UPDATE "user"
-        //!            SET "active" = 'FALSE'
-        //!          WHERE "id" = $1`,[userToDelete.id]);
-    },
+    //     console.log('id :', userToDelete.id);
+    //     //! await client.query(`
+    //     //!         UPDATE "user"
+    //     //!            SET "active" = 'FALSE'
+    //     //!          WHERE "id" = $1`,[userToDelete.id]);
+    // },
     
 }
 
