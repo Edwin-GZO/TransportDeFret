@@ -18,6 +18,43 @@
 					</h1>
 					<div class="columns">
 						<!---->
+
+						<div class="column is-5">
+
+							<div class="box"  id="mail">
+								<div class="columns">
+									<div class="column card-name ">
+										<span id="titleMail">
+											<strong> E-mail : </strong>
+										</span>
+										<span id="dataMail">
+											<%= user.mail%>
+										</span>
+									</div>
+
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validateMail">Valider</button>
+											</div>
+										</div>
+									</form>
+
+
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card"id="modifyMail">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+
+									</div>
+								</div>
+							</div>
+
 						<div class="column is-5">
 
 							<div class="box" id="name" >
@@ -101,9 +138,9 @@
 						<!---->
 					</div>
 					<div class="columns">
-					<div class="column is-3">
+					<!-- <div class="column is-3"> -->
 
-						</div>
+						<!-- </div> -->
 						<!---->
 						<!---->
 						<!-- <div class="column is-6"> -->
@@ -143,48 +180,14 @@
 
 						<!-- </div> -->
 							<!---->
-						<div class="column is-3">
+						<!-- <div class="column is-3"> -->
 
-						</div>
+						<!-- </div> -->
 					</div>
 
 					<div class="columns">
 						<!---->
-						<div class="column is-5">
-
-							<div class="box"  id="mail">
-								<div class="columns">
-									<div class="column card-name ">
-										<span id="titleMail">
-											<strong> E-mail : </strong>
-										</span>
-										<span id="dataMail">
-											<%= user.mail%>
-										</span>
-									</div>
-
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>">
-											</div>
-											<div class="control">
-												<button class="button is-small is-success" id="validateMail">Valider</button>
-											</div>
-										</div>
-									</form>
-
-
-									<div class="column is-narrow">
-										<a href="#" class="button--edit-card"id="modifyMail">
-											<span class="icon is-small has-text-primary">
-												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
-											</span>
-										</a>
-
-									</div>
-								</div>
-							</div>
+						
 
 						</div>
 						<!---->

@@ -1,14 +1,25 @@
-const dashBoardUserModule = {
+
+const userDataMapper = require('../db/userDataMapper');
+const quoteRouter = require('../router/quoteRouter')
+
+module.exports = {
+    
+    dashBoardUserModule = {
 
     init: function () {
      console.log('Initialisation DasHBoardModule');
      dashBoardUserModule.addListenerToActions();
+
+     const userController = require('./');
+        exports.index = function(req, res) {
+        res.render('index', { moment: moment });
+}
 },
     addListenerToActions:()=>{
 
         // Rajoute les events listeners sur le Crayon !
         const modifyName = document.getElementById('modifyName');
-        modifyName.addEventListener('click',dashBoardUserModule.showFormName);
+        modifyName.addEventListener('click',quoteRouter.test);
 
         const modifyPhone = document.getElementById('modifyPhone');
         modifyPhone.addEventListener('click',dashBoardUserModule.showFormPhone);
@@ -35,7 +46,7 @@ const dashBoardUserModule = {
 
         const validateSiret = document.getElementById('validateSiret');
         validateSiret.addEventListener('click',dashBoardUserModule.submitSiret);
-        
+
         const deleteUser = document.getElementById('deleteUser');
         deleteUser.addEventListener('click',dashBoardUserModule.submitDelete);
     },
@@ -139,5 +150,7 @@ const dashBoardUserModule = {
     // },
     
 }
+}
 
 document.addEventListener('DOMContentLoaded', dashBoardUserModule.init );
+
