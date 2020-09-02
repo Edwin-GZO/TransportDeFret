@@ -15,13 +15,13 @@ console.log(__dirname +'/app/assets');
 // Gestion des sessions
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true,
-    // cookie: {
-    //     httpOnly: true ,
-    //     sameSite: 'none' ,
-    //     secure: true
-    // }
+    cookie: {
+        httpOnly: true ,
+        sameSite: 'none' ,
+        secure: true
+    }
 }));
 
 app.use((error, request, response, next) => {
