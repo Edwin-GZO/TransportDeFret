@@ -1,0 +1,57 @@
+
+body{
+    width: 80%;
+  }
+  
+  
+  .split{ height:100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow: hidden;
+    }
+    
+    .textRes{
+    position: absolute;
+    left: 5em;
+    top: 20em;
+    margin-right: 5em;
+    
+    }
+    
+    
+    .pRes{
+      line-height: 2em;
+    font-size: 1.5em;
+    text-align: justify;
+    border-left: white 3px solid;
+    padding: 1em;
+    color: white;
+    }
+    
+  
+    .h2Res {
+      color: white;
+      text-align: center;
+      font-size: 3em;
+    }
+    
+   .leftRes{
+      left:0;
+    
+      
+     
+    }
+    
+    .rightRes{
+      right: 0;
+      background: url('../../assets/images/D02jqh.jpg') no-repeat;
+    
+    }
+    
+   .imgRes{
+     position: absolute;
+      top: -6%;
+      left: 4em;
+    }

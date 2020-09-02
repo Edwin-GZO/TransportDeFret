@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Field from '../../containers/Field'
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react'
+import validator from 'validator';
 import './style.scss';
 
 
@@ -20,7 +21,8 @@ const FormInscriptionPart = ({
     citySignUpPart,
     postalCodeSignUpPart,
     hasError,
-    isSamePassword
+    isSamePassword,
+    isEmailOk,
   }) => {
   
     const handleSubmitpart = (evt) => {
@@ -51,7 +53,8 @@ const FormInscriptionPart = ({
         />
       </Form.Field>
   
-      <Form.Field required >
+      <Form.Field required>
+        
         <label>Prénom</label>
         <Field 
           name="firstNameSignUpPart"

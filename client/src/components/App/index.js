@@ -1,16 +1,14 @@
-
-
-
 import React, { useEffect } from "react";
 import { useDispatch } from 'react-redux'
 import { Route, Switch } from 'react-router-dom';
 import Accueil from '../../components/Accueil';
-import Affretement from '../../components/Affretement';
+
 import Carte from '../../components/Carte';
 import Distribution from '../../components/Distribution';
 import FormQuotePro from '../../containers//FormQuotePro';
 import Logistique from '../../components/Logistique';
 import Mots from '../../components/Mots';
+import Oui from '../../components/Oui';
 import PageContact from '../../components/PageContact';
 import ProPartModale from '../../components/ProPartModale';
 import Reseau from '../../components/Reseau';
@@ -18,10 +16,16 @@ import FormInscriptionPro from '../../containers/FormInscriptionPro';
 import FormInscriptionPart from '../../containers/FormInscriptionPart';
 import LoginForm from '../../containers/LoginForm';
 import ContactForm from '../../containers/ContactForm';
+import Testtemplate from '../../components/Testtemplate';
+import ReactFullpage from '@fullpage/react-fullpage';
+import {SectionsContainer, Section} from 'react-fullpage';
 
 import { checkAuth } from '../../store/action/user-actions';
 
-import './style.scss';
+
+import Affretement from "../../components/Affretement";
+import Aacueil from "../../components/Aacueil";
+
 
 
 
@@ -34,15 +38,16 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
-      <LoginForm />
-    <FormInscriptionPart />
-    <FormInscriptionPro />
-    <ContactForm />
-=======
-    <FormQuotePro />
->>>>>>> d44719279dab9ccd508b5d8504a25dcd2b99cd79
-      <Switch>
+ 
+
+
+<PageContact />
+
+
+
+
+
+     {/*} <Switch>
         <Route path="/affretement" component={Affretement} />
         <Route path="/carte" component={Carte} />
         <Route path="/distribution" component={Distribution} />
@@ -52,7 +57,7 @@ function App() {
         <Route path="/pageContact" component={PageContact} />
         <Route path="/ProPartModale" component={ProPartModale} />
         <Route path="/reseau" component={Reseau} />
-      </Switch>
+</Switch>*/}
       
     </div>
   );
