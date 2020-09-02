@@ -9,9 +9,13 @@ import './style.scss';
 
 const ContactForm = ({ submitcontact, contactMessage, history }) => {
 
+
+  
+
     const handleContact = (evt) => {
         evt.preventDefault();
         submitcontact();
+        setTimeout(() => history.push('/'), 3000);
       };
 
       
@@ -25,7 +29,7 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
 <div id='mainTitle'>
     <img  style={{width:250,height:250}} src={logo}/>
     </div>
-    
+
 <h1 className="ui dark header">Formulaire de contact</h1>
 {contactMessage ? <span>{contactMessage}</span> : null}
 <Form autoComplete="off" onSubmit={handleContact}>
