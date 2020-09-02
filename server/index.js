@@ -9,7 +9,8 @@ const app = express();
 
 app.set('view engine', 'ejs'); 
 app.set('views', './app/views'); 
-app.use(express.static(__dirname +'/assets'));
+app.use(express.static(__dirname +'/app/assets'));
+console.log(__dirname +'/app/assets');
 
 // Gestion des sessions
 app.use(session({
