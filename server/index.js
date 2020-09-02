@@ -1,6 +1,9 @@
 require('dotenv').config();
-const express = require('express');
-const session = require('express-session');
+const express = require('express') ;
+const session = require('express-session') ;
+var moment = require('moment') ; 
+moment.locale('fr'); 
+
 const app = express();
 
 // Gestion des sessions
@@ -40,27 +43,47 @@ app.all('*', (request, response, next) => {
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-const conInscRouteur = require('./app/router/conInscRouteur');
-const quoteRouteur = require('./app/router/quoteRouter');
-const contactRouteur = require('./app/router/contactRouter');
+const conInscRouter = require('./app/router/conInscRouter');
+const quoteRouter = require('./app/router/quoteRouter');
+const contactRouter = require('./app/router/contactRouter');
+const userRouter = require('./app/router/userRouter');
 
 // Middleware qui vérifie que le USER est connection
 // app.route(/^(\/api\/user.*|\/)/
-
+// (^\/api\/user\/\w*\/\w*)|(^\/$)|(^\/api\/user)
 //! Pourquoi all ? Pourquoi pas route ? Trouver le moyen d'inversé la selection ....  Tous SAUF /api/user*
-// app.all(/^(\/api\/user*)/, (request, response, next) => {
-//     console.log("Passe par le middleware Session", request.session.login);
-//     if (!request.session.login) {
-//         console.log(" Error : Pas de session Login" );
-//         response.status(401).json({ isLogged: false , error : "Pas de session Login " });
-//     } else {
-//         next();
-//     }
-// });
 
-app.use(conInscRouteur);
-app.use(quoteRouteur);
-app.use(contactRouteur);
+app.all('*', (request, response, next) => {
+    console.log(" Vérification par le MiddleWare de Session => ", request.session.login);
+
+    routePath = request.originalUrl
+    console.log("Route Path ",routePath)
+     
+    const autorisedRoadUser = '/api/user' ; 
+    const autorisedRoadPassword = '/api/user/password' ; 
+    const autorisedRoadSignupPart = '/api/user/signup/part' ;
+    const autorisedRoadSignupPro = '/api/user/signup/pro' ;
+    const autorisedRoadContact = '/api/contact' ; 
+    const autorisedRoadSlach = '/' ;
+
+    if ((autorisedRoadUser == routePath || autorisedRoadPassword == routePath || autorisedRoadSignupPart == routePath || autorisedRoadSignupPro == routePath || autorisedRoadSlach == routePath || autorisedRoadContact == routePath )) {
+
+        console.log(" Route libre ")
+        next();
+
+    } else if (!request.session.login) {
+        console.log(moment().format('LLLL')," Error : Pas de session Login" );
+        response.status(401).json({ isLogged: false , error : "Pas de session Login " });
+    } else {
+        console.log(moment().format('LLLL'), `Validation session pour ${request.session.login}`);
+        next();
+    }
+});
+
+app.use(conInscRouter);
+app.use(quoteRouter);
+app.use(contactRouter);
+app.use(userRouter);
 
 
 const port = process.env.PORT || 8080 ;

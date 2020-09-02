@@ -41,6 +41,8 @@ CREATE TABLE "bill_address" (
 DROP TABLE IF EXISTS "sender_address";
 CREATE TABLE "sender_address" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" TEXT , -- Société Pro  Nom Prénom Part
+    "phone" TEXT,
     "main" TEXT NOT NULL, -- n° de voie + type de voie + nom de voie
     "complement" TEXT,
     "postal_code" TEXT NOT NULL, -- /!\ creer un type postal_code --! Avec le code postal proposé la ville ?
@@ -54,6 +56,8 @@ CREATE TABLE "sender_address" (
 DROP TABLE IF EXISTS "receiver_address";
 CREATE TABLE "receiver_address" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" TEXT , -- Société Pro  Nom Prénom Part
+    "phone" TEXT,
     "main" TEXT NOT NULL, -- n° de voie + type de voie + nom de voie
     "complement" TEXT,
     "postal_code" TEXT NOT NULL, -- /!\ creer un type postal_code --! Avec le code postal proposé la ville ?
