@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Field from '../../containers/Field';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 const FormInscriptionPro = ({ 
@@ -36,7 +37,14 @@ const FormInscriptionPro = ({
   
   return (
   
+    
+
     <section className="register">
+
+<div id='mainTitle'>
+    <img  style={{width:250,height:250}} src={logo}/>
+    </div>
+    
      <h1 class="ui dark header">Formulaire d'inscription professionnel</h1>
       {
         hasError ? <p>modal</p> : null

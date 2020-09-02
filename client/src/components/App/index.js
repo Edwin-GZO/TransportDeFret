@@ -15,6 +15,8 @@ import ContactForm from '../../containers/ContactForm';
 import ModalInscription from '../../components/ModalInscription';
 import NotFound from '../../components/NotFound';
 
+import Reseau from '../../components/Reseau';
+
 
 import { checkAuth } from '../../store/action/user-actions';
 
@@ -23,7 +25,7 @@ import './style.scss';
 
 
 const App = (
-  {isLogged}
+  isLogged
 ) => {
 console.log(isLogged);
   
@@ -38,15 +40,15 @@ console.log(isLogged);
 
     
       <Switch>   
-        <Route exact path="/" component={Accueil} />     
-        <Route exact path="/contact" component={ContactForm} />
-        <Route exact path="/connection" component={LoginForm} />
+        <Route exact path="/" component={Accueil} />   
+        <Route  path="/contact" component={ContactForm} />
+        <Route  path="/connection" component={LoginForm} />
 
         {/*require login*/}
 
-        {isLogged && (<Route exact path="/ipro" component={FormInscriptionPro} />)}
-        {isLogged && (<Route exact path="/ipart" component={FormInscriptionPart} />)}
-        {isLogged && (<Route exact path="/devis" component={FormQuotePro} />)}
+        {isLogged && (<Route  path="/ipro" component={FormInscriptionPro} />)}
+        {isLogged && (<Route  path="/ipart" component={FormInscriptionPart} />)}
+        {isLogged && (<Route  path="/devis" component={FormQuotePro} />)}
         
                
         <Route>

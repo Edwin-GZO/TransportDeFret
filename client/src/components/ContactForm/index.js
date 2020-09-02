@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Field from '../../containers/Field.js'
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 
@@ -20,6 +21,11 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
 
     return (
 <section className="contact">
+
+<div id='mainTitle'>
+    <img  style={{width:250,height:250}} src={logo}/>
+    </div>
+    
 <h1 className="ui dark header">Formulaire de contact</h1>
 {contactMessage ? <span>{contactMessage}</span> : null}
 <Form autoComplete="off" onSubmit={handleContact}>
