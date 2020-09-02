@@ -7,20 +7,12 @@ import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 const FormInscriptionPro = ({ 
-  isFormValid,
+  
   signup,
-  mailSignUpPro,
+  
   passwordSignUpPro,
   passwordconfirmSignUpPro,
-  phoneSignUpPro,
-  billStreetSignUpPro,
-  billNumberSignUpPro,
-  billTrackSignUpPro,
-  billComplementSigPUpro,
-  siret,
-  citySignUpPro,
-  postalCodeSignUpPro,
-  societe,
+  
   hasError,
   isSamePassword,
   history,

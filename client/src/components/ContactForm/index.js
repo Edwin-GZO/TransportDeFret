@@ -76,8 +76,8 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
     
     
     <Field
-    required="true"
-    id="bg"
+    
+      id="bg"
       type="textarea"
       reducerName="contact"
       name='commentContact'
