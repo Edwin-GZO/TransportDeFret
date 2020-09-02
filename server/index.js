@@ -15,12 +15,12 @@ console.log(__dirname +'/app/assets');
 // Gestion des sessions
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    resave: true,
+    resave: false,
     saveUninitialized: true,
     cookie: {
         httpOnly: true ,
-        sameSite: 'none' ,
-        secure: true
+        // sameSite: 'none' ,
+        // secure: true
     }
 }));
 
@@ -36,15 +36,11 @@ app.use((error, request, response, next) => {
 
 app.all('*', (request, response, next) => {
     // console.log('Autorisation du protocole CORs');
-    response.setHeader('Access-Control-Allow-Origin', request.header('Origin') || '*');
-    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-
-    const requestedHeaders = request.header('Access-Control-Request-Headers');
-    if (requestedHeaders) {
-        response.setHeader('Access-Control-Allow-Headers', requestedHeaders);
-    }
-
-    response.setHeader('Access-Control-Allow-Credentials', 'true');
+    response.header('Access-Control-Allow-Origin', request.header('Origin') || '*');
+    response.header('Access-Control-Allow-Methods', 'OPTIONS,GET,PUT,POST,DELETE');
+    response.header('Access-Control-Allow-Headers', request.header('Access-Control-Request-Headers') || '*');
+    response.header('Access-Control-Allow-Credentials', 'true');
+    response.header('Access-Control-Max-Age', '864000');
      
     next();
 });
