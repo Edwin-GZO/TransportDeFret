@@ -1,6 +1,6 @@
 
-const userDataMapper = require('../db/userDataMapper');
-const quoteRouter = require('../router/quoteRouter')
+// const userDataMapper = require('../db/userDataMapper');
+// const quoteRouter = require('../router/quoteRouter')
 
 module.exports = {
     
