@@ -215,7 +215,7 @@ module.exports = {
 
         if (!request.session.login) {
             response.status(401).json({isLogged: false , error:" Pas de session" });
-            console.log(" Erreur : Aucune session ") }
+            console.log(" CheckLogged : Erreur Aucune session ") }
 
         else {
             response.status(201).json(request.session.login)

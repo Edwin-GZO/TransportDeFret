@@ -12,6 +12,11 @@ app.set('views', './app/views');
 app.use(express.static(__dirname +'/app/assets'));
 console.log(__dirname +'/app/assets');
 
+app.use((request, response, next) => {
+    console.log('COOKIES', request.header('Cookie'));
+    next();
+});
+
 // Gestion des sessions
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -95,7 +100,6 @@ const userRouter = require('./app/router/userRouter');
 //         next();
 //     }
 // });
-
 
 app.use(conInscRouter);
 app.use(quoteRouter);
