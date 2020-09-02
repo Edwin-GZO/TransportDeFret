@@ -17,11 +17,11 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: {
-        httpOnly: true ,
-        sameSite: 'none' ,
-        secure: true
-    }
+    // cookie: {
+    //     httpOnly: true ,
+    //     sameSite: 'none' ,
+    //     secure: true
+    // }
 }));
 
 app.use((error, request, response, next) => {
