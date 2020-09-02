@@ -1,31 +1,35 @@
-
 const dashBoardUserModule = {
 
     init: function () {
-     console.log('Initialisation DasHBordModule');
+     console.log('Initialisation DasHBoardModule');
      dashBoardUserModule.addListenerToActions();
 },
     addListenerToActions:()=>{
 
-        //click sur le crayon
+        // Rajoute les events listeners sur le Crayon !
         const modifyName = document.getElementById('modifyName');
         modifyName.addEventListener('click',dashBoardUserModule.showFormName);
+
         const modifyPhone = document.getElementById('modifyPhone');
         modifyPhone.addEventListener('click',dashBoardUserModule.showFormPhone);
-        const modifyPassword = document.getElementById('modifyPassword');
-        modifyPassword.addEventListener('click',dashBoardUserModule.showFormPassword);
+
+        // const modifyPassword = document.getElementById('modifyPassword');
+        // modifyPassword.addEventListener('click',dashBoardUserModule.showFormPassword);
+
         const modifyMail = document.getElementById('modifyMail');
         modifyMail.addEventListener('click',dashBoardUserModule.showFormMail);
+
         const modifySiret = document.getElementById('modifySiret');
         modifySiret.addEventListener('click',dashBoardUserModule.showFormSiret);
 
         //click sur le bouton valider du formulaire (input)
         const validateName = document.getElementById('validateName');
         validateName.addEventListener('click',dashBoardUserModule.submitName);
+
         const validatePhone = document.getElementById('validatePhone');
         validatePhone.addEventListener('click',dashBoardUserModule.submitPhone);
-        const validatePassword = document.getElementById('validatePassword');
-        validatePassword.addEventListener('click',dashBoardUserModule.submitPassword);
+        // const validatePassword = document.getElementById('validatePassword');
+        // validatePassword.addEventListener('click',dashBoardUserModule.submitPassword);
         const validateMail = document.getElementById('validateMail');
         validateMail.addEventListener('click',dashBoardUserModule.submitMail);
         const validateSiret = document.getElementById('validateSiret');
@@ -39,6 +43,7 @@ const dashBoardUserModule = {
     showFormName: ()=>{
         const formName = document.getElementById('formName');
         formName.classList.remove('is-hidden');
+        
         const dataName = document.getElementById('dataName');
         dataName.classList.add('is-hidden');
         
@@ -49,11 +54,11 @@ const dashBoardUserModule = {
         const dataPhone = document.getElementById('dataPhone');
         dataPhone.classList.add('is-hidden');
     },
-    showFormPassword: ()=>{
-        const formPassword = document.getElementById('formPassword');
-        formPassword.classList.remove('is-hidden');
+    // showFormPassword: ()=>{
+    //     const formPassword = document.getElementById('formPassword');
+    //     formPassword.classList.remove('is-hidden');
         
-    },
+    // },
     showFormMail: ()=>{
         const formMail = document.getElementById('formMail');
         formMail.classList.remove('is-hidden');
@@ -70,10 +75,13 @@ const dashBoardUserModule = {
     //pour faire disparaitre les input
     submitName: (event)=>{
         event.preventDefault();
+
         const validateName = document.getElementById('formName');
         validateName.classList.add('is-hidden');
+
         const dataName = document.getElementById('dataName');
         dataName.classList.remove('is-hidden');
+
         const inputName = document.getElementById('inputName');
         dataName.textContent = inputName.value;
         
