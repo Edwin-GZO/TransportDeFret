@@ -145,14 +145,10 @@ console.log(isLogged);
       
         
       </div>
-      </div>
-      
-   
- 
+      </div> 
   </nav>
+  
 
- 
-   
     )
   }
   

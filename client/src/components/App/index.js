@@ -22,8 +22,10 @@ import './style.scss';
 
 
 
-function App() {
-
+const App = (
+  {isLogged}
+) => {
+console.log(isLogged);
   
   const dispatch = useDispatch();
   useEffect(()=> {
@@ -42,9 +44,9 @@ function App() {
 
         {/*require login*/}
 
-        <Route exact path="/ipro" component={FormInscriptionPro} />
-        <Route exact path="/ipart" component={FormInscriptionPart} />
-        <Route exact path="/devis" component={FormQuotePro} />
+        {isLogged && (<Route exact path="/ipro" component={FormInscriptionPro} />)}
+        {isLogged && (<Route exact path="/ipart" component={FormInscriptionPart} />)}
+        {isLogged && (<Route exact path="/devis" component={FormQuotePro} />)}
         
                
         <Route>
