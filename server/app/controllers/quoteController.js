@@ -1,14 +1,22 @@
 const quoteDataMapper = require('../db/quoteDatamapper') ;
 const contactDataMapper = require('../db/contactDataMapper') ;
 const moment = require('moment') ;
+moment.locale('fr'); 
 
 module.exports = {
+
+    console : async(request) => {
+
+        console.log(request) ;
+        console.log(request.body) ;
+        console.log(request.session.login) ;
+    },
 
     test: async (request, response, next) => {
 
         try {
             
-            response.send('hello world');
+            response.status(200).send('Coucou petite perruche !');
             console.log(moment().format('LLLL')," Test : Coucou petite perruche  ")
 
         } catch (error) {

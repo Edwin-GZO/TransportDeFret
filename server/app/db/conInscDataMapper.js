@@ -4,7 +4,7 @@ module.exports = {
 
     findUser: async (body) => {
  
-        const user = await client.query('SELECT * FROM "user" WHERE "mail"= $1', [body.mailLogin]);
+        const user = await client.query('SELECT * FROM "user" WHERE "mail"= $1', [body.mailLogin]); 
         return user.rows[0];
 
     },
@@ -36,7 +36,7 @@ module.exports = {
         await client.query('INSERT INTO "user" ("name", "password","mail","phone","type","siret","bill_address_id")VALUES ($1,$2,$3,$4,$5,$6,$7)',
             [
             result.societe ,
-            result.passwordSignUpPro ,
+            result.passwordSignUpPro , 
             result.mailSignUpPro ,
             result.phoneSignUpPro ,
             "pro" ,
@@ -51,7 +51,7 @@ module.exports = {
         await client.query('INSERT INTO "user" ("name", "password","mail","phone","type","bill_address_id")VALUES ($1,$2,$3,$4,$5,$6)',
             [
             `${result.firstNameSignUpPart}  ${result.nameSignUpPart}` ,
-            result.passwordSignUpPart ,
+            result.passwordSignUpPart , 
             result.mailSignUpPart ,
             result.phoneSignUpPart ,
             "part" ,

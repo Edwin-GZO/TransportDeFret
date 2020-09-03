@@ -58,8 +58,8 @@ console.log(isLogged);
       </div> 
       )}   
 
-      <a href='#' id="navlink-items" className={(isLogged ? "navbar-item" : "display")}>
-        Mes info
+      <a href='http://localhost:8080/api/user/dashboard' id="navlink-items" className={(isLogged ? "navbar-item" : "display")}>
+        Mon Profil
       </a>
 
       <div className="navbar-item has-dropdown is-hoverable">

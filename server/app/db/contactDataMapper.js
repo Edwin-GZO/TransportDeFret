@@ -1,6 +1,7 @@
 const client = require('./db');
 const nodemailer = require('nodemailer');
 const moment = require('moment') ;
+moment.locale('fr'); 
 
 module.exports = {
     
