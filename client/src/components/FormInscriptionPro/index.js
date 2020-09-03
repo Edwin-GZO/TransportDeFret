@@ -7,19 +7,17 @@ import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 const FormInscriptionPro = ({ 
-  
-  signup,
-  
+  signUpMessage,
+  signup,  
   passwordSignUpPro,
-  passwordconfirmSignUpPro,
-  
+  passwordconfirmSignUpPro,  
   hasError,
   isSamePassword,
   history,
   
 }) => {
 
-  
+  console.log(signUpMessage);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -28,8 +26,8 @@ const FormInscriptionPro = ({
       return
     }
     
-    signup('pro');
-
+    signup();
+    setTimeout(() => history.push('/'), 3000);
     
     } 
 
@@ -45,9 +43,13 @@ const FormInscriptionPro = ({
     </div>
     
      <h1 class="ui dark header">Formulaire d'inscription professionnel</h1>
-      {
-        hasError ? <p>modal</p> : null
-      }
+     
+     
+     {signUpMessage ? <span>{signUpMessage}</span> : null}
+     
+
+      
+
   <Form onSubmit={handleSubmit} >
 
     <Form.Field required>
@@ -58,7 +60,7 @@ const FormInscriptionPro = ({
         name="siret"
         reducerName="register"
         placeholder="xxx xxx xxx xxxxx"
-        required={true}
+        
         
       />
     </Form.Field>
@@ -71,7 +73,7 @@ const FormInscriptionPro = ({
         name="societe"
         reducerName="register"
         placeholder="société"
-        required={true}
+        
       />
     </Form.Field>
 
@@ -172,7 +174,7 @@ const FormInscriptionPro = ({
           </div>
 
     
-    <Form.Field >
+    <Form.Field required>
       <label >Telephone</label>
             <Field 
             name="phoneSignUpPro"
@@ -183,17 +185,19 @@ const FormInscriptionPro = ({
             type="text"
               /> 
     </Form.Field>
-    <Form.Field required data-tooltip="Entre 8 et 16 caractères, une majuscule et 1 caractère spécial" data-position="top-center" >
+
+    
+
+    <Form.Field required data-tooltip="Entre 8 et 16 caractères, une majuscule et 1 caractère spécial ( _!@#$%^&*)" data-position="top-center" >
         <label >Choisissez votre mot de passe</label>
         <Field 
           cssClass={!isSamePassword ? 'error' : ''}
           name="passwordSignUpPro"
-          
           reducerName="register"
           placeholder=""
           id="bg"
           required="true"
-          
+          type="password"
         />
     </Form.Field>
     <Form.Field required>
@@ -206,6 +210,7 @@ const FormInscriptionPro = ({
           placeholder=""
           id="bg"
           required="true"
+          type="password"
         />
     </Form.Field>
     

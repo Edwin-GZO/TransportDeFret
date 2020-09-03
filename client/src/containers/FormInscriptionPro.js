@@ -20,6 +20,7 @@ const mapStateToProps = (state) => ({
     isFormValid: state.register.isFormValid,
     isSamePassword: state.register.isSamePassword,
     hasError: state.register.hasError,
+    signUpMessage: state.register.signUpMessage,
   });
   
   const mapDispatchToProps = (dispatch) => ({

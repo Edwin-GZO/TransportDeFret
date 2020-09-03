@@ -95,10 +95,21 @@ export default (store) => (next) => (action) => {
       })
         .then((res) => {
             console.log('signup request')
-          store.dispatch(signupsuccess(res.data));
+          store.dispatch(signupsuccess(<div className="ui success message">
+          <i className="close icon"></i>
+          <div className="header">
+            Votre inscription est validée.
+          </div>
+          <p>Redirection vers l'accueil en cours ...</p>
+        </div>));
         })
         .catch((err) => {
-          store.dispatch(signuperror("Impossible d'enregistrer cet utilisateur"))
+          store.dispatch(signuperror(<div className="ui negative message">
+          <i className="close icon"></i>
+          <div className="header">
+            Nous sommes désolés mais votre message n'a pu être envoyé.
+          </div>
+          <p>Veuillez essayer ultérieurement</p></div>))
         })
 
       break;
