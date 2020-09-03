@@ -1,21 +1,33 @@
 import React from 'react';
 import './style.scss';
-import logo from '../../assets/images/IMG_2009.png'
-import mar from '../../assets/images/mar.png'
-
+import logo from '../../assets/images/IMG_2009.png';
+import Carte from '../../components/Carte';
+import Affretement from '../../components/Affretement';
+import Distribution from '../../components/Distribution';
+import Logistique from '../../components/Logistique';
+import Mots from '../../components/Mots';
+import Reseau from '../../components/Reseau';
+import PageContact from '../../components/PageContact';
 const Aacueil = () => {
-return (
-    
+return ( 
     <div>
-        <div className="acc">
+        <div className="acc fullPage-component">
       
       
-        <img style={{height:200, width:200}} src={logo} />
+        <img style={{height:200, width:200}} src={logo} alt="acc"/>
         
        <p className="textAcc"> <h2 className="h2Acc">Bienvenue chez TDR </h2><p className="backAcc">La réactivité d'une PME, l'experience d'un réseau  </p> 
        </p>
+
       
    </div>
+   <Affretement />
+      <Carte />
+      <Distribution />
+      <Logistique />
+      <Mots />
+      <Reseau/>
+      <PageContact />
    </div>
 )
 }

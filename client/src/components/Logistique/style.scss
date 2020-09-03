@@ -5,22 +5,23 @@ body {
 }
 
 
-.split{
-    height:100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow: hidden;
+// .split{
+//     height:100%;
+//     width: 50%;
+//     position: fixed;
+//     z-index: 1;
+//     top: 0;
+//     overflow: hidden;
     
-    }
+//     }
     
     .textLog{
+      /*
     position: absolute;
     left: 5em;
     top: 20em;
     margin-right: 5em;
-    
+    */
     }
     
     
@@ -44,9 +45,12 @@ body {
     .leftLog{
       left:0;
       background: url('../../assets/images/D02jqh.jpg') no-repeat;
-      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
      
-    }
+    
     
     .rightLog{
       right: 0;
@@ -55,9 +59,9 @@ body {
     }
     
     .imgLog {
-      position: absolute;
-      top: -6%;
-      left: 7em;
+      // position: absolute;
+      // top: -6%;
+      // left: 7em;
     }
     
     

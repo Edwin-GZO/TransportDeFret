@@ -1,19 +1,13 @@
 import React from 'react';
-import logo from '../../assets/images/IMG_2009.png'
 import './style.scss';
 
 
 const PageContact = () => {
 return (
-
+    <div className='fullPage-component'>
 <div className="container">
 
 
-<div className='mainTitle'>
-<img  style={{width:250,height:250}} alt="salut" src={logo}/>
-</div>
-
- 
 <div className="allBlock">
   <div className="block_address">
 <h2 className="subtitle"><a href="https://www.google.fr/maps/place/1+Impasse+de+la+Gr%C3%A8ce,+13127+Vitrolles/@43.4175812,5.2681815,17z/data=!3m1!4b1!4m5!3m4!1s0x12c9e91e4dfc82ff:0x52c30d921e7a3be!8m2!3d43.4175812!4d5.2703702" target="_blank" rel="noopener noreferrer">VITROLLES</a></h2>
@@ -40,6 +34,8 @@ return (
         <p>38070 St Quentin Fallavier</p>
     <p>Tel: 06.20.90.40.33</p>
    </div>
+   </div>
+
    </div>
 
    </div>

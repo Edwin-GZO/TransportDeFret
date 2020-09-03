@@ -3,22 +3,23 @@ body {
 }
 
 
-.split{
-    height:100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow: hidden;
+// .split{
+//     height:100%;
+//     width: 50%;
+//     position: fixed;
+//     z-index: 1;
+//     top: 0;
+//     overflow: hidden;
     
-    }
+//     }
     
     .textMots{
+      /*
     position: absolute;
     left: 5em;
     top: 20em;
     margin-right: 5em;
-    
+    */
     }
     
     
@@ -40,21 +41,18 @@ body {
     }
     
     .leftMots{
-      left:0;
+      //left:0;
       background: url('../../assets/images/D02jqh.jpg') no-repeat;
-      
-     
     }
     
     .rightMots{
       right: 0;
-      
     
     }
     
     .imgMots {
-      position: absolute;
-      top: -6%;
-      left: 7em;
+      // position: absolute;
+      // top: -6%;
+      // left: 7em;
     }
     

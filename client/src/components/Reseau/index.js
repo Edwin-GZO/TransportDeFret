@@ -1,21 +1,21 @@
 import React from 'react';
 import './style.scss';
-import schema from '../../assets/images/logistique.png';
+import vector from '../../assets/images/vector.jpg';
 
 const Reseau = () => {
 return (
-  <div>
+  <div className='fullPage-component'>
 
   <div className="split leftRes">
     
-       <img className="imgRes" style={{width:700,height:1000}} src={schema} alt="hey1"/>
+       <img className="imgRes" style={{width:700,height:700}} src={vector} alt="hey1"/>
     
     </div>
   
     <div className="split rightRes">
     <div className="textRes">
         <h2 className="h2Res">Réseau</h2>
-      <p className="pRes">Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+      <p className="pRes">De 1 palette à 6 palettes, nous vous garantissons une distribution nationale de qualité grâce à notre intégration au groupement Evolutrans</p>
       </div>
     </div>
   

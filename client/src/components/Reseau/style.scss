@@ -4,20 +4,21 @@ body{
   }
   
   
-  .split{ height:100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow: hidden;
-    }
+ .split{ 
+   height:100vh;
+   width: 50%;
+   z-index: 1;
+   overflow: hidden;
+  
+   }
     
     .textRes{
+      /*
     position: absolute;
     left: 5em;
     top: 20em;
     margin-right: 5em;
-    
+    */
     }
     
     
@@ -25,7 +26,6 @@ body{
       line-height: 2em;
     font-size: 1.5em;
     text-align: justify;
-    border-left: white 3px solid;
     padding: 1em;
     color: white;
     }
@@ -51,7 +51,6 @@ body{
     }
     
    .imgRes{
-     position: absolute;
-      top: -6%;
-      left: 4em;
+    display: block;
+    margin: 0 auto;
     }

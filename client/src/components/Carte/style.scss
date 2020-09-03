@@ -1,0 +1,61 @@
+body{
+    width: 80%;
+  }
+  
+  
+  // .split { 
+  //   height:100%;
+  //   width: 50%;
+  //   position: fixed;
+  //   z-index: 1;
+  //   top: 0;
+  //   overflow: hidden;
+  // }
+    
+    .textCarte{
+      /*
+    position: absolute;
+    left: 5em;
+    top: 20em;
+    margin-right: 5em;
+    */
+    
+    }
+    
+    
+    .pCarte{
+      line-height: 2em;
+    font-size: 2em;
+    text-align: justify;
+    padding: 1em;
+    color: white;
+   
+    }
+    
+  
+    .h2Carte {
+      color: white;
+      text-align: center;
+      font-size: 3em;
+    }
+    
+   .leftCarte{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .rightCarte{
+      right: 0;
+      background: url('../../assets/images/D02jqh.jpg') no-repeat;
+    
+    }
+    
+   .imgCarte{
+    //  position: absolute;
+    //   top: 10%;
+    //   left: 10em;
+    display: block;
+    margin: auto;
+    align-items: center;
+    }

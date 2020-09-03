@@ -4,7 +4,7 @@ import schema from '../../assets/images/logistique.png';
 
 const Mots = () => {
 return (
-  <div>
+  <div className='fullPage-component'>
 
 <div className="split leftMots">
     <div className="textMots">

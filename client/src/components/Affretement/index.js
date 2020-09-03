@@ -1,15 +1,15 @@
 import React from 'react';
 import './style.scss'
-import schema from '../../assets/images/logistique.png'
+
 import panne from '../../assets/images/panne.png'
 
 const Affretement = () => {
 return (
-  <div>
+   <div className='fullPage-component'>
 
 <div className="split leftAff">
   
-     <img className="imgAff" style={{width:600,height:600}} src={panne} alt="hey1"/>
+     <img className="imgAff" style={{width:600,height:500}} src={panne} alt="hey1"/>
   
   </div>
 

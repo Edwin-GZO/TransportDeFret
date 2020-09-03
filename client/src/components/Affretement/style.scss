@@ -4,19 +4,16 @@ body{
 }
 
 
-.split{ height:100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow: hidden;
-  }
+// .split{ height:100%;
+//   width: 50%;
+//   position: fixed;
+//   z-index: 1;
+//   top: 0;
+//   overflow: hidden;
+//   }
   
   .textAff{
-  position: absolute;
-  left: 5em;
-  top: 20em;
-  margin-right: 5em;
+ 
   
   }
   
@@ -25,7 +22,6 @@ body{
     line-height: 2em;
   font-size: 1.5em;
   text-align: justify;
-  border-left: white 3px solid;
   padding: 1em;
   color: white;
   }
@@ -39,7 +35,9 @@ body{
   
  .leftAff{
     left:0;
-  
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
    
   }
@@ -51,7 +49,9 @@ body{
   }
   
  .imgAff{
-   position: absolute;
-    top: -6%;
-    left: 4em;
+  //  position: absolute;
+  //   top: 8em;
+  //   left: 12em;
+  // display: block;
+  //   margin: auto;
   }

@@ -6,7 +6,7 @@ import schema from '../../assets/images/logistique.png';
 const Logistique = () => {
 return (
  
-  <div>
+  <div className='fullPage-component'>
 
 <div className="split leftLog">
     <div className="textLog">
