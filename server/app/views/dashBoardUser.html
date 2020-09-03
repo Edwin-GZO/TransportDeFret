@@ -16,14 +16,10 @@
 					<h1 class="title">
 						<strong> Profil utilisateur </strong>
 					</h1>
-					
-					<!-- Une ligne  -->
-					
+					<!-- Ligne 1 -->
 					<div class="columns">
-						
-						<!-- Bloc Gauche --> 
+						<!-- bloc 1 -->
 						<div class="column is-5">
-
 							<div class="box"  id="mail">
 								<div class="columns">
 									<div class="column card-name ">
@@ -34,170 +30,89 @@
 											<%= user.mail%>
 										</span>
 									</div>
-
 									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
 										<div class="field has-addons">
 											<div class="control">
-												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>">
+												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>"
+													>
 											</div>
 											<div class="control">
 												<button class="button is-small is-success" id="validateMail">Valider</button>
 											</div>
 										</div>
 									</form>
-
-
-									<div class="column is-narrow">
-										<a href="#" class="button--edit-card"id="modifyMail">
-											<span class="icon is-small has-text-primary">
-												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
-											</span>
-										</a>
-									</div>
 								</div>
 							</div>
 						</div>
-
-						<!-- Fin de bloc Gauche -->
-
-						<!-- Bloc Centrale -->
-
-							<div class="column is-2"></div>
-
-						<!-- Bloc droit -->
+						<!-- bloc 2 -->
+						<div class="column is-2">
+						</div>
+						<!-- bloc 3 -->
 						<div class="column is-5">
-
 							<div class="box" id="name" >
 								<div class="columns">
 									<div class="column card-name ">
-										<span id="titleName">
-											<strong> Nom : </strong>
+										<span id="titlePassword">
+											<strong> Mot de passe </strong>
 										</span>
-										<span id="dataName">
-											<%= user.name%>
-										</span>
-
+										<span id="dataPassword">										</span>
 									</div>
-
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formName">
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPassword">
 										<div class="field has-addons">
 											<div class="control">
-												<input type="text" class="input is-small" id="inputName" name="content" value="<%= user.name%>">
+												<input type="text" class="input is-small" id="inputPassword" name="content" value="">
 											</div>
 											<div class="control">
-												<button class="button is-small is-success" id="validateName">Valider</button>
+												<button class="button is-small is-success" id="validatePassword">Valider</button>
 											</div>
 										</div>
 									</form>
-
-
-									<div class="column is-narrow">
-										<a href="#" class="button--edit-card" id="modifyName">
-											<span class="icon is-small has-text-primary" >
-												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
-											</span>
-										</a>
-
-									</div>
 								</div>
 							</div>
 						</div>
-						</div>
-						<!--Fin de ligne-->
-						
-							<!-- Une ligne  -->
-					
+					</div>
+					<!-- Ligne 2 -->
 					<div class="columns">
-						
-						<!-- Bloc Gauche --> 
+						<!--Bloc 1-->
 						<div class="column is-5">
-
-							<div class="box"  id="mail">
-								<div class="columns">
-									<div class="column card-name ">
-										<span id="titleMail">
-											<strong> E-mail : </strong>
-										</span>
-										<span id="dataMail">
-											<%= user.mail%>
-										</span>
-									</div>
-
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>">
-											</div>
-											<div class="control">
-												<button class="button is-small is-success" id="validateMail">Valider</button>
-											</div>
-										</div>
-									</form>
-
-
-									<div class="column is-narrow">
-										<a href="#" class="button--edit-card"id="modifyMail">
-											<span class="icon is-small has-text-primary">
-												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
-											</span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Fin de bloc Gauche -->
-
-						<!-- Bloc Centrale -->
-
-							<div class="column is-2"></div>
-
-						<!-- Bloc droit -->
-						<div class="column is-5">
-
 							<div class="box" id="name" >
 								<div class="columns">
 									<div class="column card-name ">
 										<span id="titleName">
-											<strong> Nom : </strong>
+											<strong> Société / Nom : </strong>
 										</span>
 										<span id="dataName">
 											<%= user.name%>
 										</span>
-
 									</div>
-
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formName">
+									<form action="http://localhost:8080/api/user/dashboard/namemodif" method="POST" style="margin-top: 11px" class="is-hidden" id="formName">
 										<div class="field has-addons">
 											<div class="control">
-												<input type="text" class="input is-small" id="inputName" name="content" value="<%= user.name%>">
+												<input type="text" class="input is-small" id="inputName" name="content" value="<%= user.name%>"
+													>
 											</div>
 											<div class="control">
+											
 												<button class="button is-small is-success" id="validateName">Valider</button>
+												
 											</div>
 										</div>
 									</form>
-
-
 									<div class="column is-narrow">
 										<a href="#" class="button--edit-card" id="modifyName">
 											<span class="icon is-small has-text-primary" >
 												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
 											</span>
 										</a>
-
 									</div>
 								</div>
 							</div>
-							</div>
 						</div>
-						<!--Fin de ligne-->
-
-
+						<!--Bloc 2-->
+						<div class="column is-2">
 						</div>
-						<!---->
+						<!--Bloc 3-->
 						<div class="column is-5">
-
 							<div class="box"  id="phone">
 								<div class="columns">
 									<div class="column card-name ">
@@ -208,7 +123,6 @@
 											<%= user.phone%>
 										</span>
 									</div>
-
 									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPhone">
 										<div class="field has-addons">
 											<div class="control">
@@ -219,82 +133,21 @@
 											</div>
 										</div>
 									</form>
-
-
 									<div class="column is-narrow">
 										<a href="#" class="button--edit-card"id="modifyPhone">
 											<span class="icon is-small has-text-primary">
 												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
 											</span>
 										</a>
-
 									</div>
 								</div>
 							</div>
-
 						</div>
-						<!---->
 					</div>
+					<!--Ligne 3-->
 					<div class="columns">
-					<!-- <div class="column is-3"> -->
-
-						<!-- </div> -->
-						<!---->
-						<!---->
-						<!-- <div class="column is-6"> -->
-
-							<!-- <div class="box"  id="password">
-								<div class="columns">
-									<div class="column card-name ">
-										<span id="titlePassword">
-											<strong> Mot de passe : </strong>
-										</span>
-
-									</div>
-
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPassword">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="password" class="input is-small" id="inputPassword" name="content" value=""
-													placeholder="Mot de passe">
-											</div>
-											<div class="control">
-												<button class="button is-small is-success" id="validatePassword">Valider</button>
-											</div>
-										</div>
-									</form>
-
-
-									<div class="column is-narrow">
-										<a href="#" class="button--edit-card"id="modifyPassword">
-											<span class="icon is-small has-text-primary">
-												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
-											</span>
-										</a>
-
-									</div>
-								</div>
-							</div> -->
-
-						<!-- </div> -->
-							<!---->
-						<!-- <div class="column is-3"> -->
-
-						<!-- </div> -->
-					</div>
-
-					<div class="columns">
-						<!---->
-						
-
-						</div>
-						<!---->
-						<div class="column is-2">
-
-						</div>
-						<!---->
+						<!--Bloc 1-->
 						<div class="column is-5">
-
 							<div class="box"  id="siret">
 								<div class="columns">
 									<div class="column card-name ">
@@ -305,53 +158,62 @@
 											<%= user.siret%>
 										</span>
 									</div>
-
 									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formSiret">
 										<div class="field has-addons">
 											<div class="control">
-												<input type="text" class="input is-small" id="inputSiret" name="content" value="<%= user.siret%>">
+												<input type="text" class="input is-small" id="inputSiret" name="content" value=""
+													placeholder="<%= user.siret%>">
 											</div>
 											<div class="control">
 												<button class="button is-small is-success" id="validateSiret">Valider</button>
 											</div>
 										</div>
 									</form>
-
-
 									<div class="column is-narrow">
 										<a href="#" class="button--edit-card" id="modifySiret">
 											<span class="icon is-small has-text-primary">
 												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
 											</span>
 										</a>
-
 									</div>
 								</div>
 							</div>
-
+						</div>
+						<!--Bloc 2-->
+						<div class="column is-2">
+						</div>
+						<!--Bloc 3-->
+						<div class="column is-5">
 						</div>
 						<!---->
-
-					<!---->
+					<!--Ligne 4-->
 					</div>
+
 					<div class="columns">
-					<div class="column is-3">
+						<!--Bloc 1-->
+						<div class="column is-1"></div>
 
-						<button href="http://54.175.105.52:8080/coucou" class="button is-danger" id="deleteUser">Supprimer</button>
-					</div>
+							<!--Bloc 2 - Bouton supprimer-->
+						<div class="column is-1">
+							<form method='POST' action='http://localhost:8080/api/user/dashboard/userDelete' >
+								<button class="button is-danger" id="deleteUser">Supprimer</button>
+							</form>
+						</div>
+
+					<!--Bloc 3-->
 					<div class="column is-6">
 					</div>
-					<div class="column is-3">
+					<!--Bloc 4 - Bouton Retour Accueil-->
+					<div class="column is-1">
+						<a href="http://localhost:3000/" >
 						<button class="button is-success">Retour à l'accueil</button>
+						</a>
 					</div>
 				</div>
-
 			</div>
-
 			</section>
 
 			<script type="text/javascript" src="/dashBoardUserModule.js"></script>
-			<!-- <script type="text/javascript" src="../router/quoteRouter.js"></script> -->
 
 		</body>
 

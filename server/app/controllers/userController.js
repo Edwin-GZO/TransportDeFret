@@ -9,6 +9,35 @@ moment.locale('fr');
 
 module.exports = {
 
+    // Affiche le DashBoard pour l'User
+    dashBoard: async (request, response) => {
+
+        try {
+            
+            //dashBoardUserModule.addListenerToActions();
+            const body = {mailLogin : request.session.login }
+
+            const user = await conInscDataMapper.findUser(body);
+    
+            console.log(user) ;
+
+            if (!user) {
+                
+                response.status(401).json({isLogged: false , error:" Pas de session" });
+                console.log(moment().format('LLLL'), " Erreur DashBoard : Aucune session ")
+                
+            }
+
+            response.render('dashBoardUser',{user});
+
+        } catch (error) {
+        
+        console.trace(moment().format('LLLL'), error) ;
+        response.status(500).send(error) ;
+        
+        }
+    },
+
     // Permet de modifier le Nom
     nameModif : async (request, response) => {
 
@@ -42,38 +71,35 @@ module.exports = {
         }
     },
 
-    // Affiche le DashBoard pour l'User
-    dashBoard: async (request, response) => {
-
-        try {
-            
-            //dashBoardUserModule.addListenerToActions();
-            const body = {mailLogin : request.session.login }
-
-            const user = await conInscDataMapper.findUser(body);
+    userDelete : async (request, response) => {  
     
-            console.log(user) ;
+        try {
+        
+            console.log("request.sessions.login",request.session.login) ;
 
-            if (!user) {
-                
-                response.status(401).json({isLogged: false , error:" Pas de session" });
-                console.log(moment().format('LLLL'), " Erreur DashBoard : Aucune session ")
-                
+            const body = {
+                mailLogin : request.session.login
             }
 
-            response.render('dashBoardUser',{user});
+            const user = await conInscDataMapper.findUser(body);
+
+            await userDataMapper.userSoftDelete(user) ;
+
+            console.log(moment().format('LLLL'), " OK BDD - Utilisateur Soft Effacé ") ;
+            response.status(201).redirect('http://localhost:3000/',302);
 
         } catch (error) {
         
-        console.trace(moment().format('LLLL'), error) ;
-        response.status(500).send(error) ;
+            console.trace(moment().format('LLLL'), error) ;
+            response.status(500).send(error) ;
         
         }
-    }
+
+    },
 
 }
 
-
+// Gestion d'envoie des Mot de Passe par mail
 // modifyPassword: async (request, response, next) => {
 
     //     try {

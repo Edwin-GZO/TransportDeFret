@@ -27,13 +27,14 @@ module.exports = {
             const user = await conInscDataMapper.findUser(body);
             
             // Est ce que l'utilisateur existe ?
-            if (!user) {
+            if (!user || user.active == false) {
                 
                 response.status(404).json({isLogged:false , error:"Utilisateur non trouvé"});
                 console.log(moment().format('LLLL')," Erreur Connexion : Mauvais Identifiant")
                 return;
             }
 
+            // Vérification de l'adéquation du mot de passe saisie / Celui en base de données
             const compareOK = await bcrypt.compare(body.passwordLogin, user.password)
             
             if (!compareOK) {

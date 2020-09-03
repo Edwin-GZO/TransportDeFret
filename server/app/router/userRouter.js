@@ -8,5 +8,6 @@ const router = express.Router();
 router.get('/api/user/dashboard', userController.dashBoard) ;
 
 router.post('/api/user/dashboard/namemodif', userController.nameModif) ;
+router.post('/api/user/dashboard/userdelete', userController.userDelete) ;
 
 module.exports = router;

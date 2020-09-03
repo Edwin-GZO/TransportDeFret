@@ -102,7 +102,6 @@ const dashBoardUserModule = {
    
     },
 
-
     submitPhone: (event)=>{
         event.preventDefault();
         const validatePhone = document.getElementById('formPhone');
@@ -114,7 +113,6 @@ const dashBoardUserModule = {
         const inputPhone = document.getElementById('inputPhone');
 
         dataPhone.textContent = inputPhone.value;
-
         
     },
 

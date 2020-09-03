@@ -5,11 +5,21 @@ module.exports = {
     
     updateName: async (newName,user) => {
         await client.query(`
-            UPDATE "user" SET "name" = $1 WHERE id = $2`,
+            UPDATE "user" SET "name" = $1 , "updated_at" = now() WHERE id = $2`,
             [
                 newName.content,
                 user.id
             ]
+        );
+    },
+
+    userSoftDelete : async (user) => {
+        await client.query(`
+            UPDATE "user" SET "active" = 'f', "updated_at" = now() WHERE id = $1`,
+            [
+                user.id
+            ]
+        
         );
     }
 
