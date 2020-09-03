@@ -8,9 +8,9 @@ import Distribution from '../../components/Distribution';
 
 import Logistique from '../../components/Logistique';
 import Mots from '../../components/Mots';
-import PageContact from '../../components/PageContact';
 
-import Reseau from '../../components/Reseau';
+
+
 /*import ReactFullpage from '@fullpage/react-fullpage';
 import {SectionsContainer, Section} from 'react-fullpage';*/
 import Accueil from '../../containers/Accueil';
@@ -48,13 +48,14 @@ console.log(isLogged);
     <div className="App">
 
 
-    
-      <Switch>   
-        <Route exact path="/" component={Accueil} />   
+    <Aacueil/>
+      {/*  <Switch>   
+        <Route exact path="/" component={Accueil} /> 
+          
         <Route  path="/contact" component={ContactForm} />
         <Route  path="/connection" component={LoginForm} />
 
-        {/*require login*/}
+   
 
         {isLogged && (<Route  path="/ipro" component={FormInscriptionPro} />)}
         {isLogged && (<Route  path="/ipart" component={FormInscriptionPart} />)}
@@ -64,7 +65,7 @@ console.log(isLogged);
         <Route>
             <NotFound />
         </Route>
-      </Switch>
+      </Switch> */}
      
       
     </div>

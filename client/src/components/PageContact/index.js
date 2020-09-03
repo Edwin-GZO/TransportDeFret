@@ -7,7 +7,7 @@ return (
     <div className='fullPage-component'>
 <div className="container">
 
-<img className="contImg" src={logo} style={{height:200, width:200}} />
+<img className="contImg" src={logo} style={{height:400, width:400}} />
 
 <div className="allBlock">
 

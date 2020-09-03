@@ -14,7 +14,7 @@ return (
         <div className="acc fullPage-component">
       
       
-        <img style={{height:200, width:200}} src={logo} alt="acc"/>
+       
         
        <p className="textAcc active"> <h2 className="h2Acc">Bienvenue chez TDR </h2><p className="backAcc">La réactivité d'une PME, l'experience d'un réseau  </p> 
        </p>
