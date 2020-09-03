@@ -14,6 +14,13 @@ a, a:active, a:visited {
     
 }
 
+.navbar{
+position: absolute;
+top: 0;
+width: 100%;
+
+
+}
 .display {
     display:none;
 }
@@ -23,4 +30,8 @@ a, a:active, a:visited {
 .modal-btn {
     align-items:center;
 }
+
+//-------------------------------------------//
+
+
 

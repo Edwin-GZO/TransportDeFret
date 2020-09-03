@@ -8,6 +8,8 @@ import './style.scss';
 
 
 
+
+
 const Accueil = (
   { handleLogout,
     isLogged }
@@ -153,6 +155,8 @@ console.log(isLogged);
       </div>
       </div> 
   </nav>
+
+
   
 
     )

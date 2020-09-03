@@ -1,76 +1,61 @@
 import React, { useEffect } from "react";
-import { useDispatch } from 'react-redux'
-import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { Route, Switch } from "react-router-dom";
 
+import Carte from "../../components/Carte";
+import Distribution from "../../components/Distribution";
 
-import Carte from '../../components/Carte';
-import Distribution from '../../components/Distribution';
-
-import Logistique from '../../components/Logistique';
-import Mots from '../../components/Mots';
-
-
+import Logistique from "../../components/Logistique";
+import Mots from "../../components/Mots";
 
 /*import ReactFullpage from '@fullpage/react-fullpage';
 import {SectionsContainer, Section} from 'react-fullpage';*/
-import Accueil from '../../containers/Accueil';
-import FormQuotePro from '../../containers//FormQuotePro';
-import PageContact from '../../components/PageContact';
-import FormInscriptionPro from '../../containers/FormInscriptionPro';
-import FormInscriptionPart from '../../containers/FormInscriptionPart';
-import LoginForm from '../../containers/LoginForm';
-import ContactForm from '../../containers/ContactForm';
-import ModalInscription from '../../components/ModalInscription';
-import NotFound from '../../components/NotFound';
+import Accueil from "../../containers/Accueil";
+import FormQuotePro from "../../containers//FormQuotePro";
+import PageContact from "../../components/PageContact";
+import FormInscriptionPro from "../../containers/FormInscriptionPro";
+import FormInscriptionPart from "../../containers/FormInscriptionPart";
+import LoginForm from "../../containers/LoginForm";
+import ContactForm from "../../containers/ContactForm";
+import ModalInscription from "../../components/ModalInscription";
+import NotFound from "../../components/NotFound";
 
-import Reseau from '../../components/Reseau';
+import Reseau from "../../components/Reseau";
 
-
-import { checkAuth } from '../../store/action/user-actions';
-
+import { checkAuth } from "../../store/action/user-actions";
 
 import Affretement from "../../components/Affretement";
 import Aacueil from "../../components/Aacueil";
 
+const App = (isLogged) => {
+  console.log(isLogged);
 
-
-const App = (
-  isLogged
-) => {
-console.log(isLogged);
-  
   const dispatch = useDispatch();
-  useEffect(()=> {
-   dispatch(checkAuth());
- }, [])
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, []);
 
   return (
     <div className="App">
 
+<Accueil />
+<Switch>     
 
-    <Aacueil/>
-      {/*  <Switch>   
-        <Route exact path="/" component={Accueil} /> 
-          
-        <Route  path="/contact" component={ContactForm} />
-        <Route  path="/connection" component={LoginForm} />
+          <Route exact path="/" component={Aacueil} />
+        <Route exact path="/contact" component={ContactForm} />
+        <Route exact path="/connection" component={LoginForm} />
 
-   
+        {isLogged && <Route path="/ipro" component={FormInscriptionPro} />}
+        {isLogged && <Route path="/ipart" component={FormInscriptionPart} />}
+        {isLogged && <Route path="/devis" component={FormQuotePro} />}
 
-        {isLogged && (<Route  path="/ipro" component={FormInscriptionPro} />)}
-        {isLogged && (<Route  path="/ipart" component={FormInscriptionPart} />)}
-        {isLogged && (<Route  path="/devis" component={FormQuotePro} />)}
-        
-               
         <Route>
-            <NotFound />
+          <NotFound />
         </Route>
-      </Switch> */}
-     
-      
+      </Switch>
     </div>
   );
-}
+};
 
 // <Affretement />
 //       <Carte />
@@ -82,17 +67,15 @@ console.log(isLogged);
 
 export default App;
 
-
-
 // <div className="App">
 // <Switch>
 //     <Route exact path='/' component={Aacueil} />
 //     <Route exact path="/affretement" component={Affretement} />
 //     <Route exact path="/carte" component={Carte} />
-//     <Route exact path="/distribution" component={Distribution} />  
+//     <Route exact path="/distribution" component={Distribution} />
 //     <Route exact path="/logistique" component={Logistique} />
 //     <Route exact path="/Mots" component={Mots} />
 //     <Route exact path="/pageContact" component={PageContact} />
 //     <Route exact path="/reseau" component={Reseau} />
-//  </Switch> 
+//  </Switch>
 // </div>
