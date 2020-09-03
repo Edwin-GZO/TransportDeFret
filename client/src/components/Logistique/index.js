@@ -11,7 +11,7 @@ return (
 <div className="split leftLog">
     <div className="textLog">
       <h2 className="h2Log">Logistique</h2>
-    <p className="pLog">Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+    <p className="pLog"> Evolupal offre une couverture internationale dans toute l’Europe. Qu’il s’agisse d’assurer une livraison en métropole ou dans un point de livraison plus reculé, ses transporteurs interviennent partout, tout en assurant une optimisation des délais de livraison</p>
     </div>
     
   
