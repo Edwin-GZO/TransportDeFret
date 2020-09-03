@@ -80,6 +80,8 @@ const FormQuotePro = ({
 </div>
       
      <h1 class="ui dark header">Demande de devis</h1>
+
+     {quoteMessage ? <div>{quoteMessage}</div> : null}
     
       
   <Form autoComplete="off" onSubmit={handleSubmit} >
@@ -418,8 +420,8 @@ const FormQuotePro = ({
       cssClass='field-input'
     />  
             
-            {quoteMessage ? <div>{quoteMessage}</div> : null}
             
+
    <div className="btn">       
 <span className="">
           <Button className="ui primary button">Validez</Button>
