@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Field from '../../containers/Field';
+import { Link } from 'react-router-dom';
 import './style.scss';
 import PropTypes from 'prop-types';
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 
 const LoginForm = ({
   mail,
@@ -10,9 +12,18 @@ const LoginForm = ({
   changeField,
   handleLogin,
   handleLogout,
-  isLogged,
   loggedMessage,
+  isLogged,  
+  history
 }) => {
+
+  useEffect(()=> {
+    if(isLogged) {
+   
+     setTimeout(() => history.push('/'), 3000);
+ }
+}, [isLogged])
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
         handleLogin();
@@ -20,72 +31,66 @@ const LoginForm = ({
 
             
     return(
-     <div className="toutcon">
-     <div className="container" >
-      <div className="login-form">
-      {isLogged && (
-        <div className="login-form-logged">
-          <p className="login-form-message">
-            {loggedMessage}
-          </p>
-          <button
-            type="button"
-            className="login-form-button"
-            onClick={handleLogout}
-          >
-            Déconnexion
-          </button>
-        </div>
-         
-      )}
-      {!isLogged && (
-        
-        
-           
-        <form autoComplete="off" className="login-box" onSubmit={handleSubmit}>
+             
+      <section className="login">
+
+<div id='mainTitle'>
+<img  style={{width:250,height:250}} src={logo}/>
+</div>
+
+      <h1 className="ui dark header">Identifiants de connexion</h1>
+      {loggedMessage ? <span>{loggedMessage}</span> : null}
+        <Form autoComplete="off" onSubmit={handleSubmit}>
           
-          <div className="text-box">
-            <i className="fa fa-user" aria-hidden="true"></i>
+        <Form.Field required >
+      <label>Adresse mail</label>
           <Field 
+          required="true"
             name="mailLogin"
             reducerName="user"
             placeholder="Adresse Email"
-
+            id="bg"
           />
-          </div>
-      
-          <div className="text-box">
-          <i className="fa fa-lock" aria-hidden="true"></i>
+        </Form.Field>
+
+     
+        <Form.Field required>
+       
+        <label>Mot de passe</label>
+       
             <Field
-            
+            id="bg"
             name="passwordLogin"
             reducerName="user"
-            type="password"
+            required="true"
             placeholder="Mot de Passe"
-
+            type="password"
           />
-            </div>    
+         </Form.Field>
+        
+
+
          
-          <div className="btn">
-            
-            <input type="submit"
-            className="btn"
-            name=""
-            value="se connecter">
+           <div className="btn">       
+<span className="validation-btn">
+          <Button className="ui blue button">Validez</Button>
+  </span>
+  <span>
+  <Link button="true" className="ui grey button" to="/">
+  Annuler
+</Link>
+</span>
+</div>
 
-            </input>
-           
-          </div>
-         
-        </form>
+    
+        </Form>
+        </section>
 
-      )}
-      </div>
-      </div>
-      </div>
-);
+      )};
+     
 
-    };
+
+   
 
     LoginForm.propTypes = {
       mail: PropTypes.string.isRequired,

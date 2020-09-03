@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import Field from '../../containers/Field'
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 const FormQuotePro = ({
@@ -45,21 +47,24 @@ const FormQuotePro = ({
   widthQuotePro,
   heightQuotePro,
   commentQuotePro,
+  quoteMessage,
+  history,
   // history
 }) => {
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(false)
+   //const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  // useEffect(()=> {
-  //   if(isLoggedIn) {
-  //     console.log('click');
-  //     setTimeout(() => history.push('/'), 2000);
-  //   }
+  //useEffect(()=> {
+  // if(isLoggedIn) {
+  //    console.log('click');
+  //    setTimeout(() => history.push('/'), 2000);
+    // }
   // }, [isLoggedIn])
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     submitquote();
+    setTimeout(() => history.push('/'), 3000);
   } 
   
   return (
@@ -67,139 +72,37 @@ const FormQuotePro = ({
     <section className="quote">
       
     {/* <button onClick={()=> setIsLoggedIn(true)}>click</button> */}
-      
-      <h1 className="title">Demande de devis</h1>
-      <h2 className="subtitle">Adresse de facturation</h2>
 
-      {/* {isLoggedIn ? <p>some text</p> : */}
+     {/* {isLoggedIn ? <p>some text</p> : */}
+
+     <div id='mainTitle'>
+<img  style={{width:250,height:250}} src={logo}/>
+</div>
+      
+     <h1 class="ui dark header">Demande de devis</h1>
+
+     {quoteMessage ? <div>{quoteMessage}</div> : null}
+    
       
   <Form autoComplete="off" onSubmit={handleSubmit} >
 
-    <Form.Field>
-      <label>N° Siret</label>
-      <Field
-        name="billSiretQuotePro"
-        reducerName="quotePro"
-        placeholder="N° siret"
-       
-      />
-    </Form.Field>
-
-    <Form.Field>
-      <label>Societe</label>
-      <Field 
-        name="billSocieteQuotePro"
-        reducerName="quotePro"
-        placeholder="société"
-      />
-    </Form.Field>
-
-    <Form.Field>
-      <label>Adresse Mail</label>
-        <Field 
-          name="billMailQuotePro"
-          type="email"
-          reducerName="quotePro"
-          placeholder="mail"
-           />
-           </Form.Field>
-
-           <div className="ui form">
-                <div className="two fields">
-                <div className="field">
-
-           <Form.Field>
-          <label>N° de la voie</label>
-          <Field
-            name="billNumberQuotePro"
-            reducerName="quotePro"
-            placeholder=""
-             />
-            </Form.Field>
-            </div>
-
-            <div className="field">
-          <Form.Field>
-          <label>Type voie</label>
-          <Field
-            name="billTrackQuotePro"            
-            reducerName="quotePro"
-            placeholder=""
-             />
-             </Form.Field>
-             </div>
-             </div>
-             </div>
-             
-
-   
-        <Form.Field>
-          <label>Nom de la voie</label>
-          <Field
-            name="billStreetQuotePro"
-            
-            reducerName="quotePro"
-            placeholder=""
-             
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Complément d'adresse</label>
-          <Field  name="billComplementQuotePro"                
-                reducerName="quotePro"
-                placeholder=""
-                />
-        </Form.Field>
-        
-
-
-        <div className="ui form">
-              <div className="two fields">
-                  <div className="field">
-        <Form.Field >
-          <label>Ville</label>
-          <Field  name="billCityQuotePro"
-                
-                reducerName="quotePro"
-                placeholder=""
-                />
-        </Form.Field>
-        </div>
-
-        <div className="field">
-        <Form.Field >
-          <label>Code postal</label>
-          <Field name="billPostalCodeQuotePro"
-                
-                reducerName="quotePro"
-                placeholder=""
-                />
-        </Form.Field>
-        </div>
-          </div>
-          </div>
-
     
-    <Form.Field>
-      <label>Telephone</label>
-      <Field name="billPhoneQuotePro"
-            
-            reducerName="quotePro"
-            placeholder=""
-              />
-    </Form.Field>
+<section className="chargement">
+  <h2 id="h2" class="ui blue header">Adresse de chargement</h2>
 
-    <h2 className="subtitle">Adresse de chargement</h2>
-   
+  
+
     <div className="ui form">
                 <div className="two fields">
                 <div className="field">
     <Form.Field>
+    
         <label>Nom</label>
         <Field
+          id="bg"   
           name="loadNameQuotePro"
           reducerName="quotePro"
-          placeholder="Nom"
+          placeholder=""
         />
       </Form.Field>
       </div>
@@ -208,9 +111,9 @@ const FormQuotePro = ({
         <label>Prénom</label>
         <Field 
           name="loadFirstNameQuotePro"
-          
+          id="bg"
           reducerName="quotePro"
-          placeholder="prénom"
+          placeholder=""
         />
       </Form.Field>
       </div>
@@ -221,24 +124,27 @@ const FormQuotePro = ({
                 <div className="two fields">
                 <div className="field">
 
-           <Form.Field>
+           <Form.Field required>
           <label>N° de la voie</label>
           <Field
+           id="bg"
             name="loadNumberQuotePro"
             reducerName="quotePro"
             placeholder=""
+            required="true"
              />
             </Form.Field>
             </div>
 
             <div className="field">
-          <Form.Field>
+          <Form.Field required>
           <label>Type voie</label>
           <Field
             name="loadTrackQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
+            required="true"
              />
              </Form.Field>
              </div>
@@ -247,21 +153,22 @@ const FormQuotePro = ({
              
 
    
-        <Form.Field>
+        <Form.Field required>
           <label>Nom de la voie</label>
           <Field
             name="loadStreetQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
-             
+            required="true"
           />
         </Form.Field>
 
         <Form.Field>
           <label>Complément d'adresse</label>
-          <Field  name="loadComplementQuotePro"
-                
+          <Field  
+                name="loadComplementQuotePro"
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -272,23 +179,26 @@ const FormQuotePro = ({
         <div className="ui form">
               <div className="two fields">
                   <div className="field">
-        <Form.Field >
+        <Form.Field  required>
           <label>Ville</label>
-          <Field  name="loadCityQuotePro"
-                
+          <Field  
+                name="loadCityQuotePro"
+                id="bg"
                 reducerName="quotePro"
                 placeholder=""
+                required="true"
                 />
         </Form.Field>
         </div>
 
         <div className="field">
-        <Form.Field >
+        <Form.Field required>
           <label>Code postal</label>
           <Field name="loadPostalCodeQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
+                required="true"
                 />
         </Form.Field>
         </div>
@@ -296,37 +206,42 @@ const FormQuotePro = ({
           </div>
 
     
-    <Form.Field>
+    <Form.Field required>
       <label>Telephone</label>
       <Field name="loadPhoneQuotePro"
-            
+             id="bg"
             reducerName="quotePro"
             placeholder=""
+            required="true"
               />
     </Form.Field>
+    </section>
 
-    <h2 className="subtitle">Adresse de livraison</h2>
+    <h2 id="h2" class="ui blue header">Adresse de livraison</h2>
 
     <div className="ui form">
                 <div className="two fields">
                 <div className="field">
-    <Form.Field>
+    <Form.Field required>
         <label>Nom</label>
         <Field
+         id="bg"
           name="nameDeliveryQuotePro"
           reducerName="quotePro"
-          placeholder="Nom"
+          placeholder=""
+          required="true"
         />
       </Form.Field>
       </div>
       <div className="field">
-      <Form.Field>
+      <Form.Field required>
         <label>Prénom</label>
         <Field 
           name="firstNameDeliveryQuotePro"
-          
+          id="bg"
           reducerName="quotePro"
-          placeholder="prénom"
+          placeholder=""
+          required="true"
         />
       </Form.Field>
       </div>
@@ -337,24 +252,27 @@ const FormQuotePro = ({
                 <div className="two fields">
                 <div className="field">
 
-           <Form.Field>
+           <Form.Field required>
           <label>N° de la voie</label>
           <Field
+           id="bg"
             name="deliveryNumberQuotePro"
             reducerName="quotePro"
             placeholder=""
+            required="true"
              />
             </Form.Field>
             </div>
 
             <div className="field">
-          <Form.Field>
+          <Form.Field required>
           <label>Type voie</label>
           <Field
             name="deliveryTrackQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
+            required="true"
              />
              </Form.Field>
              </div>
@@ -363,23 +281,24 @@ const FormQuotePro = ({
              
 
    
-        <Form.Field>
+        <Form.Field required>
           <label>Nom de la voie</label>
           <Field
             name="deliveryStreetQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
-             
+            required="true"
           />
         </Form.Field>
 
-        <Form.Field>
+        <Form.Field >
           <label>Complément d'adresse</label>
           <Field  name="deliveryComplementQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
+                
                 />
         </Form.Field>
         
@@ -388,23 +307,25 @@ const FormQuotePro = ({
         <div className="ui form">
               <div className="two fields">
                   <div className="field">
-        <Form.Field >
+        <Form.Field required>
           <label>Ville</label>
           <Field  name="deliveryCityQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
+                required="true"
                 />
         </Form.Field>
         </div>
 
         <div className="field">
-        <Form.Field >
+        <Form.Field required >
           <label>Code postal</label>
           <Field name="deliveryCodeQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
+                required="true"
                 />
         </Form.Field>
         </div>
@@ -412,23 +333,24 @@ const FormQuotePro = ({
           </div>
 
     
-    <Form.Field>
+    <Form.Field required>
       <label>Telephone</label>
       <Field name="deliveryphoneQuotePro"
-            
+             id="bg"
             reducerName="quotePro"
             placeholder=""
+            required="true"
               />
     </Form.Field>
 
-    <h2 className="subtitle">Détails</h2>
+    <h2 id="h2" class="ui blue header">Détails</h2>
 
     
 
            <Form.Field>
           <label>Nombre de palettes</label>
           <Field
-           
+            id="bg"
             type="select"
             name="paletteNumberQuotePro"
             reducerName="quotePro"
@@ -445,7 +367,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Longueur (cm)</label>
           <Field  name="lenghtQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -456,7 +378,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Largeur (cm)</label>
           <Field name="widthQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -466,7 +388,7 @@ const FormQuotePro = ({
         <Form.Field >
           <label>Hauteur (cm)</label>
           <Field name="heightQuotePro"
-                
+                 id="bg"
                 reducerName="quotePro"
                 placeholder=""
                 />
@@ -480,7 +402,7 @@ const FormQuotePro = ({
           <label>Poids (Kg)</label>
           <Field
             name="weightQuotePro"
-            
+            id="bg"
             reducerName="quotePro"
             placeholder=""
              />
@@ -491,18 +413,29 @@ const FormQuotePro = ({
 
              <Field
       type="textarea"
+      //id="bg"
       reducerName="contact"
       name='commentQuotePro'
-      placeholder='Commentaires ... ...'
+      placeholder='Commentaires éventuels ...'
       cssClass='field-input'
     />  
             
-             
-<div className="submit">
-          <Button >Validez</Button>
-  </div>
+            
+
+   <div className="btn">       
+<span className="">
+          <Button className="ui primary button">Validez</Button>
+  </span>
+  <span>
+  <Link button="true" className="ui grey button" to="/">
+  Annuler
+</Link>
+</span>
+</div>
   </Form>
 {/* } */}
+
+
 
   </section>
 

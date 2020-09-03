@@ -1,26 +1,71 @@
 const contactDataMapper = require('../db/contactDataMapper');
-
+const moment = require('moment') ;
+moment.locale('fr'); 
 
 module.exports = {
 
     contactForm: async(request, response) => {
         
-        const dataForm = request.body;
+        try {
         
-        const mail = {
-            
-            from: "cgauthier.dev@gmail.com", //dataForm.mail,
-
-            to: "test.projet.transport.de.fret@gmail.com", //exploitation@transportstdr.fr"
-            subject: dataForm.subjectContact,
-
-            html: `<strong>Mail du contact :</strong> ${dataForm.mailContact} <br /> <strong>Nom du contact :</strong> ${dataForm.nameContact} <br /><br />  
-            <strong>Contenu du message :</strong> ${dataForm.commentContact}`
-        };
-
-        await contactDataMapper.sendMailContact(mail);
+            const dataForm = request.body;
         
-        response.status(201).json(" Le mail de contact a bien été envoyé ");
+            const mail = {
+                
+                message: "formulaire de contact" ,
+                from: "tdr_site@gmail.com" , //dataForm.mail,
+    
+                to: "test.projet.transport.de.fret@gmail.com" , //exploitation@transportstdr.fr"
+                subject: dataForm.subjectContact,
+    
+                html: 
+                `<table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                            <strong>Mail du contact </strong>
+                                <p>
+                                    <ul>
+                                        <li> ${dataForm.mailContact}</li>
+                                    </ul>
+                                    
+                                </p>
+                                
+                                
+                            </td>
+                            <td style="font-size: 0; line-height: 0;" width="100"> </td>
+                            <td>
+                                <strong>Nom du contact</strong>
+                                <p>
+                                    <ul>   
+                                        <li> ${dataForm.nameContact}</li>
+                                    </ul>
+                                </p>
+                                
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <br />
+                <strong> Contenu du message </strong>
+                <p>
+                    ${dataForm.commentContact} 
+                </p>`
+    
+            };
+    
+            await contactDataMapper.sendMailContact(mail);
+
+            response.status(201).json(" Le mail de contact a bien été envoyé ");
+
+        } catch (error) {
+        
+        console.trace(moment().format('LLLL'), error) ;
+        response.status(500).send(error) ;
+        
+        }
 
     }
 }

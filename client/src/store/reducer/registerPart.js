@@ -101,20 +101,7 @@ export default (state= stateInitial , action={})=> {
         return {
           ...state,
           ...action.payload,
-          nameSignUpPart: '',
-          firstNameSignUpPart: '',
-          mailSignUpPart: '',
-          billNumberSignUpPart: '',
-           billTrackSignUpPart: '',
-           billStreetSignUpPart: '',
-          billComplementSignUpPart: '',
-          citySignUpPart:'',
-          postalCodeSignUpPart:'',
-          phoneSignUpPart: '',
-          passwordSignUpPart: '',
-          passwordconfirmSignUpPart: '',
-          error: '',
-          signUpMessage: '',
+          
           isSignedUp: false,
           signUpMessage: `Votre compte n'a pu etre créé ! `,
       

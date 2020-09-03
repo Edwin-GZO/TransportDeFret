@@ -22,8 +22,5 @@ return (
   
   </div>
 )
-
 }
-
-
 export default Reseau;

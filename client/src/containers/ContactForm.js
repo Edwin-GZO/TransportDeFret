@@ -22,7 +22,6 @@ const mapStateToProps = (state) => ({
   
     },
     submitcontact: () => {
-      console.log('submit');
       dispatch(submitcontact());
     },
     

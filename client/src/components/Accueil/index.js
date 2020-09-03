@@ -1,94 +1,160 @@
-import React from 'react';
+import React, { useState} from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Header, Icon, Modal } from 'semantic-ui-react';
+
 import './style.scss';
-import * as ReactBootStrap from "react-bootstrap";
 
 
 
 
-const Accueil = () => {
+
+const Accueil = (
+  { handleLogout,
+    isLogged }
+) => {
+
+  const [open, setOpen] = React.useState(false)
  
+console.log(isLogged);
+  //const [isLogged, setislogged] = useState(false);
+ 
+  
+    
     return(
    
+  
+
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+  <div className="navbar-brand">
     
-    <div className="App" >
-  <div className="container">
+
+    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" className="navbar-menu">
+
+    <div className="navbar-start">
+
+    <div className="navbar-item"> 
+        <div className="buttons" >
       
-      <ReactBootStrap.Navbar className="fw" collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <ReactBootStrap.Navbar.Brand href="#home">Logo Entreprise que j'arrive pas à integrer</ReactBootStrap.Navbar.Brand>
-  <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
-    <ReactBootStrap.Nav className="mr-auto">
-      <ReactBootStrap.Nav.Link href="#accueil">Accueil</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#reseau">Réseau</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#livraison">Livraison</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#affretement">Affretement</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#logistique">Logistique</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#entreprise">Entreprise</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#carte">Carte</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#inscription">Inscription</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#contact">Contact</ReactBootStrap.Nav.Link>
+    <Link className="button is-warning" to="/contact">
+        Contact
+      </Link>
+      </div>
+      </div>
+
+      {!isLogged && (
+
+        
+      <div className="navbar-item"> 
+        <div className="buttons" >
+        
+        <Link className="button is-primary" to="/connection">
+            <strong>Se connecter</strong>
+            </Link>  
+                 
+      </div>
+      </div> 
+      )}   
+
+      <a href='http://localhost:8080/api/user/dashboard' id="navlink-items" className={(isLogged ? "navbar-item" : "display")}>
+        Mon Profil
+      </a>
+
+      <div className="navbar-item has-dropdown is-hoverable">
+
+      <a  id="navlink-items" className={(isLogged ? "navbar-link" : "display")}>
+          Documentations
+        </a>
+
+        <div className="navbar-dropdown">
+        <Link className="navbar-item" id="navlink-items" to="/devis">
+            Demande de devis
+          </Link>
+          <Link className="navbar-item" id="navlink-items" to="/docs">
+            Telechargement
+          </Link>
+          
+         </div>
+      </div>
+    </div>
+    
+    
+    
+
+    <div className="navbar-end">
+
+    
+
+        {!isLogged
+
+        ? 
+        <>
+        
       
-      {/*<ReactBootStrap.NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-        <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Item href="#action/3.3">Something</ReactBootStrap.NavDropdown.Item>
-        <ReactBootStrap.NavDropdown.Divider />
-        <ReactBootStrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootStrap.NavDropdown.Item>
-    </ReactBootStrap.NavDropdown>*/}
-    </ReactBootStrap.Nav>
-    <ReactBootStrap.Nav>
-      <ReactBootStrap.Nav.Link href="#inscrire">s'incrire</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link eventKey={2} href="#connection">
-        se connecter
-      </ReactBootStrap.Nav.Link>
-    </ReactBootStrap.Nav>
-  </ReactBootStrap.Navbar.Collapse>
-</ReactBootStrap.Navbar>
-</div>
+        <div className="navbar-item"> 
+        <div className="buttons" >      
+        <Modal className="modal-btn"
+      basic
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      size='tiny'
+      trigger={<Button primary>S'inscrire</Button>}
+    >
+     <section className="modale">
+      <Modal.Content>
+        <Header as='h2' color='blue'>
+          Vous désirez vous inscrire en tant que :
+        </Header>
+      </Modal.Content>
+      <Modal.Actions>
+      <span id="devispro">
+        <Link color='white' to="ipro">
+          <Icon name='checkmark' /> Professionnel
+        </Link>
+       </span>
+       <span id="devispart">
+        <Link  color='white' to="ipart">
+          <Icon name='checkmark' /> Particulier
+        </Link>
+        </span>
+               
+      </Modal.Actions>
+      </section>
+    </Modal>
+            </div>
+        </div>
 
-{/*
-<div className="carousel">
+       
+  </>
 
-<ReactBootStrap.Carousel interval={3000} >
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="https://www.cocoexpress.fr/view/images/icon/256/transport-express-colis-france.png"
-      alt="First slide"
-    />
-    <ReactBootStrap.Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="holder.js/800x400?text=Second slide&bg=282c34"
-      alt="Third slide"
-    />
+        :  
+        
+        <div className="navbar-item"> 
+        <div className="buttons" >
+        <button type="button" className="button is-danger" onClick={handleLogout}>
+            <strong>Déconnexion</strong>
+            </button>          
+      </div>
+      </div>           
+        
 
-    <ReactBootStrap.Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-  <ReactBootStrap.Carousel.Item>
-    <img
-      className="imgCar"
-      src="holder.js/800x400?text=Third slide&bg=20232a"
-      alt="Third slide"
-    />
+        }
+        
+      
+      
+        
+      </div>
+      </div> 
+  </nav>
+  
 
-    <ReactBootStrap.Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </ReactBootStrap.Carousel.Caption>
-  </ReactBootStrap.Carousel.Item>
-</ReactBootStrap.Carousel>
-</div>*/}
-
-     </div>
     )
   }
   

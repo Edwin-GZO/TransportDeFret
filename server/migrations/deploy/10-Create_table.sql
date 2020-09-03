@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS "user";
 CREATE TABLE "user" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "password" TEXT NOT NULL, -- vérifier le nombre et le type de caractère (ragex)
+    "password" TEXT NOT NULL, -- vérifier le nombre et le type de caractère (ragex) en front
     "role" TEXT NOT NULL DEFAULT 'user', -- user || admin
     "mail" TEXT UNIQUE NOT NULL, -- valider avec API mailvalidator
     "phone" TEXT, -- Expression Régulière
@@ -41,6 +41,8 @@ CREATE TABLE "bill_address" (
 DROP TABLE IF EXISTS "sender_address";
 CREATE TABLE "sender_address" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" TEXT , -- Société Pro  Nom Prénom Part
+    "phone" TEXT,
     "main" TEXT NOT NULL, -- n° de voie + type de voie + nom de voie
     "complement" TEXT,
     "postal_code" TEXT NOT NULL, -- /!\ creer un type postal_code --! Avec le code postal proposé la ville ?
@@ -54,6 +56,8 @@ CREATE TABLE "sender_address" (
 DROP TABLE IF EXISTS "receiver_address";
 CREATE TABLE "receiver_address" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" TEXT , -- Société Pro  Nom Prénom Part
+    "phone" TEXT,
     "main" TEXT NOT NULL, -- n° de voie + type de voie + nom de voie
     "complement" TEXT,
     "postal_code" TEXT NOT NULL, -- /!\ creer un type postal_code --! Avec le code postal proposé la ville ?
@@ -69,13 +73,13 @@ CREATE TABLE "quote" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "ref_quote" SERIAL NOT NULL, -- Définir un format pour le référence : 6 chiffres
     "nbr_pallets" INT DEFAULT 0, 
-    "distance" INT NOT NULL, -- en KM
-    "price" FLOAT NOT NULL, -- €
+    "distance" INT , -- en KM
+    "price" FLOAT , -- €
     "date_quote" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP, -- vérifier le format date_quote,
-    "length" INT NOT NULL, -- en mm
-    "width" INT NOT NULL, -- en mm
-    "height" INT NOT NULL, -- en mm
-    "weight" INT NOT NULL, -- poids en g
+    "length" INT , -- en mm
+    "width" INT , -- en mm
+    "height" INT , -- en mm
+    "weight" INT , -- poids en g
     "comments" TEXT,
     "created_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMPTZ ,

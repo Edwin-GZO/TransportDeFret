@@ -3,9 +3,11 @@
      text-align: center;
   }
   .formulaire {
-      width: 60%;
-      margin: 5% auto;
-      text-align: center;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-top: 10vh;
+    transform: translateY(-10%);  
   }
 
   .submit-btn:disabled{
@@ -15,5 +17,10 @@
 .error {
     background: rgba(255, 0, 0, 0.2) !important;
     border: 1px solid red !important;
+}
+
+#bg {
+    background-color: #d2d4dc;
+
 }
  

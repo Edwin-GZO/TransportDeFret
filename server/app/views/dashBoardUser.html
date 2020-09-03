@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+		<html>
+
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title> TDR - profil utilisateur </title>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+			<!--<link rel="stylesheet" href="./assets/css/style.css"> -->
+			<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		</head>
+
+		<body>
+			<section class="section ">
+				<div class="container">
+					<h1 class="title">
+						<strong> Profil utilisateur </strong>
+					</h1>
+					
+					<!-- Une ligne  -->
+					
+					<div class="columns">
+						
+						<!-- Bloc Gauche --> 
+						<div class="column is-5">
+
+							<div class="box"  id="mail">
+								<div class="columns">
+									<div class="column card-name ">
+										<span id="titleMail">
+											<strong> E-mail : </strong>
+										</span>
+										<span id="dataMail">
+											<%= user.mail%>
+										</span>
+									</div>
+
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validateMail">Valider</button>
+											</div>
+										</div>
+									</form>
+
+
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card"id="modifyMail">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Fin de bloc Gauche -->
+
+						<!-- Bloc Centrale -->
+
+							<div class="column is-2"></div>
+
+						<!-- Bloc droit -->
+						<div class="column is-5">
+
+							<div class="box" id="name" >
+								<div class="columns">
+									<div class="column card-name ">
+										<span id="titleName">
+											<strong> Nom : </strong>
+										</span>
+										<span id="dataName">
+											<%= user.name%>
+										</span>
+
+									</div>
+
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formName">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" id="inputName" name="content" value="<%= user.name%>">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validateName">Valider</button>
+											</div>
+										</div>
+									</form>
+
+
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card" id="modifyName">
+											<span class="icon is-small has-text-primary" >
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+						<!--Fin de ligne-->
+						
+							<!-- Une ligne  -->
+					
+					<div class="columns">
+						
+						<!-- Bloc Gauche --> 
+						<div class="column is-5">
+
+							<div class="box"  id="mail">
+								<div class="columns">
+									<div class="column card-name ">
+										<span id="titleMail">
+											<strong> E-mail : </strong>
+										</span>
+										<span id="dataMail">
+											<%= user.mail%>
+										</span>
+									</div>
+
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validateMail">Valider</button>
+											</div>
+										</div>
+									</form>
+
+
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card"id="modifyMail">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Fin de bloc Gauche -->
+
+						<!-- Bloc Centrale -->
+
+							<div class="column is-2"></div>
+
+						<!-- Bloc droit -->
+						<div class="column is-5">
+
+							<div class="box" id="name" >
+								<div class="columns">
+									<div class="column card-name ">
+										<span id="titleName">
+											<strong> Nom : </strong>
+										</span>
+										<span id="dataName">
+											<%= user.name%>
+										</span>
+
+									</div>
+
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formName">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" id="inputName" name="content" value="<%= user.name%>">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validateName">Valider</button>
+											</div>
+										</div>
+									</form>
+
+
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card" id="modifyName">
+											<span class="icon is-small has-text-primary" >
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<!--Fin de ligne-->
+
+
+						</div>
+						<!---->
+						<div class="column is-5">
+
+							<div class="box"  id="phone">
+								<div class="columns">
+									<div class="column card-name ">
+										<span id="titlePhone">
+											<strong> Téléphone : </strong>
+										</span>
+										<span id="dataPhone">
+											<%= user.phone%>
+										</span>
+									</div>
+
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPhone">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" id="inputPhone" name="content" value="<%= user.phone%>">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success"id="validatePhone">Valider</button>
+											</div>
+										</div>
+									</form>
+
+
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card"id="modifyPhone">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!---->
+					</div>
+					<div class="columns">
+					<!-- <div class="column is-3"> -->
+
+						<!-- </div> -->
+						<!---->
+						<!---->
+						<!-- <div class="column is-6"> -->
+
+							<!-- <div class="box"  id="password">
+								<div class="columns">
+									<div class="column card-name ">
+										<span id="titlePassword">
+											<strong> Mot de passe : </strong>
+										</span>
+
+									</div>
+
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPassword">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="password" class="input is-small" id="inputPassword" name="content" value=""
+													placeholder="Mot de passe">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validatePassword">Valider</button>
+											</div>
+										</div>
+									</form>
+
+
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card"id="modifyPassword">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+
+									</div>
+								</div>
+							</div> -->
+
+						<!-- </div> -->
+							<!---->
+						<!-- <div class="column is-3"> -->
+
+						<!-- </div> -->
+					</div>
+
+					<div class="columns">
+						<!---->
+						
+
+						</div>
+						<!---->
+						<div class="column is-2">
+
+						</div>
+						<!---->
+						<div class="column is-5">
+
+							<div class="box"  id="siret">
+								<div class="columns">
+									<div class="column card-name ">
+										<span id="titleSiret">
+											<strong> Siret : </strong>
+										</span>
+										<span id="dataSiret">
+											<%= user.siret%>
+										</span>
+									</div>
+
+									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formSiret">
+										<div class="field has-addons">
+											<div class="control">
+												<input type="text" class="input is-small" id="inputSiret" name="content" value="<%= user.siret%>">
+											</div>
+											<div class="control">
+												<button class="button is-small is-success" id="validateSiret">Valider</button>
+											</div>
+										</div>
+									</form>
+
+
+									<div class="column is-narrow">
+										<a href="#" class="button--edit-card" id="modifySiret">
+											<span class="icon is-small has-text-primary">
+												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
+											</span>
+										</a>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!---->
+
+					<!---->
+					</div>
+					<div class="columns">
+					<div class="column is-3">
+
+						<button href="http://54.175.105.52:8080/coucou" class="button is-danger" id="deleteUser">Supprimer</button>
+					</div>
+					<div class="column is-6">
+					</div>
+					<div class="column is-3">
+						<button class="button is-success">Retour à l'accueil</button>
+					</div>
+				</div>
+
+			</div>
+
+			</section>
+
+			<script type="text/javascript" src="/dashBoardUserModule.js"></script>
+			<!-- <script type="text/javascript" src="../router/quoteRouter.js"></script> -->
+
+		</body>
+
+		</html>

@@ -1,26 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Field from '../../containers/Field.js'
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 
-const ContactForm = ({ submitcontact, contactMessage }) => {
+const ContactForm = ({ submitcontact, contactMessage, history }) => {
+
+
+  
+
     const handleContact = (evt) => {
         evt.preventDefault();
         submitcontact();
+        setTimeout(() => history.push('/'), 3000);
       };
+
+  
 
 
     return (
 <section className="contact">
-<h1 className="title">Formulaire de contact</h1>
-{contactMessage ? <p>{contactMessage}</p> : null}
-<Form autoComplete="off" className="login-box" onSubmit={handleContact}>
 
-    <Form.Field >
-      <label>Nom</label>
+<div id='mainTitle'>
+    <img  style={{width:250,height:250}} src={logo}/>
+    </div>
+
+<h1 className="ui dark header">Formulaire de contact</h1>
+{contactMessage ? <span>{contactMessage}</span> : null}
+<Form autoComplete="off" onSubmit={handleContact}>
+
+    <Form.Field required>
+      <label >Nom</label>
       <Field 
+      required="true"
+      id="bg"
       reducerName="contact"
       name='nameContact'
       placeholder=''/>
@@ -29,17 +45,21 @@ const ContactForm = ({ submitcontact, contactMessage }) => {
     <Form.Field required>
       <label>Objet</label>
       <Field 
+      required="true"
+      id="bg"
       reducerName="contact"
       name='subjectContact'
       placeholder=''/>
     </Form.Field>
 
-    <Form.Field required>
+    <Form.Field required >
       <label>Adresse Mail</label>
       <Field 
+      required="true"
+      id="bg"
       name='mailContact'
       reducerName="contact"
-      type='email'
+      //type='email'
       placeholder=''
        />
 
@@ -54,6 +74,8 @@ const ContactForm = ({ submitcontact, contactMessage }) => {
     
     
     <Field
+    
+      id="bg"
       type="textarea"
       reducerName="contact"
       name='commentContact'
@@ -65,7 +87,16 @@ const ContactForm = ({ submitcontact, contactMessage }) => {
     
 
 
-    <Button type='submit'>Validez</Button>
+      <div className="btn">       
+<span className="">
+          <Button className="ui primary button">Validez</Button>
+  </span>
+  <span>
+  <Link button="true" className="ui grey button" to="/">
+  Annuler
+</Link>
+</span>
+</div>
   </Form>
 
   </section>

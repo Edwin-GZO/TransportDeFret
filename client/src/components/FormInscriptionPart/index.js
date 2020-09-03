@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import Field from '../../containers/Field'
+import { Link } from 'react-router-dom';
+import Field from '../../containers/Field';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react'
-import validator from 'validator';
+import { Button, Form } from 'semantic-ui-react';
+import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
 
@@ -36,9 +37,16 @@ const FormInscriptionPart = ({
       } 
     
     return (
-    
+
+     
+
       <section className="register">
-        <h1 className="title">Formulaire d'inscription</h1>
+
+<div id='mainTitle'>
+      <img  style={{width:250,height:250}} src={logo}/>
+      </div>
+      
+       <h1 class="ui dark header">Formulaire d'inscription particulier</h1>
         {
           hasError ? <p>modal</p> : null
         }
@@ -47,9 +55,11 @@ const FormInscriptionPart = ({
       <Form.Field required >
         <label>Nom</label>
         <Field
+        required="true"
           name="nameSignUpPart"
           reducerName="registerPart"
           placeholder="Nom"
+          id="bg"
         />
       </Form.Field>
   
@@ -57,8 +67,9 @@ const FormInscriptionPart = ({
         
         <label>Prénom</label>
         <Field 
+        required="true"
           name="firstNameSignUpPart"
-          
+          id="bg"
           reducerName="registerPart"
           placeholder="prénom"
         />
@@ -67,10 +78,11 @@ const FormInscriptionPart = ({
       <Form.Field required >
         <label>Adresse Mail</label>
           <Field 
+          id="bg"
             name="mailSignUpPart"
-            type="mail"
+            required="true"
             reducerName="registerPart"
-            placeholder="mail"
+            placeholder="john@doe.com"
              />
              </Form.Field>
   
@@ -81,6 +93,8 @@ const FormInscriptionPart = ({
              <Form.Field required>
             <label>N° de la voie</label>
             <Field
+            required="true"
+            id="bg"
               name="billNumberSignUpPart"
               reducerName="registerPart"
               placeholder=""
@@ -92,8 +106,9 @@ const FormInscriptionPart = ({
             <Form.Field required>
             <label>Type voie</label>
             <Field
+            required="true"
               name="billTrackSignUpPart"
-              
+              id="bg"
               reducerName="registerPart"
               placeholder=""
                />
@@ -107,15 +122,18 @@ const FormInscriptionPart = ({
           <Form.Field required>
             <label>Nom de la voie</label>
             <Field
+            required="true"
               name="billStreetSignUpPart"              
               reducerName="registerPart"
               placeholder=""
-               
+              id="bg"
             />
           </Form.Field>
           <Form.Field>
             <label>Complément d'adresse</label>
-            <Field  name="billComplementSignUpPart"                  
+            <Field  
+            id="bg"
+            name="billComplementSignUpPart"                  
                   reducerName="registerPart"
                   placeholder=""
                   />
@@ -128,8 +146,10 @@ const FormInscriptionPart = ({
                     <div className="field">
           <Form.Field required>
             <label>Ville</label>
-            <Field  name="citySignUpPart"
-                  
+            <Field 
+            required="true"
+             name="citySignUpPart"
+                  id="bg"
                   reducerName="registerPart"
                   placeholder=""
                   />
@@ -140,7 +160,8 @@ const FormInscriptionPart = ({
           <Form.Field required>
             <label>Code postal</label>
             <Field name="postalCodeSignUpPart"
-                  
+            required="true"
+                  id="bg"
                   reducerName="registerPart"
                   placeholder=""
                   />
@@ -156,6 +177,8 @@ const FormInscriptionPart = ({
               reducerName="registerPart"
               placeholder=""
               type=""
+              required="true"
+              id="bg"
                 />
       </Form.Field>
       <Form.Field required>
@@ -163,25 +186,37 @@ const FormInscriptionPart = ({
           <Field
             cssClass={!isSamePassword ? 'error' : ''}
             name="passwordSignUpPart"
-            type="password"
+            
             reducerName="registerPart"
             placeholder=""
-            required={true}
-            minLength={8}
+            required="true"
+            
+            id="bg"
           />
       </Form.Field>
       <Form.Field required>
         <label>Confirmez votre mot de passe</label>
           <Field
+          required="true"
             cssClass={!isSamePassword ? 'error' : ''}
             name="passwordconfirmSignUpPart"
-            type="password"
+            
             reducerName="registerPart"
             placeholder=""
+            id="bg"
           />
       </Form.Field>
       
-      <Button className='submit-btn' disabled={isFormValid ? false : true} name="submit" type='submit'>Validez</Button>
+      <div className="btn">       
+<span className="">
+          <Button className="ui primary button">Validez</Button>
+  </span>
+  <span>
+  <Link button className="ui grey button" to="/">
+  Annuler
+</Link>
+</span>
+</div>
     </Form>
   
   
