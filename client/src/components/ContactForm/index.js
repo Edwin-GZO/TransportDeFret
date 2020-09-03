@@ -18,8 +18,6 @@ const ContactForm = ({ submitcontact, contactMessage, history }) => {
         setTimeout(() => history.push('/'), 3000);
       };
 
-      
-
   
 
 

@@ -14,7 +14,7 @@ export default (store) => (next) => (action) => {
 
             axios({
                 method: 'post',
-                url: 'http://54.175.105.52:8080/api/quote/pro',
+                url: 'http://localhost:8080/api/quote/pro',
                 data: quotePro,
                 withCredentials: true,
             }).then((res) => {                
@@ -35,7 +35,7 @@ export default (store) => (next) => (action) => {
             <div className="header">
               <div>Votre demande n'a pu être envoyée</div>
             </div>
-            <p>Veuillez essayer ultérieurement</p>
+            
             </div>));
             })
             break;

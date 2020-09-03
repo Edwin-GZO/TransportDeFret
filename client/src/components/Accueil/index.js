@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
-import logo from '../../assets/images/IMG_2009.png';
+
 import './style.scss';
 
 
@@ -38,24 +38,26 @@ console.log(isLogged);
   <div id="navbarBasicExample" className="navbar-menu">
 
     <div className="navbar-start">
-      <Link className="navbar-item" id="navlink-items" to="/">
-        Accueil
-      </Link>
 
-      <Link className="navbar-item" id="navlink-items" to="/contact">
+    <div className="navbar-item"> 
+        <div className="buttons" >
+      
+    <Link className="button is-warning" to="/contact">
         Contact
       </Link>
+      </div>
+      </div>
 
       {!isLogged && (
 
         
       <div className="navbar-item"> 
         <div className="buttons" >
-        <span>
+        
         <Link className="button is-primary" to="/connection">
             <strong>Se connecter</strong>
             </Link>  
-            </span>        
+                 
       </div>
       </div> 
       )}   
@@ -81,19 +83,22 @@ console.log(isLogged);
          </div>
       </div>
     </div>
+    
+    
+    
 
-       
     <div className="navbar-end">
 
     
+
         {!isLogged
 
         ? 
         <>
         
       
-        <div className="navbar-item">
-        <div className="buttons" >         
+        <div className="navbar-item"> 
+        <div className="buttons" >      
         <Modal className="modal-btn"
       basic
       onClose={() => setOpen(false)}

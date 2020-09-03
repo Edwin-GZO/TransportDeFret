@@ -42,7 +42,7 @@ const LoginForm = ({
       {loggedMessage ? <span>{loggedMessage}</span> : null}
         <Form autoComplete="off" onSubmit={handleSubmit}>
           
-        <Form.Field >
+        <Form.Field required >
       <label>Adresse mail</label>
           <Field 
           required="true"
@@ -54,7 +54,7 @@ const LoginForm = ({
         </Form.Field>
 
      
-        <Form.Field >
+        <Form.Field required>
        
         <label>Mot de passe</label>
        
@@ -64,6 +64,7 @@ const LoginForm = ({
             reducerName="user"
             required="true"
             placeholder="Mot de Passe"
+            type="password"
           />
          </Form.Field>
         

@@ -70,7 +70,7 @@ export default (state= stateInitial , action={})=> {
           }
 
         properties.isSignedUp = true
-        properties.signUpMessage = `Votre compte à été crée avec succès !`
+        //properties.signUpMessage = `Votre compte à été crée avec succès !`
         properties.isFormValid = false
         properties.isSamePassword = true
         properties.hasError = false;
@@ -79,21 +79,23 @@ export default (state= stateInitial , action={})=> {
         ...state,
         ...action.payload,
         ...properties,
-        isLogged:true
-        // siret: '',
-        // mail: '',
-        // bill_address: '',
-        // complement: '',
-        // city:'',
-        // postal_code:'',
-        // phone: '',
-        // password: '',
-        // passwordconfirm: '',
-        // error: '',
-        // signUpMessage: '',
-        // societe: '',
-        // isSignedUp: true,
-        // signUpMessage: `Votre compte à été crée avec succès !`
+       
+        signUpMessage: action.payload,
+
+        siret: '',
+        mail: '',
+        bill_address: '',
+        complement: '',
+        city:'',
+        postal_code:'',
+        phone: '',
+        password: '',
+        passwordconfirm: '',
+        error: '',
+        
+        societe: '',
+      
+       
 
       } ;  
 
@@ -103,8 +105,8 @@ export default (state= stateInitial , action={})=> {
           ...action.payload,
           
           isSignedUp: false,
-          signUpMessage: `Votre compte n'a pu etre créé ! `,
-      
+          signUpMessage: action.payload,
+          
         };
 
         // case SIGN_UP:

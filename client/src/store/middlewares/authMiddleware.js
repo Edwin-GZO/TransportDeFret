@@ -9,7 +9,7 @@ export default (store) => (next) => (action) => {
       
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/user/logout',
+        url: 'http://localhost:8080/api/user/logout',
         
         withCredentials: true
       })
@@ -28,21 +28,22 @@ export default (store) => (next) => (action) => {
       
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/isLogged',
+        url: 'http://localhost:8080/api/isLogged',
         
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
         .then((res) => {
           console.log(res.data);
+
           
-            store.dispatch(logUser(res.data.isLogged));
+          { res.data ? store.dispatch(loginSuccess(res.data.info))
+          : store.dispatch(loginError(res.data.info))};
           
         })
-         // res.data.logged
-           //{ ? store.dispatch(loginSuccess(res.data.info))}
-            //: store.dispatch(loginError(res.data.info));
+         // 
+         
             
-        //})
+      
         .catch((err) => {
           console.error(err);
         })
@@ -89,16 +90,27 @@ export default (store) => (next) => (action) => {
 
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/user/signup/pro',
+        url: 'http://localhost:8080/api/user/signup/pro',
         data: register,
         withCredentials: true 
       })
         .then((res) => {
             console.log('signup request')
-          store.dispatch(signupsuccess(res.data));
+          store.dispatch(signupsuccess(<div className="ui success message">
+          <i className="close icon"></i>
+          <div className="header">
+            Votre inscription est validée.
+          </div>
+          <p>Redirection vers l'accueil en cours ...</p>
+        </div>));
         })
         .catch((err) => {
-          store.dispatch(signuperror("Impossible d'enregistrer cet utilisateur"))
+          store.dispatch(signuperror(<div className="ui negative message">
+          <i className="close icon"></i>
+          <div className="header">
+            Nous sommes désolés mais votre inscription ne peut être validée.
+          </div>
+          <p>Veuillez essayer ultérieurement</p></div>))
         })
 
       break;
