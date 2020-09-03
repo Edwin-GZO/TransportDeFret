@@ -20,11 +20,7 @@ const dashBoardUserModule = {
         const modifySiret = document.getElementById('modifySiret');
         modifySiret.addEventListener('click',dashBoardUserModule.showFormSiret);
 
-        const modifyPassword = document.getElementById('modifyPassword');
-        modifyPassword.addEventListener('click',dashBoardUserModule.showFormPassword);
-
-        const modifyMail = document.getElementById('modifyMail');
-        modifyMail.addEventListener('click',dashBoardUserModule.showFormMail);
+        
 
         
         //click sur le bouton valider du formulaire (input)
@@ -36,12 +32,6 @@ const dashBoardUserModule = {
 
         const validateSiret = document.getElementById('validateSiret');
         validateSiret.addEventListener('click',dashBoardUserModule.submitSiret);
-
-        // const validatePassword = document.getElementById('validatePassword');
-        // validatePassword.addEventListener('click',dashBoardUserModule.submitPassword);
-        // const validateMail = document.getElementById('validateMail');
-        // validateMail.addEventListener('click',dashBoardUserModule.submitMail);
-
         
         const deleteUser = document.getElementById('deleteUser');
         deleteUser.addEventListener('click',dashBoardUserModule.submitDelete);
@@ -64,18 +54,7 @@ const dashBoardUserModule = {
         const dataPhone = document.getElementById('dataPhone');
         dataPhone.classList.add('is-hidden');
     },
-    // showFormPassword: ()=>{
-    //     const formPassword = document.getElementById('formPassword');
-    //     formPassword.classList.remove('is-hidden');
-        
-    // },
-    // showFormMail: ()=>{
-    //     const formMail = document.getElementById('formMail');
-    //     formMail.classList.remove('is-hidden');
-
-    //     const dataMail = document.getElementById('dataMail');
-    //     dataMail.classList.add('is-hidden');
-    // },
+ 
     showFormSiret: ()=>{
         const formSiret = document.getElementById('formSiret');
         formSiret.classList.remove('is-hidden');
