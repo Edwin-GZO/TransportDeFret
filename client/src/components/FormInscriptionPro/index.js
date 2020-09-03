@@ -45,7 +45,7 @@ const FormInscriptionPro = ({
      <h1 class="ui dark header">Formulaire d'inscription professionnel</h1>
      
      
-     {signUpMessage ? <span>{signUpMessage}</span> : null}
+     
      
 
       
@@ -213,6 +213,8 @@ const FormInscriptionPro = ({
           type="password"
         />
     </Form.Field>
+
+    {signUpMessage ? <span>{signUpMessage}</span> : null}
     
     <div className="btn">       
 <span className="">
