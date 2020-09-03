@@ -13,6 +13,28 @@ module.exports = {
         );
     },
 
+    updatePhone: async (newPhone,user) => {
+        await client.query(`
+            UPDATE "user" SET "phone" = $1 , "updated_at" = now() WHERE id = $2`,
+            [
+                newPhone.content,
+                user.id
+            ]
+        );
+    },
+
+
+    updateSiret: async (newSiret,user) => {
+        await client.query(`
+            UPDATE "user" SET "siret" = $1 , "updated_at" = now() WHERE id = $2`,
+            [
+                newSiret.content,
+                user.id
+            ]
+        );
+    },
+
+
     userSoftDelete : async (user) => {
         await client.query(`
             UPDATE "user" SET "active" = 'f', "updated_at" = now() WHERE id = $1`,

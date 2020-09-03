@@ -7,7 +7,10 @@ const router = express.Router();
 
 router.get('/api/user/dashboard', userController.dashBoard) ;
 
-router.post('/api/user/dashboard/namemodif', userController.nameModif) ;
-router.post('/api/user/dashboard/userdelete', userController.userDelete) ;
+router.post('/api/user/dashboard/changename', userController.changeName) ;
+router.post('/api/user/dashboard/changephone', userController.changePhone) ;
+router.post('/api/user/dashboard/changesiret', userController.changeSiret) ;
+
+// router.post('/api/user/dashboard/userdelete', userController.userDelete) ;
 
 module.exports = router;

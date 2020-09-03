@@ -30,17 +30,6 @@
 											<%= user.mail%>
 										</span>
 									</div>
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>"
-													>
-											</div>
-											<div class="control">
-												<button class="button is-small is-success" id="validateMail">Valider</button>
-											</div>
-										</div>
-									</form>
 								</div>
 							</div>
 						</div>
@@ -85,7 +74,10 @@
 											<%= user.name%>
 										</span>
 									</div>
-									<form action="http://localhost:8080/api/user/dashboard/namemodif" method="POST" style="margin-top: 11px" class="is-hidden" id="formName">
+
+		<!-- Route pour changement de Nom -->
+									<form action="http://localhost:8080/api/user/dashboard/changename" method="POST" style="margin-top: 11px" class="is-hidden" id="formName">
+										
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" id="inputName" name="content" value="<%= user.name%>"
@@ -123,7 +115,8 @@
 											<%= user.phone%>
 										</span>
 									</div>
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPhone">
+		<!-- Route pour changement de Téléphone -->	
+									<form action="http://localhost:8080/api/user/dashboard/changephone" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPhone">
 										<div class="field has-addons">
 											<div class="control">
 												<input type="text" class="input is-small" id="inputPhone" name="content" value="<%= user.phone%>">
@@ -158,11 +151,11 @@
 											<%= user.siret%>
 										</span>
 									</div>
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formSiret">
+		<!-- Route pour changement de Siret -->		
+									<form action="http://localhost:8080/api/user/dashboard/changesiret" method="POST" style="margin-top: 11px" class="is-hidden" id="formSiret">
 										<div class="field has-addons">
 											<div class="control">
-												<input type="text" class="input is-small" id="inputSiret" name="content" value=""
-													placeholder="<%= user.siret%>">
+												<input type="text" class="input is-small" id="inputSiret" name="content" value="<%= user.siret%>">
 											</div>
 											<div class="control">
 												<button class="button is-small is-success" id="validateSiret">Valider</button>

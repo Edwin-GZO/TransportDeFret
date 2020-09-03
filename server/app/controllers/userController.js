@@ -39,13 +39,13 @@ module.exports = {
     },
 
     // Permet de modifier le Nom
-    nameModif : async (request, response) => {
+    changeName : async (request, response) => {
 
         try {
     
-            // console.log(request) ;
-            console.log("request",request.body) ;
-            console.log("request.sessions.login",request.session.login) ;
+            // // console.log(request) ;
+            // console.log("request",request.body) ;
+            // console.log("request.sessions.login",request.session.login) ;
 
             const newName = request.body
 
@@ -55,13 +55,75 @@ module.exports = {
 
             const user = await conInscDataMapper.findUser(body);
 
-            console.log("user",user) ;
+            // console.log("user",user) ;
 
             await userDataMapper.updateName(newName,user) ;
 
             console.log(moment().format('LLLL'), " OK BDD - Nom Modifié ") ;
             response.status(201).redirect('/api/user/dashboard',302);
-            // dashBoardUserModule.submitName();
+
+        } catch (error) {
+        
+            console.trace(moment().format('LLLL'), error) ;
+            response.status(500).send(error) ;
+        
+        }
+    },
+
+    // Permet de modifier le Nom
+    changePhone : async (request, response) => {
+
+        try {
+    
+            // // console.log(request) ;
+            // console.log("request",request.body) ;
+            // console.log("request.sessions.login",request.session.login) ;
+
+            const newPhone = request.body
+
+            const body = {
+                mailLogin : request.session.login
+            }
+
+            const user = await conInscDataMapper.findUser(body);
+
+            // console.log("user",user) ;
+
+            await userDataMapper.updatePhone(newPhone,user) ;
+
+            console.log(moment().format('LLLL'), " OK BDD - Téléphone Modifié ") ;
+            response.status(201).redirect('/api/user/dashboard',302);
+
+        } catch (error) {
+        
+            console.trace(moment().format('LLLL'), error) ;
+            response.status(500).send(error) ;
+        
+        }
+    },
+
+    changeSiret : async (request, response) => {
+
+        try {
+    
+            // console.log(request) ;
+            console.log("request",request.body) ;
+            console.log("request.sessions.login",request.session.login) ;
+
+            const newSiret = request.body
+
+            const body = {
+                mailLogin : request.session.login
+            }
+
+            const user = await conInscDataMapper.findUser(body);
+
+            console.log("user",user) ;
+
+            await userDataMapper.updateSiret(newSiret,user) ;
+
+            console.log(moment().format('LLLL'), " OK BDD - Numéro Siret Modifié ") ;
+            response.status(201).redirect('/api/user/dashboard',302);
 
         } catch (error) {
         

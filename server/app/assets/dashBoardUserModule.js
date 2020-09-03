@@ -17,31 +17,32 @@ const dashBoardUserModule = {
         const modifyPhone = document.getElementById('modifyPhone');
         modifyPhone.addEventListener('click',dashBoardUserModule.showFormPhone);
 
-        // const modifyPassword = document.getElementById('modifyPassword');
-        // modifyPassword.addEventListener('click',dashBoardUserModule.showFormPassword);
+        const modifySiret = document.getElementById('modifySiret');
+        modifySiret.addEventListener('click',dashBoardUserModule.showFormSiret);
+
+        const modifyPassword = document.getElementById('modifyPassword');
+        modifyPassword.addEventListener('click',dashBoardUserModule.showFormPassword);
 
         const modifyMail = document.getElementById('modifyMail');
         modifyMail.addEventListener('click',dashBoardUserModule.showFormMail);
 
-        const modifySiret = document.getElementById('modifySiret');
-        modifySiret.addEventListener('click',dashBoardUserModule.showFormSiret);
-
-
-
+        
         //click sur le bouton valider du formulaire (input)
         const validateName = document.getElementById('validateName');
         validateName.addEventListener('click',dashBoardUserModule.submitName);
 
         const validatePhone = document.getElementById('validatePhone');
         validatePhone.addEventListener('click',dashBoardUserModule.submitPhone);
-        // const validatePassword = document.getElementById('validatePassword');
-        // validatePassword.addEventListener('click',dashBoardUserModule.submitPassword);
-        const validateMail = document.getElementById('validateMail');
-        validateMail.addEventListener('click',dashBoardUserModule.submitMail);
 
         const validateSiret = document.getElementById('validateSiret');
         validateSiret.addEventListener('click',dashBoardUserModule.submitSiret);
 
+        // const validatePassword = document.getElementById('validatePassword');
+        // validatePassword.addEventListener('click',dashBoardUserModule.submitPassword);
+        // const validateMail = document.getElementById('validateMail');
+        // validateMail.addEventListener('click',dashBoardUserModule.submitMail);
+
+        
         const deleteUser = document.getElementById('deleteUser');
         deleteUser.addEventListener('click',dashBoardUserModule.submitDelete);
     },
@@ -68,13 +69,13 @@ const dashBoardUserModule = {
     //     formPassword.classList.remove('is-hidden');
         
     // },
-    showFormMail: ()=>{
-        const formMail = document.getElementById('formMail');
-        formMail.classList.remove('is-hidden');
+    // showFormMail: ()=>{
+    //     const formMail = document.getElementById('formMail');
+    //     formMail.classList.remove('is-hidden');
 
-        const dataMail = document.getElementById('dataMail');
-        dataMail.classList.add('is-hidden');
-    },
+    //     const dataMail = document.getElementById('dataMail');
+    //     dataMail.classList.add('is-hidden');
+    // },
     showFormSiret: ()=>{
         const formSiret = document.getElementById('formSiret');
         formSiret.classList.remove('is-hidden');
@@ -103,7 +104,9 @@ const dashBoardUserModule = {
     },
 
     submitPhone: (event)=>{
+
         event.preventDefault();
+
         const validatePhone = document.getElementById('formPhone');
         validatePhone.classList.add('is-hidden');
 
@@ -116,6 +119,23 @@ const dashBoardUserModule = {
         
     },
 
+
+    submitSiret: (event)=>{
+
+        event.preventDefault();
+
+        const validateSiret = document.getElementById('formSiret');
+        validateSiret.classList.add('is-hidden');
+
+        const dataSiret = document.getElementById('dataSiret');
+        dataSiret.classList.remove('is-hidden');
+
+        const inputSiret = document.getElementById('inputSiret');
+
+        dataSiret.textContent = inputSiret.value;
+    },
+
+
     // submitPassword: (event)=>{
     //     event.preventDefault();
     //     const validatePassword = document.getElementById('formPassword');
@@ -123,25 +143,16 @@ const dashBoardUserModule = {
         
     // },
 
-    submitMail: (event)=>{
-        event.preventDefault();
-        const validateMail = document.getElementById('formMail');
-        validateMail.classList.add('is-hidden');
-        const dataMail = document.getElementById('dataMail');
-        dataMail.classList.remove('is-hidden');
-        const inputMail = document.getElementById('inputMail');
-        dataMail.textContent = inputMail.value;
-    },
+    // submitMail: (event)=>{
+    //     event.preventDefault();
+    //     const validateMail = document.getElementById('formMail');
+    //     validateMail.classList.add('is-hidden');
+    //     const dataMail = document.getElementById('dataMail');
+    //     dataMail.classList.remove('is-hidden');
+    //     const inputMail = document.getElementById('inputMail');
+    //     dataMail.textContent = inputMail.value;
+    // },
 
-    submitSiret: (event)=>{
-        event.preventDefault();
-        const validateSiret = document.getElementById('formSiret');
-        validateSiret.classList.add('is-hidden');
-        const dataSiret = document.getElementById('dataSiret');
-        dataSiret.classList.remove('is-hidden');
-        const inputSiret = document.getElementById('inputSiret');
-        dataSiret.textContent = inputSiret.value;
-    },
 
 }
 
