@@ -79,7 +79,7 @@
 								<div class="columns">
 									<div class="column card-name ">
 										<span id="titleName">
-											<strong> Nom : </strong>
+											<strong> Société / Nom : </strong>
 										</span>
 										<span id="dataName">
 											<%= user.name%>
@@ -188,14 +188,18 @@
 						<!---->
 					<!--Ligne 4-->
 					</div>
+
 					<div class="columns">
 						<!--Bloc 1-->
-						<div class="column is-1">
-						</div>
+						<div class="column is-1"></div>
+
 						<!--Bloc 2 - Bouton supprimer-->
 						<div class="column is-1">
-						<button class="button is-danger" id="deleteUser">Supprimer</button>
-					</div>
+							<!-- <form action="http://localhost:8080/api/user/dashboard/namemodif" method="POST" style="margin-top: 11px" class="is-hidden" id="formName"> -->
+							<button class="button is-danger" id="deleteUser">Supprimer</button>
+							</form>
+						</div>
+
 					<!--Bloc 3-->
 					<div class="column is-6">
 					</div>

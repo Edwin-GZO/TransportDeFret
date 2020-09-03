@@ -85,6 +85,7 @@ const dashBoardUserModule = {
 
     //pour faire disparaitre les input
     submitName: async (event)=>{
+
         event.preventDefault();
 
         const validateName = document.getElementById('formName');
@@ -98,19 +99,6 @@ const dashBoardUserModule = {
         dataName.textContent = inputName.value;
 
         console.log(inputName.value)
-
-        // try {
-            
-        //     const response = await fetch(dashBoardUserModule.base_url+'/api/user/dashboard/namemodif', {
-        //         method : "POST",
-        //         body: inputName.value
-        //     })
-
-        //     console.log(response);
-
-        // } catch (error) {
-            
-        // }
    
     },
 
@@ -124,12 +112,14 @@ const dashBoardUserModule = {
         const inputPhone = document.getElementById('inputPhone');
         dataPhone.textContent = inputPhone.value;
     },
-    submitPassword: (event)=>{
-        event.preventDefault();
-        const validatePassword = document.getElementById('formPassword');
-        validatePassword.classList.add('is-hidden');
+
+    // submitPassword: (event)=>{
+    //     event.preventDefault();
+    //     const validatePassword = document.getElementById('formPassword');
+    //     validatePassword.classList.add('is-hidden');
         
-    },
+    // },
+
     submitMail: (event)=>{
         event.preventDefault();
         const validateMail = document.getElementById('formMail');
@@ -139,6 +129,7 @@ const dashBoardUserModule = {
         const inputMail = document.getElementById('inputMail');
         dataMail.textContent = inputMail.value;
     },
+
     submitSiret: (event)=>{
         event.preventDefault();
         const validateSiret = document.getElementById('formSiret');
@@ -148,22 +139,8 @@ const dashBoardUserModule = {
         const inputSiret = document.getElementById('inputSiret');
         dataSiret.textContent = inputSiret.value;
     },
-    // submitDelete: (event) => {
-    //     event.preventDefault();
-    //     const dataMail = await document.getElementById('dataMail');
-    //     const body = {mailLogin : dataMail.textContent };
-        
-        
-    //     const userToDelete = await dashBoardUserModule.findUser(body);
-        
-        
-    //     console.log('id :', userToDelete.id);
-    //     //! await client.query(`
-    //     //!         UPDATE "user"
-    //     //!            SET "active" = 'FALSE'
-    //     //!          WHERE "id" = $1`,[userToDelete.id]);
-    // },
-    
+
 }
 
 document.addEventListener('DOMContentLoaded', dashBoardUserModule.init );
+console.log(document);
