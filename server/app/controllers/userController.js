@@ -89,9 +89,13 @@ module.exports = {
             console.log(request.body) ;
             console.log(request.session.login) ;
 
+
+            
             const user = await conInscDataMapper.findUser(request.session.login);
 
             console.log("user",user) ;
+
+
 
         } catch (error) {
         
