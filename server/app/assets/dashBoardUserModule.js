@@ -95,7 +95,7 @@ const dashBoardUserModule = {
         dataName.classList.remove('is-hidden');
 
         const inputName = document.getElementById('inputName');
-        
+        // A mettre la validation ( recharger la page avec les nouvelles infos )
         dataName.textContent = inputName.value;
 
         console.log(inputName.value)
@@ -107,10 +107,15 @@ const dashBoardUserModule = {
         event.preventDefault();
         const validatePhone = document.getElementById('formPhone');
         validatePhone.classList.add('is-hidden');
+
         const dataPhone = document.getElementById('dataPhone');
         dataPhone.classList.remove('is-hidden');
+
         const inputPhone = document.getElementById('inputPhone');
+
         dataPhone.textContent = inputPhone.value;
+
+        
     },
 
     // submitPassword: (event)=>{
