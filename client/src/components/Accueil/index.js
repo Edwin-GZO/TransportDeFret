@@ -38,9 +38,7 @@ console.log(isLogged);
   <div id="navbarBasicExample" className="navbar-menu">
 
     <div className="navbar-start">
-      <Link className="navbar-item" id="navlink-items" to="/">
-        Accueil
-      </Link>
+      
 
       <Link className="navbar-item" id="navlink-items" to="/contact">
         Contact

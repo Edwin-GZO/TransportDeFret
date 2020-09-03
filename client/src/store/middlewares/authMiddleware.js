@@ -9,7 +9,7 @@ export default (store) => (next) => (action) => {
       
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/user/logout',
+        url: 'http://localhost:8080/api/user/logout',
         
         withCredentials: true
       })
@@ -28,7 +28,7 @@ export default (store) => (next) => (action) => {
       
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/isLogged',
+        url: 'http://localhost:8080/api/isLogged',
         
         withCredentials: true // Je veux que le serveur sache qui je suis grace à la session
       })
@@ -56,7 +56,7 @@ export default (store) => (next) => (action) => {
 
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/user',
+        url: 'http://localhost:8080/api/user',
         data: user,
         withCredentials: true 
       })
@@ -89,7 +89,7 @@ export default (store) => (next) => (action) => {
 
       axios({
         method: 'post',
-        url: 'http://54.175.105.52:8080/api/user/signup/pro',
+        url: 'http://localhost:8080/api/user/signup/pro',
         data: register,
         withCredentials: true 
       })

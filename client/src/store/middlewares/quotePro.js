@@ -14,7 +14,7 @@ export default (store) => (next) => (action) => {
 
             axios({
                 method: 'post',
-                url: 'http://54.175.105.52:8080/api/quote/pro',
+                url: 'http://localhost:8080/api/quote/pro',
                 data: quotePro,
                 withCredentials: true,
             }).then((res) => {                
