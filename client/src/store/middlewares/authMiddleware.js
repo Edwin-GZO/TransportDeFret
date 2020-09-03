@@ -34,15 +34,16 @@ export default (store) => (next) => (action) => {
       })
         .then((res) => {
           console.log(res.data);
+
           
-            store.dispatch(logUser(res.data.isLogged));
+          { res.data ? store.dispatch(loginSuccess(res.data.info))
+          : store.dispatch(loginError(res.data.info))};
           
         })
-         // res.data.logged
-           //{ ? store.dispatch(loginSuccess(res.data.info))}
-            //: store.dispatch(loginError(res.data.info));
+         // 
+         
             
-        //})
+      
         .catch((err) => {
           console.error(err);
         })
@@ -107,7 +108,7 @@ export default (store) => (next) => (action) => {
           store.dispatch(signuperror(<div className="ui negative message">
           <i className="close icon"></i>
           <div className="header">
-            Nous sommes désolés mais votre message n'a pu être envoyé.
+            Nous sommes désolés mais votre inscription ne peut être validée.
           </div>
           <p>Veuillez essayer ultérieurement</p></div>))
         })

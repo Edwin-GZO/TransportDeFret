@@ -87,7 +87,9 @@ const FormQuotePro = ({
     
 <section className="chargement">
   <h2 id="h2" class="ui blue header">Adresse de chargement</h2>
-   
+
+  
+
     <div className="ui form">
                 <div className="two fields">
                 <div className="field">
@@ -415,8 +417,9 @@ const FormQuotePro = ({
       placeholder='Commentaires éventuels ...'
       cssClass='field-input'
     />  
-            {quoteMessage ? <span>{quoteMessage}</span> : null}
-
+            
+            {quoteMessage ? <div>{quoteMessage}</div> : null}
+            
    <div className="btn">       
 <span className="">
           <Button className="ui primary button">Validez</Button>
@@ -429,6 +432,8 @@ const FormQuotePro = ({
 </div>
   </Form>
 {/* } */}
+
+
 
   </section>
 

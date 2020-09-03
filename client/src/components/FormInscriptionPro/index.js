@@ -47,7 +47,7 @@ const FormInscriptionPro = ({
      
      
      
-
+     {signUpMessage ? <span>{signUpMessage}</span> : null}
       
 
   <Form onSubmit={handleSubmit} >
@@ -72,7 +72,7 @@ const FormInscriptionPro = ({
       id="bg"
         name="societe"
         reducerName="register"
-        placeholder="société"
+        placeholder=""
         
       />
     </Form.Field>
@@ -194,7 +194,7 @@ const FormInscriptionPro = ({
           cssClass={!isSamePassword ? 'error' : ''}
           name="passwordSignUpPro"
           reducerName="register"
-          placeholder=""
+          placeholder="........"
           id="bg"
           required="true"
           type="password"
@@ -207,14 +207,14 @@ const FormInscriptionPro = ({
           name="passwordconfirmSignUpPro"
           
           reducerName="register"
-          placeholder=""
+          placeholder="........"
           id="bg"
           required="true"
           type="password"
         />
     </Form.Field>
 
-    {signUpMessage ? <span>{signUpMessage}</span> : null}
+   
     
     <div className="btn">       
 <span className="">

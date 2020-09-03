@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
-import { checkAuth } from '../store/action/user-actions';
+import { checkAuth, logUser } from '../store/action/user-actions';
 
 const mapStateToProps = (state) => ({
    
@@ -12,6 +12,11 @@ const mapStateToProps = (state) => ({
         dispatch(checkAuth());
 
   },
+
+  logUser: () => {
+
+    dispatch(logUser());
+  }
 
 });
 

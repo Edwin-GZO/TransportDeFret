@@ -50,6 +50,10 @@ export default (state = stateInitial, action = {}) => {
                 return {
                     ...state,              
                     contactMessage: action.payload,
+                    nameContact: '',
+                    mailContact: '',
+                    commentContact: '',
+                    subjectContact: '',
                 };
 
             

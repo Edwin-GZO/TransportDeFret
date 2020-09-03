@@ -79,23 +79,23 @@ export default (state= stateInitial , action={})=> {
         ...state,
         ...action.payload,
         ...properties,
-        isLogged:true, 
-        signUpMessage: action.payload
+       
+        signUpMessage: action.payload,
 
-        // siret: '',
-        // mail: '',
-        // bill_address: '',
-        // complement: '',
-        // city:'',
-        // postal_code:'',
-        // phone: '',
-        // password: '',
-        // passwordconfirm: '',
-        // error: '',
-        // signUpMessage: '',
-        // societe: '',
-        // isSignedUp: true,
-        // signUpMessage: `Votre compte à été crée avec succès !`
+        siret: '',
+        mail: '',
+        bill_address: '',
+        complement: '',
+        city:'',
+        postal_code:'',
+        phone: '',
+        password: '',
+        passwordconfirm: '',
+        error: '',
+        
+        societe: '',
+      
+       
 
       } ;  
 
@@ -106,7 +106,7 @@ export default (state= stateInitial , action={})=> {
           
           isSignedUp: false,
           signUpMessage: action.payload,
-      
+          
         };
 
         // case SIGN_UP:
