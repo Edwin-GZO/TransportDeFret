@@ -20,9 +20,12 @@ body {
     top: 20em;
     margin-right: 5em;
     */
+   
     }
     
-    
+    .active {
+      
+    }
     .pMots{
       line-height: 2em;
       font-size: 1.5em;
@@ -43,10 +46,20 @@ body {
     .leftMots{
       //left:0;
       background: url('../../assets/images/D02jqh.jpg') no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 1.3em;
     }
     
     .rightMots{
       right: 0;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding-top: 8em;
+     padding-left: 5em;
+
     
     }
     
@@ -55,4 +68,5 @@ body {
       // top: -6%;
       // left: 7em;
     }
+    
     

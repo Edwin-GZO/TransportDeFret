@@ -40,15 +40,19 @@ body{
     }
     
    .leftCarte{
+    right: 0;
+    background: url('../../assets/images/D02jqh.jpg') no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     }
     
+
     .rightCarte{
-      right: 0;
-      background: url('../../assets/images/D02jqh.jpg') no-repeat;
-    
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
    .imgCarte{

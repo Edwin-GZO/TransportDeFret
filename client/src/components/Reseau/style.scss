@@ -47,6 +47,10 @@ body{
     .rightRes{
       right: 0;
       background: url('../../assets/images/D02jqh.jpg') no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 1.3em;
     
     }
     

@@ -35,11 +35,25 @@ font-size: 1.5em;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
+/*
+.textO{
+	font-size: 3em;
+	display: flex;
+	flex-direction: column-reverse;
+	padding-left: 10em;
+	background: white;
+	background-size: -20em;
+	
+	
+}*/
 
 .textAcc{
 	text-align: center;
 	color: #01215A;
 	font-size: 3em;
+	position: absolute;
+	left: 13em;
+	bottom: 10em;
 	
 	background-size: 10%;
 	/*width: 20%;

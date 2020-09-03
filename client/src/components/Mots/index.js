@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import schema from '../../assets/images/logistique.png';
+import logos from '../../assets/images/GrosLogoTDR.png';
 
 const Mots = () => {
 return (
@@ -14,8 +14,8 @@ return (
     
   
   </div>
-  <div className="split rightMots">
-     <img className="imgMots"  style={{width:700,height:1000}} src={schema} alt="hey1"/>
+  <div className="split rightMots active">
+     <img className="imgMots"  style={{width:600,height:600}} src={logos} alt="hey1"/>
   </div>
 
 

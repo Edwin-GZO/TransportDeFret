@@ -1,14 +1,17 @@
 import React from 'react';
 import './style.scss';
-
+import logo from '../../assets/images/IMG_2009.png'
 
 const PageContact = () => {
 return (
     <div className='fullPage-component'>
 <div className="container">
 
+<img className="contImg" src={logo} style={{height:200, width:200}} />
 
 <div className="allBlock">
+
+    
   <div className="block_address">
 <h2 className="subtitle"><a href="https://www.google.fr/maps/place/1+Impasse+de+la+Gr%C3%A8ce,+13127+Vitrolles/@43.4175812,5.2681815,17z/data=!3m1!4b1!4m5!3m4!1s0x12c9e91e4dfc82ff:0x52c30d921e7a3be!8m2!3d43.4175812!4d5.2703702" target="_blank" rel="noopener noreferrer">VITROLLES</a></h2>
 <p>Zac l'Anjoly </p>

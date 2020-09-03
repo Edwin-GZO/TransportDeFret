@@ -16,16 +16,18 @@ return (
       
         <img style={{height:200, width:200}} src={logo} alt="acc"/>
         
-       <p className="textAcc"> <h2 className="h2Acc">Bienvenue chez TDR </h2><p className="backAcc">La réactivité d'une PME, l'experience d'un réseau  </p> 
+       <p className="textAcc active"> <h2 className="h2Acc">Bienvenue chez TDR </h2><p className="backAcc">La réactivité d'une PME, l'experience d'un réseau  </p> 
        </p>
+       
 
       
    </div>
+   <Mots />
    <Affretement />
       <Carte />
       <Distribution />
       <Logistique />
-      <Mots />
+     
       <Reseau/>
       <PageContact />
    </div>
