@@ -35,7 +35,7 @@ export default (store) => (next) => (action) => {
             <div className="header">
               <div>Votre demande n'a pu être envoyée</div>
             </div>
-            <p>Veuillez essayer ultérieurement</p>
+            
             </div>));
             })
             break;
