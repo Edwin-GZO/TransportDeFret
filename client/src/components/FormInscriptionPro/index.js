@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Field from '../../containers/Field';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Icon } from 'semantic-ui-react';
 import logo from '../../assets/images/IMG_2009.png';
 import './style.scss';
 
@@ -31,7 +31,8 @@ const FormInscriptionPro = ({
     
     } 
 
-      
+    const [Eye, setEye] = useState(false);
+
   return (
   
     
@@ -190,6 +191,9 @@ const FormInscriptionPro = ({
 
     <Form.Field required data-tooltip="Entre 8 et 16 caractères, une majuscule et 1 caractère spécial ( _!@#$%^&*)" data-position="top-center" >
         <label >Choisissez votre mot de passe</label>
+        <Icon name="eye" onClick={
+            () => setEye(!Eye)
+          }/>
         <Field 
           cssClass={!isSamePassword ? 'error' : ''}
           name="passwordSignUpPro"
@@ -197,20 +201,21 @@ const FormInscriptionPro = ({
           placeholder="........"
           id="bg"
           required="true"
-          type="password"
+          type={Eye ? "text" : "password"}
         />
     </Form.Field>
     <Form.Field required>
       <label>Confirmez votre mot de passe</label>
+     
         <Field
           cssClass={!isSamePassword ? 'error' : ''}
           name="passwordconfirmSignUpPro"
-          
+          type={Eye ? "text" : "password"}
           reducerName="register"
           placeholder="........"
           id="bg"
           required="true"
-          type="password"
+          
         />
     </Form.Field>
 

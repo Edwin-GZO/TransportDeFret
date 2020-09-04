@@ -37,14 +37,13 @@ const App = (isLogged) => {
 
   return (
     <div className="App">
-
-<Accueil />
-<Switch>     
-
-          <Route exact path="/" component={Aacueil} />
+      <Accueil />
+      <Switch>
+        <Route exact path="/" component={Aacueil} />
         <Route exact path="/contact" component={ContactForm} />
         <Route exact path="/connection" component={LoginForm} />
-
+        <Route exact path="/modalinscr" component={ModalInscription}></Route>
+        
         {isLogged && <Route path="/ipro" component={FormInscriptionPro} />}
         {isLogged && <Route path="/ipart" component={FormInscriptionPart} />}
         {isLogged && <Route path="/devis" component={FormQuotePro} />}
