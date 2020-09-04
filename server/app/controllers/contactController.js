@@ -15,7 +15,7 @@ module.exports = {
                 message: "formulaire de contact" ,
                 from: "tdr_site@gmail.com" , //dataForm.mail,
     
-                to: "test.projet.transport.de.fret@gmail.com" , //exploitation@transportstdr.fr"
+                to: "ed.granzotto@gmail.com" , //exploitation@transportstdr.fr"
                 subject: dataForm.subjectContact,
     
                 html: 
@@ -27,11 +27,8 @@ module.exports = {
                                 <p>
                                     <ul>
                                         <li> ${dataForm.mailContact}</li>
-                                    </ul>
-                                    
-                                </p>
-                                
-                                
+                                    </ul> 
+                                </p>                              
                             </td>
                             <td style="font-size: 0; line-height: 0;" width="100"> </td>
                             <td>
@@ -41,8 +38,6 @@ module.exports = {
                                         <li> ${dataForm.nameContact}</li>
                                     </ul>
                                 </p>
-                                
-                                
                             </td>
                         </tr>
                     </tbody>

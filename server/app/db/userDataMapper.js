@@ -13,6 +13,7 @@ module.exports = {
         );
     },
 
+
     updatePhone: async (newPhone,user) => {
         await client.query(`
             UPDATE "user" SET "phone" = $1 , "updated_at" = now() WHERE id = $2`,
@@ -45,4 +46,5 @@ module.exports = {
         );
     }
 
+    
 }

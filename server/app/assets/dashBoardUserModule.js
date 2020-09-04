@@ -19,14 +19,7 @@ const dashBoardUserModule = {
 
         const modifySiret = document.getElementById('modifySiret');
         modifySiret.addEventListener('click',dashBoardUserModule.showFormSiret);
-<<<<<<< HEAD
-
-        
-
-        
-=======
        
->>>>>>> feature/crudUser
         //click sur le bouton valider du formulaire (input)
         const validateName = document.getElementById('validateName');
         validateName.addEventListener('submit',dashBoardUserModule.submitName);
@@ -69,11 +62,7 @@ const dashBoardUserModule = {
         const dataPhone = document.getElementById('dataPhone');
         dataPhone.classList.add('is-hidden');
     },
-<<<<<<< HEAD
- 
-=======
    
->>>>>>> feature/crudUser
     showFormSiret: ()=>{
         const formSiret = document.getElementById('formSiret');
         formSiret.classList.remove('is-hidden');

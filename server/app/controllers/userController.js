@@ -1,5 +1,6 @@
 const userDataMapper = require('../db/userDataMapper') ; // useless ?
 const conInscDataMapper = require('../db/conInscDataMapper');
+const conInscController = require('../controllers/conInscController');
 const contactDataMapper = require('../db/contactDataMapper');
 // const dashBoardUserModule = require('../assets/dashBoardUserModule');
 
@@ -146,6 +147,8 @@ module.exports = {
             const user = await conInscDataMapper.findUser(body);
 
             await userDataMapper.userSoftDelete(user) ;
+
+            request.session.destroy();
 
             console.log(moment().format('LLLL'), " OK BDD - Utilisateur Soft Effacé ") ;
             response.status(201).redirect('http://localhost:3000/',302);
