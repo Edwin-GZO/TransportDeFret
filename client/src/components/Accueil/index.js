@@ -44,7 +44,7 @@ console.log(isLogged);
     <div className="navbar-item"> 
         <div className="buttons" >
       
-    <Link className="button is-warning" to="/contact">
+    <Link class="button is-warning is-outlined" to="/contact">
         Contactez-nous
       </Link>
       </div>
@@ -56,7 +56,7 @@ console.log(isLogged);
       <div className="navbar-item"> 
         <div className="buttons" >
         
-        <Link className="button is-primary" to="/connection">
+        <Link class="button is-link is-outlined" to="/connection">
             <strong>Se connecter</strong>
             </Link>  
                  
@@ -117,12 +117,12 @@ console.log(isLogged);
       </Modal.Content>
       <Modal.Actions>
       <span id="devispro">
-        <Link color='white' to="ipro">
+        <Link color='white' exact to="ipro">
           <Icon name='checkmark' /> Professionnel
         </Link>
        </span>
        <span id="devispart">
-        <Link  color='white' to="ipart">
+        <Link  color='white' exact to="ipart">
           <Icon name='checkmark' /> Particulier
         </Link>
         </span>
