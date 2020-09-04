@@ -63,7 +63,7 @@ module.exports = {
                 message: "formulaire de devis" ,
                 from: "tdr_site@gmail.com" , //dataForm.mail,
     
-                to: "test.projet.transport.de.fret@gmail.com" , //exploitation@transportstdr.fr"
+                to: "ed.granzotto@gmail.com" , //exploitation@transportstdr.fr"
                 subject: `Demande de devis ` ,
     
                 html: 
