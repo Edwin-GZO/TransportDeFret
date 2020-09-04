@@ -15,12 +15,17 @@ a, a:active, a:visited {
 }
 
 .navbar{
-position: absolute;
+position: relative;
 top: 0;
 width: 100%;
 
 
-}
+&.is-transparent {
+    background-color: transparent;
+    background-image: none;
+
+}}
+
 .display {
     display:none;
 }

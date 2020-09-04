@@ -9,6 +9,8 @@ import Mots from '../../components/Mots';
 import Reseau from '../../components/Reseau';
 import PageContact from '../../components/PageContact';
 import Engagements from '../../components/Engagements';
+
+
 const Aacueil = () => {
 return ( 
     <div>
@@ -28,9 +30,9 @@ return (
    <Affretement />
       <Carte />
       <Distribution />
-      <Logistique />
-     
+      <Logistique />     
       <Reseau/>
+     
       <PageContact />
    </div>
 )

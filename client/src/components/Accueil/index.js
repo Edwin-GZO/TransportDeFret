@@ -26,7 +26,7 @@ console.log(isLogged);
    
   
 
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     
 
@@ -37,7 +37,7 @@ console.log(isLogged);
     </a>
   </div>
 
-  <div id="navbarBasicExample" className="navbar-menu">
+  <div id="navbarBasicExample"  className="navbar-menu">
 
     <div className="navbar-start">
 
@@ -45,7 +45,7 @@ console.log(isLogged);
         <div className="buttons" >
       
     <Link className="button is-warning" to="/contact">
-        Contact
+        Contactez-nous
       </Link>
       </div>
       </div>
