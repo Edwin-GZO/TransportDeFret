@@ -1,220 +1,26 @@
-<!DOCTYPE html>
-		<html>
-
-		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title> TDR - profil utilisateur </title>
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-			<!--<link rel="stylesheet" href="./assets/css/style.css"> -->
-			<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-		</head>
-
-		<body>
-			<section class="section ">
-				<div class="container">
-					<h1 class="title">
-						<strong> Profil utilisateur </strong>
-					</h1>
-					<!-- Ligne 1 -->
-					<div class="columns">
-						<!-- bloc 1 -->
-						<div class="column is-5">
-							<div class="box"  id="mail">
-								<div class="columns">
-									<div class="column card-name ">
-										<span id="titleMail">
-											<strong> E-mail : </strong>
-										</span>
-										<span id="dataMail">
-											<%= user.mail%>
-										</span>
-									</div>
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formMail">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="text" class="input is-small" id="inputMail" name="content" value="<%= user.mail%>"
-													>
-											</div>
-											<div class="control">
-												<button class="button is-small is-success" id="validateMail">Valider</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<!-- bloc 2 -->
-						<div class="column is-2">
-						</div>
-						<!-- bloc 3 -->
-						<div class="column is-5">
-							<div class="box" id="name" >
-								<div class="columns">
-									<div class="column card-name ">
-										<span id="titlePassword">
-											<strong> Mot de passe </strong>
-										</span>
-										<span id="dataPassword">										</span>
-									</div>
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPassword">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="text" class="input is-small" id="inputPassword" name="content" value="">
-											</div>
-											<div class="control">
-												<button class="button is-small is-success" id="validatePassword">Valider</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
+<div class="modal" id="modalDelete">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<!--<form action="" method="POST"> -->
+			<header class="modal-card-head">
+				<p class="modal-card-title"> ATTENTION vous allez supprimer votre compte</p>
+				<button class="delete close" id="hideModalDelete" type="button" aria-label="close"></button>
+			</header>
+			<footer class="modal-card-foot">
+				<div class="field is">
+					<div class="control">
+						<form method="POST" action="http://localhost:8080/api/user/dashboard/userdelete" >
+							<button class="button is-danger" id="confirmDelete">Confirmer la Suppression</button>
+						</form>
 					</div>
-					<!-- Ligne 2 -->
-					<div class="columns">
-						<!--Bloc 1-->
-						<div class="column is-5">
-							<div class="box" id="name" >
-								<div class="columns">
-									<div class="column card-name ">
-										<span id="titleName">
-											<strong> Société / Nom : </strong>
-										</span>
-										<span id="dataName">
-											<%= user.name%>
-										</span>
-									</div>
-									<form action="http://localhost:8080/api/user/dashboard/namemodif" method="POST" style="margin-top: 11px" class="is-hidden" id="formName">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="text" class="input is-small" id="inputName" name="content" value="<%= user.name%>"
-													>
-											</div>
-											<div class="control">
-											
-												<button class="button is-small is-success" id="validateName">Valider</button>
-												
-											</div>
-										</div>
-									</form>
-									<div class="column is-narrow">
-										<a href="#" class="button--edit-card" id="modifyName">
-											<span class="icon is-small has-text-primary" >
-												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
-											</span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!--Bloc 2-->
-						<div class="column is-2">
-						</div>
-						<!--Bloc 3-->
-						<div class="column is-5">
-							<div class="box"  id="phone">
-								<div class="columns">
-									<div class="column card-name ">
-										<span id="titlePhone">
-											<strong> Téléphone : </strong>
-										</span>
-										<span id="dataPhone">
-											<%= user.phone%>
-										</span>
-									</div>
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formPhone">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="text" class="input is-small" id="inputPhone" name="content" value="<%= user.phone%>">
-											</div>
-											<div class="control">
-												<button class="button is-small is-success"id="validatePhone">Valider</button>
-											</div>
-										</div>
-									</form>
-									<div class="column is-narrow">
-										<a href="#" class="button--edit-card"id="modifyPhone">
-											<span class="icon is-small has-text-primary">
-												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
-											</span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--Ligne 3-->
-					<div class="columns">
-						<!--Bloc 1-->
-						<div class="column is-5">
-							<div class="box"  id="siret">
-								<div class="columns">
-									<div class="column card-name ">
-										<span id="titleSiret">
-											<strong> Siret : </strong>
-										</span>
-										<span id="dataSiret">
-											<%= user.siret%>
-										</span>
-									</div>
-									<form action="" method="POST"  style="margin-top: 11px" class="is-hidden" id="formSiret">
-										<div class="field has-addons">
-											<div class="control">
-												<input type="text" class="input is-small" id="inputSiret" name="content" value=""
-													placeholder="<%= user.siret%>">
-											</div>
-											<div class="control">
-												<button class="button is-small is-success" id="validateSiret">Valider</button>
-											</div>
-										</div>
-									</form>
-									<div class="column is-narrow">
-										<a href="#" class="button--edit-card" id="modifySiret">
-											<span class="icon is-small has-text-primary">
-												<i class="fas fa-pencil-alt" style="margin-top: 11px"></i>
-											</span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!--Bloc 2-->
-						<div class="column is-2">
-						</div>
-						<!--Bloc 3-->
-						<div class="column is-5">
-						</div>
-						<!---->
-					<!--Ligne 4-->
-					</div>
-
-					<div class="columns">
-						<!--Bloc 1-->
-						<div class="column is-1"></div>
-
-							<!--Bloc 2 - Bouton supprimer-->
-						<div class="column is-1">
-							<form method='POST' action='http://localhost:8080/api/user/dashboard/userDelete' >
-								<button class="button is-danger" id="deleteUser">Supprimer</button>
-							</form>
-						</div>
-
-					<!--Bloc 3-->
-					<div class="column is-6">
-					</div>
-					<!--Bloc 4 - Bouton Retour Accueil-->
-					<div class="column is-1">
-						<a href="http://localhost:3000/" >
-						<button class="button is-success">Retour à l'accueil</button>
-						</a>
+					<div class="column is-2"></div>
+					<div class="control">
+						<form method="GET" action="http://localhost:8080/api/user/dashboard" >
+							<button class="button is-success" id="cancelDelete">Annuler la Suppression</button>
+						</form>
 					</div>
 				</div>
-			</div>
-			</section>
-
-			<script type="text/javascript" src="/dashBoardUserModule.js"></script>
-
-		</body>
-
-		</html>
+			</footer>
+		<!--</form>-->
+	</div>
+</div>

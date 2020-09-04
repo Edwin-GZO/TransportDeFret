@@ -19,22 +19,37 @@ const dashBoardUserModule = {
 
         const modifySiret = document.getElementById('modifySiret');
         modifySiret.addEventListener('click',dashBoardUserModule.showFormSiret);
+<<<<<<< HEAD
 
         
 
         
+=======
+       
+>>>>>>> feature/crudUser
         //click sur le bouton valider du formulaire (input)
         const validateName = document.getElementById('validateName');
-        validateName.addEventListener('click',dashBoardUserModule.submitName);
+        validateName.addEventListener('submit',dashBoardUserModule.submitName);
 
         const validatePhone = document.getElementById('validatePhone');
-        validatePhone.addEventListener('click',dashBoardUserModule.submitPhone);
+        validatePhone.addEventListener('submit',dashBoardUserModule.submitPhone);
 
         const validateSiret = document.getElementById('validateSiret');
-        validateSiret.addEventListener('click',dashBoardUserModule.submitSiret);
+        validateSiret.addEventListener('submit',dashBoardUserModule.submitSiret);
         
         const deleteUser = document.getElementById('deleteUser');
         deleteUser.addEventListener('click',dashBoardUserModule.submitDelete);
+
+         //confirmation suppression de compte
+         let confirmDelete = document.getElementById('confirmDelete');
+         confirmDelete.addEventListener('submit',dashBoardUserModule.submitConfirmDelete);
+ 
+         let cancelDelete = document.getElementById('cancelDelete');
+         cancelDelete.addEventListener('submit',dashBoardUserModule.submitCancelDelete);
+ 
+         let hideModalDelete = document.getElementById('hideModalDelete');
+         hideModalDelete.addEventListener('click', dashBoardUserModule.submitCancelDelete);
+
     },
 
     //pour faire apparaitre les input
@@ -54,7 +69,11 @@ const dashBoardUserModule = {
         const dataPhone = document.getElementById('dataPhone');
         dataPhone.classList.add('is-hidden');
     },
+<<<<<<< HEAD
  
+=======
+   
+>>>>>>> feature/crudUser
     showFormSiret: ()=>{
         const formSiret = document.getElementById('formSiret');
         formSiret.classList.remove('is-hidden');
@@ -114,25 +133,24 @@ const dashBoardUserModule = {
         dataSiret.textContent = inputSiret.value;
     },
 
+    submitDelete: (event) => {
+        event.preventDefault();
+        let modalDelete = document.getElementById('modalDelete');
+        modalDelete.classList.add('is-active');
+    },
 
-    // submitPassword: (event)=>{
-    //     event.preventDefault();
-    //     const validatePassword = document.getElementById('formPassword');
-    //     validatePassword.classList.add('is-hidden');
-        
-    // },
+    submitConfirmDelete: (event) => {
+        event.preventDefault();
+        let modalDelete = document.getElementById('modalDelete');
+        modalDelete.classList.remove('is-active');
+        console.log('submitdelete',modalDelete);
+    },
 
-    // submitMail: (event)=>{
-    //     event.preventDefault();
-    //     const validateMail = document.getElementById('formMail');
-    //     validateMail.classList.add('is-hidden');
-    //     const dataMail = document.getElementById('dataMail');
-    //     dataMail.classList.remove('is-hidden');
-    //     const inputMail = document.getElementById('inputMail');
-    //     dataMail.textContent = inputMail.value;
-    // },
-
-
+    submitCancelDelete: (event) => {
+        event.preventDefault();
+        let modalDelete = document.getElementById('modalDelete');
+        modalDelete.classList.remove('is-active');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', dashBoardUserModule.init );

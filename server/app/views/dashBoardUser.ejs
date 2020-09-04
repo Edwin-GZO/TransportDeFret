@@ -91,8 +91,7 @@
 							</div>
 						</div>
 						<!--Bloc 2-->
-						<div class="column is-2">
-						</div>
+						<div class="column is-2"></div>
 						<!--Bloc 3-->
 						<div class="column is-5">
 							<div class="box"  id="phone">
@@ -178,8 +177,8 @@
 
 							<!--Bloc 2 - Bouton supprimer-->
 						<div class="column is-1">
-							<form method='POST' action='http://localhost:8080/api/user/dashboard/userdelete' >
-								<button class="button is-danger" id="deleteUser">Supprimer</button>
+							<form method='POST' action='' >
+								<button class="button is-danger" id="deleteUser">Supprimer le compte</button>
 							</form>
 						</div>
 
@@ -195,6 +194,44 @@
 				</div>
 			</div>
 			</section>
+
+			<!-- Modale de suppression de compte-->
+			<div class="modal" id="modalDelete">
+				<div class="modal-background"></div>
+				<div class="modal-card">
+				
+					<header class="modal-card-head">
+						<p class="modal-card-title"> ATTENTION : Vous allez supprimer votre compte ? </p>
+						<button class="delete close" id="hideModalDelete" type="button" aria-label="close"></button>
+					</header>
+
+					
+						<footer class="modal-card-foot">
+							<div class="field is">
+								<div class="columns">
+									<div class="column is-1"></div>
+									<div class="column is-5">
+									
+										<div class="control">
+											<form method="POST" action="http://localhost:8080/api/user/dashboard/userdelete" >
+												<button class="button is-danger" id="confirmDelete">Confirmer la Suppression</button>
+											</form>
+										</div>
+									</div>
+									<div class="column is-2"></div>
+									<div class="column is-5">
+										<div class="control">
+											<form method="GET" action="http://localhost:8080/api/user/dashboard" >
+												<button class="button is-success" id="cancelDelete">Annuler la Suppression</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</footer>
+					
+				</div>
+			</div>
 
 			<script type="text/javascript" src="/dashBoardUserModule.js"></script>
 
