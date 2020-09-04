@@ -56,7 +56,7 @@ const App = (isLogged) => {
   );
 };
 
-// <Affretement />
+// <Affretement /> test EDWIN BLABNLA
 //       <Carte />
 //       <Distribution />
 //       <Logistique />
