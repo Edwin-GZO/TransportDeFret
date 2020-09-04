@@ -44,6 +44,15 @@ console.log(isLogged);
     <div className="navbar-item"> 
         <div className="buttons" >
       
+    <Link class="button is-link is-rounded is-medium is-outlined" to="/">
+        Accueil
+      </Link>
+      </div>
+      </div>
+
+    <div className="navbar-item"> 
+        <div className="buttons" >
+      
     <Link class="button is-success is-rounded" to="/contact">
         Contactez-nous
       </Link>
