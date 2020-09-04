@@ -36,8 +36,8 @@ export default (store) => (next) => (action) => {
           console.log(res.data);
 
           
-          { res.data ? store.dispatch(loginSuccess(res.data.info))
-          : store.dispatch(loginError(res.data.info))};
+          { res.data ? store.dispatch(loginSuccess(res.data))
+          : store.dispatch(loginError(res.data))};
           
         })
          // 
