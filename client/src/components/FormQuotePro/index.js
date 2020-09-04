@@ -359,7 +359,7 @@ const FormQuotePro = ({
              />
             </Form.Field>
 
-            <h5 className="subtitle">OU</h5>
+         {/* <h5 className="subtitle">OU</h5>*/}
             
             <div className="ui form">
               <div className="three fields">
@@ -396,7 +396,7 @@ const FormQuotePro = ({
         </div>
           </div>
           </div>
-             <h5 className="subtitle">ET</h5>
+             {/*<h5 className="subtitle">ET</h5> */}
             
           <Form.Field>
           <label>Poids (Kg)</label>

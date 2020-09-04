@@ -20,7 +20,7 @@ const LoginForm = ({
 
   useEffect(() => {
     if (isLogged) {
-      setTimeout(() => history.push("/"), 3000);
+      setTimeout(() => history.push("/"), 2000);
     }
   }, [isLogged]);
 
