@@ -28,12 +28,12 @@ function ModalInscription() {
       </Modal.Content>
       <Modal.Actions>
       <span id="devispro">
-        <Link color='white' to="ipro">
+        <Link color='white' exact to="ipro">
           <Icon name='checkmark' /> Professionnel
         </Link>
        </span>
        <span id="devispart">
-        <Link  color='white' to="ipart">
+        <Link  color='white' exact to="ipart">
           <Icon name='checkmark' /> Particulier
         </Link>
         </span>

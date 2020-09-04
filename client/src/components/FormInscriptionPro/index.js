@@ -42,7 +42,7 @@ const FormInscriptionPro = ({
     <img  style={{width:250,height:250}} src={logo}/>
     </div>
     
-     <h1 class="ui dark header">Formulaire d'inscription professionnel</h1>
+     <h1 className="ui dark header">Formulaire d'inscription professionnel</h1>
      
      
      
@@ -95,7 +95,7 @@ const FormInscriptionPro = ({
                 <div className="field">
 
            <Form.Field required>
-          <label>N° de la voie</label>
+          <label>N° de voie</label>
           <Field
           id="bg"
             name="billNumberSignUpPro"
@@ -221,7 +221,7 @@ const FormInscriptionPro = ({
           <Button className="ui primary button">Validez</Button>
   </span>
   <span>
-  <Link button className="ui grey button" to="/">
+  <Link button="true" className="ui grey button" to="/">
   Annuler
 </Link>
 </span>

@@ -22,7 +22,8 @@ const FormInscriptionPart = ({
     citySignUpPart,
     postalCodeSignUpPart,
     hasError,
-    isSamePassword
+    isSamePassword,
+    isEmailOk,
   }) => {
   
     const handleSubmitpart = (evt) => {
@@ -62,7 +63,8 @@ const FormInscriptionPart = ({
         />
       </Form.Field>
   
-      <Form.Field required >
+      <Form.Field required>
+        
         <label>Prénom</label>
         <Field 
         required="true"

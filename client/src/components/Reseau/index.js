@@ -1,18 +1,26 @@
-import React from 'react'
-import { Image, Rail, Segment } from 'semantic-ui-react'
+import React from 'react';
+import './style.scss';
+import vector from '../../assets/images/vector.jpg';
 
-const Reseau = () => (
-  <Segment>
-    <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+const Reseau = () => {
+return (
+  <div className='fullPage-component'>
 
-    <Rail attached internal position='left'>
-      <Segment>Left Rail Content</Segment>
-    </Rail>
-
-    <Rail attached internal position='right'>
-      <Segment>Right Rail Content</Segment>
-    </Rail>
-  </Segment>
+  <div className="split leftRes">
+    
+       <img className="imgRes" style={{width:700,height:700}} src={vector} alt="hey1"/>
+    
+    </div>
+  
+    <div className="split rightRes">
+    <div className="textRes">
+        <h2 className="h2Res">Réseau</h2>
+      <p className="pRes">De 1 palette à 6 palettes, nous vous garantissons une distribution nationale de qualité grâce à notre intégration au groupement Evolutrans</p>
+      </div>
+    </div>
+  
+  
+  </div>
 )
-
-export default Reseau
+}
+export default Reseau;

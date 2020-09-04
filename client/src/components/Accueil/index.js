@@ -8,6 +8,8 @@ import './style.scss';
 
 
 
+
+
 const Accueil = (
   { handleLogout,
     isLogged }
@@ -24,7 +26,7 @@ console.log(isLogged);
    
   
 
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     
 
@@ -35,15 +37,15 @@ console.log(isLogged);
     </a>
   </div>
 
-  <div id="navbarBasicExample" className="navbar-menu">
+  <div id="navbarBasicExample"  className="navbar-menu">
 
     <div className="navbar-start">
 
     <div className="navbar-item"> 
         <div className="buttons" >
       
-    <Link className="button is-warning" to="/contact">
-        Contact
+    <Link class="button is-warning is-outlined" to="/contact">
+        Contactez-nous
       </Link>
       </div>
       </div>
@@ -54,7 +56,7 @@ console.log(isLogged);
       <div className="navbar-item"> 
         <div className="buttons" >
         
-        <Link className="button is-primary" to="/connection">
+        <Link class="button is-link is-outlined" to="/connection">
             <strong>Se connecter</strong>
             </Link>  
                  
@@ -115,12 +117,12 @@ console.log(isLogged);
       </Modal.Content>
       <Modal.Actions>
       <span id="devispro">
-        <Link color='white' to="ipro">
+        <Link color='white' exact to="ipro">
           <Icon name='checkmark' /> Professionnel
         </Link>
        </span>
        <span id="devispart">
-        <Link  color='white' to="ipart">
+        <Link  color='white' exact to="ipart">
           <Icon name='checkmark' /> Particulier
         </Link>
         </span>
@@ -153,6 +155,8 @@ console.log(isLogged);
       </div>
       </div> 
   </nav>
+
+
   
 
     )
