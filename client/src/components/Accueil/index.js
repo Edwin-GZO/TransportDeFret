@@ -44,7 +44,7 @@ console.log(isLogged);
     <div className="navbar-item"> 
         <div className="buttons" >
       
-    <Link class="button is-warning is-outlined" to="/contact">
+    <Link class="button is-success is-rounded" to="/contact">
         Contactez-nous
       </Link>
       </div>
@@ -56,7 +56,7 @@ console.log(isLogged);
       <div className="navbar-item"> 
         <div className="buttons" >
         
-        <Link class="button is-link is-outlined" to="/connection">
+        <Link class="button is-link is-rounded" to="/connection">
             <strong>Se connecter</strong>
             </Link>  
                  
@@ -107,7 +107,7 @@ console.log(isLogged);
       onOpen={() => setOpen(true)}
       open={open}
       size='tiny'
-      trigger={<Button primary>S'inscrire</Button>}
+      trigger={<button class="ui primary basic button">S'inscrire</button>}
     >
      <section className="modale">
       <Modal.Content>
@@ -117,12 +117,12 @@ console.log(isLogged);
       </Modal.Content>
       <Modal.Actions>
       <span id="devispro">
-        <Link color='white' exact to="ipro">
+        <Link color='white' onClick={() => setOpen(!open)} exact to="ipro">
           <Icon name='checkmark' /> Professionnel
         </Link>
        </span>
        <span id="devispart">
-        <Link  color='white' exact to="ipart">
+        <Link  color='white' onClick={() => setOpen(!open)} exact to="ipart">
           <Icon name='checkmark' /> Particulier
         </Link>
         </span>
