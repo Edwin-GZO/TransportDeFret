@@ -414,7 +414,7 @@ const FormQuotePro = ({
              <Field
       type="textarea"
       //id="bg"
-      reducerName="contact"
+      reducerName="quotePro"
       name='commentQuotePro'
       placeholder='Commentaires éventuels ...'
       cssClass='field-input'

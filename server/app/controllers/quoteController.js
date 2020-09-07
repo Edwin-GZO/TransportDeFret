@@ -69,7 +69,7 @@ module.exports = {
                 html: 
     
                 `<table cellspacing="0" cellpadding="0" border="0">
-                    <strong> Description du Colis </strong>
+                    <strong> Description du Colis :</strong>
                         <p>
                             <ul>
                                 <li> Nombre(s) de palette(s) : ${quoteBody.paletteNumberQuotePro} </li>
@@ -80,13 +80,13 @@ module.exports = {
                             </ul>
                         </p>
                         <p>
-                            <em> Commentaire :</em>
+                        <strong> <em> Commentaire :</em> </strong>
                             ${quoteBody.commentQuotePro}
                         </p>
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Adresse de Chargement</strong>
+                                <strong>Adresse de Chargement :</strong>
                                 <p>
                                     <ul>   
                                         <li> <em>Contact : ${quoteBody.loadFirstNameQuotePro} ${quoteBody.loadNameQuotePro}</em></li>
@@ -104,7 +104,7 @@ module.exports = {
                             <td style="font-size: 0; line-height: 0;" width="20">
                             </td>
                             <td>
-                                <strong>Adresse de Livraison</strong>
+                                <strong>Adresse de Livraison :</strong>
                                 <p>
                                     <ul>   
                                         <li> <em>Contact : ${quoteBody.firstNameDeliveryQuotePro} ${quoteBody.nameDeliveryQuotePro}</em></li>

@@ -23,7 +23,7 @@ module.exports = {
                     <tbody>
                         <tr>
                             <td>
-                            <strong>Mail du contact </strong>
+                            <strong>Mail du contact :</strong>
                                 <p>
                                     <ul>
                                         <li> ${dataForm.mailContact}</li>
@@ -32,7 +32,7 @@ module.exports = {
                             </td>
                             <td style="font-size: 0; line-height: 0;" width="100"> </td>
                             <td>
-                                <strong>Nom du contact</strong>
+                                <strong>Nom du contact :</strong>
                                 <p>
                                     <ul>   
                                         <li> ${dataForm.nameContact}</li>
@@ -44,7 +44,7 @@ module.exports = {
                 </table>
                 <br />
                 <br />
-                <strong> Contenu du message </strong>
+                <strong> Contenu du message :</strong>
                 <p>
                     ${dataForm.commentContact} 
                 </p>`
